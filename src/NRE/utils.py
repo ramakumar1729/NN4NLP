@@ -19,9 +19,9 @@ def load_data(data_path, mode="span"):
     if mode == "span":
         for doc in x:
             cbegin = doc.index("_C_")
-            cend = doc.index(next(filter(pat.match, doc[cbegin:])))
+            cend = doc.index(list(filter(pat.match, doc[cbegin:]))[0])
             pbegin = doc.index("_P_")
-            pend = doc.index(next(filter(pat.match, doc[pbegin:])))
+            pend = doc.index(list(filter(pat.match, doc[pbegin:]))[0])
 
             # Design choice. Include P/C tag?
             xnew.append([doc[pbegin:pend], doc[cbegin:cend]])
