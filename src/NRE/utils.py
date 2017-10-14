@@ -48,13 +48,13 @@ def batch_loader(inputs, targets, batch_size, cuda=False):
     ys, ydict = targets
     for i in range(len(xs)//batch_size):
 
-        p, p_lens = pad([[xdict[tok] for tok in i[0]]
-                         for i in xs[batch_size*i: batch_size*(i+1)]],
+        p, p_lens = pad([[xdict[tok] for tok in j[0]]
+                         for j in xs[batch_size*i: batch_size*(i+1)]],
                         pad_symbol=1)
         p = Variable(torch.LongTensor(p))
         p_lens = Variable(torch.LongTensor(p_lens), requires_grad=False)
-        c, c_lens = pad([[xdict[tok] for tok in i[1]]
-                         for i in xs[batch_size*i: batch_size*(i+1)]],
+        c, c_lens = pad([[xdict[tok] for tok in j[1]]
+                         for j in xs[batch_size*i: batch_size*(i+1)]],
                         pad_symbol=1)
         c = Variable(torch.LongTensor(c))
         c_lens = Variable(torch.LongTensor(c_lens), requires_grad=False)
