@@ -10,8 +10,8 @@ from torch.autograd import Variable
 
 torch.manual_seed(1)
 
-from src.models import NRE
-from src.utils import load_pretrained_embedding, load_data, batch_loader
+from src.NRE.models import NRE
+from src.NRE.utils import load_pretrained_embedding, load_data, batch_loader
 
 def prepare_sequence(seq, to_ix):
     idxs = [to_ix[w] for w in seq]
