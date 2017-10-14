@@ -27,7 +27,7 @@ class NRE(nn.Module):
         Returns:
             Variable: log softmax values for each class
         """
-        super().__init__()
+        super(NRE, self).__init__()
 
         self.embedding_dim = embedding_dim
         self.hidden_dim = hidden_dim
