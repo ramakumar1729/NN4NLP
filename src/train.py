@@ -5,7 +5,6 @@ import numpy as np
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
 
@@ -14,14 +13,9 @@ torch.manual_seed(1)
 from src.NRE.models import NRE
 from src.NRE.utils import load_pretrained_embedding, load_data, batch_loader
 
-def prepare_sequence(seq, to_ix):
-    idxs = [to_ix[w] for w in seq]
-    tensor = torch.LongTensor(idxs)
-    return Variable(tensor)
 
-
-def prepare_vocab(sequence, w2i = {}):
-
+def prepare_vocab(sequence, w2i={}):
+    """Calculate dictionary."""
     for w in sequence:
         if w not in w2i:
             w2i[w] = len(w2i)
@@ -31,29 +25,35 @@ def prepare_vocab(sequence, w2i = {}):
 
 def train(args):
 
-    # import ipdb;ipdb.set_trace()
     trainX, trainY = load_data(os.path.join(args.data_dir, "train.txt"))
     devX, devY = load_data(os.path.join(args.data_dir, "dev.txt"))
 
     w2i = {"_UNK_": 0, "_PAD_": 1}
-    word2idx = prepare_vocab([w for i, j in trainX+devX for w in i+j], w2i = w2i)
+    word2idx = prepare_vocab([w for i, j in trainX+devX for w in i+j], w2i=w2i)
 
     t2i = {"NONE": 0}
-    tag2idx = prepare_vocab([l for l in trainY+devY], w2i = t2i)
+    tag2idx = prepare_vocab([l for l in trainY+devY], w2i=t2i)
     num_classes = len(tag2idx)
 
-    n_batches = len(trainX) // args.batch_size
-    dev_n_batches = len(devX) // args.batch_size
+    if args.embedding_file:
+        W, embed_dim = load_pretrained_embedding(w2i, args.embedding_file)
+        assert embed_dim == args.embed_dim
+    else:
+        W = None
 
     model = NRE(args.embed_dim,
                 args.hidden_dim,
                 vocab_size=len(word2idx),
-                tagset_size=len(tag2idx))
+                tagset_size=len(tag2idx),
+                pretrained_emb=W)
     if args.cuda:
         model = model.cuda()
 
     loss_function = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=0.1)
+
+    n_batches = len(trainX) // args.batch_size
+    dev_n_batches = len(devX) // args.batch_size
 
     for epoch in tqdm.trange(300, ncols=100, desc="Epoch"):
         epoch_loss = 0
@@ -81,7 +81,7 @@ def train(args):
             epoch_loss += loss.data[0]
             correct += torch.sum(torch.eq(predictions.data.max(dim=1)[1],
                                           ys.data))
-        # TODO: F-1
+
         acc = correct / len(trainX)
 
         # Dev
@@ -110,21 +110,21 @@ def train(args):
                     FP[pred] += 1
                     FN[y] += 1
 
-        P = [ float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp,fp in zip(TP, FP)]
-        R = [ float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp,fn in zip(TP, FN)]
-        F1 = [ 2*p*r/(p+r) if p+r > 0 else 0 for p,r in zip(P, R)]
+        P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(TP, FP)]
+        R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(TP, FN)]
+        F1 = [2*p*r/(p+r) if p+r > 0 else 0 for p, r in zip(P, R)]
         macro_F1 = np.mean(F1[1:])
-        print("F1  :",F1)
-        print("TP  :",TP)
-        print("FP  :",FP)
-        print("FN  :", FN)
-        print("P  :", P)
-        print("R  :", R)
-        print("Macro-Average F1: {}".format(macro_F1))
+        tqdm.tqdm.write("P  :{}".format(P))
+        tqdm.tqdm.write("R  :{}".format(R))
+        tqdm.tqdm.write("F1  :{}".format(F1))
+        tqdm.tqdm.write("Macro-Average F1: {}".format(macro_F1))
+        # tqdm.tqdm.write("TP  : {}".format(TP))
+        # tqdm.tqdm.write("FP  : {}".format(FP))
+        # tqdm.tqdm.write("FN  : {}".format(FN))
         eval_acc = correct / len(devX)
         tqdm.tqdm.write(("Epoch {:2d}\ttr_loss/acc: ({:.3f} | {:.2f})"
                          "\tdv_loss/acc: ({:.3f} | {:.2f})").format(
-            epoch+1, epoch_loss, acc, eval_loss, eval_acc))
+                             epoch+1, epoch_loss, acc, eval_loss, eval_acc))
 
 
 if __name__ == '__main__':

@@ -3,7 +3,6 @@ import numpy as np
 import torch
 import torch.autograd as autograd
 import torch.nn as nn
-import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence as pack
 from torch.nn.utils.rnn import pad_packed_sequence as unpack
 
@@ -67,7 +66,6 @@ class NRE(nn.Module):
 
         sorted_p_lens, sorted_p_idx = torch.sort(p_lengths, descending=True)
         _, unsort_p_idx = torch.sort(sorted_p_idx)
-
         packed_p_emb = pack(p_emb[sorted_p_idx],
                             lengths=sorted_p_lens.data.int().tolist(),
                             batch_first=True)

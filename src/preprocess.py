@@ -48,7 +48,8 @@ def main(args):
     idcs = np.arange(len(x))
     np.random.shuffle(idcs)
 
-    train_x, train_y = x[idcs[num_dev_examples+1:]], y[idcs[num_dev_examples+1:]]
+    train_x = x[idcs[num_dev_examples+1:]]
+    train_y = y[idcs[num_dev_examples+1:]]
     dev_x, dev_y = x[idcs[:num_dev_examples]], y[idcs[:num_dev_examples]]
     print("Train: {}, Dev: {}".format(len(train_x), len(dev_x)))
 
