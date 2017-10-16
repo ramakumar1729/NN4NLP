@@ -1,8 +1,11 @@
+import random
 import re
+import shutil
 
 import torch
 from torch.autograd import Variable
 
+random.seed(1)
 
 def load_data(data_path, mode="span"):
 
@@ -30,6 +33,13 @@ def load_data(data_path, mode="span"):
     else:
         xnew = x
 
+    none_idxs = [i for i, l in enumerate(y) if l == "NONE"]
+    n_nones = len(none_idxs)
+    # Randomly take away 90% of Nones
+    remove_none_idxs = random.sample(none_idxs, k=9*(n_nones//10))
+    xnew = [x_ for i, x_ in enumerate(xnew) if i not in remove_none_idxs]
+    y = [y_ for i, y_ in enumerate(y) if i not in remove_none_idxs]
+
     return xnew, y
 
 
@@ -46,6 +56,12 @@ def batch_loader(inputs, targets, batch_size, cuda=False):
     """
     xs, xdict = inputs
     ys, ydict = targets
+
+    # Shuffle
+    zipped = list(zip(xs, ys))
+    random.shuffle(zipped)
+    xs, ys = zip(*zipped)
+
     for i in range(len(xs)//batch_size):
 
         p, p_lens = pad([[xdict[tok] for tok in j[0]]
@@ -124,3 +140,12 @@ def load_pretrained_embedding(dictionary, embed_file, source="glove"):
             n += 1
 
     return W, embed_dim
+
+
+def save_checkpoint(state, is_best, filename="checkpoint.pth.tar"):
+        """From ImageNet example of PyTorch official repository; save the model
+            details to a file.
+        """
+        torch.save(state, filename)
+        if is_best:
+            shutil.copyfile(filename, "model_best.pth.tar")

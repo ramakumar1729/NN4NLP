@@ -13,7 +13,7 @@ torch.manual_seed(1)
 class NRE(nn.Module):
 
     def __init__(self, embedding_dim, hidden_dim, vocab_size, tagset_size,
-                 pretrained_emb=None, freeze_emb=False):
+                 pretrained_emb=None, freeze_emb=True):
         """constructor of the relation classifier.
 
         Parameters:
@@ -35,12 +35,12 @@ class NRE(nn.Module):
 
         self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
 
-        if pretrained_emb:
+        if pretrained_emb is not None:
             self.word_embeddings.weight = nn.Parameter(pretrained_emb)
 
         # Whether or not to freeze the pretrained embeddings
         if freeze_emb:
-            self.word_emb.requires_grad = False
+            self.word_embeddings.requires_grad = False
 
         self.dropout = nn.Dropout(0.5)
 
@@ -93,6 +93,7 @@ class NRE(nn.Module):
         c_hn = self.fc(c_hn)
 
         features = torch.cat((p_hn, c_hn), dim=1)
+        # features = p_hn + c_hn
         scores = self.feat2tag(features)
 
         return scores

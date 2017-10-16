@@ -11,7 +11,10 @@ from torch.autograd import Variable
 torch.manual_seed(1)
 
 from src.NRE.models import NRE
-from src.NRE.utils import load_pretrained_embedding, load_data, batch_loader
+from src.NRE.utils import (load_pretrained_embedding,
+                           load_data,
+                           batch_loader,
+                           save_checkpoint)
 
 
 def prepare_vocab(sequence, w2i={}):
@@ -25,8 +28,15 @@ def prepare_vocab(sequence, w2i={}):
 
 def train(args):
 
+    if os.path.exists(args.save_dir):
+        print("Make a new save directory.")
+    else:
+        os.mkdir(args.save_dir)
+
     trainX, trainY = load_data(os.path.join(args.data_dir, "train.txt"))
     devX, devY = load_data(os.path.join(args.data_dir, "dev.txt"))
+
+    print("Tr: {}, Dv: {}".format(len(trainX), len(devX)))
 
     w2i = {"_UNK_": 0, "_PAD_": 1}
     word2idx = prepare_vocab([w for i, j in trainX+devX for w in i+j], w2i=w2i)
@@ -55,9 +65,13 @@ def train(args):
     n_batches = len(trainX) // args.batch_size
     dev_n_batches = len(devX) // args.batch_size
 
-    for epoch in tqdm.trange(300, ncols=100, desc="Epoch"):
+    with open(os.path.join(args.save_dir, "train.log"), "a") as f:
+        print("\t\t".join(["Epoch", "Tr loss", "Dv loss", "Macro-F1"]),
+              file=f)
+
+    macro_F1_best = 0
+    for epoch in tqdm.trange(args.num_epochs, ncols=100, desc="Epoch"):
         epoch_loss = 0
-        correct = 0
         train_batches = batch_loader(inputs=(trainX, word2idx),
                                      targets=(trainY, tag2idx),
                                      batch_size=args.batch_size,
@@ -79,10 +93,6 @@ def train(args):
             loss.backward()
             optimizer.step()
             epoch_loss += loss.data[0]
-            correct += torch.sum(torch.eq(predictions.data.max(dim=1)[1],
-                                          ys.data))
-
-        acc = correct / len(trainX)
 
         # Dev
         # Compute F-1.
@@ -91,7 +101,6 @@ def train(args):
         FN = [0 for _ in range(num_classes)]
 
         model.eval()
-        correct = 0
         eval_loss = 0
         for ps, p_lens, cs, c_lens, ys in tqdm.tqdm(dev_batches,
                                                     total=dev_n_batches,
@@ -101,7 +110,6 @@ def train(args):
             loss = loss_function(predictions, ys)
             eval_loss += loss.data[0]
             preds = predictions.data.max(dim=1)[1]
-            correct += torch.sum(torch.eq(preds, ys.data))
 
             for pred, y in zip(preds, ys.data):
                 if pred == y:
@@ -114,27 +122,44 @@ def train(args):
         R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(TP, FN)]
         F1 = [2*p*r/(p+r) if p+r > 0 else 0 for p, r in zip(P, R)]
         macro_F1 = np.mean(F1[1:])
-        tqdm.tqdm.write("P  :{}".format(P))
-        tqdm.tqdm.write("R  :{}".format(R))
-        tqdm.tqdm.write("F1  :{}".format(F1))
-        tqdm.tqdm.write("Macro-Average F1: {}".format(macro_F1))
+
+        # tqdm.tqdm.write("P  :{}".format(P))
+        # tqdm.tqdm.write("R  :{}".format(R))
+        # tqdm.tqdm.write("F1  :{}".format(F1))
+        # tqdm.tqdm.write("Macro-Average F1: {}".format(macro_F1))
         # tqdm.tqdm.write("TP  : {}".format(TP))
         # tqdm.tqdm.write("FP  : {}".format(FP))
         # tqdm.tqdm.write("FN  : {}".format(FN))
-        eval_acc = correct / len(devX)
-        tqdm.tqdm.write(("Epoch {:2d}\ttr_loss/acc: ({:.3f} | {:.2f})"
-                         "\tdv_loss/acc: ({:.3f} | {:.2f})").format(
-                             epoch+1, epoch_loss, acc, eval_loss, eval_acc))
+
+        tqdm.tqdm.write(("Epoch {:2d}\ttr_loss: {:.3f}"
+                         "\tdv_loss / F1: ({:.3f} | {:.3f})").format(
+                             epoch+1, epoch_loss, eval_loss, macro_F1))
+
+        with open(os.path.join(args.save_dir, "train.log"), "a") as f:
+            print("{:2d}\t\t{:.2f}\t\t{:.2f}\t\t{:.3f}".format(
+                epoch+1, epoch_loss, eval_loss, macro_F1),
+                  file=f)
+
+        if macro_F1 > macro_F1_best:
+            save_checkpoint(model.state_dict(),
+                            False,
+                            os.path.join(args.save_dir,
+                                         "model_best.ckpt.gz".format(epoch+1)))
+            macro_F1_best = macro_F1
+
+    print("Best Macro F1: {}".format(macro_F1_best))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Relation classifier")
+    parser.add_argument("--num-epochs", type=int, default=100)
     parser.add_argument("--embed-dim", type=int, default=100)
     parser.add_argument("--hidden-dim", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--embedding-file", type=str)
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--data-dir", type=str, required=True)
+    parser.add_argument("--save-dir", type=str, required=True)
     args = parser.parse_args()
 
     train(args)
