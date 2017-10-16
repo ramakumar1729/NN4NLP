@@ -8,7 +8,6 @@ from tabulate import tabulate
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.autograd import Variable
 
 torch.manual_seed(1)
 
@@ -64,7 +63,8 @@ def train(args):
         model = model.cuda()
 
     loss_function = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr)
+    optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()),
+                          lr=args.lr)
 
     n_batches = len(trainX) // args.batch_size
     dev_n_batches = len(devX) // args.batch_size
@@ -130,14 +130,6 @@ def train(args):
         F1 = [2*p*r/(p+r) if p+r > 0 else 0 for p, r in zip(P, R)]
         macro_F1 = np.mean(F1[1:])
 
-        # tqdm.tqdm.write("P  :{}".format(P))
-        # tqdm.tqdm.write("R  :{}".format(R))
-        # tqdm.tqdm.write("F1  :{}".format(F1))
-        # tqdm.tqdm.write("Macro-Average F1: {}".format(macro_F1))
-        # tqdm.tqdm.write("TP  : {}".format(TP))
-        # tqdm.tqdm.write("FP  : {}".format(FP))
-        # tqdm.tqdm.write("FN  : {}".format(FN))
-
         tqdm.tqdm.write(("Epoch {:2d}\ttr_loss: {:.3f}"
                          "\tdv_loss / F1: ({:.3f} | {:.3f})").format(
                              epoch+1, epoch_loss, eval_loss, macro_F1))
@@ -150,19 +142,21 @@ def train(args):
         if macro_F1 > macro_F1_best:
             save_checkpoint(model.state_dict(),
                             False,
-                            os.path.join(args.save_dir,
-                                         "model_best.ckpt.gz".format(epoch+1)))
+                            os.path.join(args.save_dir, "model_best.pt"))
             macro_F1_best = macro_F1
             F1_best = F1
             tolerance_count = 0
+
         elif tolerance_count > args.tolerate:
             break
+
         else:
             tolerance_count += 1
 
     print("Best Macro F1: {}".format(macro_F1_best))
     tags = sorted(tag2idx.items(), key=lambda x: x[1])
-    print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)], headers=("Tag", "F1")))
+    print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)],
+                   headers=("Tag", "F1")))
 
 
 if __name__ == '__main__':
@@ -175,7 +169,7 @@ if __name__ == '__main__':
                         help="Path to pretrained embeddings.")
     parser.add_argument("--freeze-emb", action="store_true", default=False)
     parser.add_argument("--tolerate", type=int, default=5,
-                        help="Wait for X epochs even if the metric performs worse.")
+                        help="# of epochs to wait when the metric gets worse.")
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--lr", type=int, default=0.1)
     parser.add_argument("--data-dir", type=str, default="data/processed")

@@ -11,7 +11,15 @@
 2. Run as follows
 ```sh
 python -m src.train \
-    --data-dir data/processed \
+    --save-dir exp1 \  # Unique directory name.
+    --batch-size 16 \
+    --embed-dim 100 \
+    --tolerate 5 \
     --embedding-file PATH/TO/GLOVE/EMBEDDINGS \ # If using pretrained emb
     --cuda # If using gpu
 ```
+
+## What's saved in the `--save-dir`
+
+- `model_best.pt` : PyTorch model.
+- `train.log` : Training/Dev loss and F-1 history.
