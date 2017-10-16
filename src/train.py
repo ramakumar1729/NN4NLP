@@ -1,7 +1,9 @@
 import argparse
 import os
+import sys
 import tqdm
 import numpy as np
+from tabulate import tabulate
 
 import torch
 import torch.nn as nn
@@ -30,6 +32,7 @@ def train(args):
 
     if os.path.exists(args.save_dir):
         print("Make a new save directory.")
+        sys.exit(0)
     else:
         os.mkdir(args.save_dir)
 
@@ -55,12 +58,13 @@ def train(args):
                 args.hidden_dim,
                 vocab_size=len(word2idx),
                 tagset_size=len(tag2idx),
-                pretrained_emb=W)
+                pretrained_emb=W,
+                freeze_emb=args.freeze_emb)
     if args.cuda:
         model = model.cuda()
 
     loss_function = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=0.1)
+    optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr)
 
     n_batches = len(trainX) // args.batch_size
     dev_n_batches = len(devX) // args.batch_size
@@ -69,7 +73,10 @@ def train(args):
         print("\t\t".join(["Epoch", "Tr loss", "Dv loss", "Macro-F1"]),
               file=f)
 
-    macro_F1_best = 0
+    macro_F1_best = 0    # For tracking best macro F1
+    F1_best = None       # For per-class F1
+    tolerance_count = 0  # For tracking the number of waits
+
     for epoch in tqdm.trange(args.num_epochs, ncols=100, desc="Epoch"):
         epoch_loss = 0
         train_batches = batch_loader(inputs=(trainX, word2idx),
@@ -136,7 +143,7 @@ def train(args):
                              epoch+1, epoch_loss, eval_loss, macro_F1))
 
         with open(os.path.join(args.save_dir, "train.log"), "a") as f:
-            print("{:2d}\t\t{:.2f}\t\t{:.2f}\t\t{:.3f}".format(
+            print("{:2d}\t\t{:3.2f}\t\t{:.2f}\t\t{:.3f}".format(
                 epoch+1, epoch_loss, eval_loss, macro_F1),
                   file=f)
 
@@ -146,8 +153,16 @@ def train(args):
                             os.path.join(args.save_dir,
                                          "model_best.ckpt.gz".format(epoch+1)))
             macro_F1_best = macro_F1
+            F1_best = F1
+            tolerance_count = 0
+        elif tolerance_count > args.tolerate:
+            break
+        else:
+            tolerance_count += 1
 
     print("Best Macro F1: {}".format(macro_F1_best))
+    tags = sorted(tag2idx.items(), key=lambda x: x[1])
+    print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)], headers=("Tag", "F1")))
 
 
 if __name__ == '__main__':
@@ -156,10 +171,16 @@ if __name__ == '__main__':
     parser.add_argument("--embed-dim", type=int, default=100)
     parser.add_argument("--hidden-dim", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=32)
-    parser.add_argument("--embedding-file", type=str)
+    parser.add_argument("--embedding-file", type=str,
+                        help="Path to pretrained embeddings.")
+    parser.add_argument("--freeze-emb", action="store_true", default=False)
+    parser.add_argument("--tolerate", type=int, default=5,
+                        help="Wait for X epochs even if the metric performs worse.")
     parser.add_argument("--cuda", action="store_true")
-    parser.add_argument("--data-dir", type=str, required=True)
-    parser.add_argument("--save-dir", type=str, required=True)
+    parser.add_argument("--lr", type=int, default=0.1)
+    parser.add_argument("--data-dir", type=str, default="data/processed")
+    parser.add_argument("--save-dir", type=str, required=True,
+                        help="Directory to save the experiment.")
     args = parser.parse_args()
 
     train(args)
