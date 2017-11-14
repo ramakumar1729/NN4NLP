@@ -125,7 +125,7 @@ def extract_examples(text, ann, host, order="fix", test=False):
         rel_annotations = []
         raw_words, pos, ner, sent_boundaries = extract_features(host, text)
         if ann is not None:
-            ann_ents, _ = fix_tokenize(raw_words, pos, ann)
+            ann_ents, _ = fix_tokenize(raw_words, ann)
             ner, ent2wordidx = fill_ent_annotation(raw_words, ann_ents)
             negative_rels = get_negative_pairs(ann, sent_boundaries)
 
@@ -149,9 +149,9 @@ def extract_examples(text, ann, host, order="fix", test=False):
             return None
 
         raw_words, pos, _, sent_boundaries = extract_features(host, text)
-        ann_ents, ann_rels = fix_tokenize(raw_words, pos, ann)
+        ann_ents, ann_rels = fix_tokenize(raw_words, ann)
         ner, ent2wordidx = fill_ent_annotation(raw_words, ann_ents)
-        negative_rels = get_negative_pairs(ann_rels, sent_boundaries)
+        negative_rels = get_negative_pairs(ann, sent_boundaries)
 
     entity_dict = {e[0]: e[1:] for e in ann if e[0][0] not in ["*", "R"]}
 
@@ -298,8 +298,8 @@ def construct_vocab(sequence, max_vocab=50000):
         o2i (dict): object-to-index.
         i2o (List): index-to-object.
     """
-    o2i = {"unk": 0}
-    i2o = ["unk"]
+    o2i = {"<unk>": 0, "<pad>": 1}
+    i2o = ["<unk>", "<pad>"]
 
     freq = Counter(sequence)
     for e, _ in freq.most_common():

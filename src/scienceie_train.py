@@ -3,17 +3,19 @@ import os
 import sys
 import tqdm
 import numpy as np
+import pickle
 from tabulate import tabulate
 
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch.autograd import Variable
 
 np.random.seed(1)
 torch.manual_seed(1)
 
-from src.CNN.models import CNNClassifier
-from src.NRE.utils import load_pretrained_embedding
+from src.CNN.models import CNNclassifier
+from src.NRE.utils import load_pretrained_embedding, save_checkpoint
 
 
 def pad(features, max_seq_len):
@@ -61,41 +63,36 @@ def train(args):
 
     # Fetch processed data. #### Data is preprocessed offline ####
     dataset, dicts = load_data(args.data_dir)
-    labvocab = set([i[1] for i in dataset["train"]] +
-                   [i[1] for i in dataset["dev"]])
-    labvocab = {i: n for (i, n) in enumerate(labvocab)}  # This includes None
-
+    labvocab = ["None", "Synonym-of", "Hyponym-of", "r_Hyponym-of"]
+    labvocab = {n: i for (i, n) in enumerate(labvocab)}  # This includes None
     for dtype in dataset:
-        dataset[dtype] = [([[dicts["word"].get(i, 0) for i in r[0]],
-                            [dicts["relpos"].get(i, 0) for i in r[1]],
-                            [dicts["relpos"].get(i, 0) for i in r[2]],
-                            [dicts["ner"].get(i, 0) for i in r[3]],
-                            [dicts["pos"].get(i, 0) for i in r[4]]],
+        dataset[dtype] = [([[dicts["word"][0].get(i, 0) for i in r[0]],
+                            [dicts["relpos"][0].get(i, 0) for i in r[1]],
+                            [dicts["relpos"][0].get(i, 0) for i in r[2]],
+                            [dicts["ner"][0].get(i, 0) for i in r[3]],
+                            [dicts["pos"][0].get(i, 0) for i in r[4]]],
                            labvocab.get(l))
                           for r, l in dataset[dtype]]
 
-    wvocab = dicts["word"]
-    rlpvocab = dicts["relpos"]
-    posvocab = dicts["pos"]
-    entvocab = dicts["ner"]
-    labvocab = set([i[1] for i in dataset["train"]] +
-                   [i[1] for i in dataset["dev"]])
-    labvocab = {i: n for (i, n) in enumerate(labvocab)}  # This includes None
+    wvocab = dicts["word"][0]
+    rlpvocab = dicts["relpos"][0]
+    posvocab = dicts["pos"][0]
+    entvocab = dicts["ner"][0]
 
     print("Tr: {}, Dv: {}".format(len(dataset["train"]), len(dataset["dev"])))
 
     if args.embedding_file:
-        W, embed_dim = load_pretrained_embedding(w2i, args.embedding_file)
+        W, embed_dim = load_pretrained_embedding(dicts["word"][0], args.embedding_file)
         assert embed_dim == args.embed_dim
     else:
         W = None
 
-    model = CNNClassifier(vocab_size=len(wvocab),
+    model = CNNclassifier(vocab_size=len(wvocab),
                           embed_dim=100,
                           out_dim=100,
                           n_ent_labels=len(entvocab),
                           n_pos_labels=len(posvocab),
-                          n_loc_lables=len(rlpvocab),
+                          n_loc_labels=len(rlpvocab),
                           n_rel_labels=len(labvocab),
                           pretrained_emb=W,
                           freeze_emb=args.freeze_emb)
@@ -119,7 +116,7 @@ def train(args):
 
     for epoch in tqdm.trange(args.num_epochs, ncols=100, desc="Epoch"):
         epoch_loss = 0
-        train_batches = batch_loader(data=dataset["train"]
+        train_batches = batch_loader(data=dataset["train"],
                                      batch_size=args.batch_size,
                                      cuda=args.cuda)
         dev_batches = batch_loader(data=dataset["dev"],
@@ -136,16 +133,17 @@ def train(args):
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
                                 rs[:, 4, :].squeeze(1))
-            loss = loss_function(predictions, ys)
+
+            loss = loss_function(predictions, targets)
             loss.backward()
             optimizer.step()
             epoch_loss += loss.data[0]
 
         # Dev
         # Compute F-1.
-        TP = [0 for _ in range(num_classes)]
-        FP = [0 for _ in range(num_classes)]
-        FN = [0 for _ in range(num_classes)]
+        TP = [0 for _ in range(len(labvocab))]
+        FP = [0 for _ in range(len(labvocab))]
+        FN = [0 for _ in range(len(labvocab))]
 
         model.eval()
         eval_loss = 0
@@ -156,11 +154,11 @@ def train(args):
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
                                 rs[:, 4, :].squeeze(1))
-            loss = loss_function(predictions, ys)
+            loss = loss_function(predictions, targets)
             eval_loss += loss.data[0]
             preds = predictions.data.max(dim=1)[1]
 
-            for pred, y in zip(preds, ys.data):
+            for pred, y in zip(preds, targets.data):
                 if pred == y:
                     TP[y] += 1
                 else:
@@ -196,7 +194,7 @@ def train(args):
             tolerance_count += 1
 
     print("Best Macro F1: {}".format(macro_F1_best))
-    tags = sorted(tag2idx.items(), key=lambda x: x[1])
+    tags = sorted(labvocab.items(), key=lambda x: x[1])
     print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)],
                    headers=("Tag", "F1")))
 
