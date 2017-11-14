@@ -3,3 +3,4 @@ numpy
 tabulate
 torch
 tqdm
+pycorenlp
