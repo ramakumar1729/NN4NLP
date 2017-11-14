@@ -12,20 +12,43 @@ import torch.optim as optim
 np.random.seed(1)
 torch.manual_seed(1)
 
-from src.NRE.models import NRE
-from src.NRE.utils import (load_pretrained_embedding,
-                           load_data,
-                           batch_loader,
-                           save_checkpoint)
+from src.CNN.models import CNNClassifier
+from src.NRE.utils import load_pretrained_embedding
 
 
-def prepare_vocab(sequence, w2i={}):
-    """Calculate dictionary."""
-    for w in sequence:
-        if w not in w2i:
-            w2i[w] = len(w2i)
+def pad(features, max_seq_len):
+    # Padding idx = 1
+    return [[f + [1]*(max_seq_len - len(f)) for f in r]
+            for r in features]
 
-    return w2i
+def load_data(path):
+    # Load data
+    with open(os.path.join(path, "data.pkl"), "rb") as f:
+        data = pickle.load(f)
+
+    # Load dict
+    with open(os.path.join(path, "dict.pkl"), "rb") as f:
+        dicts = pickle.load(f)
+
+    return data, dicts
+
+
+def batch_loader(data, batch_size=1, cuda=True):
+    """foo."""
+    np.random.shuffle(data)
+
+    n_batch_size = len(data) // batch_size + 1
+
+    for i in range(n_batch_size):
+        rs, targets = zip(*data[batch_size*i:batch_size*(i+1)])
+        max_seq_len = max(len(r[0]) for r in rs)
+        rs = pad(rs, max_seq_len)
+        batch = torch.LongTensor(rs)  # B x num_f x seq_len
+        targets = torch.LongTensor(targets)
+        if cuda:
+            yield Variable(batch).cuda(), Variable(targets).cuda()
+        else:
+            yield Variable(batch), Variable(targets)
 
 
 def train(args):
@@ -36,17 +59,30 @@ def train(args):
     else:
         os.mkdir(args.save_dir)
 
-    trainX, trainY = load_data(os.path.join(args.data_dir, "train.txt"))
-    devX, devY = load_data(os.path.join(args.data_dir, "dev.txt"))
+    # Fetch processed data. #### Data is preprocessed offline ####
+    dataset, dicts = load_data(args.data_dir)
+    labvocab = set([i[1] for i in dataset["train"]] +
+                   [i[1] for i in dataset["dev"]])
+    labvocab = {i: n for (i, n) in enumerate(labvocab)}  # This includes None
 
-    print("Tr: {}, Dv: {}".format(len(trainX), len(devX)))
+    for dtype in dataset:
+        dataset[dtype] = [([[dicts["word"].get(i, 0) for i in r[0]],
+                            [dicts["relpos"].get(i, 0) for i in r[1]],
+                            [dicts["relpos"].get(i, 0) for i in r[2]],
+                            [dicts["ner"].get(i, 0) for i in r[3]],
+                            [dicts["pos"].get(i, 0) for i in r[4]]],
+                           labvocab.get(l))
+                          for r, l in dataset[dtype]]
 
-    w2i = {"_UNK_": 0, "_PAD_": 1}
-    word2idx = prepare_vocab([w for i, j in trainX+devX for w in i+j], w2i=w2i)
+    wvocab = dicts["word"]
+    rlpvocab = dicts["relpos"]
+    posvocab = dicts["pos"]
+    entvocab = dicts["ner"]
+    labvocab = set([i[1] for i in dataset["train"]] +
+                   [i[1] for i in dataset["dev"]])
+    labvocab = {i: n for (i, n) in enumerate(labvocab)}  # This includes None
 
-    t2i = {"NONE": 0}
-    tag2idx = prepare_vocab([l for l in trainY+devY], w2i=t2i)
-    num_classes = len(tag2idx)
+    print("Tr: {}, Dv: {}".format(len(dataset["train"]), len(dataset["dev"])))
 
     if args.embedding_file:
         W, embed_dim = load_pretrained_embedding(w2i, args.embedding_file)
@@ -54,12 +90,15 @@ def train(args):
     else:
         W = None
 
-    model = NRE(args.embed_dim,
-                args.hidden_dim,
-                vocab_size=len(word2idx),
-                tagset_size=len(tag2idx),
-                pretrained_emb=W,
-                freeze_emb=args.freeze_emb)
+    model = CNNClassifier(vocab_size=len(wvocab),
+                          embed_dim=100,
+                          out_dim=100,
+                          n_ent_labels=len(entvocab),
+                          n_pos_labels=len(posvocab),
+                          n_loc_lables=len(rlpvocab),
+                          n_rel_labels=len(labvocab),
+                          pretrained_emb=W,
+                          freeze_emb=args.freeze_emb)
     if args.cuda:
         model = model.cuda()
 
@@ -67,8 +106,8 @@ def train(args):
     optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()),
                           lr=args.lr)
 
-    n_batches = len(trainX) // args.batch_size
-    dev_n_batches = len(devX) // args.batch_size
+    n_batches = len(dataset["train"]) // args.batch_size + 1
+    dev_n_batches = len(dataset["dev"]) // args.batch_size + 1
 
     with open(os.path.join(args.save_dir, "train.log"), "a") as f:
         print("\t\t".join(["Epoch", "Tr loss", "Dv loss", "Macro-F1"]),
@@ -80,23 +119,23 @@ def train(args):
 
     for epoch in tqdm.trange(args.num_epochs, ncols=100, desc="Epoch"):
         epoch_loss = 0
-        train_batches = batch_loader(inputs=(trainX, word2idx),
-                                     targets=(trainY, tag2idx),
+        train_batches = batch_loader(data=dataset["train"]
                                      batch_size=args.batch_size,
                                      cuda=args.cuda)
-        dev_batches = batch_loader(inputs=(devX, word2idx),
-                                   targets=(devY, tag2idx),
+        dev_batches = batch_loader(data=dataset["dev"],
                                    batch_size=args.batch_size,
                                    cuda=args.cuda)
         # Train
         model.train()
-        for ps, p_lens, cs, c_lens, ys in tqdm.tqdm(train_batches,
-                                                    total=n_batches,
-                                                    ncols=100,
-                                                    desc="Training"):
+        for rs, targets in tqdm.tqdm(train_batches, total=n_batches,
+                                     ncols=100, desc="Training"):
 
             optimizer.zero_grad()
-            predictions = model(ps, p_lens, cs, c_lens)
+            predictions = model(rs[:, 0, :].squeeze(1),
+                                rs[:, 1, :].squeeze(1),
+                                rs[:, 2, :].squeeze(1),
+                                rs[:, 3, :].squeeze(1),
+                                rs[:, 4, :].squeeze(1))
             loss = loss_function(predictions, ys)
             loss.backward()
             optimizer.step()
@@ -110,11 +149,13 @@ def train(args):
 
         model.eval()
         eval_loss = 0
-        for ps, p_lens, cs, c_lens, ys in tqdm.tqdm(dev_batches,
-                                                    total=dev_n_batches,
-                                                    ncols=100,
-                                                    desc="Evaluating"):
-            predictions = model(ps, p_lens, cs, c_lens)
+        for rs, targets in tqdm.tqdm(dev_batches, total=dev_n_batches,
+                                     ncols=100, desc="Evaluating"):
+            predictions = model(rs[:, 0, :].squeeze(1),
+                                rs[:, 1, :].squeeze(1),
+                                rs[:, 2, :].squeeze(1),
+                                rs[:, 3, :].squeeze(1),
+                                rs[:, 4, :].squeeze(1))
             loss = loss_function(predictions, ys)
             eval_loss += loss.data[0]
             preds = predictions.data.max(dim=1)[1]
@@ -173,7 +214,7 @@ if __name__ == '__main__':
                         help="# of epochs to wait when the metric gets worse.")
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--lr", type=int, default=0.1)
-    parser.add_argument("--data-dir", type=str, default="data/processed")
+    parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")
     args = parser.parse_args()
