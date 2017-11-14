@@ -1,0 +1,21 @@
+T1	NoType 43 79	Unification Categorial Grammar (UCG)
+T2	NoType 100 119	Isomorphic Grammars
+T3	NoType 124 143	Machine Translation
+T4	NoType 174 208	Isomorphic Grammars approach to MT
+T5	NoType 233 241	grammars
+T6	NoType 249 276	Source and Target languages
+T7	NoType 314 316	SL
+T8	NoType 321 323	TL
+T9	NoType 355 375	translation relation
+T10	NoType 381 403	isomorphic derivations
+T11	NoType 576 594	semantic questions
+T12	NoType 620 628	Semantic
+T13	NoType 704 724	translation relation
+T14	NoType 744 766	textual representation
+T15	NoType 804 813	MT system
+T16	NoType 840 855	monolingual UCG
+T17	NoType 945 984	bi-directional English-Spanish fragment
+R1	USAGE Arg1:T1 Arg2:T3
+R2	MODEL-FEATURE Arg1:T5 Arg2:T6
+R3	COMPARE Arg1:T7 Arg2:T8
+R4	COMPARE Arg1:T13 Arg2:T14

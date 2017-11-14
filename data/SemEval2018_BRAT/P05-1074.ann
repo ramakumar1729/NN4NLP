@@ -1,0 +1,22 @@
+T1	NoType 24 52	monolingual parallel corpora
+T2	NoType 77 88	paraphrases
+T3	NoType 132 158	bilingual parallel corpora
+T4	NoType 192 200	resource
+T5	NoType 209 229	alignment techniques
+T6	NoType 235 279	phrase-based statistical machine translation
+T7	NoType 294 305	paraphrases
+T8	NoType 313 321	language
+T9	NoType 348 354	phrase
+T10	NoType 399 421	paraphrase probability
+T11	NoType 434 445	paraphrases
+T12	NoType 463 488	bilingual parallel corpus
+T13	NoType 508 533	translation probabilities
+T14	NoType 575 597	contextual information
+T15	NoType 628 669	paraphrase extraction and ranking methods
+T16	NoType 685 707	manual word alignments
+T17	NoType 727 734	quality
+T18	NoType 740 751	paraphrases
+T19	NoType 767 787	automatic alignments
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T11 Arg2:T12
+R3	PART_WHOLE Arg1:T18 Arg2:T19

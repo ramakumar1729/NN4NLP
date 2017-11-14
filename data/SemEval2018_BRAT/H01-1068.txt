@@ -1,0 +1,2 @@
+ 
+ We describe a three-tiered approach for evaluation of spoken dialogue systems . The three tiers measure user satisfaction , system support of mission success and component performance . We describe our use of this approach in numerous fielded user studies conducted with the U.S. military. 

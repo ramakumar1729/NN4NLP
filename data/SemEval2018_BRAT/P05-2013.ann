@@ -1,0 +1,12 @@
+T1	NoType 61 105	Combinatory Categorial Grammar (CCG) lexicon
+T2	NoType 113 140	Turkish dependency treebank
+T3	NoType 156 163	Turkish
+T4	NoType 170 208	agglutinating free word order language
+T5	NoType 234 251	language theories
+T6	NoType 291 306	compact lexicon
+T7	NoType 324 338	CCG principles
+T8	NoType 347 355	treebank
+T9	NoType 400 408	Penn WSJ
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T4 Arg2:T3
+R3	COMPARE Arg1:T8 Arg2:T9

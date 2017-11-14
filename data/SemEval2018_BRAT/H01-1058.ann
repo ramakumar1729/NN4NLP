@@ -1,0 +1,35 @@
+T1	NoType 60 81	language models (LMs)
+T2	NoType 104 125	interpolation methods
+T3	NoType 133 168	log-linear and linear interpolation
+T4	NoType 183 194	performance
+T5	NoType 217 228	performance
+T6	NoType 235 241	oracle
+T7	NoType 248 254	oracle
+T8	NoType 265 286	reference word string
+T9	NoType 303 314	word string
+T10	NoType 329 340	performance
+T11	NoType 353 380	word or semantic error rate
+T12	NoType 398 410	word strings
+T13	NoType 424 435	word string
+T14	NoType 475 477	LM
+T15	NoType 494 500	oracle
+T16	NoType 513 529	dynamic combiner
+T17	NoType 535 549	hard decisions
+T18	NoType 560 569	reference
+T19	NoType 637 671	dynamic language model combination
+T20	NoType 687 698	performance
+T21	NoType 761 767	oracle
+T22	NoType 776 790	neural network
+T23	NoType 796 809	decision tree
+T24	NoType 842 845	LMs
+T25	NoType 851 870	confidence measures
+T26	NoType 892 902	hypothesis
+T27	NoType 924 926	LM
+T28	NoType 941 951	confidence
+R1	RESULT Arg1:T2 Arg2:T4
+R2	RESULT Arg1:T9 Arg2:T10
+R3	RESULT Arg1:T14 Arg2:T13
+R4	USAGE Arg1:T18 Arg2:T16
+R5	RESULT Arg1:T19 Arg2:T20
+R6	MODEL-FEATURE Arg1:T25 Arg2:T24
+R7	MODEL-FEATURE Arg1:T28 Arg2:T27

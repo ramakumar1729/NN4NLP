@@ -1,0 +1,39 @@
+T1	NoType 45 67	statistical techniques
+T2	NoType 103 115	translations
+T3	NoType 121 126	graph
+T4	NoType 130 152	translation hypotheses
+T5	NoType 213 229	hypotheses graph
+T6	NoType 251 266	shallow mapping
+T7	NoType 271 288	permutation rules
+T8	NoType 320 325	nodes
+T9	NoType 340 388	vectors representing morpho-syntactic properties
+T10	NoType 392 397	words
+T11	NoType 402 409	phrases
+T12	NoType 468 497	statistical feature functions
+T13	NoType 515 532	vector components
+T14	NoType 538 555	feature functions
+T15	NoType 599 603	text
+T16	NoType 614 636	log-linear combination
+T17	NoType 673 690	translation paths
+T18	NoType 698 703	graph
+T19	NoType 720 747	language modelling toolkits
+T20	NoType 753 756	CMU
+T21	NoType 765 776	SRI toolkit
+T22	NoType 809 849	word-lemma based feature function models
+T23	NoType 878 896	token-based models
+T24	NoType 910 934	PoS-tag feature function
+T25	NoType 942 958	word-lemma model
+T26	NoType 986 993	weights
+T27	NoType 998 1018	lexical translations
+T28	NoType 1039 1056	training material
+T29	NoType 1075 1080	texts
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T4 Arg2:T3
+R3	USAGE Arg1:T6 Arg2:T5
+R4	PART_WHOLE Arg1:T9 Arg2:T8
+R5	USAGE Arg1:T16 Arg2:T17
+R6	COMPARE Arg1:T20 Arg2:T21
+R7	COMPARE Arg1:T22 Arg2:T23
+R8	PART_WHOLE Arg1:T24 Arg2:T25
+R9	MODEL-FEATURE Arg1:T26 Arg2:T27
+R10	COMPARE Arg1:T28 Arg2:T29

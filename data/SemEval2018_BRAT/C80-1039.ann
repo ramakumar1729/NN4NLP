@@ -1,0 +1,9 @@
+T1	NoType 154 159	FROFF
+T2	NoType 278 283	fonts
+T3	NoType 303 312	character
+T4	NoType 354 369	typing location
+T5	NoType 434 443	character
+T6	NoType 510 519	character
+T7	NoType 543 548	rules
+T8	NoType 625 649	mathematical expressions
+R1	USAGE Arg1:T7 Arg2:T8

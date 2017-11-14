@@ -1,0 +1,8 @@
+T1	NoType 23 42	computational model
+T2	NoType 124 138	discourse task
+T3	NoType 195 200	model
+T4	NoType 227 230	APT
+T5	NoType 305 344	organizational and discourse strategies
+T6	NoType 377 383	corpus
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T3 Arg2:T4

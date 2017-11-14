@@ -1,0 +1,17 @@
+T1	NoType 36 46	similarity
+T2	NoType 55 60	words
+T3	NoType 96 108	word vectors
+T4	NoType 116 134	vector space model
+T5	NoType 168 205	methods for constructing word vectors
+T6	NoType 214 272	LSA-based, cooccurrence-based and dictionary-based methods
+T7	NoType 339 349	similarity
+T8	NoType 358 378	taxonomic similarity
+T9	NoType 383 405	associative similarity
+T10	NoType 450 479	dictionary-based word vectors
+T11	NoType 495 515	taxonomic similarity
+T12	NoType 528 577	LSA-based and the cooccurrence-based word vectors
+T13	NoType 593 615	associative similarity
+R1	MODEL-FEATURE Arg1:T3 Arg2:T1
+R2	USAGE Arg1:T6 Arg2:T7
+R3	USAGE Arg1:T10 Arg2:T11
+R4	USAGE Arg1:T12 Arg2:T13

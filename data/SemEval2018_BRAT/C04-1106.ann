@@ -1,0 +1,13 @@
+T1	NoType 16 39	analogies between words
+T2	NoType 174 197	computational linguists
+T3	NoType 229 256	analogies between sentences
+T4	NoType 348 367	multilingual corpus
+T5	NoType 394 403	analogies
+T6	NoType 414 423	sentences
+T7	NoType 501 508	analogy
+T8	NoType 539 543	form
+T9	NoType 571 578	meaning
+T10	NoType 608 619	translation
+T11	NoType 636 643	meaning
+T12	NoType 664 672	meanings
+R1	MODEL-FEATURE Arg1:T5 Arg2:T6

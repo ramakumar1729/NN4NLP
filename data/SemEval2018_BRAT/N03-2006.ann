@@ -1,0 +1,13 @@
+T1	NoType 23 42	translation quality
+T2	NoType 46 50	EBMT
+T3	NoType 74 90	bilingual corpus
+T4	NoType 117 133	bilingual corpus
+T5	NoType 156 170	language model
+T6	NoType 187 205	monolingual corpus
+T7	NoType 241 252	EBMT system
+T8	NoType 263 282	evaluation measures
+T9	NoType 290 300	BLEU score
+T10	NoType 309 319	NIST score
+T11	NoType 370 386	bilingual corpus
+T12	NoType 420 434	language model
+R1	RESULT Arg1:T2 Arg2:T1

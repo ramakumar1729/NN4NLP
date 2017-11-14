@@ -1,0 +1,11 @@
+T1	NoType 49 57	patterns
+T2	NoType 61 77	translation data
+T3	NoType 84 112	part-of-speech tag sequences
+T4	NoType 151 166	diagnostic tool
+T5	NoType 180 190	developers
+T6	NoType 194 221	machine translation systems
+T7	NoType 275 285	developers
+T8	NoType 297 305	patterns
+T9	NoType 309 335	machine translation output
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T8 Arg2:T9

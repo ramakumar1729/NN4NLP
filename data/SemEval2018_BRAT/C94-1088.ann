@@ -1,0 +1,12 @@
+T1	NoType 24 67	characters-based Chinese collocation system
+T2	NoType 122 139	word-based system
+T3	NoType 147 157	wordbreaks
+T4	NoType 191 211	Chinese text corpora
+T5	NoType 215 249	character-based collocation system
+T6	NoType 286 311	pre-processing distortion
+T7	NoType 335 358	sub-lexical information
+T8	NoType 373 408	word-based collocational properties
+T9	NoType 456 478	automatic segmentation
+R1	COMPARE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T3 Arg2:T4
+R3	USAGE Arg1:T9 Arg2:T8

@@ -1,0 +1,5 @@
+T1	NoType 34 39	model
+T2	NoType 56 90	structure of communicative context
+T3	NoType 94 114	dialogue interaction
+T4	NoType 243 251	dialogue
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3

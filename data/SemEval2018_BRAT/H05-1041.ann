@@ -1,0 +1,15 @@
+T1	NoType 14 54	practically unsupervised learning method
+T2	NoType 66 88	single-snippet answers
+T3	NoType 92 112	definition questions
+T4	NoType 116 142	question answering systems
+T5	NoType 159 177	Web search engines
+T6	NoType 199 237	on-line encyclopedias and dictionaries
+T7	NoType 295 336	positive and negative definition examples
+T8	NoType 370 373	svm
+T9	NoType 514 520	system
+T10	NoType 524 533	questions
+T11	NoType 538 561	news articles from trec
+T12	NoType 585 598	search engine
+T13	NoType 606 626	definition questions
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T6 Arg2:T7

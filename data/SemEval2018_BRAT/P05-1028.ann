@@ -1,0 +1,8 @@
+T1	NoType 23 35	corpus study
+T2	NoType 132 151	information graphic
+T3	NoType 185 214	graphic interpretation system
+T4	NoType 252 273	communicative signals
+T5	NoType 335 353	shallow processing
+T6	NoType 492 512	sight-impaired users
+T7	NoType 538 558	information graphics
+R1	USAGE Arg1:T4 Arg2:T3

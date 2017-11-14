@@ -1,0 +1,28 @@
+T1	NoType 17 67	generative probabilistic model of natural language
+T2	NoType 84 87	HBG
+T3	NoType 123 145	linguistic information
+T4	NoType 157 166	ambiguity
+T5	NoType 170 173	HBG
+T6	NoType 187 243	lexical, syntactic, semantic, and structural information
+T7	NoType 253 263	parse tree
+T8	NoType 273 295	disambiguation process
+T9	NoType 321 350	corpus of bracketed sentences
+T10	NoType 362 370	Treebank
+T11	NoType 393 415	decision tree building
+T12	NoType 455 465	parse tree
+T13	NoType 498 503	parse
+T14	NoType 509 517	sentence
+T15	NoType 577 584	grammar
+T16	NoType 609 633	linguistic introspection
+T17	NoType 672 677	parse
+T18	NoType 683 701	head-to-head tests
+T19	NoType 742 770	probabilistic parsing models
+T20	NoType 787 792	P-CFG
+T21	NoType 798 807	HBG model
+T22	NoType 834 839	P-CFG
+T23	NoType 857 873	parsing accuracy
+R1	USAGE Arg1:T3 Arg2:T4
+R2	USAGE Arg1:T6 Arg2:T5
+R3	MODEL-FEATURE Arg1:T13 Arg2:T14
+R4	USAGE Arg1:T16 Arg2:T15
+R5	COMPARE Arg1:T21 Arg2:T22

@@ -1,0 +1,24 @@
+T1	NoType 71 89	segment boundaries
+T2	NoType 93 119	spoken multiparty dialogue
+T3	NoType 210 243	predicting top-level topic shifts
+T4	NoType 262 293	identifying subtopic boundaries
+T5	NoType 326 337	performance
+T6	NoType 347 357	ASR output
+T7	NoType 372 391	human transcription
+T8	NoType 423 431	features
+T9	NoType 443 498	predicting top-level and predicting subtopic boundaries
+T10	NoType 542 561	subtopic boundaries
+T11	NoType 568 599	lexical cohesion-based approach
+T12	NoType 647 678	predicting top-level boundaries
+T13	NoType 685 710	machine learning approach
+T14	NoType 725 769	lexical-cohesion and conversational features
+T15	NoType 793 812	conversational cues
+T16	NoType 823 834	cue phrases
+T17	NoType 839 857	overlapping speech
+T18	NoType 939 959	transcription errors
+T19	NoType 974 984	ASR output
+T20	NoType 1031 1075	lexical-cohesion and conversational features
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	COMPARE Arg1:T6 Arg2:T7
+R3	USAGE Arg1:T13 Arg2:T12
+R4	MODEL-FEATURE Arg1:T18 Arg2:T19

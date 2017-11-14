@@ -1,0 +1,3 @@
+
+This paper presents a new approach to statistical sentence generation in which alternative phrases are represented as packed sets of trees, or forests, and then ranked statistically to choose the best one. This representation offers advantages in compactness and in the ability to represent syntactic information. It also facilitates more efficient statistical ranking than a previous approach to statistical generation. An efficient ranking algorithm is described, together with experimental results showing significant improvements over simple enumeration or a lattice-based approach.
+

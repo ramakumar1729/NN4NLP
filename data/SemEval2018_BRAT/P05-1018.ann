@@ -1,0 +1,15 @@
+T1	NoType 61 76	local coherence
+T2	NoType 97 124	entity-based representation
+T3	NoType 128 137	discourse
+T4	NoType 159 175	Centering Theory
+T5	NoType 215 223	raw text
+T6	NoType 233 253	coherence assessment
+T7	NoType 259 283	ranking learning problem
+T8	NoType 311 335	discourse representation
+T9	NoType 373 389	ranking function
+T10	NoType 428 441	induced model
+T11	NoType 472 480	accuracy
+T12	NoType 488 520	state-of-the-art coherence model
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T7 Arg2:T6
+R3	COMPARE Arg1:T10 Arg2:T12

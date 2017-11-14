@@ -1,0 +1,16 @@
+T1	NoType 1 45	Machine transliteration/back-transliteration
+T2	NoType 78 123	multilingual speech and language applications
+T3	NoType 162 205	machine transliteration/backtransliteration
+T4	NoType 234 269	direct orthographical mapping (DOM)
+T5	NoType 292 301	languages
+T6	NoType 340 382	joint source-channel transliteration model
+T7	NoType 396 436	n-gram transliteration model (n-gram TM)
+T8	NoType 471 494	transliteration process
+T9	NoType 545 592	transliteration/backtransliteration experiments
+T10	NoType 597 648	English/Chinese and English/Japanese language pairs
+T11	NoType 723 748	system development effort
+T12	NoType 771 795	transliteration accuracy
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4
+R3	MODEL-FEATURE Arg1:T7 Arg2:T8
+R4	USAGE Arg1:T9 Arg2:T10

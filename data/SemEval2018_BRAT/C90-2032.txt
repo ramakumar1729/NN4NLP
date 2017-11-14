@@ -1,0 +1,2 @@
+ 
+ This paper proposes document oriented preference sets(DoPS) for the disambiguation of the dependency structure of sentences . The DoPS system extracts preference knowledge from a target document or other documents automatically. Sentence ambiguities can be resolved by using domain targeted preference knowledge without using complicated large knowledgebases . Implementation and empirical results are described for the the analysis of dependency structures of Japanese patent claim sentences . 

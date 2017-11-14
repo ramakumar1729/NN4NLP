@@ -1,0 +1,32 @@
+T1	NoType 1 21	Automatic estimation
+T2	NoType 25 42	word significance
+T3	NoType 56 95	speech-based Information Retrieval (IR)
+T4	NoType 120 132	significance
+T5	NoType 136 141	words
+T6	NoType 153 155	IR
+T7	NoType 157 203	automatic speech recognition (ASR) performance
+T8	NoType 232 263	weighted word error rate (WWER)
+T9	NoType 279 285	weight
+T10	NoType 318 320	IR
+T11	NoType 333 354	word error rate (WER)
+T12	NoType 373 378	words
+T13	NoType 392 409	decoding strategy
+T14	NoType 425 429	WWER
+T15	NoType 441 469	Minimum Bayes-Risk framework
+T16	NoType 522 525	ASR
+T17	NoType 530 532	IR
+T18	NoType 581 608	automatic estimation method
+T19	NoType 613 640	word significance (weights)
+T20	NoType 667 669	IR
+T21	NoType 685 692	weights
+T22	NoType 715 734	evaluation measures
+T23	NoType 738 741	ASR
+T24	NoType 746 748	IR
+T25	NoType 799 840	speech-based information retrieval system
+T26	NoType 861 870	IR system
+R1	USAGE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	COMPARE Arg1:T9 Arg2:T11
+R4	USAGE Arg1:T15 Arg2:T13
+R5	COMPARE Arg1:T16 Arg2:T17
+R6	USAGE Arg1:T18 Arg2:T19

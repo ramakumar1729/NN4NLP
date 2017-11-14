@@ -1,0 +1,2 @@
+ 
+ This paper describes a domain independent strategy for the multimedia articulation of answers elicited by a natural language interface to database query applications . Multimedia answers include videodisc images and heuristically-produced complete sentences in text or text-to-speech form . Deictic reference and feedback about the discourse are enabled. The interface thus presents the application as cooperative and conversational. 

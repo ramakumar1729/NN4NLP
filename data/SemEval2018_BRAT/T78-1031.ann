@@ -1,0 +1,30 @@
+T1	NoType 28 37	inference
+T2	NoType 41 58	semantic networks
+T3	NoType 87 107	Path-based inference
+T4	NoType 118 121	arc
+T5	NoType 127 139	path of arcs
+T6	NoType 158 163	nodes
+T7	NoType 219 223	path
+T8	NoType 245 250	nodes
+T9	NoType 253 279	Path-based inference rules
+T10	NoType 303 338	binary relational calculus notation
+T11	NoType 341 361	Node-based inference
+T12	NoType 371 380	structure
+T13	NoType 384 389	nodes
+T14	NoType 455 470	node structures
+T15	NoType 473 499	Node-based inference rules
+T16	NoType 524 540	semantic network
+T17	NoType 562 589	predicate calculus notation
+T18	NoType 592 612	Path-based inference
+T19	NoType 638 658	node-based inference
+T20	NoType 814 840	path-based inference rules
+T21	NoType 870 893	extensional equivalence
+T22	NoType 897 917	intensional concepts
+T23	NoType 931 942	explication
+T24	NoType 946 957	inheritance
+T25	NoType 961 972	hierarchies
+R1	USAGE Arg1:T10 Arg2:T9
+R2	USAGE Arg1:T14 Arg2:T11
+R3	USAGE Arg1:T17 Arg2:T15
+R4	COMPARE Arg1:T18 Arg2:T19
+R5	MODEL-FEATURE Arg1:T24 Arg2:T25

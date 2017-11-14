@@ -1,0 +1,20 @@
+T1	NoType 43 77	unsupervised automatic acquisition
+T2	NoType 81 137	Italian and English verb subcategorization frames (SCFs)
+T3	NoType 143 169	general and domain corpora
+T4	NoType 206 242	syntactically shallow-parsed corpora
+T5	NoType 279 296	search heuristics
+T6	NoType 325 351	lexico-syntactic knowledge
+T7	NoType 358 362	SCFs
+T8	NoType 420 464	state-of-the-art lexical acquisition systems
+T9	NoType 487 492	verbs
+T10	NoType 509 527	SCFs distributions
+T11	NoType 544 571	similar semantic properties
+T12	NoType 612 617	verbs
+T13	NoType 629 635	frames
+T14	NoType 650 662	distribution
+T15	NoType 673 715	Minimum Description Length Principle (MDL)
+T16	NoType 773 786	Italian verbs
+R1	USAGE Arg1:T3 Arg2:T1
+R2	MODEL-FEATURE Arg1:T6 Arg2:T7
+R3	MODEL-FEATURE Arg1:T10 Arg2:T9
+R4	MODEL-FEATURE Arg1:T13 Arg2:T12

@@ -1,0 +1,13 @@
+T1	NoType 44 62	Lincoln CSR system
+T2	NoType 87 105	semiphone modeling
+T3	NoType 147 161	duration model
+T4	NoType 178 188	error rate
+T5	NoType 210 240	triphone and semiphone systems
+T6	NoType 248 265	training strategy
+T7	NoType 437 447	recognizer
+T8	NoType 473 504	bigram back-off language models
+T9	NoType 547 554	RM task
+T10	NoType 562 575	ATIS CSR task
+T11	NoType 680 701	RM and ATIS CSR tasks
+R1	RESULT Arg1:T3 Arg2:T4
+R2	USAGE Arg1:T8 Arg2:T7

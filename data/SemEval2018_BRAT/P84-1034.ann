@@ -1,0 +1,19 @@
+T1	NoType 25 31	syntax
+T2	NoType 36 45	semantics
+T3	NoType 49 68	machine translation
+T4	NoType 131 167	English-Japanese machine translation
+T5	NoType 174 198	syntax directed approach
+T6	NoType 222 251	Heuristic Parsing Model (HPM)
+T7	NoType 260 281	Syntactic Role System
+T8	NoType 308 336	Japanese-English translation
+T9	NoType 343 370	semantics directed approach
+T10	NoType 393 428	Conceptual Dependency Diagram (CDD)
+T11	NoType 437 465	Augmented Case Marker System
+T12	NoType 486 506	Semantic Role System
+T13	NoType 571 598	Japanese sentence structure
+T14	NoType 603 629	English sentence structure
+T15	NoType 650 669	machine translation
+T16	NoType 723 734	ambiguities
+R1	USAGE Arg1:T5 Arg2:T4
+R2	USAGE Arg1:T8 Arg2:T9
+R3	COMPARE Arg1:T13 Arg2:T14

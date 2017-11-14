@@ -1,0 +1,29 @@
+T1	NoType 28 42	empirical test
+T2	NoType 119 147	Chinese-to-English SMT model
+T3	NoType 160 197	word sense disambiguation performance
+T4	NoType 215 241	WSD evaluation methodology
+T5	NoType 246 254	datasets
+T6	NoType 264 302	Senseval-3 Chinese lexical sample task
+T7	NoType 368 406	word sense disambiguation (WSD) models
+T8	NoType 432 440	Senseval
+T9	NoType 511 522	BLEU scores
+T10	NoType 526 563	statistical machine translation (SMT)
+T11	NoType 578 588	SMT models
+T12	NoType 622 633	translation
+T13	NoType 641 646	words
+T14	NoType 650 675	source language sentences
+T15	NoType 704 707	WSD
+T16	NoType 708 716	accuracy
+T17	NoType 720 730	SMT models
+T18	NoType 796 806	WSD models
+T19	NoType 855 858	WSD
+T20	NoType 859 867	accuracy
+T21	NoType 887 897	SMT models
+T22	NoType 955 965	WSD models
+T23	NoType 1073 1083	SMT models
+T24	NoType 1133 1143	WSD models
+T25	NoType 1155 1158	SMT
+T26	NoType 1214 1224	WSD models
+R1	MODEL-FEATURE Arg1:T12 Arg2:T13
+R2	RESULT Arg1:T17 Arg2:T16
+R3	COMPARE Arg1:T23 Arg2:T24

@@ -1,0 +1,13 @@
+T1	NoType 42 49	parsing
+T2	NoType 71 81	utterances
+T3	NoType 199 221	multimodal integration
+T4	NoType 255 280	unification-based grammar
+T5	NoType 299 328	multidimensional chart parser
+T6	NoType 413 423	interfaces
+T7	NoType 723 759	multimodal parsing and understanding
+T8	NoType 781 809	weighted finite-state device
+T9	NoType 822 848	speech and gesture streams
+T10	NoType 1002 1020	speech recognition
+T11	NoType 1073 1104	multimodal ambiguity resolution
+R1	USAGE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T8 Arg2:T7

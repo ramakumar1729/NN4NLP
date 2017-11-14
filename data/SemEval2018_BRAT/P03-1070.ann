@@ -1,0 +1,18 @@
+T1	NoType 20 46	verbal and nonverbal means
+T2	NoType 51 60	grounding
+T3	NoType 88 118	embodied conversational agents
+T4	NoType 148 155	signals
+T5	NoType 169 182	common ground
+T6	NoType 186 212	human-computer interaction
+T7	NoType 227 235	eye gaze
+T8	NoType 238 247	head nods
+T9	NoType 252 269	attentional focus
+T10	NoType 290 311	direction-giving task
+T11	NoType 334 353	nonverbal behaviors
+T12	NoType 388 401	dialogue move
+T13	NoType 476 493	negative feedback
+T14	NoType 534 537	ECA
+T15	NoType 548 583	verbal and nonverbal grounding acts
+T16	NoType 594 608	dialogue state
+R1	MODEL-FEATURE Arg1:T9 Arg2:T10
+R2	USAGE Arg1:T15 Arg2:T14

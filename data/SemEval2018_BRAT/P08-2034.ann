@@ -1,0 +1,22 @@
+T1	NoType 1 42	Lyric-based song sentiment classification
+T2	NoType 77 93	sentiment labels
+T3	NoType 152 211	vector space model (VSM)-based text classification approach
+T4	NoType 233 238	words
+T5	NoType 246 257	song lyrics
+T6	NoType 288 297	sentiment
+T7	NoType 302 307	Nouns
+T8	NoType 312 317	verbs
+T9	NoType 334 343	sentiment
+T10	NoType 362 371	Negations
+T11	NoType 376 385	modifiers
+T12	NoType 397 415	sentiment keywords
+T13	NoType 449 458	sentiment
+T14	NoType 463 473	Song lyric
+T15	NoType 528 564	sentiment vector space model (s-VSM)
+T16	NoType 590 609	song lyric document
+T17	NoType 654 665	s-VSM model
+T18	NoType 682 691	VSM model
+T19	NoType 699 745	lyric-based song sentiment classification task
+R1	PART_WHOLE Arg1:T4 Arg2:T5
+R2	MODEL-FEATURE Arg1:T15 Arg2:T16
+R3	COMPARE Arg1:T17 Arg2:T18

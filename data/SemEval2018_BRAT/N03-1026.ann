@@ -1,0 +1,28 @@
+T1	NoType 30 88	ambiguity packing and stochastic disambiguation techniques
+T2	NoType 93 126	Lexical-Functional Grammars (LFG)
+T3	NoType 144 165	sentence condensation
+T4	NoType 194 221	linguistic parser/generator
+T5	NoType 226 229	LFG
+T6	NoType 234 252	transfer component
+T7	NoType 257 272	parse reduction
+T8	NoType 286 306	packed parse forests
+T9	NoType 315 336	maximum-entropy model
+T10	NoType 341 368	stochastic output selection
+T11	NoType 415 440	parser evaluation methods
+T12	NoType 474 487	summarization
+T13	NoType 499 528	sentence condensation systems
+T14	NoType 534 557	experimental evaluation
+T15	NoType 561 574	summarization
+T16	NoType 621 653	automatic parse-based evaluation
+T17	NoType 660 677	manual evaluation
+T18	NoType 691 698	strings
+T19	NoType 709 722	summarization
+T20	NoType 791 805	grammaticality
+T21	NoType 813 826	system output
+T22	NoType 847 880	constraint-based parser/generator
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T6 Arg2:T7
+R4	USAGE Arg1:T10 Arg2:T9
+R5	TOPIC Arg1:T14 Arg2:T15
+R6	MODEL-FEATURE Arg1:T20 Arg2:T21

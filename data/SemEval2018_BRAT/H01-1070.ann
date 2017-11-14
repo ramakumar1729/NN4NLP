@@ -1,0 +1,13 @@
+T1	NoType 52 65	n-gram models
+T2	NoType 70 92	error-correction rules
+T3	NoType 97 116	Thai key prediction
+T4	NoType 121 157	Thai-English language identification
+T5	NoType 184 208	rule-reduction algorithm
+T6	NoType 218 236	mutual information
+T7	NoType 251 273	error-correction rules
+T8	NoType 313 321	accuracy
+T9	NoType 330 353	language identification
+T10	NoType 358 372	key prediction
+R1	USAGE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T6 Arg2:T7
+R3	RESULT Arg1:T9 Arg2:T8

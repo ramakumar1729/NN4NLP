@@ -1,0 +1,13 @@
+T1	NoType 1 20	Combination methods
+T2	NoType 55 73	system performance
+T3	NoType 112 130	system combination
+T4	NoType 135 151	unsupervised WSD
+T5	NoType 177 225	voting- and arbiter-based combination strategies
+T6	NoType 249 273	unsupervised WSD systems
+T7	NoType 280 299	combination methods
+T8	NoType 308 326	predominant senses
+T9	NoType 364 372	raw text
+T10	NoType 397 403	SemCor
+T11	NoType 408 428	Senseval-3 data sets
+R1	RESULT Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T8 Arg2:T7

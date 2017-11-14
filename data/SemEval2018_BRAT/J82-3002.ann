@@ -1,0 +1,22 @@
+T1	NoType 54 96	natural language question answering system
+T2	NoType 106 113	Chat-80
+T3	NoType 116 123	Chat-80
+T4	NoType 252 258	Prolog
+T5	NoType 263 283	programming language
+T6	NoType 293 298	logic
+T7	NoType 319 348	logic-based grammar formalism
+T8	NoType 356 378	extraposition grammars
+T9	NoType 381 388	Chat-80
+T10	NoType 400 417	English questions
+T11	NoType 427 433	Prolog
+T12	NoType 434 449	subset of logic
+T13	NoType 466 484	logical expression
+T14	NoType 510 528	planning algorithm
+T15	NoType 544 550	Prolog
+T16	NoType 557 575	query optimisation
+T17	NoType 581 600	relational database
+T18	NoType 616 627	Prolog form
+R1	USAGE Arg1:T6 Arg2:T5
+R2	USAGE Arg1:T9 Arg2:T10
+R3	PART_WHOLE Arg1:T12 Arg2:T11
+R4	USAGE Arg1:T16 Arg2:T17

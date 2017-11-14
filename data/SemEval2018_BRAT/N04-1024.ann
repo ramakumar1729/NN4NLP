@@ -1,0 +1,25 @@
+T1	NoType 1 44	CriterionSM Online Essay Evaluation Service
+T2	NoType 79 88	sentences
+T3	NoType 100 107	writing
+T4	NoType 113 143	essay-based discourse elements
+T5	NoType 151 168	thesis statements
+T6	NoType 211 220	Criterion
+T7	NoType 270 279	coherence
+T8	NoType 283 289	essays
+T9	NoType 315 323	features
+T10	NoType 327 336	sentences
+T11	NoType 346 374	semantic similarity measures
+T12	NoType 379 398	discourse structure
+T13	NoType 403 425	support vector machine
+T14	NoType 437 445	features
+T15	NoType 457 480	breakdowns in coherence
+T16	NoType 507 521	essay question
+T17	NoType 546 564	discourse elements
+T18	NoType 567 591	Intra-sentential quality
+T19	NoType 610 631	rule-based heuristics
+T20	NoType 700 708	baseline
+R1	USAGE Arg1:T1 Arg2:T3
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8
+R3	MODEL-FEATURE Arg1:T9 Arg2:T10
+R4	USAGE Arg1:T14 Arg2:T13
+R5	TOPIC Arg1:T19 Arg2:T18

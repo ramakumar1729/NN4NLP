@@ -1,0 +1,11 @@
+T1	NoType 66 105	mutli-document summarization approaches
+T2	NoType 123 129	events
+T3	NoType 145 156	event terms
+T4	NoType 161 186	associated event elements
+T5	NoType 238 246	contents
+T6	NoType 263 269	events
+T7	NoType 330 348	PageRank algorithm
+T8	NoType 356 365	event map
+T9	NoType 383 392	documents
+R1	MODEL-FEATURE Arg1:T3 Arg2:T2
+R2	USAGE Arg1:T9 Arg2:T8

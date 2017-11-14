@@ -1,0 +1,37 @@
+T1	NoType 17 28	disposition
+T2	NoType 34 45	proposition
+T3	NoType 137 148	disposition
+T4	NoType 162 174	propositions
+T5	NoType 285 296	disposition
+T6	NoType 316 327	proposition
+T7	NoType 342 359	fuzzy quantifiers
+T8	NoType 539 555	fuzzy quantifier
+T9	NoType 568 579	proposition
+T10	NoType 723 734	disposition
+T11	NoType 742 753	proposition
+T12	NoType 772 785	explicitation
+T13	NoType 789 800	restoration
+T14	NoType 803 816	Explicitation
+T15	NoType 853 860	meaning
+T16	NoType 866 877	proposition
+T17	NoType 897 917	test-score semantics
+T18	NoType 959 968	semantics
+T19	NoType 975 982	meaning
+T20	NoType 988 999	proposition
+T21	NoType 1172 1199	reasoning with dispositions
+T22	NoType 1235 1250	fuzzy syllogism
+T23	NoType 1253 1292	Syllogistic reasoning with dispositions
+T24	NoType 1321 1342	commonsense reasoning
+T25	NoType 1361 1386	management of uncertainty
+T26	NoType 1390 1404	expert systems
+T27	NoType 1503 1513	typicality
+T28	NoType 1560 1575	human cognition
+T29	NoType 1599 1616	default reasoning
+R1	PART_WHOLE Arg1:T7 Arg2:T6
+R2	PART_WHOLE Arg1:T8 Arg2:T9
+R3	MODEL-FEATURE Arg1:T15 Arg2:T16
+R4	MODEL-FEATURE Arg1:T19 Arg2:T20
+R5	USAGE Arg1:T22 Arg2:T21
+R6	RESULT Arg1:T23 Arg2:T24
+R7	PART_WHOLE Arg1:T25 Arg2:T26
+R8	RESULT Arg1:T27 Arg2:T28

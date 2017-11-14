@@ -1,0 +1,2 @@
+ 
+ This paper proposes a series of modifications to the left corner parsing algorithm for context-free grammars . It is argued that the resulting algorithm is both efficient and flexible and is, therefore, a good choice for the parser used in a natural language interface . 

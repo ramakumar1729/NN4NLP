@@ -1,0 +1,5 @@
+T1	NoType 52 94	theory of natural language presuppositions
+T2	NoType 348 403	inferential theory for natural language presuppositions
+T3	NoType 490 513	presuppositional nature
+T4	NoType 523 532	sentences
+R1	MODEL-FEATURE Arg1:T3 Arg2:T4

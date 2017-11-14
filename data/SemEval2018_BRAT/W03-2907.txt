@@ -1,0 +1,3 @@
+
+This paper presents an approach to the unsupervised learning of parts of speech which uses both morphological and syntactic information. While the model is more complex than those which have been employed for unsupervised learning of POS tags in English, which use only syntactic information, the variety of languages in the world requires that we consider morphology as well. In many languages, morphology provides better clues to a word's category than word order. We present the computational model for POS learning, and present results for applying it to Bulgarian, a Slavic language with relatively free word order and rich morphology.
+

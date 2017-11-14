@@ -1,0 +1,12 @@
+T1	NoType 42 67	Question Answering system
+T2	NoType 126 156	FAQ-like questions and answers
+T3	NoType 189 215	noisy-channel architecture
+T4	NoType 238 252	language model
+T5	NoType 257 264	answers
+T6	NoType 271 291	transformation model
+T7	NoType 296 317	answer/question terms
+T8	NoType 332 338	corpus
+T9	NoType 352 373	question/answer pairs
+R1	USAGE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T6 Arg2:T7
+R3	PART_WHOLE Arg1:T9 Arg2:T8

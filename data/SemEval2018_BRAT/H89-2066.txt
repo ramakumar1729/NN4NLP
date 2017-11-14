@@ -1,0 +1,3 @@
+
+The goal of this research is to develop a spoken language system that will demonstrate the usefulness of voice input for interactive problem solving. The system will accept continuous speech, and will handle multiple speakers without explicit speaker enrollment. Combining speech recognition and natural language processing to achieve speech understanding, the system will be demonstrated in an application domain relevant to the DoD. The objective of this project is to develop a robust and high-performance speech recognition system using a segment-based approach to phonetic recognition. The recognition system will eventually be integrated with natural language processing to achieve spoken language understanding.
+

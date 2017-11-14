@@ -1,0 +1,12 @@
+T1	NoType 50 79	semantically annotated corpus
+T2	NoType 127 167	acquisition of word-semantic information
+T3	NoType 195 220	domain-independent lexica
+T4	NoType 243 253	annotation
+T5	NoType 258 272	semantic roles
+T6	NoType 280 304	frame semantics paradigm
+T7	NoType 346 360	annotated data
+T8	NoType 433 442	vagueness
+T9	NoType 447 456	ambiguity
+T10	NoType 460 479	semantic annotation
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T9 Arg2:T10

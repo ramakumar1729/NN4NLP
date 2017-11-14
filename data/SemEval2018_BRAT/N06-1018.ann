@@ -1,0 +1,13 @@
+T1	NoType 92 121	natural language applications
+T2	NoType 219 239	temporal expressions
+T3	NoType 243 257	newswire texts
+T4	NoType 305 325	temporal expressions
+T5	NoType 337 342	genre
+T6	NoType 395 406	expressions
+T7	NoType 426 457	constraint-based representation
+T8	NoType 467 508	Time Calculus for Natural Language (TCNL)
+T9	NoType 544 578	Temporal Expression Anchoror (TEA)
+T10	NoType 648 656	baseline
+R1	PART_WHOLE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T5 Arg2:T4
+R3	COMPARE Arg1:T9 Arg2:T10

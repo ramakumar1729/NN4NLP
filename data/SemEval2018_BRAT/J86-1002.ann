@@ -1,0 +1,15 @@
+T1	NoType 16 32	error correction
+T2	NoType 36 52	ill-formed input
+T3	NoType 80 97	dialogue patterns
+T4	NoType 130 138	patterns
+T5	NoType 162 178	Error correction
+T6	NoType 207 214	parsing
+T7	NoType 231 239	meanings
+T8	NoType 295 303	sentence
+T9	NoType 323 366	dialogue acquisition and tracking algorithm
+T10	NoType 412 426	implementation
+T11	NoType 432 456	voice interactive system
+T12	NoType 518 546	error correction methodology
+T13	NoType 552 572	stereotypic dialogue
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T9 Arg2:T11

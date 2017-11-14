@@ -1,0 +1,3 @@
+
+This paper describes an implemented program that takes a tagged text corpus and generates a partial list of the subcategorization frames in which each verb occurs. The completeness of the output list increases monotonically with the total occurrences of each verb in the training corpus. False positive rates are one to three percent. Five subcategorization frames are currently detected and we foresee no impediment to detecting many more. Ultimately, we expect to provide a large subcategorization dictionary to the NLP community and to train dictionaries for specific corpora.
+

@@ -1,0 +1,2 @@
+ 
+ Determiners play an important role in conveying the meaning of an utterance , but they have often been disregarded, perhaps because it seemed more important to devise methods to grasp the global meaning  of a sentence , even if not in a precise way. Another problem with determiners is their inherent ambiguity . In this paper we propose a logical formalism , which, among other things, is suitable for representing determiners without forcing a particular interpretation when their meaning is still not clear. 

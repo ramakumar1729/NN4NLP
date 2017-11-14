@@ -1,0 +1,11 @@
+T1	NoType 45 67	spoken language corpus
+T2	NoType 76 119	ATIS (Air Travel Information System) domain
+T3	NoType 175 229	MADCOW (Multi-site ATIS Data COllection Working group)
+T4	NoType 312 347	multi-site data collection paradigm
+T5	NoType 377 383	MADCOW
+T6	NoType 402 412	collection
+T7	NoType 440 450	utterances
+T8	NoType 454 472	spontaneous speech
+T9	NoType 502 578	multi-site common evaluation of speech, natural language and spoken language
+R1	MODEL-FEATURE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T8 Arg2:T7

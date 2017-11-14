@@ -1,0 +1,43 @@
+T1	NoType 3 39	Unification-based grammar formalisms
+T2	NoType 74 82	features
+T3	NoType 95 113	linguistic objects
+T4	NoType 125 187	computational algorithms for unification of feature structures
+T5	NoType 312 330	feature structures
+T6	NoType 365 370	model
+T7	NoType 396 414	feature structures
+T8	NoType 434 450	logical formulas
+T9	NoType 480 495	directed graphs
+T10	NoType 522 528	graphs
+T11	NoType 543 560	transition graphs
+T12	NoType 583 613	deterministic finite automaton
+T13	NoType 621 630	semantics
+T14	NoType 635 653	feature structures
+T15	NoType 766 778	disjunctions
+T16	NoType 783 794	path values
+T17	NoType 811 823	disjunctions
+T18	NoType 897 910	logical model
+T19	NoType 925 947	denotational semantics
+T20	NoType 955 968	logical model
+T21	NoType 990 1002	equivalences
+T22	NoType 1035 1043	formulas
+T23	NoType 1046 1057	Unification
+T24	NoType 1149 1154	model
+T25	NoType 1191 1215	computational complexity
+T26	NoType 1219 1230	unification
+T27	NoType 1256 1275	consistency problem
+T28	NoType 1280 1288	formulas
+T29	NoType 1294 1312	disjunctive values
+T30	NoType 1316 1327	NP-complete
+T31	NoType 1348 1358	complexity
+T32	NoType 1377 1388	disjunctive
+T33	NoType 1435 1444	expansion
+T34	NoType 1448 1471	disjunctive normal form
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8
+R3	PART_WHOLE Arg1:T11 Arg2:T12
+R4	MODEL-FEATURE Arg1:T13 Arg2:T14
+R5	PART_WHOLE Arg1:T16 Arg2:T17
+R6	COMPARE Arg1:T18 Arg2:T19
+R7	USAGE Arg1:T20 Arg2:T22
+R8	MODEL-FEATURE Arg1:T25 Arg2:T26
+R9	MODEL-FEATURE Arg1:T27 Arg2:T28

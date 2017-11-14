@@ -1,0 +1,19 @@
+T1	NoType 1 29	Taiwan Child Language Corpus
+T2	NoType 39 46	scripts
+T3	NoType 83 93	recordings
+T4	NoType 126 146	Southern Min Chinese
+T5	NoType 194 200	corpus
+T6	NoType 212 257	Child Language Data Exchange System (CHILDES)
+T7	NoType 275 281	corpus
+T8	NoType 303 308	words
+T9	NoType 337 352	data collection
+T10	NoType 354 367	transcription
+T11	NoType 369 386	word segmentation
+T12	NoType 392 417	part-of-speech annotation
+T13	NoType 426 432	corpus
+T14	NoType 454 460	corpus
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T4 Arg2:T3
+R3	MODEL-FEATURE Arg1:T6 Arg2:T5
+R4	PART_WHOLE Arg1:T8 Arg2:T7
+R5	USAGE Arg1:T12 Arg2:T13

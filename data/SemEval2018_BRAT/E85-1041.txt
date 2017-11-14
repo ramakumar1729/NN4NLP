@@ -1,0 +1,3 @@
+
+We propose a draft scheme of the model formalizing the structure of communicative context in dialogue interaction. The relationships between the interacting partners are considered as system of three automata representing the partners of the dialogue and environment.
+

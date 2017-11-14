@@ -1,0 +1,16 @@
+T1	NoType 101 123	electronic discussions
+T2	NoType 142 164	help-desk applications
+T3	NoType 221 230	summaries
+T4	NoType 299 307	features
+T5	NoType 311 333	electronic discussions
+T6	NoType 353 371	clustering process
+T7	NoType 385 404	filtering mechanism
+T8	NoType 430 440	influences
+T9	NoType 456 490	clustering and filtering processes
+T10	NoType 494 526	electronic newsgroup discussions
+T11	NoType 548 559	performance
+T12	NoType 590 613	coarse-level clustering
+T13	NoType 621 642	information retrieval
+R1	MODEL-FEATURE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T9 Arg2:T10
+R3	RESULT Arg1:T12 Arg2:T11

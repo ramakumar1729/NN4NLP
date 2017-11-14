@@ -1,0 +1,3 @@
+
+This paper explores the issue of using different co-occurrence similarities between terms for separating query terms that are useful for retrieval from those that are harmful. The hypothesis under examination is that useful terms tend to be more similar to each other than to other query terms. Preliminary experiments with similarities computed using first-order and second-order co-occurrence seem to confirm the hypothesis. Term similarities could then be used for determining which query terms are useful and best reflect the user's information need. A possible application would be to use this source of evidence for tuning the weights of the query terms.
+

@@ -1,0 +1,14 @@
+T1	NoType 37 59	labeled directed graph
+T2	NoType 90 111	linguistic structures
+T3	NoType 156 165	NLP tasks
+T4	NoType 169 190	graph transformations
+T5	NoType 238 253	transformations
+T6	NoType 262 278	annotated corpus
+T7	NoType 341 380	identification of non-local depenencies
+T8	NoType 388 406	Penn Treebank data
+T9	NoType 412 434	semantic role labeling
+T10	NoType 442 463	Proposition Bank data
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T3
+R3	MODEL-FEATURE Arg1:T7 Arg2:T8
+R4	MODEL-FEATURE Arg1:T9 Arg2:T10

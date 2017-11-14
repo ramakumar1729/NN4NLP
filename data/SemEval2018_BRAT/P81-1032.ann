@@ -1,0 +1,28 @@
+T1	NoType 8 39	natural language interpretation
+T2	NoType 56 78	semantic domain models
+T3	NoType 80 109	fail-soft recovery heuristics
+T4	NoType 129 147	control structures
+T5	NoType 158 181	single-strategy parsers
+T6	NoType 220 243	multi-strategy approach
+T7	NoType 334 364	task-specific domain knowledge
+T8	NoType 381 409	general linguistic knowledge
+T9	NoType 427 462	grammatical and ungrammatical input
+T10	NoType 466 483	parsing algorithm
+T11	NoType 531 549	parsing strategies
+T12	NoType 556 580	case-frame instantiation
+T13	NoType 607 625	parsing strategies
+T14	NoType 645 663	types of knowledge
+T15	NoType 735 747	conjunctions
+T16	NoType 749 766	fragmentary input
+T17	NoType 772 796	ungrammatical structures
+T18	NoType 822 849	grammatically correct input
+T19	NoType 859 878	specific heuristics
+T20	NoType 892 911	ungrammatical input
+T21	NoType 938 962	multi-strategy framework
+R1	USAGE Arg1:T2 Arg2:T1
+R2	COMPARE Arg1:T5 Arg2:T6
+R3	COMPARE Arg1:T7 Arg2:T8
+R4	USAGE Arg1:T11 Arg2:T10
+R5	USAGE Arg1:T14 Arg2:T13
+R6	COMPARE Arg1:T17 Arg2:T18
+R7	PART_WHOLE Arg1:T19 Arg2:T21

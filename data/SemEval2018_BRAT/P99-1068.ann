@@ -1,0 +1,13 @@
+T1	NoType 1 7	STRAND
+T2	NoType 28 55	language-independent system
+T3	NoType 60 87	automatic discovery of text
+T4	NoType 91 111	parallel translation
+T5	NoType 170 176	STRAND
+T6	NoType 195 228	automatic language identification
+T7	NoType 336 374	automatically acquired parallel corpus
+T8	NoType 391 420	English-French document pairs
+T9	NoType 448 453	words
+T10	NoType 458 466	language
+R1	USAGE Arg1:T2 Arg2:T3
+R2	PART_WHOLE Arg1:T6 Arg2:T5
+R3	PART_WHOLE Arg1:T8 Arg2:T7

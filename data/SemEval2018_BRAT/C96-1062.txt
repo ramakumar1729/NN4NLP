@@ -1,0 +1,3 @@
+
+A domain independent model is proposed for the automated interpretation of nominal compounds in English. This model is meant to account for productive rules of interpretation which are inferred from the morpho-syntactic and semantic characteristics of the nominal constituents. In particular, we make extensive use of Pustejovsky's principles concerning the predicative information associated with nominals. We argue that it is necessary to draw a line between generalizable semantic principles and domain-specific semantic information. We explain this distinction and we show how this model may be applied to the interpretation of compounds in real texts, provided that complementary semantic information are retrieved.
+

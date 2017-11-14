@@ -1,0 +1,13 @@
+T1	NoType 35 53	explanation system
+T2	NoType 121 137	domain knowledge
+T3	NoType 178 209	multisentential discourse plans
+T4	NoType 227 242	discourse plans
+T5	NoType 375 386	explanation
+T6	NoType 488 510	explanation generation
+T7	NoType 516 562	semantically rich, large-scale knowledge bases
+T8	NoType 594 619	robust explanation system
+T9	NoType 636 684	multisentential and multi-paragraph explanations
+T10	NoType 696 722	large-scale knowledge base
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T7 Arg2:T6
+R3	USAGE Arg1:T10 Arg2:T8

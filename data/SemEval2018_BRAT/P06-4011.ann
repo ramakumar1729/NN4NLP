@@ -1,0 +1,21 @@
+T1	NoType 38 79	computational analysis of move structures
+T2	NoType 83 92	abstracts
+T3	NoType 96 113	research articles
+T4	NoType 133 142	sentences
+T5	NoType 154 162	abstract
+T6	NoType 204 208	move
+T7	NoType 229 249	rhetorical functions
+T8	NoType 314 323	abstracts
+T9	NoType 333 336	Web
+T10	NoType 352 366	language model
+T11	NoType 370 384	abstract moves
+T12	NoType 415 427	concordancer
+T13	NoType 430 434	CARE
+T14	NoType 456 477	move-tagged abstracts
+T15	NoType 482 498	digital learning
+T16	NoType 546 590	Web-based computer-assisted academic writing
+R1	PART_WHOLE Arg1:T2 Arg2:T3
+R2	PART_WHOLE Arg1:T4 Arg2:T5
+R3	PART_WHOLE Arg1:T8 Arg2:T9
+R4	MODEL-FEATURE Arg1:T10 Arg2:T11
+R5	USAGE Arg1:T14 Arg2:T15

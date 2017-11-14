@@ -1,0 +1,10 @@
+T1	NoType 26 55	automatic abstracting systems
+T2	NoType 84 102	training resources
+T3	NoType 164 181	annotation scheme
+T4	NoType 240 248	resource
+T5	NoType 298 304	scheme
+T6	NoType 318 334	rhetorical moves
+T7	NoType 338 351	argumentation
+T8	NoType 392 398	scheme
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T3 Arg2:T4

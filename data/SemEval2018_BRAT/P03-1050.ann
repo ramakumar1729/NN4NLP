@@ -1,0 +1,33 @@
+T1	NoType 24 54	unsupervised learning approach
+T2	NoType 69 97	non-English (Arabic) stemmer
+T3	NoType 104 118	stemming model
+T4	NoType 131 162	statistical machine translation
+T5	NoType 178 193	English stemmer
+T6	NoType 222 237	parallel corpus
+T7	NoType 250 268	training resources
+T8	NoType 274 287	parallel text
+T9	NoType 308 322	training phase
+T10	NoType 325 354	Monolingual, unannotated text
+T11	NoType 390 397	stemmer
+T12	NoType 435 441	domain
+T13	NoType 445 450	genre
+T14	NoType 492 498	Arabic
+T15	NoType 539 547	language
+T16	NoType 559 572	affix removal
+T17	NoType 579 603	resource-frugal approach
+T18	NoType 621 630	agreement
+T19	NoType 668 682	Arabic stemmer
+T20	NoType 695 700	rules
+T21	NoType 703 714	affix lists
+T22	NoType 721 741	human annotated text
+T23	NoType 762 784	unsupervised component
+T24	NoType 787 808	Task-based evaluation
+T25	NoType 815 843	Arabic information retrieval
+T26	NoType 882 899	average precision
+T27	NoType 905 919	unstemmed text
+T28	NoType 968 975	stemmer
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T4 Arg2:T3
+R3	MODEL-FEATURE Arg1:T16 Arg2:T15
+R4	RESULT Arg1:T17 Arg2:T18
+R5	USAGE Arg1:T25 Arg2:T24

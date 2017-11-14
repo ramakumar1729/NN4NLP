@@ -1,0 +1,15 @@
+T1	NoType 5 32	psycholinguistic literature
+T2	NoType 55 72	syntactic priming
+T3	NoType 163 170	priming
+T4	NoType 179 211	incremental probabilistic parser
+T5	NoType 254 261	priming
+T6	NoType 265 270	rules
+T7	NoType 279 288	sentences
+T8	NoType 297 306	sentences
+T9	NoType 319 340	coordinate structures
+T10	NoType 395 414	parallel structures
+T11	NoType 424 434	human data
+T12	NoType 479 495	parsing accuracy
+R1	TOPIC Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4
+R3	PART_WHOLE Arg1:T10 Arg2:T11

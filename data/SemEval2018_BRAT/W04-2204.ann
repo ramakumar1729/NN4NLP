@@ -1,0 +1,27 @@
+T1	NoType 43 62	transfer dictionary
+T2	NoType 78 101	Dictionary construction
+T3	NoType 151 177	machine translation system
+T4	NoType 246 256	dictionary
+T5	NoType 272 292	linguistic resources
+T6	NoType 298 307	algorithm
+T7	NoType 330 344	language pairs
+T8	NoType 389 418	Korean-to-Japanese dictionary
+T9	NoType 425 432	English
+T10	NoType 438 443	pivot
+T11	NoType 470 492	automatic construction
+T12	NoType 526 540	directionality
+T13	NoType 544 556	dictionaries
+T14	NoType 578 603	"one-time look up" method
+T15	NoType 612 666	Korean-to-English and a Japanese-to-English dictionary
+T16	NoType 699 723	"overlapping constraint"
+T17	NoType 731 759	Korean-to-English dictionary
+T18	NoType 767 797	English-to-Japanese dictionary
+T19	NoType 872 882	dictionary
+T20	NoType 887 915	English-to-Korean dictionary
+T21	NoType 920 950	English-to-Japanese dictionary
+R1	PART_WHOLE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T5 Arg2:T4
+R3	USAGE Arg1:T6 Arg2:T7
+R4	USAGE Arg1:T10 Arg2:T8
+R5	MODEL-FEATURE Arg1:T12 Arg2:T13
+R6	USAGE Arg1:T15 Arg2:T14

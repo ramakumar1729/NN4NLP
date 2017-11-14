@@ -1,0 +1,3 @@
+
+This paper proposes an approach to full parsing suitable for Information Extraction from texts. Sequences of cascades of rules deterministically analyze the text, building unambiguous structures. Initially basic chunks are analyzed; then argumental relations are recognized; finally modifier attachment is performed and the global parse tree is built. The approach was proven to work for three languages and different domains. It was implemented in the IE module of FACILE, a EU project for multilingual text classification and IE.
+

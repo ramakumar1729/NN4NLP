@@ -1,0 +1,10 @@
+T1	NoType 34 65	model of grammatical processing
+T2	NoType 83 101	uniform processing
+T3	NoType 106 123	knowledge sources
+T4	NoType 134 141	feature
+T5	NoType 167 174	parsing
+T6	NoType 179 189	generation
+T7	NoType 246 268	parametrized deduction
+T8	NoType 342 369	natural language processing
+R1	USAGE Arg1:T2 Arg2:T1
+R2	COMPARE Arg1:T5 Arg2:T6

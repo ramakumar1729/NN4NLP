@@ -1,0 +1,15 @@
+T1	NoType 27 47	evaluation criterion
+T2	NoType 52 76	word similarity measures
+T3	NoType 97 131	meaning-entailing substitutability
+T4	NoType 151 185	semantic-oriented NLP applications
+T5	NoType 267 282	human agreement
+T6	NoType 302 320	semantic criterion
+T7	NoType 357 392	distributional word feature vectors
+T8	NoType 411 434	word similarity results
+T9	NoType 482 504	feature vector quality
+T10	NoType 523 563	feature weighting and selection function
+T11	NoType 600 615	feature vectors
+T12	NoType 627 654	word similarity performance
+R1	USAGE Arg1:T3 Arg2:T4
+R2	MODEL-FEATURE Arg1:T6 Arg2:T7
+R3	RESULT Arg1:T10 Arg2:T11

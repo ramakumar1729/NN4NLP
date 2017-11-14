@@ -1,0 +1,12 @@
+T1	NoType 1 15	Link detection
+T2	NoType 63 97	Topic Detection and Tracking tasks
+T3	NoType 101 120	new event detection
+T4	NoType 150 170	story link detection
+T5	NoType 175 194	new event detection
+T6	NoType 198 224	information retrieval task
+T7	NoType 258 267	precision
+T8	NoType 272 278	recall
+T9	NoType 398 420	part of speech tagging
+T10	NoType 427 446	similarity measures
+T11	NoType 460 470	stop lists
+R1	PART_WHOLE Arg1:T2 Arg2:T3

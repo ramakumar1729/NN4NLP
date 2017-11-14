@@ -1,0 +1,28 @@
+T1	NoType 28 36	accuracy
+T2	NoType 41 55	newspaper text
+T3	NoType 57 85	part of speech (pos) tagging
+T4	NoType 170 176	parser
+T5	NoType 188 205	pos tag ambiguity
+T6	NoType 249 267	grammar formalisms
+T7	NoType 283 318	fine-grained grammatical categories
+T8	NoType 332 335	tag
+T9	NoType 340 343	ccg
+T10	NoType 345 361	tagging accuracy
+T11	NoType 396 406	formalisms
+T12	NoType 418 438	ambiguity resolution
+T13	NoType 445 452	parsing
+T14	NoType 479 501	multi-tagging approach
+T15	NoType 538 564	lexical category ambiguity
+T16	NoType 592 603	ccg parsing
+T17	NoType 620 642	multi-tagging approach
+T18	NoType 650 659	pos level
+T19	NoType 716 724	pos tags
+T20	NoType 735 755	pos tagging accuracy
+T21	NoType 785 802	pos tag ambiguity
+T22	NoType 810 838	language processing pipeline
+T23	NoType 864 880	ccg supertagging
+R1	RESULT Arg1:T3 Arg2:T1
+R2	USAGE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T7 Arg2:T6
+R4	USAGE Arg1:T14 Arg2:T16
+R5	RESULT Arg1:T21 Arg2:T23

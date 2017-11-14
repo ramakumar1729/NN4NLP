@@ -1,0 +1,31 @@
+T1	NoType 25 56	discourse understanding process
+T2	NoType 60 83	spoken dialogue systems
+T3	NoType 132 147	user utterances
+T4	NoType 161 168	context
+T5	NoType 174 182	dialogue
+T6	NoType 200 210	candidates
+T7	NoType 219 232	understanding
+T8	NoType 262 276	user utterance
+T9	NoType 288 297	ambiguity
+T10	NoType 301 321	speech understanding
+T11	NoType 368 381	understanding
+T12	NoType 400 414	user utterance
+T13	NoType 437 447	candidates
+T14	NoType 452 465	understanding
+T15	NoType 492 501	ambiguity
+T16	NoType 509 517	dialogue
+T17	NoType 534 566	discourse understanding accuracy
+T18	NoType 632 641	ambiguity
+T19	NoType 651 674	statistical information
+T20	NoType 689 705	dialogue corpora
+T21	NoType 745 763	hand-crafted rules
+T22	NoType 813 844	discourse understanding process
+T23	NoType 973 983	candidates
+T24	NoType 988 1001	understanding
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T6 Arg2:T7
+R4	MODEL-FEATURE Arg1:T9 Arg2:T10
+R5	USAGE Arg1:T13 Arg2:T14
+R6	MODEL-FEATURE Arg1:T19 Arg2:T20
+R7	USAGE Arg1:T23 Arg2:T24

@@ -1,0 +1,14 @@
+T1	NoType 62 96	multimedia articulation of answers
+T2	NoType 111 137	natural language interface
+T3	NoType 141 168	database query applications
+T4	NoType 171 189	Multimedia answers
+T5	NoType 198 214	videodisc images
+T6	NoType 251 260	sentences
+T7	NoType 264 268	text
+T8	NoType 272 291	text-to-speech form
+T9	NoType 294 311	Deictic reference
+T10	NoType 316 324	feedback
+T11	NoType 335 344	discourse
+T12	NoType 362 371	interface
+R1	COMPARE Arg1:T7 Arg2:T8
+R2	MODEL-FEATURE Arg1:T10 Arg2:T11

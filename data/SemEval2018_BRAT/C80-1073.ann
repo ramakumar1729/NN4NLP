@@ -1,0 +1,15 @@
+T1	NoType 38 66	Augmented Transition Network
+T2	NoType 83 95	dialog model
+T3	NoType 124 129	model
+T4	NoType 221 236	dialog schemata
+T5	NoType 259 280	conversation analysis
+T6	NoType 319 347	models of verbal interaction
+T7	NoType 388 403	dialog schemata
+T8	NoType 414 432	verbal interaction
+T9	NoType 454 493	task-oriented and goal-directed dialogs
+T10	NoType 507 510	ATN
+T11	NoType 567 586	verbal interactions
+T12	NoType 590 611	task-oriented dialogs
+R1	USAGE Arg1:T1 Arg2:T2
+R2	TOPIC Arg1:T5 Arg2:T4
+R3	PART_WHOLE Arg1:T11 Arg2:T12

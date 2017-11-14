@@ -1,0 +1,24 @@
+T1	NoType 43 66	quantifying noun groups
+T2	NoType 70 76	German
+T3	NoType 140 167	corpus-based investigations
+T4	NoType 297 318	grammar sensu stricto
+T5	NoType 328 336	treebank
+T6	NoType 390 400	annotation
+T7	NoType 408 417	tree-bank
+T8	NoType 453 471	stochastic parsers
+T9	NoType 487 496	tree-bank
+T10	NoType 504 512	grammars
+T11	NoType 530 538	treebank
+T12	NoType 562 570	treebank
+T13	NoType 590 604	source of data
+T14	NoType 609 646	theoretical linguistic investigations
+T15	NoType 676 691	corpus research
+T16	NoType 760 765	SILVA
+T17	NoType 769 776	parsing
+T18	NoType 781 796	extraction tool
+T19	NoType 801 820	German text corpora
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T5 Arg2:T4
+R3	PART_WHOLE Arg1:T6 Arg2:T7
+R4	USAGE Arg1:T12 Arg2:T14
+R5	USAGE Arg1:T18 Arg2:T19

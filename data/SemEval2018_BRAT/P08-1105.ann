@@ -1,0 +1,20 @@
+T1	NoType 1 28	Topical blog post retrieval
+T2	NoType 52 62	blog posts
+T3	NoType 85 94	relevance
+T4	NoType 107 112	topic
+T5	NoType 125 152	topical blog post retrieval
+T6	NoType 168 198	textual credibility indicators
+T7	NoType 206 223	retrieval process
+T8	NoType 251 261	indicators
+T9	NoType 321 331	blog posts
+T10	NoType 403 408	blogs
+T11	NoType 445 455	indicators
+T12	NoType 489 507	retrieval approach
+T13	NoType 517 532	language models
+T14	NoType 553 577	TREC Blog track test set
+T15	NoType 603 625	credibility indicators
+T16	NoType 648 671	retrieval effectiveness
+R1	MODEL-FEATURE Arg1:T3 Arg2:T2
+R2	USAGE Arg1:T6 Arg2:T5
+R3	USAGE Arg1:T11 Arg2:T12
+R4	RESULT Arg1:T15 Arg2:T16

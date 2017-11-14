@@ -1,0 +1,8 @@
+T1	NoType 24 43	computational model
+T2	NoType 47 64	word segmentation
+T3	NoType 100 121	realistic acquisition
+T4	NoType 181 212	statistical learning mechanisms
+T5	NoType 253 273	cognitive psychology
+T6	NoType 278 289	linguistics
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T4 Arg2:T5

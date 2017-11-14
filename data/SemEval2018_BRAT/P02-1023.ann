@@ -1,0 +1,15 @@
+T1	NoType 10 34	language model (LM) size
+T2	NoType 71 73	LM
+T3	NoType 192 202	LM pruning
+T4	NoType 226 230	rank
+T5	NoType 236 243	entropy
+T6	NoType 287 303	pruning criteria
+T7	NoType 329 347	Chinese text input
+T8	NoType 360 386	character error rate (CER)
+T9	NoType 443 447	rank
+T10	NoType 523 527	rank
+T11	NoType 564 574	error rate
+T12	NoType 636 649	model pruning
+T13	NoType 818 821	CER
+R1	COMPARE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T6 Arg2:T7

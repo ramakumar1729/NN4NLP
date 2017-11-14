@@ -1,0 +1,59 @@
+T1	NoType 34 63	theory of discourse structure
+T2	NoType 90 97	purpose
+T3	NoType 102 112	processing
+T4	NoType 116 125	discourse
+T5	NoType 144 163	discourse structure
+T6	NoType 256 266	utterances
+T7	NoType 279 299	linguistic structure
+T8	NoType 318 326	purposes
+T9	NoType 339 360	intentional structure
+T10	NoType 381 399	focus of attention
+T11	NoType 412 429	attentional state
+T12	NoType 437 457	linguistic structure
+T13	NoType 486 495	discourse
+T14	NoType 511 521	utterances
+T15	NoType 547 568	intentional structure
+T16	NoType 582 609	discourse-relevant purposes
+T17	NoType 637 656	linguistic segments
+T18	NoType 698 715	attentional state
+T19	NoType 741 759	focus of attention
+T20	NoType 767 779	participants
+T21	NoType 787 796	discourse
+T22	NoType 810 827	attentional state
+T23	NoType 930 939	discourse
+T24	NoType 1037 1056	discourse phenomena
+T25	NoType 1060 1071	cue phrases
+T26	NoType 1074 1095	referring expressions
+T27	NoType 1102 1115	interruptions
+T28	NoType 1122 1183	theory of attention, intention, and aggregation of utterances
+T29	NoType 1237 1247	discourses
+T30	NoType 1272 1281	discourse
+T31	NoType 1335 1346	cue phrases
+T32	NoType 1349 1370	referring expressions
+T33	NoType 1377 1390	interruptions
+T34	NoType 1410 1416	theory
+T35	NoType 1471 1481	utterances
+T36	NoType 1487 1496	discourse
+T37	NoType 1499 1519	Discourse processing
+T38	NoType 1549 1559	utterances
+T39	NoType 1567 1576	discourse
+T40	NoType 1592 1600	segments
+T41	NoType 1619 1629	intentions
+T42	NoType 1647 1656	discourse
+T43	NoType 1685 1695	intentions
+T44	NoType 1715 1724	discourse
+T45	NoType 1781 1798	attentional state
+T46	NoType 1848 1865	recognition tasks
+T47	NoType 1899 1908	discourse
+T48	NoType 1922 1934	participants
+R1	RESULT Arg1:T3 Arg2:T4
+R2	MODEL-FEATURE Arg1:T7 Arg2:T6
+R3	MODEL-FEATURE Arg1:T9 Arg2:T8
+R4	MODEL-FEATURE Arg1:T11 Arg2:T10
+R5	PART_WHOLE Arg1:T14 Arg2:T13
+R6	MODEL-FEATURE Arg1:T15 Arg2:T16
+R7	MODEL-FEATURE Arg1:T18 Arg2:T19
+R8	MODEL-FEATURE Arg1:T28 Arg2:T29
+R9	PART_WHOLE Arg1:T35 Arg2:T36
+R10	PART_WHOLE Arg1:T38 Arg2:T39
+R11	PART_WHOLE Arg1:T41 Arg2:T42

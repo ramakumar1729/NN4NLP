@@ -1,0 +1,36 @@
+T1	NoType 30 36	system
+T2	NoType 41 86	acquiring adjectival subcategorization frames
+T3	NoType 88 92	scfs
+T4	NoType 136 143	English
+T5	NoType 144 155	corpus data
+T6	NoType 161 167	system
+T7	NoType 183 207	decision-tree classifier
+T8	NoType 215 224	scf types
+T9	NoType 257 278	grammatical relations
+T10	NoType 280 283	grs
+T11	NoType 292 298	output
+T12	NoType 311 329	statistical parser
+T13	NoType 350 375	pattern-matching language
+T14	NoType 388 391	grs
+T15	NoType 397 403	frames
+T16	NoType 441 465	inheritance-based lexica
+T17	NoType 471 482	experiments
+T18	NoType 497 503	system
+T19	NoType 522 531	scf types
+T20	NoType 537 550	70% precision
+T21	NoType 555 570	66% recall rate
+T22	NoType 578 582	tool
+T23	NoType 587 608	linguistic annotation
+T24	NoType 612 616	scfs
+T25	NoType 620 631	corpus data
+T26	NoType 709 731	training and test data
+T27	NoType 736 765	subcategorization acquisition
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	PART_WHOLE Arg1:T7 Arg2:T6
+R4	PART_WHOLE Arg1:T9 Arg2:T11
+R5	MODEL-FEATURE Arg1:T15 Arg2:T14
+R6	RESULT Arg1:T18 Arg2:T20
+R7	USAGE Arg1:T22 Arg2:T23
+R8	PART_WHOLE Arg1:T24 Arg2:T25
+R9	USAGE Arg1:T26 Arg2:T27

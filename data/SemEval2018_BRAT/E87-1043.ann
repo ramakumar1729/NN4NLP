@@ -1,0 +1,18 @@
+T1	NoType 5 15	verb forms
+T2	NoType 57 68	information
+T3	NoType 86 91	event
+T4	NoType 107 115	sentence
+T5	NoType 119 126	present
+T6	NoType 128 132	past
+T7	NoType 136 142	future
+T8	NoType 146 165	deictic information
+T9	NoType 182 187	event
+T10	NoType 203 211	sentence
+T11	NoType 284 305	aspectual information
+T12	NoType 403 421	verb form meanings
+T13	NoType 458 469	habituality
+T14	NoType 504 529	model-theoretic semantics
+R1	MODEL-FEATURE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T3 Arg2:T4
+R3	PART_WHOLE Arg1:T9 Arg2:T10
+R4	MODEL-FEATURE Arg1:T13 Arg2:T12

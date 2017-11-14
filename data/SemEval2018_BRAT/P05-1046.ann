@@ -1,0 +1,21 @@
+T1	NoType 35 68	information extraction techniques
+T2	NoType 105 129	supervised training data
+T3	NoType 164 197	field structured extraction tasks
+T4	NoType 279 294	prior knowledge
+T5	NoType 379 406	hidden Markov models (HMMs)
+T6	NoType 426 442	generative model
+T7	NoType 447 468	field structured text
+T8	NoType 478 503	unsupervised HMM learning
+T9	NoType 658 673	prior knowledge
+T10	NoType 731 751	unsupervised methods
+T11	NoType 763 773	accuracies
+T12	NoType 783 801	unlabeled examples
+T13	NoType 834 852	supervised methods
+T14	NoType 859 875	labeled examples
+T15	NoType 886 909	semi-supervised methods
+T16	NoType 948 960	labeled data
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T4 Arg2:T3
+R3	MODEL-FEATURE Arg1:T6 Arg2:T7
+R4	RESULT Arg1:T10 Arg2:T11
+R5	USAGE Arg1:T16 Arg2:T15

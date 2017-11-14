@@ -1,0 +1,19 @@
+T1	NoType 28 60	speech and text image processing
+T2	NoType 69 79	Xerox PARC
+T3	NoType 117 139	recognition technology
+T4	NoType 143 173	document-oriented applications
+T5	NoType 255 270	text processors
+T6	NoType 295 323	audio and scanned image data
+T7	NoType 363 396	speech and text-image recognition
+T8	NoType 452 481	documents with signal content
+T9	NoType 534 538	PARC
+T10	NoType 570 587	text-image editor
+T11	NoType 594 605	wordspotter
+T12	NoType 610 636	voice editing and indexing
+T13	NoType 648 666	decoding framework
+T14	NoType 671 705	scanned-document content retrieval
+T15	NoType 792 838	signal-based document processing functionality
+R1	TOPIC Arg1:T4 Arg2:T3
+R2	PART_WHOLE Arg1:T5 Arg2:T6
+R3	COMPARE Arg1:T7 Arg2:T8
+R4	USAGE Arg1:T9 Arg2:T10

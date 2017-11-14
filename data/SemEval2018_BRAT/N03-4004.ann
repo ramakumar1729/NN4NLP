@@ -1,0 +1,7 @@
+T1	NoType 7 43	TAP-XL Automated Analyst's Assistant
+T2	NoType 82 89	English
+T3	NoType 116 130	topical report
+T4	NoType 176 205	multilingual, multimedia data
+T5	NoType 342 351	languages
+T6	NoType 366 391	human language technology
+R1	USAGE Arg1:T4 Arg2:T1

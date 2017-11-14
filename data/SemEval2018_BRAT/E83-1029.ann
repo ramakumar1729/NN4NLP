@@ -1,0 +1,8 @@
+T1	NoType 61 100	scenes descriptions in natural language
+T2	NoType 187 205	syntactic analyzer
+T3	NoType 218 245	Procedural Systemic Grammar
+T4	NoType 251 268	semantic analyzer
+T5	NoType 284 312	Conceptual Dependency Theory
+T6	NoType 322 332	dictionary
+R1	USAGE Arg1:T3 Arg2:T2
+R2	USAGE Arg1:T5 Arg2:T4

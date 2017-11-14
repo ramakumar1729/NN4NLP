@@ -1,0 +1,19 @@
+T1	NoType 1 32	 We present a novel method for 
+T2	NoType 62 66	 in 
+T3	NoType 98 112	 . We train a 
+T4	NoType 138 161	 that, given a pair of 
+T5	NoType 170 220	 , can reliably determine whether or not they are 
+T6	NoType 232 280	 of each other. Using this approach, we extract 
+T7	NoType 293 305	 from large 
+T8	NoType 364 383	 . We evaluate the 
+T9	NoType 412 479	 by showing that it improves the performance of a state-of-the-art 
+T10	NoType 517 553	 . We also show that a good-quality 
+T11	NoType 562 619	 can be built from scratch by starting with a very small 
+T12	NoType 634 644	 (100,000 
+T13	NoType 649 675	 ) and exploiting a large 
+T14	NoType 694 751	 . Thus, our method can be applied with great benefit to 
+T15	NoType 765 788	 for which only scarce 
+T16	NoType 797 813	 are available. 
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T6 Arg2:T7
+R3	USAGE Arg1:T11 Arg2:T10

@@ -1,0 +1,3 @@
+
+In this paper we discuss a proposed user knowledge modeling architecture for the ICICLE system, a language tutoring application for deaf learners of written English. The model will represent the language proficiency of the user and is designed to be referenced during both writing analysis and feedback production. We motivate our model design by citing relevant research on second language and cognitive skill acquisition, and briefly discuss preliminary empirical evidence supporting the design. We conclude by showing how our design can provide a rich and robust information base to a language assessment / correction application by modeling user proficiency at a high level of granularity and specificity.
+

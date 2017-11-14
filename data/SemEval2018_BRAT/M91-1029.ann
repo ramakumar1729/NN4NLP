@@ -1,0 +1,17 @@
+T1	NoType 5 68	PRC Adaptive Knowledge-based Text Understanding System (PAKTUS)
+T2	NoType 222 242	core English lexicon
+T3	NoType 244 251	grammar
+T4	NoType 295 336	natural language processing (NLP) systems
+T5	NoType 341 359	text understanding
+T6	NoType 380 386	PAKTUS
+T7	NoType 479 489	NLP system
+T8	NoType 528 553	electronic message stream
+T9	NoType 576 582	PAKTUS
+T10	NoType 652 669	JINTACCS messages
+T11	NoType 671 688	RAINFORM messages
+T12	NoType 690 702	news reports
+T13	NoType 801 840	sublanguage and domain-specific grammar
+T14	NoType 842 868	words, conceptual mappings
+T15	NoType 874 892	discourse patterns
+R1	USAGE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T9 Arg2:T10

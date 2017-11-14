@@ -1,0 +1,30 @@
+T1	NoType 1 28	Recognition of proper nouns
+T2	NoType 32 45	Japanese text
+T3	NoType 104 126	morphological analysis
+T4	NoType 130 154	Japanese text processing
+T5	NoType 211 242	Japanese information extraction
+T6	NoType 326 339	Japanese text
+T7	NoType 375 405	morphological analysis problem
+T8	NoType 409 417	Japanese
+T9	NoType 423 445	morphological analyzer
+T10	NoType 486 598	recognition and classification of proper names, numerical and temporal expressions, i.e. Named Entity (NE) items
+T11	NoType 606 619	Japanese text
+T12	NoType 625 633	analyzer
+T13	NoType 672 680	NE items
+T14	NoType 696 713	dictionary lookup
+T15	NoType 718 734	rule application
+T16	NoType 768 780	dictionaries
+T17	NoType 800 826	Japanese character strings
+T18	NoType 880 903	dictionary lookup stage
+T19	NoType 914 919	rules
+T20	NoType 938 955	segmented strings
+T21	NoType 977 985	NE items
+T22	NoType 994 1001	segment
+T23	NoType 1020 1027	NE item
+T24	NoType 1062 1069	segment
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T3 Arg2:T4
+R3	USAGE Arg1:T7 Arg2:T8
+R4	USAGE Arg1:T9 Arg2:T10
+R5	USAGE Arg1:T16 Arg2:T17
+R6	USAGE Arg1:T19 Arg2:T20

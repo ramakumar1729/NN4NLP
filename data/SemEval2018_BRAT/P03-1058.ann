@@ -1,0 +1,17 @@
+T1	NoType 23 54	word sense disambiguation (WSD)
+T2	NoType 70 96	manually sense-tagged data
+T3	NoType 110 129	supervised learning
+T4	NoType 196 222	sense-tagged training data
+T5	NoType 228 260	English-Chinese parallel corpora
+T6	NoType 306 311	nouns
+T7	NoType 319 357	SENSEVAL-2 English lexical sample task
+T8	NoType 396 433	method of acquiring sense-tagged data
+T9	NoType 482 498	SENSEVAL-2 nouns
+T10	NoType 505 513	accuracy
+T11	NoType 650 676	manually sense-tagged data
+T12	NoType 691 705	sense coverage
+T13	NoType 768 785	domain dependence
+T14	NoType 800 812	WSD programs
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	MODEL-FEATURE Arg1:T13 Arg2:T14

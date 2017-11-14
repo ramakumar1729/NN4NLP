@@ -1,0 +1,12 @@
+T1	NoType 1 25	Sentiment Classification
+T2	NoType 55 59	text
+T3	NoType 115 122	subject
+T4	NoType 164 191	machine learning techniques
+T5	NoType 333 355	training and test data
+T6	NoType 372 377	topic
+T7	NoType 507 520	training data
+T8	NoType 534 543	emoticons
+T9	NoType 593 599	domain
+T10	NoType 601 606	topic
+R1	MODEL-FEATURE Arg1:T6 Arg2:T5
+R2	MODEL-FEATURE Arg1:T8 Arg2:T7

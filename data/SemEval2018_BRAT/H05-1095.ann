@@ -1,0 +1,18 @@
+T1	NoType 23 74	phrase-based statistical machine translation method
+T2	NoType 86 108	non-contiguous phrases
+T3	NoType 116 123	phrases
+T4	NoType 163 170	phrases
+T5	NoType 178 198	word-aligned corpora
+T6	NoType 214 243	statistical translation model
+T7	NoType 278 285	phrases
+T8	NoType 301 316	training method
+T9	NoType 346 366	translation accuracy
+T10	NoType 390 412	NIST evaluation metric
+T11	NoType 415 427	Translations
+T12	NoType 455 474	beam-search decoder
+T13	NoType 591 604	training data
+R1	USAGE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T6 Arg2:T7
+R4	USAGE Arg1:T9 Arg2:T8
+R5	USAGE Arg1:T12 Arg2:T11

@@ -1,0 +1,11 @@
+T1	NoType 32 54	computational problems
+T2	NoType 71 103	probabilistic translation models
+T3	NoType 157 176	machine translation
+T4	NoType 185 191	models
+T5	NoType 218 253	probabilistic context-free grammars
+T6	NoType 290 298	hardness
+T7	NoType 321 323	NP
+T8	NoType 352 380	exponential time lower-bound
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T5 Arg2:T4
+R3	MODEL-FEATURE Arg1:T7 Arg2:T6

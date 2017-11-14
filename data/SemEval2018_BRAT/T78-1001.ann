@@ -1,0 +1,14 @@
+T1	NoType 57 92	representational format for meaning
+T2	NoType 225 230	verbs
+T3	NoType 273 286	subpredicates
+T4	NoType 295 308	subpredicates
+T5	NoType 352 362	inferences
+T6	NoType 370 378	listener
+T7	NoType 392 396	verb
+T8	NoType 410 418	sentence
+T9	NoType 435 452	meaning structure
+T10	NoType 460 468	sentence
+T11	NoType 482 486	verb
+R1	MODEL-FEATURE Arg1:T3 Arg2:T2
+R2	PART_WHOLE Arg1:T7 Arg2:T8
+R3	PART_WHOLE Arg1:T11 Arg2:T10

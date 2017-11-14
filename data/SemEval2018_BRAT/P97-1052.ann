@@ -1,0 +1,15 @@
+T1	NoType 39 96	abstract flat syntactic representations, LFG f-structures
+T2	NoType 101 205	underspecified semantic representations, here Underspecified Discourse Representation Structures (UDRSs)
+T3	NoType 232 257	one-to-one correspondence
+T4	NoType 281 284	LFG
+T5	NoType 289 293	UDRS
+T6	NoType 320 350	model theoretic interpretation
+T7	NoType 358 379	inferential component
+T8	NoType 407 437	underspecified representations
+T9	NoType 442 454	f-structures
+T10	NoType 467 485	translation images
+T11	NoType 489 501	f-structures
+T12	NoType 505 510	UDRSs
+R1	MODEL-FEATURE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T6 Arg2:T9
+R3	MODEL-FEATURE Arg1:T10 Arg2:T11

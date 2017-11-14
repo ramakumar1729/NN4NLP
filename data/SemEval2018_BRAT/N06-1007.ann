@@ -1,0 +1,24 @@
+T1	NoType 36 57	automatic acquisition
+T2	NoType 61 81	entailment relations
+T3	NoType 90 95	verbs
+T4	NoType 137 160	paraphrases acquisition
+T5	NoType 184 204	semantic equivalence
+T6	NoType 213 218	verbs
+T7	NoType 242 264	entailment acquisition
+T8	NoType 279 316	asymmetric, or directional, relations
+T9	NoType 373 388	local structure
+T10	NoType 392 405	coherent text
+T11	NoType 442 457	verb entailment
+T12	NoType 479 498	discourse relations
+T13	NoType 507 514	clauses
+T14	NoType 530 543	parsed corpus
+T15	NoType 627 648	verb entailment types
+T16	NoType 664 671	mapping
+T17	NoType 680 685	verbs
+T18	NoType 705 724	argument structures
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T5 Arg2:T6
+R3	TOPIC Arg1:T7 Arg2:T8
+R4	MODEL-FEATURE Arg1:T9 Arg2:T10
+R5	MODEL-FEATURE Arg1:T12 Arg2:T13
+R6	MODEL-FEATURE Arg1:T17 Arg2:T18

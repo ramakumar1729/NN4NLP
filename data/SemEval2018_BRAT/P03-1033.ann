@@ -1,0 +1,28 @@
+T1	NoType 24 37	user modeling
+T2	NoType 59 80	cooperative responses
+T3	NoType 89 93	user
+T4	NoType 97 120	spoken dialogue systems
+T5	NoType 161 165	user
+T6	NoType 169 178	knowledge
+T7	NoType 199 204	users
+T8	NoType 211 221	user model
+T9	NoType 300 311	user models
+T10	NoType 314 325	skill level
+T11	NoType 341 356	knowledge level
+T12	NoType 364 377	target domain
+T13	NoType 396 405	hastiness
+T14	NoType 422 428	models
+T15	NoType 458 480	decision tree learning
+T16	NoType 492 505	dialogue data
+T17	NoType 554 577	classification accuracy
+T18	NoType 598 617	Dialogue strategies
+T19	NoType 631 644	user modeling
+T20	NoType 664 697	Kyoto city bus information system
+T21	NoType 780 801	cooperative responses
+T22	NoType 814 830	individual users
+T23	NoType 858 870	novice users
+T24	NoType 894 911	dialogue duration
+T25	NoType 916 929	skilled users
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T15 Arg2:T14
+R3	USAGE Arg1:T19 Arg2:T18

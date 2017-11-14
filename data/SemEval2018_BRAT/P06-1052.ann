@@ -1,0 +1,12 @@
+T1	NoType 43 73	redundancy elimination problem
+T2	NoType 85 129	underspecified semantic representation (USR)
+T3	NoType 135 150	scope ambiguity
+T4	NoType 164 167	USR
+T5	NoType 188 207	equivalent readings
+T6	NoType 236 272	underspecified chart representations
+T7	NoType 296 312	dominance graphs
+T8	NoType 340 344	USRs
+T9	NoType 357 377	large-scale grammars
+T10	NoType 411 417	corpus
+T11	NoType 459 468	ambiguity
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3

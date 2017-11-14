@@ -1,0 +1,27 @@
+T1	NoType 12 45	Minimum Bayes-Risk (MBR) decoding
+T2	NoType 50 81	statistical machine translation
+T3	NoType 126 139	expected loss
+T4	NoType 143 161	translation errors
+T5	NoType 168 182	loss functions
+T6	NoType 196 219	translation performance
+T7	NoType 248 262	loss functions
+T8	NoType 300 322	linguistic information
+T9	NoType 328 340	word strings
+T10	NoType 342 365	word-to-word alignments
+T11	NoType 374 383	MT system
+T12	NoType 389 408	syntactic structure
+T13	NoType 414 425	parse-trees
+T14	NoType 429 465	source and target language sentences
+T15	NoType 481 492	performance
+T16	NoType 500 512	MBR decoders
+T17	NoType 518 553	Chinese-to-English translation task
+T18	NoType 577 589	MBR decoding
+T19	NoType 610 636	statistical MT performance
+T20	NoType 650 664	loss functions
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T5 Arg2:T6
+R3	MODEL-FEATURE Arg1:T7 Arg2:T8
+R4	PART_WHOLE Arg1:T11 Arg2:T10
+R5	MODEL-FEATURE Arg1:T13 Arg2:T14
+R6	RESULT Arg1:T15 Arg2:T16
+R7	USAGE Arg1:T18 Arg2:T19

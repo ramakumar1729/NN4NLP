@@ -1,0 +1,25 @@
+T1	NoType 66 97	automated evaluation techniques
+T2	NoType 141 164	human language learners
+T3	NoType 174 180	output
+T4	NoType 184 216	machine translation (MT) systems
+T5	NoType 241 262	evaluation techniques
+T6	NoType 303 334	human language learning process
+T7	NoType 341 360	translation process
+T8	NoType 369 380	development
+T9	NoType 384 411	machine translation systems
+T10	NoType 482 497	intelligibility
+T11	NoType 501 510	MT output
+T12	NoType 515 543	language learning experiment
+T13	NoType 556 565	assessors
+T14	NoType 584 622	native from non-native language essays
+T15	NoType 640 645	words
+T16	NoType 700 709	assessors
+T17	NoType 830 856	machine translation output
+T18	NoType 910 934	translated newswire text
+T19	NoType 963 988	expert human translations
+T20	NoType 1003 1030	machine translation outputs
+T21	NoType 1145 1169	expert human translation
+T22	NoType 1175 1194	machine translation
+T23	NoType 1239 1243	word
+R1	USAGE Arg1:T1 Arg2:T3
+R2	MODEL-FEATURE Arg1:T10 Arg2:T11

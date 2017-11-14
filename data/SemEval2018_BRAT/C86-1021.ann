@@ -1,0 +1,21 @@
+T1	NoType 5 32	interlingual approach to MT
+T2	NoType 103 133	natural language understanding
+T3	NoType 143 162	machine translation
+T4	NoType 217 226	ambiguity
+T5	NoType 262 278	natural language
+T6	NoType 373 383	Mu-project
+T7	NoType 396 413	transfer approach
+T8	NoType 440 442	MT
+T9	NoType 498 512	transfer phase
+T10	NoType 532 540	Japanese
+T11	NoType 544 551	English
+T12	NoType 626 647	interlingual approach
+T13	NoType 684 698	transfer phase
+T14	NoType 831 857	Multiple Layer of Grammars
+T15	NoType 862 889	Multiple Layer Presentation
+T16	NoType 894 919	Lexicon Driven Processing
+T17	NoType 924 960	Form-Oriented Dictionary Description
+R1	USAGE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T7 Arg2:T8
+R4	COMPARE Arg1:T9 Arg2:T12

@@ -1,0 +1,2 @@
+ 
+ This paper describes a recently collected spoken language corpus for the ATIS (Air Travel Information System) domain . This data collection effort has been co-ordinated by MADCOW (Multi-site ATIS Data COllection Working group) . We summarize the motivation for this effort, the goals, the implementation of a multi-site data collection paradigm , and the accomplishments of MADCOW in monitoring the collection and distribution of 12,000 utterances of spontaneous speech from five sites for use in a multi-site common evaluation of speech, natural language and spoken language .

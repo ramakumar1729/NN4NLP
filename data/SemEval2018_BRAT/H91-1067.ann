@@ -1,0 +1,14 @@
+T1	NoType 58 76	tagged text corpus
+T2	NoType 113 137	subcategorization frames
+T3	NoType 152 156	verb
+T4	NoType 240 251	occurrences
+T5	NoType 260 264	verb
+T6	NoType 272 287	training corpus
+T7	NoType 289 309	False positive rates
+T8	NoType 341 365	subcategorization frames
+T9	NoType 483 511	subcategorization dictionary
+T10	NoType 519 532	NLP community
+T11	NoType 546 558	dictionaries
+T12	NoType 572 579	corpora
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	PART_WHOLE Arg1:T5 Arg2:T6

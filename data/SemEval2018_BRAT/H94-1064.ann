@@ -1,0 +1,30 @@
+T1	NoType 50 118	multilingual, speaker-independent, large vocabulary speech dictation
+T2	NoType 138 154	LIMSI recognizer
+T3	NoType 182 201	ARPA NOV93 CSR test
+T4	NoType 248 268	WSJ and BREF corpora
+T5	NoType 325 332	corpora
+T6	NoType 333 361	word recognition experiments
+T7	NoType 384 396	vocabularies
+T8	NoType 418 423	words
+T9	NoType 453 475	continuous density HMM
+T10	NoType 481 497	Gaussian mixture
+T11	NoType 502 519	acoustic modeling
+T12	NoType 524 541	n-gram statistics
+T13	NoType 559 574	newspaper texts
+T14	NoType 579 596	language modeling
+T15	NoType 620 658	time-synchronous graph-search strategy
+T16	NoType 735 766	bigram back-off language models
+T17	NoType 777 789	forward pass
+T18	NoType 812 822	word graph
+T19	NoType 842 848	bigram
+T20	NoType 865 887	trigram language model
+T21	NoType 889 906	Acoustic modeling
+T22	NoType 912 935	cepstrum-based features
+T23	NoType 937 989	context-dependent phone models (intra and interword)
+T24	NoType 991 1012	phone duration models
+T25	NoType 1018 1038	sex-dependent models
+R1	PART_WHOLE Arg1:T8 Arg2:T7
+R2	MODEL-FEATURE Arg1:T10 Arg2:T9
+R3	USAGE Arg1:T12 Arg2:T14
+R4	USAGE Arg1:T18 Arg2:T17
+R5	USAGE Arg1:T22 Arg2:T21

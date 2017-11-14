@@ -1,0 +1,15 @@
+T1	NoType 22 57	interactive corpus exploration tool
+T2	NoType 65 76	InfoMagnets
+T3	NoType 79 90	InfoMagnets
+T4	NoType 106 133	exploratory corpus analysis
+T5	NoType 183 194	text mining
+T6	NoType 327 335	language
+T7	NoType 340 359	behavioral patterns
+T8	NoType 385 403	tutorial dialogue 
+T9	NoType 433 452	on-line communities
+T10	NoType 484 500	educational tool
+T11	NoType 541 558	protocol analysis
+T12	NoType 565 600	Educational Research Methods course
+R1	USAGE Arg1:T3 Arg2:T4
+R2	PART_WHOLE Arg1:T7 Arg2:T8
+R3	USAGE Arg1:T10 Arg2:T11

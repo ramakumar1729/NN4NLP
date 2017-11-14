@@ -1,0 +1,7 @@
+T1	NoType 65 105	resolving bridging definite descriptions
+T2	NoType 152 180	Wall Street Journal articles
+T3	NoType 190 210	Penn Treebank Corpus
+T4	NoType 236 243	WordNet
+T5	NoType 274 295	bridging descriptions
+T6	NoType 306 317	antecedents
+R1	PART_WHOLE Arg1:T2 Arg2:T3

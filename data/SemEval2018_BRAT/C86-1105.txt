@@ -1,0 +1,3 @@
+
+How to obtain hierarchical relations(e.g. superordinate -hyponym relation, synonym relation) is one of the most important problems for thesaurus construction. A pilot system for extracting these relations automatically from an ordinary Japanese language dictionary (Shinmeikai Kokugojiten, published by Sansei-do, in machine readable form) is given. The features of the definition sentences in the dictionary, the mechanical extraction of the hierarchical relations and the estimation of the results are discussed.
+

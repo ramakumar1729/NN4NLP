@@ -1,0 +1,20 @@
+T1	NoType 42 83	Category Cooccurrence Restrictions (CCRs)
+T2	NoType 102 120	parsing algorithms
+T3	NoType 140 144	CCRs
+T4	NoType 149 167	Boolean conditions
+T5	NoType 191 201	categories
+T6	NoType 205 216	local trees
+T7	NoType 233 261	statement of generalizations
+T8	NoType 304 321	syntax formalisms
+T9	NoType 335 339	CCRs
+T10	NoType 349 371	syntactic descriptions
+T11	NoType 397 419	restrictive statements
+T12	NoType 486 508	context free languages
+T13	NoType 531 544	CCR formalism
+T14	NoType 593 599	parser
+T15	NoType 631 665	logical well-formedness conditions
+T16	NoType 669 674	trees
+R1	MODEL-FEATURE Arg1:T4 Arg2:T5
+R2	MODEL-FEATURE Arg1:T11 Arg2:T10
+R3	COMPARE Arg1:T12 Arg2:T13
+R4	MODEL-FEATURE Arg1:T15 Arg2:T16

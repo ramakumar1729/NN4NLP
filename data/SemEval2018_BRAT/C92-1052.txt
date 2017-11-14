@@ -1,0 +1,2 @@
+ 
+ In this paper discourse segments are defined and a method for discourse segmentation primarily based on abduction of temporal relations between segments is proposed. This method is precise and computationally feasible and is supported by previous work in the area of temporal anaphora resolution . 

@@ -1,0 +1,26 @@
+T1	NoType 8 24	Chinese language
+T2	NoType 28 32	verb
+T3	NoType 46 56	dependents
+T4	NoType 98 118	ambiguity resolution
+T5	NoType 122 145	right-side dependencies
+T6	NoType 163 181	dependency parsing
+T7	NoType 185 194	sentences
+T8	NoType 212 217	verbs
+T9	NoType 237 268	shift-reduce dependency parsers
+T10	NoType 291 303	connectivity
+T11	NoType 309 324	dependency tree
+T12	NoType 364 387	right-side dependencies
+T13	NoType 411 451	two-phase shift-reduce dependency parser
+T14	NoType 461 473	SVM learning
+T15	NoType 479 499	left-side dependents
+T16	NoType 504 533	right-side nominal dependents
+T17	NoType 563 591	right-side verbal dependents
+T18	NoType 686 717	shift-reduce dependency parsers
+T19	NoType 726 740	Chine language
+T20	NoType 765 784	dependency accuracy
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T4 Arg2:T6
+R3	PART_WHOLE Arg1:T8 Arg2:T7
+R4	MODEL-FEATURE Arg1:T10 Arg2:T11
+R5	USAGE Arg1:T14 Arg2:T13
+R6	USAGE Arg1:T18 Arg2:T19

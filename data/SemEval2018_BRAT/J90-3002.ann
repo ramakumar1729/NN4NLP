@@ -1,0 +1,18 @@
+T1	NoType 37 43	editor
+T2	NoType 68 78	dictionary
+T3	NoType 113 119	editor
+T4	NoType 160 173	lexicologists
+T5	NoType 203 213	dictionary
+T6	NoType 232 249	linguistic theory
+T7	NoType 272 280	lexicons
+T8	NoType 285 293	grammars
+T9	NoType 313 340	natural language processing
+T10	NoType 434 454	linguistic databases
+T11	NoType 497 503	editor
+T12	NoType 527 542	coherence rules
+T13	NoType 607 622	lexical entries
+T14	NoType 638 647	interface
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4
+R3	USAGE Arg1:T6 Arg2:T5
+R4	USAGE Arg1:T8 Arg2:T9

@@ -1,0 +1,18 @@
+T1	NoType 33 55	mathematical formalism
+T2	NoType 87 97	structures
+T3	NoType 100 107	strings
+T4	NoType 110 115	trees
+T5	NoType 118 122	dags
+T6	NoType 125 131	graphs
+T7	NoType 160 172	polarization
+T8	NoType 195 216	elementary structures
+T9	NoType 230 240	saturation
+T10	NoType 254 263	structure
+T11	NoType 346 364	grammar formalisms
+T12	NoType 375 392	rewriting systems
+T13	NoType 395 414	dependency grammars
+T14	NoType 417 420	TAG
+T15	NoType 423 427	HPSG
+T16	NoType 432 435	LFG
+R1	USAGE Arg1:T7 Arg2:T8
+R2	MODEL-FEATURE Arg1:T9 Arg2:T10

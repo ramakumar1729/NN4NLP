@@ -1,0 +1,21 @@
+T1	NoType 35 59	utterance classification
+T2	NoType 82 102	manual transcription
+T3	NoType 106 119	training data
+T4	NoType 142 176	domain independent acoustic models
+T5	NoType 196 207	classifiers
+T6	NoType 216 252	utterance classification performance
+T7	NoType 323 347	word-trigram recognition
+T8	NoType 358 378	manual transcription
+T9	NoType 396 417	unsupervised training
+T10	NoType 443 461	phone n-gram model
+T11	NoType 479 485	domain
+T12	NoType 492 498	output
+T13	NoType 502 513	recognition
+T14	NoType 524 529	model
+T15	NoType 550 573	phone-string classifier
+T16	NoType 580 603	classification accuracy
+T17	NoType 650 680	spoken language system domains
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T8 Arg2:T7
+R3	USAGE Arg1:T9 Arg2:T10
+R4	USAGE Arg1:T15 Arg2:T12

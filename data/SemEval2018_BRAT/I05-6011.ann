@@ -1,0 +1,20 @@
+T1	NoType 24 41	annotating scheme
+T2	NoType 55 65	honorifics
+T3	NoType 86 96	Honorifics
+T4	NoType 121 129	Japanese
+T5	NoType 202 211	referents
+T6	NoType 219 242	referential information
+T7	NoType 266 279	zero pronouns
+T8	NoType 294 321	machine translation outputs
+T9	NoType 335 345	honorifics
+T10	NoType 392 401	predicate
+T11	NoType 407 417	honorifics
+T12	NoType 430 435	ranks
+T13	NoType 439 448	referents
+T14	NoType 456 465	predicate
+T15	NoType 484 489	ranks
+T16	NoType 507 516	referents
+T17	NoType 528 538	predicates
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	RESULT Arg1:T6 Arg2:T8
+R3	MODEL-FEATURE Arg1:T12 Arg2:T13

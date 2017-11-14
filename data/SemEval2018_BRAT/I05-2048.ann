@@ -1,0 +1,21 @@
+T1	NoType 1 38	Statistical machine translation (SMT)
+T2	NoType 76 103	natural language processing
+T3	NoType 225 228	SMT
+T4	NoType 258 288	rule-based translation systems
+T5	NoType 383 402	translation systems
+T6	NoType 411 425	language pairs
+T7	NoType 433 440	domains
+T8	NoType 496 527	statistical machine translation
+T9	NoType 653 663	SMT system
+T10	NoType 694 710	baseline results
+T11	NoType 766 769	SMT
+T12	NoType 806 810	STTK
+T13	NoType 815 855	statistical machine translation tool kit
+T14	NoType 905 923	translation system
+T15	NoType 926 930	STTK
+T16	NoType 1043 1059	CMU's SMT system
+T17	NoType 1105 1161	rule-based and example based machine translation modules
+T18	NoType 1173 1212	multi engine machine translation system
+T19	NoType 1219 1230	source code
+T20	NoType 1238 1246	tool kit
+R1	COMPARE Arg1:T3 Arg2:T4

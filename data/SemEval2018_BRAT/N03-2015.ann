@@ -1,0 +1,17 @@
+T1	NoType 22 44	unsupervised technique
+T2	NoType 58 68	morphology
+T3	NoType 84 88	hubs
+T4	NoType 95 104	automaton
+T5	NoType 127 130	hub
+T6	NoType 136 140	node
+T7	NoType 146 151	graph
+T8	NoType 157 166	in-degree
+T9	NoType 188 198	out-degree
+T10	NoType 229 238	word-trie
+T11	NoType 261 272	minimal DFA
+T12	NoType 289 293	hubs
+T13	NoType 302 306	hubs
+T14	NoType 333 337	root
+T15	NoType 342 348	suffix
+T16	NoType 369 380	performance
+R1	PART_WHOLE Arg1:T3 Arg2:T4

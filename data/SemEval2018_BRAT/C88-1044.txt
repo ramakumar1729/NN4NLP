@@ -1,0 +1,2 @@
+ 
+ This paper presents necessary and sufficient conditions for the use of demonstrative expressions in English and discusses implications for current discourse processing algorithms . We examine a broad range of texts to show how the distribution of demonstrative forms and functions is genre dependent . This research is part of a larger study of anaphoric expressions , the results of which will be incorporated into a natural language generation system . 

@@ -1,0 +1,14 @@
+T1	NoType 35 49	data structure
+T2	NoType 54 98	phrase-based statistical machine translation
+T3	NoType 120 129	retrieval
+T4	NoType 150 157	phrases
+T5	NoType 190 196	memory
+T6	NoType 225 232	decoder
+T7	NoType 264 288	computational complexity
+T8	NoType 293 316	average retrieval times
+T9	NoType 332 351	phrase translations
+T10	NoType 359 392	suffix array-based data structure
+T11	NoType 407 415	sampling
+T12	NoType 442 456	retrieval time
+T13	NoType 496 515	translation quality
+R1	PART_WHOLE Arg1:T9 Arg2:T10

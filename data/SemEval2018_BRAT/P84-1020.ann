@@ -1,0 +1,4 @@
+T1	NoType 29 52	natural language system
+T2	NoType 79 98	ungrammatical input
+T3	NoType 161 200	computer aided second language learning
+R1	USAGE Arg1:T1 Arg2:T2

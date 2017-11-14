@@ -1,0 +1,18 @@
+T1	NoType 83 120	Statistical Machine Translation (SMT)
+T2	NoType 177 199	SMT research community
+T3	NoType 237 251	SMT algorithms
+T4	NoType 325 349	computational complexity
+T5	NoType 389 392	SMT
+T6	NoType 451 475	computational complexity
+T7	NoType 515 529	IBM Models 1-2
+T8	NoType 627 633	models
+T9	NoType 638 642	hard
+T10	NoType 686 710	polynomial time solution
+T11	NoType 728 741	hard problems
+T12	NoType 750 756	P = NP
+T13	NoType 761 768	P#P = P
+T14	NoType 830 860	polynomial time approximations
+T15	NoType 937 947	complexity
+R1	TOPIC Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T10 Arg2:T11

@@ -1,0 +1,15 @@
+T1	NoType 3 22	Word Identification
+T2	NoType 65 100	Chinese Natural Language Processing
+T3	NoType 159 170	sublanguage
+T4	NoType 201 214	unknown words
+T5	NoType 228 242	personal names
+T6	NoType 248 266	Chinese newspapers
+T7	NoType 301 330	title-driven name recognition
+T8	NoType 333 364	adaptive dynamic word formation
+T9	NoType 367 440	identification of 2-character and 3-character Chinese names without title
+T10	NoType 489 496	corpora
+T11	NoType 538 567	NTHU's statistic-based system
+T12	NoType 700 710	WI systems
+T13	NoType 723 742	name identification
+R1	USAGE Arg1:T3 Arg2:T4
+R2	PART_WHOLE Arg1:T5 Arg2:T6

@@ -1,0 +1,19 @@
+T1	NoType 47 74	machine learning techniques
+T2	NoType 86 99	comma checker
+T3	NoType 122 137	grammar checker
+T4	NoType 142 148	Basque
+T5	NoType 204 210	corpus
+T6	NoType 222 227	words
+T7	NoType 271 277	commas
+T8	NoType 285 294	precision
+T9	NoType 308 314	recall
+T10	NoType 338 347	precision
+T11	NoType 361 367	recall
+T12	NoType 398 404	commas
+T13	NoType 503 509	corpus
+T14	NoType 538 544	corpus
+T15	NoType 567 573	author
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4
+R3	PART_WHOLE Arg1:T6 Arg2:T5
+R4	MODEL-FEATURE Arg1:T15 Arg2:T14

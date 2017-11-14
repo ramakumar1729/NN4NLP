@@ -1,0 +1,27 @@
+T1	NoType 30 73	range concatenation grammar [RCG] formalism
+T2	NoType 135 138	NLP
+T3	NoType 156 191	range concatenation languages [RCL]
+T4	NoType 209 224	polynomial time
+T5	NoType 244 266	grammatical formalisms
+T6	NoType 301 305	RCGs
+T7	NoType 331 365	worst-case parsing time complexity
+T8	NoType 387 398	translation
+T9	NoType 418 421	RCG
+T10	NoType 428 450	tree adjoining grammar
+T11	NoType 468 478	O(n6) time
+T12	NoType 507 524	parsing technique
+T13	NoType 581 592	RCL parsers
+T14	NoType 599 632	non-deterministic parsing choices
+T15	NoType 640 651	main parser
+T16	NoType 658 668	language L
+T17	NoType 687 692	guide
+T18	NoType 708 732	shared derivation forest
+T19	NoType 751 761	RCL parser
+T20	NoType 777 790	superset of L
+T21	NoType 851 880	wide coverage English grammar
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T3
+R3	MODEL-FEATURE Arg1:T11 Arg2:T10
+R4	USAGE Arg1:T12 Arg2:T13
+R5	USAGE Arg1:T18 Arg2:T17
+R6	USAGE Arg1:T19 Arg2:T20

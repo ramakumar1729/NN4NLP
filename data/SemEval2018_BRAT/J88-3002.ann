@@ -1,0 +1,18 @@
+T1	NoType 7 38	intelligent interactive systems
+T2	NoType 59 65	humans
+T3	NoType 122 134	system users
+T4	NoType 169 182	user modeling
+T5	NoType 191 198	systems
+T6	NoType 245 255	user model
+T7	NoType 315 325	user model
+T8	NoType 358 362	user
+T9	NoType 398 409	User models
+T10	NoType 617 627	user model
+T11	NoType 656 669	user modeling
+T12	NoType 755 778	user modeling component
+T13	NoType 839 863	interaction requirements
+T14	NoType 941 954	user modeling
+T15	NoType 1058 1079	user modeling systems
+R1	RESULT Arg1:T4 Arg2:T5
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8
+R3	PART_WHOLE Arg1:T10 Arg2:T11

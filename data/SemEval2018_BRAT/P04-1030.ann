@@ -1,0 +1,17 @@
+T1	NoType 41 78	head-driven statistical parsing model
+T2	NoType 102 129	simultaneous language model
+T3	NoType 134 140	parser
+T4	NoType 145 180	large-vocabulary speech recognition
+T5	NoType 209 242	online left to right chart-parser
+T6	NoType 247 260	word lattices
+T7	NoType 322 328	parser
+T8	NoType 334 369	structural and lexical dependencies
+T9	NoType 388 401	n-gram models
+T10	NoType 494 522	Wall Street Journal treebank
+T11	NoType 548 564	word error rates
+T12	NoType 586 616	standard n-gram language model
+T13	NoType 645 667	structural information
+T14	NoType 679 699	speech understanding
+R1	USAGE Arg1:T3 Arg2:T4
+R2	USAGE Arg1:T8 Arg2:T7
+R3	USAGE Arg1:T13 Arg2:T14

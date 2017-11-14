@@ -1,0 +1,3 @@
+
+We propose a detection method for orthographic variants caused by transliteration in a large corpus. The method employs two similarities. One is string similarity based on edit distance. The other is contextual similarity by a vector space model. Experimental results show that the method performed a 0.889 F-measure in an open test.
+

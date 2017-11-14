@@ -1,0 +1,45 @@
+T1	NoType 46 92	large vocabulary continuous speech recognition
+T2	NoType 132 165	speaker-independent (SI) training
+T3	NoType 169 195	hidden Markov models (HMM)
+T4	NoType 227 233	speech
+T5	NoType 245 253	speakers
+T6	NoType 308 314	speech
+T7	NoType 325 333	speakers
+T8	NoType 368 385	training speakers
+T9	NoType 411 421	statistics
+T10	NoType 425 453	independently trained models
+T11	NoType 495 506	speech data
+T12	NoType 517 525	speakers
+T13	NoType 535 543	training
+T14	NoType 559 576	training speakers
+T15	NoType 581 595	SI recognition
+T16	NoType 617 632	word error rate
+T17	NoType 647 654	grammar
+T18	NoType 659 667	test set
+T19	NoType 677 709	DARPA Resource Management corpus
+T20	NoType 717 728	performance
+T21	NoType 796 813	training speakers
+T22	NoType 862 885	speaker adaptation (SA)
+T23	NoType 900 909	SI corpus
+T24	NoType 932 938	speech
+T25	NoType 961 968	speaker
+T26	NoType 973 1003	probabilistic spectral mapping
+T27	NoType 1040 1068	training (reference) speaker
+T28	NoType 1077 1091	target speaker
+T29	NoType 1099 1114	reference model
+T30	NoType 1137 1142	space
+T31	NoType 1150 1164	target speaker
+T32	NoType 1181 1190	averaging
+T33	NoType 1207 1217	utterances
+T34	NoType 1227 1241	target speaker
+T35	NoType 1246 1256	adaptation
+T36	NoType 1263 1273	error rate
+T37	NoType 1335 1337	SI
+R1	USAGE Arg1:T4 Arg2:T2
+R2	COMPARE Arg1:T9 Arg2:T11
+R3	RESULT Arg1:T14 Arg2:T16
+R4	PART_WHOLE Arg1:T18 Arg2:T19
+R5	USAGE Arg1:T23 Arg2:T22
+R6	MODEL-FEATURE Arg1:T26 Arg2:T27
+R7	USAGE Arg1:T32 Arg2:T29
+R8	USAGE Arg1:T33 Arg2:T35

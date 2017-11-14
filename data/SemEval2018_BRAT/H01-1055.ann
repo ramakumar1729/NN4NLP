@@ -1,0 +1,18 @@
+T1	NoType 22 61	Automatic Speech Recognition technology
+T2	NoType 102 116	dialog systems
+T3	NoType 153 171	speech recognition
+T4	NoType 211 225	dialog systems
+T5	NoType 254 258	user
+T6	NoType 327 331	user
+T7	NoType 347 362	system response
+T8	NoType 366 371	users
+T9	NoType 408 445	natural language generation community
+T10	NoType 480 494	dialog systems
+T11	NoType 521 531	generation
+T12	NoType 550 564	dialog systems
+T13	NoType 606 640	knowledge-based generation systems
+T14	NoType 670 697	machine learning techniques
+R1	USAGE Arg1:T1 Arg2:T2
+R2	TOPIC Arg1:T9 Arg2:T7
+R3	USAGE Arg1:T11 Arg2:T12
+R4	USAGE Arg1:T14 Arg2:T13
