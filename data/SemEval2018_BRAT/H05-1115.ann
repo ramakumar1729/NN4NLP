@@ -1,0 +1,33 @@
+T1	NoType 28 63	question-focused sentence retrieval
+T2	NoType 77 90	news articles
+T3	NoType 102 141	multi-event stories published over time
+T4	NoType 143 153	Annotators
+T5	NoType 174 183	questions
+T6	NoType 214 219	story
+T7	NoType 227 233	corpus
+T8	NoType 272 279	stories
+T9	NoType 286 295	questions
+T10	NoType 359 365	Judges
+T11	NoType 372 381	sentences
+T12	NoType 395 401	answer
+T13	NoType 410 418	question
+T14	NoType 435 461	sentence retrieval problem
+T15	NoType 474 504	stochastic, graph-based method
+T16	NoType 550 563	textual units
+T17	NoType 608 629	generic summarization
+T18	NoType 686 692	method
+T19	NoType 746 754	baseline
+T20	NoType 775 785	similarity
+T21	NoType 794 802	sentence
+T22	NoType 816 824	question
+T23	NoType 829 854	IDF-weighted word overlap
+T24	NoType 880 886	method
+T25	NoType 898 908	TRDR score
+T26	NoType 955 963	baseline
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T6 Arg2:T7
+R3	PART_WHOLE Arg1:T12 Arg2:T11
+R4	USAGE Arg1:T15 Arg2:T14
+R5	COMPARE Arg1:T18 Arg2:T19
+R6	MODEL-FEATURE Arg1:T20 Arg2:T21
+R7	RESULT Arg1:T24 Arg2:T25

@@ -1,0 +1,15 @@
+T1	NoType 37 52	deep processing
+T2	NoType 70 88	shallow techniques
+T3	NoType 107 117	NLP system
+T4	NoType 137 170	linguistic PoS tagger and chunker
+T5	NoType 202 253	broad coverage unification based grammar of Spanish
+T6	NoType 281 291	efficiency
+T7	NoType 373 383	robustness
+T8	NoType 391 412	linguistic processing
+T9	NoType 440 448	accuracy
+T10	NoType 457 466	precision
+T11	NoType 474 481	grammar
+R1	USAGE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T4 Arg2:T3
+R3	MODEL-FEATURE Arg1:T7 Arg2:T8
+R4	RESULT Arg1:T11 Arg2:T10

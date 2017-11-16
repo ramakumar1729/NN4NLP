@@ -1,0 +1,21 @@
+T1	NoType 10 19	sentences
+T2	NoType 23 38	chunks of words
+T3	NoType 74 81	parsing
+T4	NoType 83 105	information extraction
+T5	NoType 110 131	information retrieval
+T6	NoType 191 210	data representation
+T7	NoType 215 223	chunking
+T8	NoType 246 258	tagging task
+T9	NoType 306 326	data representations
+T10	NoType 358 376	noun phrase chunks
+T11	NoType 400 426	data representation choice
+T12	NoType 452 472	chunking performance
+T13	NoType 514 533	data representation
+T14	NoType 539 568	memory-based learning chunker
+T15	NoType 608 624	chunking results
+T16	NoType 631 648	standard data set
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T6 Arg2:T7
+R3	MODEL-FEATURE Arg1:T9 Arg2:T10
+R4	RESULT Arg1:T11 Arg2:T12
+R5	RESULT Arg1:T14 Arg2:T15

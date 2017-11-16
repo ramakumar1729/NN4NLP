@@ -1,0 +1,14 @@
+T1	NoType 64 88	dialog management system
+T2	NoType 100 117	Construct Algebra
+T3	NoType 121 159	collection of relations and operations
+T4	NoType 165 184	task representation
+T5	NoType 192 216	relations and operations
+T6	NoType 221 242	analytical components
+T7	NoType 289 306	dialog motivators
+T8	NoType 312 326	dialog manager
+T9	NoType 344 375	collection of dialog motivators
+T10	NoType 405 422	Construct Algebra
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T3 Arg2:T4
+R3	PART_WHOLE Arg1:T6 Arg2:T7
+R4	PART_WHOLE Arg1:T9 Arg2:T8

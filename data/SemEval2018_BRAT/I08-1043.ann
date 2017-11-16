@@ -1,0 +1,37 @@
+T1	NoType 23 66	method to automatically acquire paraphrases
+T2	NoType 73 90	bilingual corpora
+T3	NoType 111 141	bilingual dependency relations
+T4	NoType 167 195	monolingual dependency parse
+T5	NoType 238 270	statistical alignment techniques
+T6	NoType 282 301	paraphrasing method
+T7	NoType 343 348	sense
+T8	NoType 364 370	phrase
+T9	NoType 381 398	bilingual context
+T10	NoType 402 421	dependency relation
+T11	NoType 470 481	paraphrases
+T12	NoType 496 503	context
+T13	NoType 552 585	generalized translation knowledge
+T14	NoType 606 617	paraphrases
+T15	NoType 656 689	generalized translation knowledge
+T16	NoType 694 720	Korean-English translation
+T17	NoType 747 763	parallel corpora
+T18	NoType 769 802	Korean and English language pairs
+T19	NoType 821 840	paraphrasing method
+T20	NoType 862 873	paraphrases
+T21	NoType 884 893	precision
+T22	NoType 928 934	Korean
+T23	NoType 939 946	English
+T24	NoType 956 977	translation knowledge
+T25	NoType 997 1014	bilingual corpora
+T26	NoType 1059 1070	paraphrases
+T27	NoType 1086 1103	compression ratio
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T5 Arg2:T3
+R3	MODEL-FEATURE Arg1:T7 Arg2:T8
+R4	MODEL-FEATURE Arg1:T12 Arg2:T11
+R5	USAGE Arg1:T14 Arg2:T13
+R6	MODEL-FEATURE Arg1:T15 Arg2:T16
+R7	PART_WHOLE Arg1:T18 Arg2:T17
+R8	RESULT Arg1:T19 Arg2:T21
+R9	PART_WHOLE Arg1:T24 Arg2:T25
+R10	MODEL-FEATURE Arg1:T27 Arg2:T26

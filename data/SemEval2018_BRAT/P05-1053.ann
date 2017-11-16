@@ -1,0 +1,30 @@
+T1	NoType 1 51	Extracting semantic relationships between entities
+T2	NoType 121 162	lexical, syntactic and semantic knowledge
+T3	NoType 166 199	feature-based relation extraction
+T4	NoType 206 209	SVM
+T5	NoType 247 262	phrase chunking
+T6	NoType 297 316	relation extraction
+T7	NoType 348 371	performance improvement
+T8	NoType 377 386	syntactic
+T9	NoType 428 440	full parsing
+T10	NoType 525 541	full parse trees
+T11	NoType 546 565	relation extraction
+T12	NoType 600 608	chunking
+T13	NoType 634 654	semantic information
+T14	NoType 663 670	WordNet
+T15	NoType 675 684	Name List
+T16	NoType 701 734	feature-based relation extraction
+T17	NoType 758 769	performance
+T18	NoType 771 781	Evaluation
+T19	NoType 789 799	ACE corpus
+T20	NoType 846 854	features
+T21	NoType 867 873	system
+T22	NoType 910 917	systems
+T23	NoType 925 949	24 ACE relation subtypes
+T24	NoType 980 1005	tree kernel-based systems
+T25	NoType 1020 1029	F-measure
+T26	NoType 1037 1057	5 ACE relation types
+R1	USAGE Arg1:T4 Arg2:T3
+R2	RESULT Arg1:T5 Arg2:T7
+R3	RESULT Arg1:T13 Arg2:T17
+R4	COMPARE Arg1:T21 Arg2:T22

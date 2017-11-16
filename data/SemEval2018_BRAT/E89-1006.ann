@@ -1,0 +1,37 @@
+T1	NoType 25 38	French tenses
+T2	NoType 59 90	Discourse Representation Theory
+T3	NoType 154 157	IMS
+T4	NoType 178 194	theory of tenses
+T5	NoType 239 248	operators
+T6	NoType 264 271	meaning
+T7	NoType 279 285	tenses
+T8	NoType 370 376	tenses
+T9	NoType 397 404	meaning
+T10	NoType 412 416	text
+T11	NoType 473 479	events
+T12	NoType 485 493	sentence
+T13	NoType 501 516	event structure
+T14	NoType 535 539	text
+T15	NoType 551 575	system of relevant times
+T16	NoType 603 607	text
+T17	NoType 619 638	temporal adverbials
+T18	NoType 646 654	sentence
+T19	NoType 716 731	reference times
+T20	NoType 736 762	temporal perspective times
+T21	NoType 768 779	speech time
+T22	NoType 788 801	location time
+T23	NoType 894 903	new event
+T24	NoType 915 939	system of relevant times
+T25	NoType 959 989	system of temporal coordinates
+T26	NoType 1122 1129	meaning
+T27	NoType 1137 1143	tenses
+T28	NoType 1160 1180	resolution component
+T29	NoType 1207 1225	syntactic analysis
+R1	MODEL-FEATURE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T6 Arg2:T7
+R3	MODEL-FEATURE Arg1:T9 Arg2:T10
+R4	PART_WHOLE Arg1:T11 Arg2:T12
+R5	MODEL-FEATURE Arg1:T13 Arg2:T14
+R6	PART_WHOLE Arg1:T17 Arg2:T18
+R7	MODEL-FEATURE Arg1:T26 Arg2:T27
+R8	COMPARE Arg1:T28 Arg2:T29

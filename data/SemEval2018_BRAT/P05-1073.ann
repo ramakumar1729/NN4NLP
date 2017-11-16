@@ -1,0 +1,22 @@
+T1	NoType 42 64	semantic role labeling
+T2	NoType 97 120	independent classifiers
+T3	NoType 154 175	label sequence models
+T4	NoType 180 196	Viterbi decoding
+T5	NoType 265 284	core argument frame
+T6	NoType 319 331	dependencies
+T7	NoType 340 349	arguments
+T8	NoType 374 385	joint model
+T9	NoType 389 404	argument frames
+T10	NoType 426 434	features
+T11	NoType 470 502	discriminative log-linear models
+T12	NoType 528 543	error reduction
+T13	NoType 558 567	arguments
+T14	NoType 579 593	core arguments
+T15	NoType 630 640	classifier
+T16	NoType 645 670	gold-standard parse trees
+T17	NoType 674 682	PropBank
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T6 Arg2:T7
+R3	MODEL-FEATURE Arg1:T8 Arg2:T9
+R4	PART_WHOLE Arg1:T10 Arg2:T11
+R5	PART_WHOLE Arg1:T16 Arg2:T17

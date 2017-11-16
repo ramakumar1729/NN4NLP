@@ -1,0 +1,13 @@
+T1	NoType 87 123	lexicon grammar for Polish (SyntLex)
+T2	NoType 153 241	computer-assisted acquisition and morpho-syntactic description of verb-noun collocations
+T3	NoType 245 251	Polish
+T4	NoType 339 367	dictionary-based acquisition
+T5	NoType 371 390	collocation lexicon
+T6	NoType 414 446	corpus-based lexicon enlargement
+T7	NoType 454 486	corpus-based lexicon enlargement
+T8	NoType 491 514	collocation description
+T9	NoType 593 614	corpus-based approach
+T10	NoType 651 694	verb-noun collocation dictionary for Polish
+T11	NoType 725 759	SyntLex Dictionary of Collocations
+R1	USAGE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T9 Arg2:T10

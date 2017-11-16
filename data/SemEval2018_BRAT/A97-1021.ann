@@ -1,0 +1,21 @@
+T1	NoType 43 55	repositories
+T2	NoType 59 109	lexical conceptual structure (LCS) representations
+T3	NoType 114 119	verbs
+T4	NoType 132 141	languages
+T5	NoType 220 242	broad semantic classes
+T6	NoType 247 269	LCS meaning components
+T7	NoType 275 307	acquisition program - LEXICALL -
+T8	NoType 356 375	verb classification
+T9	NoType 380 401	thematic grid tagging
+T10	NoType 415 434	LCS representations
+T11	NoType 449 458	languages
+T12	NoType 466 481	representations
+T13	NoType 504 540	English, Arabic and Spanish lexicons
+T14	NoType 577 582	verbs
+T15	NoType 613 621	lexicons
+T16	NoType 628 665	operational foreign language tutoring
+T17	NoType 670 689	machine translation
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T9 Arg2:T10
+R3	USAGE Arg1:T12 Arg2:T13
+R4	USAGE Arg1:T15 Arg2:T16

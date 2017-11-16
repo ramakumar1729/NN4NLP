@@ -1,0 +1,24 @@
+T1	NoType 42 66	Natural Language parsing
+T2	NoType 87 109	example-based approach
+T3	NoType 172 196	representation structure
+T4	NoType 295 309	input sentence
+T5	NoType 360 422	Structured String Tree Correspondence (SSTC) annotation schema
+T6	NoType 434 438	SSTC
+T7	NoType 451 459	sentence
+T8	NoType 463 482	representation tree
+T9	NoType 521 531	substrings
+T10	NoType 539 547	sentence
+T11	NoType 552 560	subtrees
+T12	NoType 568 587	representation tree
+T13	NoType 607 614	parsing
+T14	NoType 638 646	subtrees
+T15	NoType 651 658	phrases
+T16	NoType 666 680	input sentence
+T17	NoType 723 735	example-base
+T18	NoType 766 774	subtrees
+T19	NoType 816 849	single rooted representation tree
+T20	NoType 883 907	representation structure
+R1	MODEL-FEATURE Arg1:T6 Arg2:T7
+R2	PART_WHOLE Arg1:T9 Arg2:T10
+R3	PART_WHOLE Arg1:T11 Arg2:T12
+R4	MODEL-FEATURE Arg1:T14 Arg2:T15

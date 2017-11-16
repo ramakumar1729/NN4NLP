@@ -1,0 +1,15 @@
+T1	NoType 26 35	ONTOSCORE
+T2	NoType 67 75	concepts
+T3	NoType 95 103	ontology
+T4	NoType 141 148	scoring
+T5	NoType 161 196	speech recognition hypotheses (SRH)
+T6	NoType 215 233	semantic coherence
+T7	NoType 252 273	annotation experiment
+T8	NoType 290 306	human annotators
+T9	NoType 379 408	speech recognition hypotheses
+T10	NoType 451 465	annotated data
+T11	NoType 516 529	German corpus
+T12	NoType 539 543	SRHs
+T13	NoType 586 594	baseline
+R1	USAGE Arg1:T4 Arg2:T5
+R2	PART_WHOLE Arg1:T12 Arg2:T11

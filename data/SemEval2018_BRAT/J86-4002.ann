@@ -1,0 +1,27 @@
+T1	NoType 46 72	human-machine interactions
+T2	NoType 78 106	natural language environment
+T3	NoType 119 126	speaker
+T4	NoType 131 139	listener
+T5	NoType 175 182	beliefs
+T6	NoType 185 193	contexts
+T7	NoType 196 207	perceptions
+T8	NoType 210 221	backgrounds
+T9	NoType 227 232	goals
+T10	NoType 254 266	conversation
+T11	NoType 308 316	listener
+T12	NoType 330 349	speaker's utterance
+T13	NoType 422 429	speaker
+T14	NoType 434 442	listener
+T15	NoType 455 473	reference failures
+T16	NoType 503 522	speaker's intention
+T17	NoType 557 573	miscommunication
+T18	NoType 625 638	communication
+T19	NoType 683 700	miscommunications
+T20	NoType 766 782	miscommunication
+T21	NoType 787 805	reference problems
+T22	NoType 865 886	failures of reference
+T23	NoType 972 979	speaker
+T24	NoType 1001 1010	utterance
+T25	NoType 1124 1145	extensional reference
+R1	MODEL-FEATURE Arg1:T2 Arg2:T1
+R2	COMPARE Arg1:T3 Arg2:T4

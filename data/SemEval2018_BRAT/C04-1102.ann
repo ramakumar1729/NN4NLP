@@ -1,0 +1,12 @@
+T1	NoType 14 30	detection method
+T2	NoType 67 82	transliteration
+T3	NoType 94 100	corpus
+T4	NoType 125 137	similarities
+T5	NoType 146 163	string similarity
+T6	NoType 173 186	edit distance
+T7	NoType 201 222	contextual similarity
+T8	NoType 228 246	vector space model
+T9	NoType 308 317	F-measure
+R1	PART_WHOLE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T6 Arg2:T5
+R3	USAGE Arg1:T8 Arg2:T7

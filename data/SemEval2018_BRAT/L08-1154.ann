@@ -1,0 +1,25 @@
+T1	NoType 29 44	term candidates
+T2	NoType 60 95	internal and contextual information
+T3	NoType 112 133	domain specific terms
+T4	NoType 185 193	features
+T5	NoType 224 229	terms
+T6	NoType 235 244	non-terms
+T7	NoType 258 266	features
+T8	NoType 305 313	features
+T9	NoType 356 371	term extraction
+T10	NoType 381 391	delimiters
+T11	NoType 488 502	term frequency
+T12	NoType 567 577	hard rules
+T13	NoType 619 624	terms
+T14	NoType 652 668	domain knowledge
+T15	NoType 687 695	training
+T16	NoType 712 719	domains
+T17	NoType 785 792	domains
+T18	NoType 832 856	resource-limited domains
+T19	NoType 897 904	domains
+T20	NoType 909 932	Chinese term extraction
+T21	NoType 1064 1083	new term extraction
+T22	NoType 1160 1184	domain lexicon expansion
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T10 Arg2:T9

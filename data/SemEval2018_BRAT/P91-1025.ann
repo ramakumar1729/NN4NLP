@@ -1,0 +1,26 @@
+T1	NoType 1 10	Languages
+T2	NoType 25 33	concepts
+T3	NoType 38 57	real-world entities
+T4	NoType 78 83	words
+T5	NoType 88 110	grammatical constructs
+T6	NoType 122 133	translation
+T7	NoType 182 189	meaning
+T8	NoType 195 215	source language text
+T9	NoType 264 279	target language
+T10	NoType 294 315	translation framework
+T11	NoType 325 341	Situation Theory
+T12	NoType 372 391	information lattice
+T13	NoType 395 416	representation scheme
+T14	NoType 421 431	utterances
+T15	NoType 444 452	contexts
+T16	NoType 460 486	mismatch resolution scheme
+T17	NoType 507 523	information flow
+T18	NoType 567 578	translation
+T19	NoType 587 594	English
+T20	NoType 599 607	Japanese
+R1	PART_WHOLE Arg1:T4 Arg2:T1
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8
+R3	USAGE Arg1:T11 Arg2:T10
+R4	MODEL-FEATURE Arg1:T13 Arg2:T14
+R5	MODEL-FEATURE Arg1:T17 Arg2:T16
+R6	USAGE Arg1:T18 Arg2:T19

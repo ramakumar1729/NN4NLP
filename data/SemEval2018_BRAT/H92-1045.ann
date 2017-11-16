@@ -1,0 +1,27 @@
+T1	NoType 35 51	polysemous words
+T2	NoType 57 65	sentence
+T3	NoType 72 79	meaning
+T4	NoType 83 88	sense
+T5	NoType 157 190	word-sense disambiguation systems
+T6	NoType 208 226	bilingual material
+T7	NoType 232 249	Canadian Hansards
+T8	NoType 277 297	monolingual material
+T9	NoType 300 317	Roget's Thesaurus
+T10	NoType 322 344	Grolier's Encyclopedia
+T11	NoType 411 420	discourse
+T12	NoType 443 458	polysemous word
+T13	NoType 467 475	sentence
+T14	NoType 507 529	well-written discourse
+T15	NoType 589 594	sense
+T16	NoType 701 706	sense
+T17	NoType 719 728	discourse
+T18	NoType 807 817	constraint
+T19	NoType 855 890	word-sense disambiguation algorithm
+T20	NoType 945 970	disambiguation algorithms
+T21	NoType 1000 1020	discourse constraint
+R1	MODEL-FEATURE Arg1:T3 Arg2:T2
+R2	USAGE Arg1:T6 Arg2:T5
+R3	PART_WHOLE Arg1:T13 Arg2:T14
+R4	PART_WHOLE Arg1:T16 Arg2:T17
+R5	USAGE Arg1:T18 Arg2:T19
+R6	USAGE Arg1:T21 Arg2:T20

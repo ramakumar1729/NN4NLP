@@ -1,0 +1,18 @@
+T1	NoType 35 55	word-sense ambiguity
+T2	NoType 75 101	machine-readable resources
+T3	NoType 126 155	large-scale knowledge sources
+T4	NoType 204 227	word-sense distinctions
+T5	NoType 260 283	semantic classification
+T6	NoType 287 292	verbs
+T7	NoType 341 364	word-sense distinctions
+T8	NoType 508 522	verb semantics
+T9	NoType 527 545	syntactic behavior
+T10	NoType 645 665	semantic information
+T11	NoType 671 685	syntactic cues
+T12	NoType 709 723	syntactic cues
+T13	NoType 778 789	word senses
+T14	NoType 871 882	word senses
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	COMPARE Arg1:T8 Arg2:T9
+R3	USAGE Arg1:T11 Arg2:T10
+R4	COMPARE Arg1:T12 Arg2:T13

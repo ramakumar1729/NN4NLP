@@ -1,0 +1,27 @@
+T1	NoType 23 56	primitive Optimality Theory (OTP)
+T2	NoType 102 104	OT
+T3	NoType 106 109	OTP
+T4	NoType 124 162	class of autosegmental representations
+T5	NoType 168 191	universal generator Gen
+T6	NoType 224 247	permissible constraints
+T7	NoType 280 288	theories
+T8	NoType 295 316	Generalized Alignment
+T9	NoType 318 321	OTP
+T10	NoType 332 345	surface forms
+T11	NoType 368 388	finite-state methods
+T12	NoType 439 446	methods
+T13	NoType 452 495	time exponential on the size of the grammar
+T14	NoType 508 526	generation problem
+T15	NoType 536 547	NP-complete
+T16	NoType 608 626	Ellison's approach
+T17	NoType 722 729	grammar
+T18	NoType 801 820	finite-state notion
+T19	NoType 822 839	factored automata
+T20	NoType 847 864	regular languages
+T21	NoType 895 923	formal intersections of FSAs
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T8 Arg2:T7
+R3	USAGE Arg1:T11 Arg2:T10
+R4	MODEL-FEATURE Arg1:T13 Arg2:T12
+R5	MODEL-FEATURE Arg1:T15 Arg2:T14
+R6	MODEL-FEATURE Arg1:T21 Arg2:T20

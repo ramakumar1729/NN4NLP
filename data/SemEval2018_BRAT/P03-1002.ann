@@ -1,0 +1,9 @@
+T1	NoType 50 61	IE paradigm
+T2	NoType 86 115	predicate-argument structures
+T3	NoType 175 204	predicate argument structures
+T4	NoType 231 242	IE paradigm
+T5	NoType 284 292	features
+T6	NoType 303 335	inductive decision tree learning
+T7	NoType 393 422	predicate-argument structures
+T8	NoType 443 445	IE
+R1	USAGE Arg1:T2 Arg2:T1

@@ -1,0 +1,3 @@
+
+Methods developed for spelling correction for languages like English (see the review by Kukich (Kukich, 1992)) are not readily applicable to agglutinative languages. This poster presents an approach to spelling correction in agglutinative languages that is based on two-level morphology and a dynamic-programming based search algorithm. After an overview of our approach, we present results from experiments with spelling correction in Turkish.
+

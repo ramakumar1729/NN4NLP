@@ -1,0 +1,23 @@
+T1	NoType 29 91	corpus-based supervised word sense disambiguation (WSD) system
+T2	NoType 96 101	Dutch
+T3	NoType 117 143	statistical classification
+T4	NoType 145 160	maximum entropy
+T5	NoType 167 189	linguistic information
+T6	NoType 222 233	classifiers
+T7	NoType 238 256	ambiguous wordform
+T8	NoType 273 293	lemma-based approach
+T9	NoType 354 369	inflected forms
+T10	NoType 376 390	ambiguous word
+T11	NoType 398 408	classifier
+T12	NoType 435 452	training material
+T13	NoType 470 479	algorithm
+T14	NoType 493 510	lemma-based model
+T15	NoType 518 544	Dutch Senseval-2 test data
+T16	NoType 583 591	accuracy
+T17	NoType 601 615	wordform model
+T18	NoType 627 653	WSD system based on lemmas
+R1	USAGE Arg1:T1 Arg2:T2
+R2	COMPARE Arg1:T6 Arg2:T8
+R3	MODEL-FEATURE Arg1:T9 Arg2:T10
+R4	USAGE Arg1:T12 Arg2:T13
+R5	USAGE Arg1:T14 Arg2:T15

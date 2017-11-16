@@ -1,0 +1,23 @@
+T1	NoType 6 26	rhetorical structure
+T2	NoType 31 42	punctuation
+T3	NoType 64 84	discourse processing
+T4	NoType 97 122	corpus annotation project
+T5	NoType 147 163	discursive usage
+T6	NoType 169 194	Chinese punctuation marks
+T7	NoType 198 219	news commentary texts
+T8	NoType 221 226	Colon
+T9	NoType 228 232	Dash
+T10	NoType 234 242	Ellipsis
+T11	NoType 244 260	Exclamation Mark
+T12	NoType 262 275	Question Mark
+T13	NoType 281 290	Semicolon
+T14	NoType 296 315	rhetorical patterns
+T15	NoType 352 360	patterns
+T16	NoType 368 379	cue phrases
+T17	NoType 416 441	Chinese punctuation marks
+T18	NoType 471 482	cue phrases
+T19	NoType 613 626	Chinese texts
+R1	USAGE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T5 Arg2:T6
+R3	COMPARE Arg1:T14 Arg2:T15
+R4	COMPARE Arg1:T17 Arg2:T18

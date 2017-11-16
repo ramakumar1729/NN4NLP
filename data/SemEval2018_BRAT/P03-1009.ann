@@ -1,0 +1,15 @@
+T1	NoType 51 61	clustering
+T2	NoType 74 95	semantic verb classes
+T3	NoType 117 128	corpus data
+T4	NoType 184 213	subcategorization frame (SCF)
+T5	NoType 238 260	Information Bottleneck
+T6	NoType 265 282	nearest neighbour
+T7	NoType 358 373	polysemic verbs
+T8	NoType 384 401	evaluation scheme
+T9	NoType 447 455	polysemy
+T10	NoType 463 471	clusters
+T11	NoType 539 563	semantically classifying
+T12	NoType 564 588	undisambiguated SCF data
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T5 Arg2:T4
+R3	MODEL-FEATURE Arg1:T9 Arg2:T10

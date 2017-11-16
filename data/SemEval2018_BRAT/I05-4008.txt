@@ -1,0 +1,3 @@
+
+Taiwan Child Language Corpus contains scripts transcribed from about 330 hours of recordings of fourteen young children from Southern Min Chinese speaking families in Taiwan. The format of the corpus adopts the Child Language Data Exchange System (CHILDES). The size of the corpus is about 1.6 million words. In this paper, we describe data collection, transcription, word segmentation, and part-of-speech annotation of this corpus. Applications of the corpus are also discussed.
+

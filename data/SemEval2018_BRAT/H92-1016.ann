@@ -1,0 +1,12 @@
+T1	NoType 42 57	MIT ATIS system
+T2	NoType 126 143	SUMMIT recognizer
+T3	NoType 160 196	context-dependent phonetic modelling
+T4	NoType 212 233	bigram language model
+T5	NoType 256 279	probabilistic LR parser
+T6	NoType 310 317	lexicon
+T7	NoType 354 366	training set
+T8	NoType 412 460	speech recognition word and sentence error rates
+T9	NoType 510 530	October '91 test set
+T10	NoType 567 589	spoken language system
+T11	NoType 602 610	test set
+T12	NoType 663 696	February '92 benchmark evaluation

@@ -1,0 +1,8 @@
+T1	NoType 34 87	algorithm for translation lexicon acquisition (SABLE)
+T2	NoType 121 127	corpus
+T3	NoType 147 167	translation lexicons
+T4	NoType 179 188	algorithm
+T5	NoType 218 224	corpus
+T6	NoType 251 287	domain-specific translation lexicons
+R1	USAGE Arg1:T1 Arg2:T3
+R2	USAGE Arg1:T4 Arg2:T6

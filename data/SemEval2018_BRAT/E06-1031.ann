@@ -1,0 +1,24 @@
+T1	NoType 23 42	evaluation measures
+T2	NoType 47 66	machine translation
+T3	NoType 79 84	costs
+T4	NoType 101 105	word
+T5	NoType 192 201	sentences
+T6	NoType 241 259	evaluation measure
+T7	NoType 284 300	block reordering
+T8	NoType 307 321	edit operation
+T9	NoType 328 335	measure
+T10	NoType 365 379	quadratic time
+T11	NoType 417 436	evaluation measures
+T12	NoType 476 509	word-dependent substitution costs
+T13	NoType 539 546	measure
+T14	NoType 552 566	human judgment
+T15	NoType 621 635	language pairs
+T16	NoType 738 764	sentence-level correlation
+T17	NoType 797 830	word dependent substitution costs
+T18	NoType 894 923	automatic evaluation measures
+T19	NoType 928 942	human judgment
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T6 Arg2:T7
+R3	RESULT Arg1:T12 Arg2:T11
+R4	COMPARE Arg1:T13 Arg2:T14
+R5	COMPARE Arg1:T18 Arg2:T19

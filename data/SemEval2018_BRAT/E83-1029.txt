@@ -1,0 +1,2 @@
+
+In this paper a system which understands and conceptualizes scenes descriptions in natural language is presented. Specifically, the following components of the system are described: the syntactic analyzer, based on a Procedural Systemic Grammar, the semantic analyzer relying on the Conceptual Dependency Theory, and the dictionary. 

@@ -1,0 +1,3 @@
+
+The GE NLToolset is a set of text interpretation tools designed to be easily adapted to new domains. This report summarizes the system and its performance on the MUC-4 task. 
+

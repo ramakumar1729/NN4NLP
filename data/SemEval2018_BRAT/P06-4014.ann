@@ -1,0 +1,7 @@
+T1	NoType 7 28	LOGON MT demonstrator
+T2	NoType 62 92	general-purpose NLP components
+T3	NoType 100 128	machine translation pipeline
+T4	NoType 149 163	output quality
+T5	NoType 222 252	hand-built, symbolic resources
+T6	NoType 257 277	stochastic processes
+R1	PART_WHOLE Arg1:T2 Arg2:T3

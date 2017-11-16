@@ -1,0 +1,10 @@
+T1	NoType 43 84	Korean phonological knowledge base system
+T2	NoType 95 130	unification-based grammar formalism
+T3	NoType 133 174	Korean Phonology Structure Grammar (KPSG)
+T4	NoType 193 197	KPSG
+T5	NoType 270 289	phonological system
+T6	NoType 292 310	speech recognition
+T7	NoType 315 331	synthesis system
+T8	NoType 449 481	generative phonological approach
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T4 Arg2:T5

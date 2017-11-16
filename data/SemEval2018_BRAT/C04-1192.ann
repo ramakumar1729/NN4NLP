@@ -1,0 +1,20 @@
+T1	NoType 33 58	word sense disambiguation
+T2	NoType 68 84	parallel corpora
+T3	NoType 125 139	word alignment
+T4	NoType 144 159	word clustering
+T5	NoType 169 189	automatic extraction
+T6	NoType 193 216	translation equivalents
+T7	NoType 258 266	wordnets
+T8	NoType 275 284	languages
+T9	NoType 292 298	corpus
+T10	NoType 304 312	wordnets
+T11	NoType 332 349	Princeton Wordnet
+T12	NoType 394 405	EuroWordNet
+T13	NoType 429 439	WSD system
+T14	NoType 588 604	alignment errors
+T15	NoType 608 639	multilingually aligned wordnets
+T16	NoType 643 651	BalkaNet
+T17	NoType 656 667	EuroWordNet
+R1	USAGE Arg1:T2 Arg2:T1
+R2	USAGE Arg1:T5 Arg2:T4
+R3	PART_WHOLE Arg1:T14 Arg2:T15

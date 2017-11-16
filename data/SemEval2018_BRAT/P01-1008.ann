@@ -1,0 +1,11 @@
+T1	NoType 7 19	paraphrasing
+T2	NoType 41 90	interpretation and generation of natural language
+T3	NoType 157 168	paraphrases
+T4	NoType 185 216	unsupervised learning algorithm
+T5	NoType 221 250	identification of paraphrases
+T6	NoType 258 297	corpus of multiple English translations
+T7	NoType 310 321	source text
+T8	NoType 344 387	phrasal and single word lexical paraphrases
+T9	NoType 399 420	syntactic paraphrases
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T4 Arg2:T5

@@ -1,0 +1,16 @@
+T1	NoType 28 41	formalization
+T2	NoType 49 67	centering approach
+T3	NoType 80 114	attentional structure in discourse
+T4	NoType 146 155	algorithm
+T5	NoType 165 182	discourse context
+T6	NoType 192 200	pronouns
+T7	NoType 242 290	centering attention on entities in the discourse
+T8	NoType 309 382	intersentential transitional states of continuing, retaining and shifting
+T9	NoType 417 423	states
+T10	NoType 472 490	ambiguous pronouns
+T11	NoType 496 505	algorithm
+T12	NoType 533 561	HPSG natural language system
+T13	NoType 597 623	database query application
+R1	MODEL-FEATURE Arg1:T1 Arg2:T3
+R2	USAGE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T12 Arg2:T13

@@ -1,0 +1,13 @@
+T1	NoType 61 92	word sense disambigation models
+T2	NoType 98 129	statistical machine translation
+T3	NoType 130 137	quality
+T4	NoType 250 289	Chinese word sense disambiguation model
+T5	NoType 300 322	translation candidates
+T6	NoType 337 362	IBM statistical MT system
+T7	NoType 378 403	word sense disambiguation
+T8	NoType 440 459	translation quality
+T9	NoType 469 507	statistical machine translation system
+T10	NoType 515 529	Error analysis
+T11	NoType 633 661	statistical MT architectures
+R1	USAGE Arg1:T4 Arg2:T5
+R2	RESULT Arg1:T7 Arg2:T8

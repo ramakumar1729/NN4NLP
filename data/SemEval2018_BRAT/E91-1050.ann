@@ -1,0 +1,9 @@
+T1	NoType 1 12	Unification
+T2	NoType 60 69	relations
+T3	NoType 78 93	representations
+T4	NoType 109 127	feature structures
+T5	NoType 208 229	declarative formalism
+T6	NoType 264 272	mappings
+T7	NoType 280 297	feature structure
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T5 Arg2:T6

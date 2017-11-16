@@ -1,0 +1,16 @@
+T1	NoType 16 25	metaphors
+T2	NoType 68 107	human understanding of natural language
+T3	NoType 133 162	method of analyzing metaphors
+T4	NoType 207 236	generalized metaphor mappings
+T5	NoType 244 264	generalized metaphor
+T6	NoType 276 295	recognition network
+T7	NoType 300 313	basic mapping
+T8	NoType 327 344	transfer mappings
+T9	NoType 354 382	implicit intention component
+T10	NoType 422 445	metaphor interpretation
+T11	NoType 453 467	reconstruction
+T12	NoType 473 489	recognition task
+T13	NoType 543 560	language learning
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T4 Arg2:T3
+R3	PART_WHOLE Arg1:T6 Arg2:T5

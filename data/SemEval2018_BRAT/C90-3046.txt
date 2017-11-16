@@ -1,0 +1,2 @@
+ 
+ This paper proposes that sentence analysis should be treated as defeasible reasoning , and presents such a treatment for Japanese sentence analyses using an argumentation system by Konolige, which is a formalization of defeasible reasoning , that includes arguments and defeat rules that capture defeasibility . 

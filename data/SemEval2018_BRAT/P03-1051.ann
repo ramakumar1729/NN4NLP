@@ -1,0 +1,42 @@
+T1	NoType 16 40	Arabic's rich morphology
+T2	NoType 46 51	model
+T3	NoType 59 63	word
+T4	NoType 90 99	morphemes
+T5	NoType 107 114	pattern
+T6	NoType 115 135	prefix*-stem-suffix*
+T7	NoType 177 185	morpheme
+T8	NoType 221 253	manually segmented Arabic corpus
+T9	NoType 282 304	unsupervised algorithm
+T10	NoType 318 339	Arabic word segmenter
+T11	NoType 353 378	unsegmented Arabic corpus
+T12	NoType 402 424	trigram language model
+T13	NoType 456 473	morpheme sequence
+T14	NoType 486 491	input
+T15	NoType 498 512	language model
+T16	NoType 549 574	manually segmented corpus
+T17	NoType 592 597	words
+T18	NoType 615 627	segmentation
+T19	NoType 628 636	accuracy
+T20	NoType 649 671	unsupervised algorithm
+T21	NoType 704 709	stems
+T22	NoType 729 733	word
+T23	NoType 734 752	unsegmented corpus
+T24	NoType 775 791	model parameters
+T25	NoType 810 820	vocabulary
+T26	NoType 825 840	training corpus
+T27	NoType 857 888	Arabic word segmentation system
+T28	NoType 909 929	exact match accuracy
+T29	NoType 935 946	test corpus
+T30	NoType 965 976	word tokens
+T31	NoType 1068 1094	highly inflected languages
+T32	NoType 1132 1157	manually segmented corpus
+T33	NoType 1165 1173	language
+R1	USAGE Arg1:T8 Arg2:T9
+R2	USAGE Arg1:T11 Arg2:T10
+R3	MODEL-FEATURE Arg1:T13 Arg2:T14
+R4	MODEL-FEATURE Arg1:T15 Arg2:T16
+R5	PART_WHOLE Arg1:T21 Arg2:T23
+R6	USAGE Arg1:T24 Arg2:T25
+R7	RESULT Arg1:T27 Arg2:T28
+R8	PART_WHOLE Arg1:T30 Arg2:T29
+R9	MODEL-FEATURE Arg1:T32 Arg2:T33

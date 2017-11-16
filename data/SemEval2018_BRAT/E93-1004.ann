@@ -1,0 +1,14 @@
+T1	NoType 30 47	modal language LT
+T2	NoType 60 71	constraints
+T3	NoType 75 80	trees
+T4	NoType 99 106	LT (LF)
+T5	NoType 120 131	constraints
+T6	NoType 135 174	trees decorated with feature structures
+T7	NoType 213 222	languages
+T8	NoType 259 281	grammatical frameworks
+T9	NoType 364 368	GPSG
+T10	NoType 388 395	LT (LF)
+T11	NoType 422 437	modal languages
+T12	NoType 481 502	constraint formalisms
+R1	MODEL-FEATURE Arg1:T7 Arg2:T8
+R2	COMPARE Arg1:T9 Arg2:T10

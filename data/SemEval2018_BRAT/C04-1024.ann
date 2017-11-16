@@ -1,0 +1,13 @@
+T1	NoType 14 47	bit-vector-based CKY-style parser
+T2	NoType 52 72	context-free parsing
+T3	NoType 91 97	parser
+T4	NoType 117 144	parse forest representation
+T5	NoType 177 213	analyses for large treebank grammars
+T6	NoType 223 238	input sentences
+T7	NoType 244 250	parser
+T8	NoType 256 277	bit-vector operations
+T9	NoType 297 321	basic parsing operations
+T10	NoType 327 333	parser
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T8 Arg2:T7

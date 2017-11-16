@@ -1,0 +1,28 @@
+T1	NoType 63 78	classifier word
+T2	NoType 85 89	noun
+T3	NoType 94 107	Thai language
+T4	NoType 174 184	classifier
+T5	NoType 197 210	concrete noun
+T6	NoType 253 269	speech community
+T7	NoType 274 293	individual speakers
+T8	NoType 333 353	classifier selection
+T9	NoType 382 401	rule-based approach
+T10	NoType 415 427	default rule
+T11	NoType 455 465	classifier
+T12	NoType 474 478	noun
+T13	NoType 496 506	classifier
+T14	NoType 516 520	noun
+T15	NoType 539 562	type of unit classifier
+T16	NoType 643 662	corpus-based method
+T17	NoType 717 751	Noun Classifier Associations (NCA)
+T18	NoType 780 801	classifier assignment
+T19	NoType 806 842	semantic construction of noun phrase
+T20	NoType 848 851	NCA
+T21	NoType 890 896	corpus
+T22	NoType 918 947	concept hierarchy constraints
+T23	NoType 952 976	frequency of occurrences
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	MODEL-FEATURE Arg1:T11 Arg2:T12
+R4	MODEL-FEATURE Arg1:T13 Arg2:T14
+R5	USAGE Arg1:T16 Arg2:T18

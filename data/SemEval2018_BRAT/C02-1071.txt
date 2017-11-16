@@ -1,0 +1,3 @@
+
+This paper describes to what extent deep processing may benefit from shallow techniques and it presents a NLP system which integrates a linguistic PoS tagger and chunker as a preprocessing module of a broad coverage unification based grammar of Spanish. Experiments show that the efficiency of the overall analysis improves significantly and that our system also provides robustness to the linguistic processing while maintaining both the accuracy and the precision of the grammar.
+

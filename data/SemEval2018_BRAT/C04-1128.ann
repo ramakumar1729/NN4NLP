@@ -1,0 +1,23 @@
+T1	NoType 7 26	sentence extraction
+T2	NoType 45 58	summarization
+T3	NoType 85 94	documents
+T4	NoType 106 112	genres
+T5	NoType 154 173	email communication
+T6	NoType 180 190	utterances
+T7	NoType 236 255	sentence extraction
+T8	NoType 286 294	segments
+T9	NoType 298 306	dialogue
+T10	NoType 325 332	summary
+T11	NoType 398 419	question-answer pairs
+T12	NoType 426 444	email conversation
+T13	NoType 461 480	email summarization
+T14	NoType 503 511	features
+T15	NoType 580 598	lexical similarity
+T16	NoType 602 620	discourse segments
+T17	NoType 625 648	question-answer pairing
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T3
+R3	PART_WHOLE Arg1:T5 Arg2:T6
+R4	PART_WHOLE Arg1:T8 Arg2:T9
+R5	PART_WHOLE Arg1:T12 Arg2:T11
+R6	USAGE Arg1:T14 Arg2:T15

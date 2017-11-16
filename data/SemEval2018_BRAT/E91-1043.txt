@@ -1,0 +1,3 @@
+
+In this paper I will argue for a model of grammatical processing that is based on uniform processing and knowledge sources. The main feature of this model is to view parsing and generation as two strongly interleaved tasks performed by a single parametrized deduction process. It will be shown that this view supports flexible and efficient natural language processing.
+

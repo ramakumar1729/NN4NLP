@@ -1,0 +1,3 @@
+
+Recently, we initiated a project to develop a phonetically-based spoken language understanding system called SUMMIT. In contrast to many of the past efforts that make use of heuristic rules whose development requires intense knowledge engineering, our approach attempts to express the speech knowledge within a formal framework using well-defined mathematical tools. In our system, features and decision strategies are discovered and trained automatically, using a large body of speech data. This paper describes the system, and documents its current performance.
+

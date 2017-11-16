@@ -1,0 +1,10 @@
+T1	NoType 24 46	decision-tree approach
+T2	NoType 75 88	probabilities
+T3	NoType 92 97	words
+T4	NoType 116 120	text
+T5	NoType 148 185	decision-tree language model attempts
+T6	NoType 214 238	nearly optimal questions
+T7	NoType 300 323	The Wall Street Journal
+T8	NoType 372 386	tri-gram model
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T3 Arg2:T4

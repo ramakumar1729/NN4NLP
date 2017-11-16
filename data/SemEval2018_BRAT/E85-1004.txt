@@ -1,0 +1,3 @@
+
+This paper reports a completed stage of ongoing research at the University of York. Landsbergen's advocacy of analytical inverses for compositional syntax rules encourages the application of Definite Clause Grammar techniques to the construction of a parser returning  Montague analysis trees. A parser MDCC is presented which implements an augmented Friedman - Warren algorithm permitting post referencing* and interfaces with a language of intenslonal logic translator LILT so as to display the derivational history of corresponding reduced IL formulae. Some familiarity with Montague's PTQ and the basic DCG mechanism is assumed.
+

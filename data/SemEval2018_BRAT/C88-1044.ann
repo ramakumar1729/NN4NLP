@@ -1,0 +1,10 @@
+T1	NoType 74 99	demonstrative expressions
+T2	NoType 103 110	English
+T3	NoType 150 181	discourse processing algorithms
+T4	NoType 212 217	texts
+T5	NoType 250 283	demonstrative forms and functions
+T6	NoType 287 302	genre dependent
+T7	NoType 348 369	anaphoric expressions
+T8	NoType 421 455	natural language generation system
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T5 Arg2:T4

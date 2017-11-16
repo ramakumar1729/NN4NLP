@@ -1,0 +1,20 @@
+T1	NoType 32 37	names
+T2	NoType 42 57	technical terms
+T3	NoType 65 74	languages
+T4	NoType 90 99	alphabets
+T5	NoType 104 121	sound inventories
+T6	NoType 196 216	phonetic equivalents
+T7	NoType 243 250	English
+T8	NoType 296 304	Japanese
+T9	NoType 334 342	Japanese
+T10	NoType 351 358	English
+T11	NoType 456 468	text phrases
+T12	NoType 482 504	bilingual dictionaries
+T13	NoType 555 581	backwards transliterations
+T14	NoType 585 592	machine
+T15	NoType 613 629	generative model
+T16	NoType 676 699	transliteration process
+R1	MODEL-FEATURE Arg1:T3 Arg2:T4
+R2	COMPARE Arg1:T7 Arg2:T8
+R3	USAGE Arg1:T14 Arg2:T13
+R4	USAGE Arg1:T15 Arg2:T16

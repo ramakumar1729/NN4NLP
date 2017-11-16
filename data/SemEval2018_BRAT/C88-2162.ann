@@ -1,0 +1,29 @@
+T1	NoType 51 80	modeling language acquisition
+T2	NoType 98 118	learning methodology
+T3	NoType 133 148	general domains
+T4	NoType 185 202	linguistic domain
+T5	NoType 218 243	linguistic representation
+T6	NoType 252 279	language processing systems
+T7	NoType 297 305	learning
+T8	NoType 328 353	linguistic representation
+T9	NoType 360 403	Dynamic Hierarchical Phrasal Lexicon (DHPL)
+T10	NoType 430 450	language acquisition
+T11	NoType 466 489	language learning model
+T12	NoType 521 525	RINA
+T13	NoType 551 568	lexical hierarchy
+T14	NoType 640 659	linguistic concepts
+T15	NoType 678 695	training examples
+T16	NoType 715 724	hierarchy
+T17	NoType 818 835	lexical hierarchy
+T18	NoType 862 881	linguistic concepts
+T19	NoType 892 899	program
+T20	NoType 941 956	lexical unknown
+T21	NoType 965 975	hypothesis
+T22	NoType 1010 1021	lexical gap
+R1	COMPARE Arg1:T3 Arg2:T4
+R2	USAGE Arg1:T5 Arg2:T6
+R3	USAGE Arg1:T9 Arg2:T10
+R4	PART_WHOLE Arg1:T13 Arg2:T11
+R5	MODEL-FEATURE Arg1:T14 Arg2:T15
+R6	USAGE Arg1:T17 Arg2:T18
+R7	MODEL-FEATURE Arg1:T21 Arg2:T20

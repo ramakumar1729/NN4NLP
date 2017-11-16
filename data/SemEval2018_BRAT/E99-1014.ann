@@ -1,0 +1,17 @@
+T1	NoType 36 48	full parsing
+T2	NoType 62 84	Information Extraction
+T3	NoType 90 95	texts
+T4	NoType 122 127	rules
+T5	NoType 158 162	text
+T6	NoType 173 195	unambiguous structures
+T7	NoType 213 219	chunks
+T8	NoType 239 259	argumental relations
+T9	NoType 284 303	modifier attachment
+T10	NoType 325 342	global parse tree
+T11	NoType 395 404	languages
+T12	NoType 419 426	domains
+T13	NoType 454 463	IE module
+T14	NoType 467 531	FACILE, a EU project for multilingual text classification and IE
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T6 Arg2:T5
+R3	PART_WHOLE Arg1:T13 Arg2:T14

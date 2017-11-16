@@ -1,0 +1,5 @@
+T1	NoType 7 34	natural language processing
+T2	NoType 69 113	Japanese natural language processing studies
+T3	NoType 407 419	Japanese NLP
+T4	NoType 480 483	NLP
+R1	USAGE Arg1:T2 Arg2:T3

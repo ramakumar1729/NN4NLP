@@ -1,0 +1,12 @@
+T1	NoType 25 44	ellipsis resolution
+T2	NoType 75 102	discourse copying algorithm
+T3	NoType 210 240	identity-of-relations analyses
+T4	NoType 376 384	full NPs
+T5	NoType 393 413	referential elements
+T6	NoType 458 470	role linking
+T7	NoType 484 495	predictions
+T8	NoType 532 540	ellipsis
+T9	NoType 607 634	discourse copying phenomena
+R1	MODEL-FEATURE Arg1:T2 Arg2:T1
+R2	COMPARE Arg1:T4 Arg2:T5
+R3	MODEL-FEATURE Arg1:T7 Arg2:T8

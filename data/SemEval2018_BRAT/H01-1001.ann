@@ -1,0 +1,24 @@
+T1	NoType 1 19	Oral communication
+T2	NoType 136 162	storage media and networks
+T3	NoType 197 209	conversation
+T4	NoType 312 326	large database
+T5	NoType 341 373	information retrieval techniques
+T6	NoType 380 389	histogram
+T7	NoType 393 401	keywords
+T8	NoType 409 432	document representation
+T9	NoType 437 455	oral communication
+T10	NoType 477 484	indices
+T11	NoType 564 569	index
+T12	NoType 693 712	automatic detection
+T13	NoType 910 918	database
+T14	NoType 976 984	database
+T15	NoType 988 996	TV shows
+T16	NoType 999 1007	Emotions
+T17	NoType 1018 1025	indices
+T18	NoType 1038 1072	dominance distribution of speakers
+T19	NoType 1099 1106	surface
+T20	NoType 1165 1174	databases
+T21	NoType 1226 1233	indices
+R1	USAGE Arg1:T7 Arg2:T5
+R2	USAGE Arg1:T9 Arg2:T10
+R3	PART_WHOLE Arg1:T15 Arg2:T14

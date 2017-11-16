@@ -1,0 +1,21 @@
+T1	NoType 33 64	statistical machine translation
+T2	NoType 79 100	syntactic information
+T3	NoType 108 123	source language
+T4	NoType 148 167	phrasal translation
+T5	NoType 193 208	source-language
+T6	NoType 209 226	dependency parser
+T7	NoType 229 244	target language
+T8	NoType 245 262	word segmentation
+T9	NoType 270 307	unsupervised word alignment component
+T10	NoType 321 336	parallel corpus
+T11	NoType 351 374	source dependency parse
+T12	NoType 391 399	sentence
+T13	NoType 410 446	dependency treelet translation pairs
+T14	NoType 461 486	tree-based ordering model
+T15	NoType 514 521	decoder
+T16	NoType 548 565	tree-based models
+T17	NoType 599 609	SMT models
+T18	NoType 671 682	phrasal SMT
+T19	NoType 729 735	parser
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T11 Arg2:T12

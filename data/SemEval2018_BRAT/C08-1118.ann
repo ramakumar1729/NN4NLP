@@ -1,0 +1,10 @@
+T1	NoType 65 80	source language
+T2	NoType 114 129	EUROPARL corpus
+T3	NoType 146 162	frequency counts
+T4	NoType 166 178	word n-grams
+T5	NoType 192 200	accuracy
+T6	NoType 214 235	classification method
+T7	NoType 278 294	positive markers
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T3 Arg2:T4
+R3	RESULT Arg1:T6 Arg2:T5

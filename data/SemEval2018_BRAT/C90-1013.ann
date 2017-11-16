@@ -1,0 +1,16 @@
+T1	NoType 29 68	bidirectional grammar generation system
+T2	NoType 76 113	feature structure-directed generation
+T3	NoType 132 159	dialogue translation system
+T4	NoType 182 206	typed feature structures
+T5	NoType 222 241	top-down derivation
+T6	NoType 269 286	generation system
+T7	NoType 297 327	disjunctive feature structures
+T8	NoType 366 381	derivation tree
+T9	NoType 388 395	grammar
+T10	NoType 405 414	generator
+T11	NoType 452 471	speaker's intention
+T12	NoType 477 495	telephone dialogue
+R1	USAGE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T4 Arg2:T5
+R3	USAGE Arg1:T7 Arg2:T6
+R4	USAGE Arg1:T9 Arg2:T10

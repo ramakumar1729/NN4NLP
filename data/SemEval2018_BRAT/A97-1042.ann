@@ -1,0 +1,13 @@
+T1	NoType 56 62	topics
+T2	NoType 66 71	texts
+T3	NoType 97 101	text
+T4	NoType 130 138	training
+T5	NoType 160 183	Optimal Position Policy
+T6	NoType 230 253	topic-bearing sentences
+T7	NoType 263 290	genre-specific regularities
+T8	NoType 294 313	discourse structure
+T9	NoType 363 384	information retrieval
+T10	NoType 386 393	routing
+T11	NoType 399 417	text summarization
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8

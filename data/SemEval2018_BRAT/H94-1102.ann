@@ -1,0 +1,16 @@
+T1	NoType 92 138	continuous speech recognition (CSR) techniques
+T2	NoType 166 195	Spoken Language Systems (SLS)
+T3	NoType 236 280	military and civilian computer-based systems
+T4	NoType 360 404	speech recognition and understanding systems
+T5	NoType 445 471	spoken language technology
+T6	NoType 477 506	military and civilian systems
+T7	NoType 555 558	CSR
+T8	NoType 562 597	mobile military command and control
+T9	NoType 651 669	acoustic modelling
+T10	NoType 689 727	recognition-time adaptation techniques
+T11	NoType 739 759	large-vocabulary CSR
+T12	NoType 805 838	ARPA large-vocabulary CSR corpora
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T5 Arg2:T6
+R3	USAGE Arg1:T7 Arg2:T8
+R4	USAGE Arg1:T11 Arg2:T12

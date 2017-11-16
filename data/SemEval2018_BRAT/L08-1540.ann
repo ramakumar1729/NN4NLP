@@ -1,0 +1,40 @@
+T1	NoType 49 73	large Czech MWE database
+T2	NoType 107 111	MWEs
+T3	NoType 124 137	lexical units
+T4	NoType 187 200	encyclopedias
+T5	NoType 205 217	dictionaries
+T6	NoType 226 235	databases
+T7	NoType 239 251	proper names
+T8	NoType 256 264	toponyms
+T9	NoType 266 278	collocations
+T10	NoType 293 306	Czech WordNet
+T11	NoType 317 347	botanical and zoological terms
+T12	NoType 393 401	database
+T13	NoType 426 430	MWEs
+T14	NoType 489 502	MWEs database
+T15	NoType 512 523	corpus data
+T16	NoType 529 550	Czech National Corpus
+T17	NoType 636 640	MWEs
+T18	NoType 673 679	corpus
+T19	NoType 760 764	MWEs
+T20	NoType 811 829	Word Sketch Engine
+T21	NoType 860 882	statistical parameters
+T22	NoType 904 908	MWEs
+T23	NoType 950 958	salience
+T24	NoType 973 977	MWEs
+T25	NoType 1015 1023	database
+T26	NoType 1056 1063	tagging
+T27	NoType 1068 1081	lemmatization
+T28	NoType 1125 1129	MWEs
+T29	NoType 1133 1144	corpus text
+T30	NoType 1176 1189	lexical units
+T31	NoType 1205 1212	tagging
+T32	NoType 1217 1230	lemmatization
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T7 Arg2:T6
+R3	PART_WHOLE Arg1:T9 Arg2:T10
+R4	COMPARE Arg1:T14 Arg2:T15
+R5	MODEL-FEATURE Arg1:T21 Arg2:T20
+R6	MODEL-FEATURE Arg1:T23 Arg2:T24
+R7	USAGE Arg1:T25 Arg2:T26
+R8	PART_WHOLE Arg1:T28 Arg2:T29

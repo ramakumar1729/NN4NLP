@@ -1,0 +1,16 @@
+T1	NoType 30 48	convolution kernel
+T2	NoType 54 65	parse trees
+T3	NoType 75 106	syntactic structure information
+T4	NoType 111 130	relation extraction
+T5	NoType 159 187	syntactic structure features
+T6	NoType 202 212	parse tree
+T7	NoType 236 255	relation extraction
+T8	NoType 303 326	convolution tree kernel
+T9	NoType 346 361	ACE 2003 corpus
+T10	NoType 377 395	convolution kernel
+T11	NoType 401 412	parse trees
+T12	NoType 512 533	ACE relation subtypes
+T13	NoType 608 631	dependency tree kernels
+T14	NoType 641 665	ACE relation major types
+R1	MODEL-FEATURE Arg1:T1 Arg2:T3
+R2	PART_WHOLE Arg1:T5 Arg2:T6

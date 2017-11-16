@@ -1,0 +1,23 @@
+T1	NoType 1 28	Sentence boundary detection
+T2	NoType 32 38	speech
+T3	NoType 66 84	speech recognition
+T4	NoType 200 266	hidden Markov model (HMM) and maximum entropy (Maxent) classifiers
+T5	NoType 303 320	knowledge sources
+T6	NoType 335 354	sentence boundaries
+T7	NoType 396 426	conditional random field (CRF)
+T8	NoType 542 558	telephone speech
+T9	NoType 563 584	broadcast news speech
+T10	NoType 594 614	human transcriptions
+T11	NoType 619 637	speech recognition
+T12	NoType 662 665	CRF
+T13	NoType 707 729	HMM and Max-ent models
+T14	NoType 737 774	NIST sentence boundary detection task
+T15	NoType 778 784	speech
+T16	NoType 859 875	three-way voting
+T17	NoType 886 897	classifiers
+T18	NoType 933 938	model
+T19	NoType 995 1012	knowledge sources
+R1	USAGE Arg1:T1 Arg2:T3
+R2	USAGE Arg1:T5 Arg2:T4
+R3	COMPARE Arg1:T10 Arg2:T11
+R4	COMPARE Arg1:T12 Arg2:T13

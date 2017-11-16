@@ -1,0 +1,3 @@
+
+In this paper we compare two competing approaches to part-of-speech tagging, statistical and constraint-based disambiguation, using French as our test language. We imposed a time limit on our experiment: the amount of time spent on the design of our constraint system was about the same as the time we used to train and test the easy-to-implement statistical model. We describe the two systems and compare the results. The accuracy of the statistical method is reasonably good, comparable to taggers for English. But the constraint-based tagger seems to be superior even with the limited time we allowed ourselves for rule development.
+

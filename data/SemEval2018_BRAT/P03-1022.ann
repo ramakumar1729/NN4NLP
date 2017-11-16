@@ -1,0 +1,14 @@
+T1	NoType 12 40	decision tree based approach
+T2	NoType 44 62	pronoun resolution
+T3	NoType 66 81	spoken dialogue
+T4	NoType 106 114	pronouns
+T5	NoType 120 146	NP- and non-NP-antecedents
+T6	NoType 169 177	features
+T7	NoType 191 209	pronoun resolution
+T8	NoType 213 228	spoken dialogue
+T9	NoType 262 270	features
+T10	NoType 306 327	Switchboard dialogues
+T11	NoType 362 398	Byron's (2002) manually tuned system
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T5 Arg2:T4
+R3	USAGE Arg1:T7 Arg2:T8

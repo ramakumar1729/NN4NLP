@@ -1,0 +1,23 @@
+T1	NoType 31 97	generative probabilistic optical character recognition (OCR) model
+T2	NoType 142 165	noisy channel framework
+T3	NoType 199 208	true text
+T4	NoType 245 257	noisy output
+T5	NoType 264 274	OCR system
+T6	NoType 281 286	model
+T7	NoType 310 326	error correction
+T8	NoType 345 360	post-processing
+T9	NoType 365 371	output
+T10	NoType 385 396	OCR systems
+T11	NoType 433 442	NLP tasks
+T12	NoType 481 486	model
+T13	NoType 496 515	finite-state models
+T14	NoType 534 539	model
+T15	NoType 575 604	character and word error rate
+T16	NoType 648 668	automatic extraction
+T17	NoType 672 692	translation lexicons
+T18	NoType 698 710	printed text
+R1	USAGE Arg1:T6 Arg2:T7
+R2	USAGE Arg1:T8 Arg2:T9
+R3	USAGE Arg1:T13 Arg2:T12
+R4	RESULT Arg1:T14 Arg2:T15
+R5	USAGE Arg1:T16 Arg2:T18

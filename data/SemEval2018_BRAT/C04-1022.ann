@@ -1,0 +1,18 @@
+T1	NoType 1 30	Statistical language modeling
+T2	NoType 77 107	morphologically rich languages
+T3	NoType 143 167	factored language models
+T4	NoType 219 225	models
+T5	NoType 274 296	conditioning variables
+T6	NoType 312 327	preceding words
+T7	NoType 337 372	morphological or syntactic features
+T8	NoType 418 434	model parameters
+T9	NoType 445 466	large space of models
+T10	NoType 528 574	entirely data-driven model selection procedure
+T11	NoType 584 598	genetic search
+T12	NoType 634 681	knowledge-based and random selection procedures
+T13	NoType 699 722	language modeling tasks
+T14	NoType 724 730	Arabic
+T15	NoType 735 742	Turkish
+R1	COMPARE Arg1:T4 Arg2:T6
+R2	USAGE Arg1:T11 Arg2:T10
+R3	USAGE Arg1:T12 Arg2:T13

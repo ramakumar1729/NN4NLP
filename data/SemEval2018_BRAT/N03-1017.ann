@@ -1,0 +1,20 @@
+T1	NoType 18 48	phrase-based translation model
+T2	NoType 53 71	decoding algorithm
+T3	NoType 141 172	phrase-based translation models
+T4	NoType 277 296	phrase-based models
+T5	NoType 308 325	word-based models
+T6	NoType 379 393	language pairs
+T7	NoType 492 510	heuristic learning
+T8	NoType 514 533	phrase translations
+T9	NoType 539 560	word-based alignments
+T10	NoType 565 582	lexical weighting
+T11	NoType 586 605	phrase translations
+T12	NoType 631 638	phrases
+T13	NoType 657 662	words
+T14	NoType 676 683	phrases
+T15	NoType 689 730	high-accuracy word-level alignment models
+T16	NoType 791 822	syntactically motivated phrases
+R1	COMPARE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T9 Arg2:T7
+R3	MODEL-FEATURE Arg1:T10 Arg2:T11
+R4	PART_WHOLE Arg1:T14 Arg2:T15

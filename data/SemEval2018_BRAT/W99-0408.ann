@@ -1,0 +1,16 @@
+T1	NoType 37 73	user knowledge modeling architecture
+T2	NoType 82 95	ICICLE system
+T3	NoType 99 128	language tutoring application
+T4	NoType 150 165	written English
+T5	NoType 196 216	language proficiency
+T6	NoType 274 290	writing analysis
+T7	NoType 295 314	feedback production
+T8	NoType 332 344	model design
+T9	NoType 376 423	second language and cognitive skill acquisition
+T10	NoType 491 497	design
+T11	NoType 530 536	design
+T12	NoType 560 583	robust information base
+T13	NoType 646 662	user proficiency
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4
+R3	USAGE Arg1:T9 Arg2:T8

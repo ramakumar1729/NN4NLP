@@ -1,0 +1,12 @@
+T1	NoType 24 30	FERRET
+T2	NoType 36 79	interactive question-answering (Q/A) system
+T3	NoType 130 143	automatic Q/A
+T4	NoType 187 193	FERRET
+T5	NoType 223 226	Q/A
+T6	NoType 236 258	predictive questioning
+T7	NoType 290 299	questions
+T8	NoType 305 312	answers
+T9	NoType 320 325	users
+T10	NoType 350 354	user
+R1	USAGE Arg1:T2 Arg2:T3
+R2	USAGE Arg1:T6 Arg2:T5

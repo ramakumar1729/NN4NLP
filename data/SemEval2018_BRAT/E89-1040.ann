@@ -1,0 +1,24 @@
+T1	NoType 37 56	machine translation
+T2	NoType 120 129	formalism
+T3	NoType 190 206	compositionality
+T4	NoType 210 221	translation
+T5	NoType 277 296	anaphoric component
+T6	NoType 304 318	Mimo formalism
+T7	NoType 348 359	translation
+T8	NoType 363 382	anaphoric relations
+T9	NoType 393 402	relations
+T10	NoType 460 483	strict compositionality
+T11	NoType 488 492	Mimo
+T12	NoType 498 509	translation
+T13	NoType 513 532	anaphoric relations
+T14	NoType 555 574	anaphoric component
+T15	NoType 593 613	linguistic phenomena
+T16	NoType 622 633	wh-movement
+T17	NoType 639 646	passive
+T18	NoType 655 689	binding of reflexives and pronouns
+T19	NoType 807 818	wh-movement
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T3 Arg2:T4
+R3	PART_WHOLE Arg1:T5 Arg2:T6
+R4	USAGE Arg1:T11 Arg2:T12
+R5	USAGE Arg1:T14 Arg2:T15

@@ -1,0 +1,16 @@
+T1	NoType 1 8	GLOSSER
+T2	NoType 74 82	language
+T3	NoType 99 113	language pairs
+T4	NoType 137 144	GLOSSER
+T5	NoType 146 163	English-Bulgarian
+T6	NoType 165 181	English-Estonian
+T7	NoType 183 200	English-Hungarian
+T8	NoType 205 217	French-Dutch
+T9	NoType 349 384	Applied Natural Language Processing
+T10	NoType 438 498	intelligent computer-assisted morphological analysis (ICALL)
+T11	NoType 510 546	disambiguated morphological analysis
+T12	NoType 551 570	lemmatized indexing
+T13	NoType 578 602	aligned bilingual corpus
+T14	NoType 606 619	word examples
+R1	MODEL-FEATURE Arg1:T3 Arg2:T4
+R2	PART_WHOLE Arg1:T14 Arg2:T13

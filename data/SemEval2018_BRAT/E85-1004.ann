@@ -1,0 +1,17 @@
+T1	NoType 111 130	analytical inverses
+T2	NoType 135 161	compositional syntax rules
+T3	NoType 192 226	Definite Clause Grammar techniques
+T4	NoType 252 258	parser
+T5	NoType 269 293	 Montague analysis trees
+T6	NoType 297 308	parser MDCC
+T7	NoType 342 379	augmented Friedman - Warren algorithm
+T8	NoType 391 407	post referencing
+T9	NoType 443 476	intenslonal logic translator LILT
+T10	NoType 498 518	derivational history
+T11	NoType 536 555	reduced IL formulae
+T12	NoType 579 593	Montague's PTQ
+T13	NoType 602 621	basic DCG mechanism
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4
+R3	USAGE Arg1:T7 Arg2:T6
+R4	MODEL-FEATURE Arg1:T10 Arg2:T11

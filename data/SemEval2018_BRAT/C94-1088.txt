@@ -1,0 +1,3 @@
+
+This paper describes a characters-based Chinese collocation system and discusses the advantages of it over a traditional word-based system. Since wordbreaks are not conventionally marked in Chinese text corpora, a character-based collocation system has the dual advantages of avoiding pre-processing distortion and directly accessing sub-lexical information. Furthermore, word-based collocational properties can be obtained through an auxiliary module of automatic segmentation.
+

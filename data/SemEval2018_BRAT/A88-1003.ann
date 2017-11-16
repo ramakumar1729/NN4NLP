@@ -1,0 +1,9 @@
+T1	NoType 34 71	pronominal anaphora resolution module
+T2	NoType 75 79	Lucy
+T3	NoType 93 121	English understanding system
+T4	NoType 227 246	anaphora resolution
+T5	NoType 314 342	blackboard-like architecture
+T6	NoType 363 379	partial theories
+T7	NoType 454 465	antecedents
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T6 Arg2:T5

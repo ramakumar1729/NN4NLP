@@ -1,0 +1,14 @@
+T1	NoType 12 25	training data
+T2	NoType 39 56	language modeling
+T3	NoType 60 81	conversational speech
+T4	NoType 122 135	training data
+T5	NoType 161 165	text
+T6	NoType 175 178	web
+T7	NoType 201 206	style
+T8	NoType 214 219	topic
+T9	NoType 234 250	recognition task
+T10	NoType 323 327	data
+T11	NoType 337 366	class-dependent interpolation
+T12	NoType 370 377	N-grams
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T5 Arg2:T6

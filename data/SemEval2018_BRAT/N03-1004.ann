@@ -1,0 +1,21 @@
+T1	NoType 29 45	ensemble methods
+T2	NoType 49 65	machine learning
+T3	NoType 85 112	natural language processing
+T4	NoType 130 192	multi-strategy and multi-source approach to question answering
+T5	NoType 248 264	answering agents
+T6	NoType 279 286	answers
+T7	NoType 299 306	corpora
+T8	NoType 313 329	answering agents
+T9	NoType 396 422	knowledge-based mechanisms
+T10	NoType 446 468	statistical techniques
+T11	NoType 486 525	multi-level answer resolution algorithm
+T12	NoType 557 573	answering agents
+T13	NoType 581 620	question, passage, and/or answer levels
+T14	NoType 671 698	answer resolution algorithm
+T15	NoType 742 757	baseline system
+T16	NoType 775 803	questions correctly answered
+T17	NoType 847 871	average precision metric
+R1	USAGE Arg1:T5 Arg2:T4
+R2	PART_WHOLE Arg1:T6 Arg2:T7
+R3	USAGE Arg1:T9 Arg2:T8
+R4	COMPARE Arg1:T14 Arg2:T15

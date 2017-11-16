@@ -1,0 +1,24 @@
+T1	NoType 27 49	information redundancy
+T2	NoType 53 71	multilingual input
+T3	NoType 93 112	machine translation
+T4	NoType 145 167	multilingual summaries
+T5	NoType 194 222	multi-document summarization
+T6	NoType 241 250	documents
+T7	NoType 258 264	Arabic
+T8	NoType 282 289	summary
+T9	NoType 296 303	English
+T10	NoType 348 355	summary
+T11	NoType 382 405	lexical-syntactic forms
+T12	NoType 419 428	documents
+T13	NoType 460 487	machine translation systems
+T14	NoType 506 516	redundancy
+T15	NoType 559 570	information
+T16	NoType 574 581	English
+T17	NoType 617 637	machine translations
+T18	NoType 651 667	Arabic documents
+T19	NoType 725 735	redundancy
+T20	NoType 750 762	noun phrases
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T7 Arg2:T6
+R3	MODEL-FEATURE Arg1:T9 Arg2:T8
+R4	MODEL-FEATURE Arg1:T16 Arg2:T15

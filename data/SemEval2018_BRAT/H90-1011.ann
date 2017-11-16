@@ -1,0 +1,21 @@
+T1	NoType 47 54	parsing
+T2	NoType 88 113	unification-based parsing
+T3	NoType 121 166	classification-based knowledge representation
+T4	NoType 171 211	unification-based grammatical frameworks
+T5	NoType 258 280	linguistic information
+T6	NoType 353 397	KL-ONE-like knowledge representation systems
+T7	NoType 442 488	classification-based representation techniques
+T8	NoType 507 548	unification-based linguistic descriptions
+T9	NoType 591 625	semantic and syntactic information
+T10	NoType 761 778	efficient parsing
+T11	NoType 840 867	KL-ONE style representation
+T12	NoType 872 879	parsing
+T13	NoType 884 907	semantic interpretation
+T14	NoType 934 950	PSI-KLONE system
+T15	NoType 965 972	parsing
+T16	NoType 1021 1055	incremental description refinement
+R1	USAGE Arg1:T2 Arg2:T1
+R2	COMPARE Arg1:T4 Arg2:T6
+R3	USAGE Arg1:T7 Arg2:T8
+R4	USAGE Arg1:T11 Arg2:T12
+R5	USAGE Arg1:T16 Arg2:T15

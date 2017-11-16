@@ -1,0 +1,21 @@
+T1	NoType 23 47	restricted domain parser
+T2	NoType 55 60	Plume
+T3	NoType 134 161	Plume's approach to parsing
+T4	NoType 174 206	semantic caseframe instantiation
+T5	NoType 235 245	efficiency
+T6	NoType 249 266	grammatical input
+T7	NoType 272 282	robustness
+T8	NoType 298 317	ungrammatical input
+T9	NoType 325 330	Plume
+T10	NoType 357 394	declarative and imperative utterances
+T11	NoType 407 415	passives
+T12	NoType 417 433	relative clauses
+T13	NoType 438 452	interrogatives
+T14	NoType 491 509	syntactic coverage
+T15	NoType 531 536	Plume
+T16	NoType 608 613	Plume
+T17	NoType 624 632	passives
+T18	NoType 634 650	relative clauses
+T19	NoType 656 670	interrogatives
+R1	USAGE Arg1:T4 Arg2:T3
+R2	RESULT Arg1:T9 Arg2:T14

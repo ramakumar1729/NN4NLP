@@ -1,0 +1,26 @@
+T1	NoType 3 20	Spelling-checkers
+T2	NoType 58 82	text processing software
+T3	NoType 179 205	dictionaries of word forms
+T4	NoType 217 222	words
+T5	NoType 279 289	inflection
+T6	NoType 298 305	English
+T7	NoType 322 349	highly inflective languages
+T8	NoType 358 363	Czech
+T9	NoType 366 373	Russian
+T10	NoType 376 382	Slovak
+T11	NoType 392 410	Slavonic languages
+T12	NoType 463 473	inflection
+T13	NoType 502 519	spelling-checkers
+T14	NoType 629 646	spelling-checkers
+T15	NoType 651 658	English
+T16	NoType 672 682	dictionary
+T17	NoType 706 717	360K floppy
+T18	NoType 753 763	word forms
+T19	NoType 787 792	Czech
+T20	NoType 850 869	word classification
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	COMPARE Arg1:T3 Arg2:T4
+R3	MODEL-FEATURE Arg1:T5 Arg2:T6
+R4	MODEL-FEATURE Arg1:T7 Arg2:T8
+R5	USAGE Arg1:T14 Arg2:T15
+R6	PART_WHOLE Arg1:T18 Arg2:T19

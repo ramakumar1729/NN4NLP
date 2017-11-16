@@ -1,0 +1,6 @@
+T1	NoType 56 85	left corner parsing algorithm
+T2	NoType 90 111	context-free grammars
+T3	NoType 228 234	parser
+T4	NoType 245 271	natural language interface
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T3 Arg2:T4

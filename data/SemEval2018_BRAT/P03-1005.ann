@@ -1,0 +1,18 @@
+T1	NoType 25 74	Hierarchical Directed Acyclic Graph (HDAG) Kernel
+T2	NoType 79 111	structured natural language data
+T3	NoType 118 129	HDAG Kernel
+T4	NoType 170 176	chunks
+T5	NoType 187 196	relations
+T6	NoType 233 244	weighed sum
+T7	NoType 269 288	attribute sequences
+T8	NoType 296 301	HDAGs
+T9	NoType 338 361	question classification
+T10	NoType 366 390	sentence alignment tasks
+T11	NoType 424 442	similarity measure
+T12	NoType 449 464	kernel function
+T13	NoType 519 530	HDAG Kernel
+T14	NoType 552 568	kernel functions
+T15	NoType 573 589	baseline methods
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8
+R3	COMPARE Arg1:T13 Arg2:T14

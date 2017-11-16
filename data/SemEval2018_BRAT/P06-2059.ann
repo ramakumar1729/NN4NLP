@@ -1,0 +1,10 @@
+T1	NoType 48 70	polarity-tagged corpus
+T2	NoType 76 90	HTML documents
+T3	NoType 190 204	HTML documents
+T4	NoType 256 273	layout structures
+T5	NoType 278 296	linguistic pattern
+T6	NoType 348 357	sentences
+T7	NoType 428 434	corpus
+T8	NoType 457 466	sentences
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T8 Arg2:T7

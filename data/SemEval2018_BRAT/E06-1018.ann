@@ -1,0 +1,15 @@
+T1	NoType 49 88	unsupervised word sense induction (WSI)
+T2	NoType 142 179	one sense per collocation observation
+T3	NoType 243 276	clustering of word co-occurrences
+T4	NoType 326 329	WSI
+T5	NoType 368 405	one sense per collocation observation
+T6	NoType 427 432	words
+T7	NoType 474 501	two-step clustering process
+T8	NoType 508 531	sentence co-occurrences
+T9	NoType 535 543	features
+T10	NoType 622 652	unsupervised evaluation method
+T11	NoType 704 740	word sense disambiguation algorithms
+T12	NoType 830 843	gold standard
+T13	NoType 860 892	automatic parameter optimization
+T14	NoType 900 913	WSI algorithm
+R1	USAGE Arg1:T8 Arg2:T7

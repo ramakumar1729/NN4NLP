@@ -1,0 +1,20 @@
+T1	NoType 28 57	tree-adjoining grammars (TAG)
+T2	NoType 101 105	TAGs
+T3	NoType 137 143	syntax
+T4	NoType 175 198	semantic interpretation
+T5	NoType 202 243	automatic translation of natural language
+T6	NoType 270 274	TAGs
+T7	NoType 284 300	synchronous TAGs
+T8	NoType 346 355	languages
+T9	NoType 402 434	expressions of natural languages
+T10	NoType 455 464	semantics
+T11	NoType 482 503	logical form language
+T12	NoType 518 528	translates
+T13	NoType 540 556	natural language
+T14	NoType 593 597	TAGs
+T15	NoType 630 643	syntax proper
+T16	NoType 676 692	synchronous TAGs
+R1	COMPARE Arg1:T3 Arg2:T4
+R2	MODEL-FEATURE Arg1:T11 Arg2:T10
+R3	MODEL-FEATURE Arg1:T12 Arg2:T13
+R4	USAGE Arg1:T14 Arg2:T15

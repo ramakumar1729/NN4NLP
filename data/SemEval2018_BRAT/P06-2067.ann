@@ -1,0 +1,30 @@
+T1	NoType 65 83	statistical parser
+T2	NoType 109 136	written and spoken language
+T3	NoType 155 178	sub-categorization cues
+T4	NoType 184 211	written and spoken language
+T5	NoType 222 236	Bikel's parser
+T6	NoType 255 263	accuracy
+T7	NoType 276 292	written language
+T8	NoType 315 323	accuracy
+T9	NoType 340 362	subcategorization cues
+T10	NoType 368 383	spoken language
+T11	NoType 439 474	extracting subcategorization frames
+T12	NoType 498 511	written texts
+T13	NoType 535 550	spoken language
+T14	NoType 592 603	punctuation
+T15	NoType 615 622	parsing
+T16	NoType 627 637	extraction
+T17	NoType 641 663	subcategorization cues
+T18	NoType 691 702	punctuation
+T19	NoType 732 747	spoken language
+T20	NoType 763 785	subcategorization cues
+T21	NoType 791 806	spoken language
+T22	NoType 852 863	punctuation
+T23	NoType 880 894	spoken corpora
+T24	NoType 919 926	parsers
+R1	USAGE Arg1:T1 Arg2:T2
+R2	RESULT Arg1:T5 Arg2:T6
+R3	USAGE Arg1:T11 Arg2:T12
+R4	USAGE Arg1:T14 Arg2:T15
+R5	PART_WHOLE Arg1:T20 Arg2:T21
+R6	PART_WHOLE Arg1:T22 Arg2:T23

@@ -1,0 +1,13 @@
+T1	NoType 29 43	human language
+T2	NoType 48 66	syntactic analysis
+T3	NoType 71 94	semantic interpretation
+T4	NoType 111 134	context-free complexity
+T5	NoType 161 178	speech processing
+T6	NoType 207 226	finite-state models
+T7	NoType 311 318	grammar
+T8	NoType 345 371	finite-state approximation
+T9	NoType 416 434	speech recognition
+T10	NoType 545 572	finite-state approximations
+T11	NoType 578 599	context-free grammars
+R1	USAGE Arg1:T6 Arg2:T5
+R2	USAGE Arg1:T8 Arg2:T9

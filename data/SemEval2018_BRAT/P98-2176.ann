@@ -1,0 +1,20 @@
+T1	NoType 51 71	semantic constraints
+T2	NoType 83 97	lexical choice
+T3	NoType 109 130	contextual indicators
+T4	NoType 149 159	indicators
+T5	NoType 181 193	correlations
+T6	NoType 215 250	choice of a noun phrase description
+T7	NoType 256 268	named entity
+T8	NoType 308 327	supervised learning
+T9	NoType 343 354	correlation
+T10	NoType 390 414	automatic lexical choice
+T11	NoType 418 430	descriptions
+T12	NoType 434 442	entities
+T13	NoType 446 461	text generation
+T14	NoType 514 524	pragmatics
+T15	NoType 552 563	description
+T16	NoType 602 630	automatically generated text
+T17	NoType 639 648	semantics
+T18	NoType 656 667	description
+T19	NoType 753 774	linguistic structures
+T20	NoType 813 826	large corpora

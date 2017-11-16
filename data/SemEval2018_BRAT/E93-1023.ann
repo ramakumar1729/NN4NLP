@@ -1,0 +1,24 @@
+T1	NoType 62 67	words
+T2	NoType 79 96	constituent parts
+T3	NoType 100 109	ambiguity
+T4	NoType 115 125	generation
+T5	NoType 138 146	analyses
+T6	NoType 155 165	input word
+T7	NoType 220 229	ambiguity
+T8	NoType 235 261	MORphological PArser MORPA
+T9	NoType 281 322	probabilistic context-free grammar (PCFG)
+T10	NoType 343 392	"conventional" context-free morphological grammar
+T11	NoType 407 434	ungrammatical segmentations
+T12	NoType 442 476	probability-based scoring function
+T13	NoType 528 533	parse
+T14	NoType 559 567	analyses
+T15	NoType 653 657	PCFG
+T16	NoType 681 702	morphological parsing
+T17	NoType 704 709	MORPA
+T18	NoType 733 739	parser
+T19	NoType 763 795	text-to-speech conversion system
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T5 Arg2:T6
+R3	PART_WHOLE Arg1:T9 Arg2:T8
+R4	USAGE Arg1:T12 Arg2:T10
+R5	USAGE Arg1:T18 Arg2:T19

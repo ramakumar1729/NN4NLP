@@ -1,0 +1,3 @@
+
+The work presented in this paper is the first step in a project which aims to cluster and summarise electronic discussions in the context of help-desk applications. The eventual objective of this project is to use these summaries to assist help-desk users and operators. In this paper, we identify features of electronic discussions that influence the clustering process, and offer a filtering mechanism that removes undesirable influences. We tested the clustering and filtering processes on electronic newsgroup discussions, and evaluated their performance by means of two experiments : coarse-level clustering simple information retrieval.
+

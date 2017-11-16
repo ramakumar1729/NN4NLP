@@ -1,0 +1,8 @@
+T1	NoType 51 87	statistical machine translation (MT)
+T2	NoType 97 121	dynamic programming (DP)
+T3	NoType 246 261	word reordering
+T4	NoType 270 296	source and target language
+T5	NoType 500 514	Verbmobil task
+T6	NoType 566 601	limited-domain spoken-language task
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T6 Arg2:T5

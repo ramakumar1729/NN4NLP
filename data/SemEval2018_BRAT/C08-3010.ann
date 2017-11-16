@@ -1,0 +1,11 @@
+T1	NoType 35 46	search tool
+T2	NoType 65 71	ngrams
+T3	NoType 91 98	queries
+T4	NoType 127 136	wildcards
+T5	NoType 204 211	fillers
+T6	NoType 219 228	wildcards
+T7	NoType 288 294	memory
+T8	NoType 315 325	disk space
+T9	NoType 387 417	linguistic knowledge discovery
+T10	NoType 428 437	NLP tasks
+R1	MODEL-FEATURE Arg1:T4 Arg2:T3

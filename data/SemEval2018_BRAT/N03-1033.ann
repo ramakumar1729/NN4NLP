@@ -1,0 +1,15 @@
+T1	NoType 18 39	part-of-speech tagger
+T2	NoType 128 140	tag contexts
+T3	NoType 147 180	dependency network representation
+T4	NoType 201 217	lexical features
+T5	NoType 230 280	jointly conditioning on multiple consecutive words
+T6	NoType 306 312	priors
+T7	NoType 316 344	conditional loglinear models
+T8	NoType 381 402	unknown word features
+T9	NoType 447 453	tagger
+T10	NoType 469 477	accuracy
+T11	NoType 485 502	Penn Treebank WSJ
+T12	NoType 508 523	error reduction
+T13	NoType 582 589	tagging
+R1	USAGE Arg1:T6 Arg2:T7
+R2	RESULT Arg1:T9 Arg2:T10

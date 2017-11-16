@@ -1,0 +1,22 @@
+T1	NoType 34 77	interactive method for speech understanding
+T2	NoType 84 106	generalized LR parsing
+T3	NoType 137 144	Parsing
+T4	NoType 216 223	portion
+T5	NoType 241 247	parser
+T6	NoType 259 266	portion
+T7	NoType 280 299	non-terminal symbol
+T8	NoType 319 326	portion
+T9	NoType 342 354	re-utterance
+T10	NoType 363 370	portion
+T11	NoType 417 429	parse record
+T12	NoType 443 452	utterance
+T13	NoType 459 463	user
+T14	NoType 497 505	sentence
+T15	NoType 553 566	unknown words
+T16	NoType 619 632	unknown words
+T17	NoType 676 686	dictionary
+T18	NoType 718 722	user
+T19	NoType 727 739	pilot system
+R1	USAGE Arg1:T7 Arg2:T5
+R2	MODEL-FEATURE Arg1:T11 Arg2:T12
+R3	PART_WHOLE Arg1:T16 Arg2:T17

@@ -1,0 +1,9 @@
+T1	NoType 17 35	discourse segments
+T2	NoType 65 87	discourse segmentation
+T3	NoType 107 116	abduction
+T4	NoType 120 138	temporal relations
+T5	NoType 147 155	segments
+T6	NoType 196 220	computationally feasible
+T7	NoType 270 298	temporal anaphora resolution
+R1	USAGE Arg1:T3 Arg2:T2
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5

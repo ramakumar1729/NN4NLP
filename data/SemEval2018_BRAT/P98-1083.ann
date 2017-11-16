@@ -1,0 +1,18 @@
+T1	NoType 42 58	Japanese parsers
+T2	NoType 69 83	decision trees
+T3	NoType 114 127	decision tree
+T4	NoType 140 166	modification probabilities
+T5	NoType 176 182	phrase
+T6	NoType 229 247	boosting algorithm
+T7	NoType 265 279	decision trees
+T8	NoType 318 340	probability estimation
+T9	NoType 362 369	parsers
+T10	NoType 397 426	EDR Japanese annotated corpus
+T11	NoType 467 507	conventional Japanese stochastic methods
+T12	NoType 597 613	parsing accuracy
+T13	NoType 665 678	training data
+T14	NoType 689 709	over-fitting to data
+T15	NoType 722 732	iterations
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T3 Arg2:T4
+R3	USAGE Arg1:T7 Arg2:T8

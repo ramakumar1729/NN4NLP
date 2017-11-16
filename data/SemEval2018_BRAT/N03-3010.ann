@@ -1,0 +1,10 @@
+T1	NoType 35 52	Cooperative Model
+T2	NoType 57 87	natural language understanding
+T3	NoType 93 108	dialogue system
+T4	NoType 139 163	Finite State Model (FSM)
+T5	NoType 168 200	Statistical Learning Model (SLM)
+T6	NoType 203 206	FSM
+T7	NoType 235 257	language understanding
+T8	NoType 322 342	Statistical approach
+T9	NoType 382 399	Cooperative Model
+R1	USAGE Arg1:T1 Arg2:T2

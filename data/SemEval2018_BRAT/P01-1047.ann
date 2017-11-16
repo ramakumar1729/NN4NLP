@@ -1,0 +1,17 @@
+T1	NoType 14 32	logical definition
+T2	NoType 36 55	Minimalist grammars
+T3	NoType 67 90	Stabler's formalization
+T4	NoType 94 122	Chomsky's minimalist program
+T5	NoType 129 147	logical definition
+T6	NoType 176 194	categorial grammar
+T7	NoType 222 240	Montague semantics
+T8	NoType 246 266	parsing-as-deduction
+T9	NoType 272 296	resource sensitive logic
+T10	NoType 305 323	learning algorithm
+T11	NoType 329 344	structured data
+T12	NoType 357 373	typing-algorithm
+T13	NoType 378 394	type-unification
+T14	NoType 434 452	Montague semantics
+T15	NoType 478 496	formal computation
+T16	NoType 504 516	logical form
+R1	USAGE Arg1:T11 Arg2:T10

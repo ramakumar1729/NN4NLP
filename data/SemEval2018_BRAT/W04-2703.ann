@@ -1,0 +1,14 @@
+T1	NoType 29 67	large scale discourse-level annotation
+T2	NoType 82 112	Penn Discourse TreeBank (PDTB)
+T3	NoType 162 181	discourse structure
+T4	NoType 211 232	discourse connectives
+T5	NoType 243 252	arguments
+T6	NoType 258 262	PDTB
+T7	NoType 301 314	Penn TreeBank
+T8	NoType 319 327	Propbank
+T9	NoType 370 401	syntactic and semantic features
+T10	NoType 473 493	practical algorithms
+T11	NoType 541 566	inter-annotator agreement
+T12	NoType 578 596	level of agreement
+T13	NoType 614 639	inter-annotator variation
+R1	USAGE Arg1:T4 Arg2:T3

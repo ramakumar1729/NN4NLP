@@ -1,0 +1,8 @@
+T1	NoType 43 65	information extraction
+T2	NoType 71 96	token classification task
+T3	NoType 113 131	tagging strategies
+T4	NoType 152 158	tokens
+T5	NoType 177 195	tagging strategies
+T6	NoType 315 334	Begin/After tagging
+T7	NoType 338 341	BIA
+R1	USAGE Arg1:T3 Arg2:T2

@@ -1,0 +1,12 @@
+T1	NoType 40 63	morphological component
+T2	NoType 79 141	NLP-system for Dutch (Dutch Medical Language Processor - DMLP)
+T3	NoType 215 243	language independent modules
+T4	NoType 251 322	LSP-MLP system (Linguistic String Project - Medical Language Processor)
+T5	NoType 388 421	language independent developments
+T6	NoType 455 469	idiosyncrasies
+T7	NoType 474 479	Dutch
+T8	NoType 604 635	patient discharge summary (PDS)
+T9	NoType 655 699	HyperText Mark-Up Language (HTML) technology
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T3 Arg2:T4
+R3	PART_WHOLE Arg1:T6 Arg2:T7

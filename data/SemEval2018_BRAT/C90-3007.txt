@@ -1,0 +1,3 @@
+
+This paper examines the properties of feature-based partial descriptions built on top of Halliday's systemic networks. We show that the crucial operation of consistency checking for such descriptions is NP-complete, and therefore probably intractable, but proceed to develop algorithms which can sometimes alleviate the unpleasant consequences of this intractability.
+

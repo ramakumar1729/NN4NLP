@@ -1,0 +1,16 @@
+T1	NoType 24 54	unsupervised learning approach
+T2	NoType 97 111	named entities
+T3	NoType 130 160	lexical and syntactic features
+T4	NoType 170 178	contexts
+T5	NoType 205 217	eigenvectors
+T6	NoType 224 239	adjacency graph
+T7	NoType 243 252	Laplacian
+T8	NoType 266 277	submanifold
+T9	NoType 293 318	high dimensionality space
+T10	NoType 339 364	cluster number estimation
+T11	NoType 372 384	eigenvectors
+T12	NoType 409 420	ACE corpora
+T13	NoType 436 470	spectral clustering based approach
+T14	NoType 493 511	clustering methods
+R1	USAGE Arg1:T3 Arg2:T1
+R2	COMPARE Arg1:T13 Arg2:T14

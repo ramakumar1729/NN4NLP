@@ -1,0 +1,2 @@
+ 
+ This article introduces a bidirectional grammar generation system called feature structure-directed generation , developed for a dialogue translation system . The system utilizes typed feature structures to control the top-down derivation in a declarative way. This generation system also uses disjunctive feature structures to reduce the number of copies of the derivation tree . The grammar for this generator is designed to properly generate the speaker's intention in a telephone dialogue . 

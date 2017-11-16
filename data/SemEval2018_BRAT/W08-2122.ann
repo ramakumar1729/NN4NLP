@@ -1,0 +1,17 @@
+T1	NoType 47 69	CoNLL 2008 shared task
+T2	NoType 82 128	generative history-based latent variable model
+T3	NoType 156 166	derivation
+T4	NoType 172 201	synchronous dependency parser
+T5	NoType 211 246	syntactic and semantic dependencies
+T6	NoType 262 267	model
+T7	NoType 281 309	macro-average F1 performance
+T8	NoType 337 363	syntactic dependencies LAS
+T9	NoType 374 398	semantic dependencies F1
+T10	NoType 409 414	model
+T11	NoType 457 473	macro-average F1
+T12	NoType 481 507	syntactic dependencies LAS
+T13	NoType 519 543	semantic dependencies F1
+R1	USAGE Arg1:T2 Arg2:T1
+R2	MODEL-FEATURE Arg1:T3 Arg2:T5
+R3	RESULT Arg1:T6 Arg2:T7
+R4	RESULT Arg1:T10 Arg2:T11

@@ -1,0 +1,25 @@
+T1	NoType 24 44	computational theory
+T2	NoType 48 73	human plausible reasoning
+T3	NoType 148 153	logic
+T4	NoType 160 166	theory
+T5	NoType 185 214	content-independent formalism
+T6	NoType 224 229	logic
+T7	NoType 236 242	theory
+T8	NoType 282 288	memory
+T9	NoType 341 347	theory
+T10	NoType 362 383	dimensionalized space
+T11	NoType 397 412	inference types
+T12	NoType 423 443	certainty conditions
+T13	NoType 469 489	meta-inference types
+T14	NoType 500 509	inference
+T15	NoType 657 672	inference types
+T16	NoType 704 710	memory
+T17	NoType 767 782	inference types
+T18	NoType 818 824	memory
+T19	NoType 842 857	inference types
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T5 Arg2:T4
+R3	COMPARE Arg1:T6 Arg2:T7
+R4	PART_WHOLE Arg1:T10 Arg2:T9
+R5	MODEL-FEATURE Arg1:T12 Arg2:T11
+R6	MODEL-FEATURE Arg1:T13 Arg2:T14

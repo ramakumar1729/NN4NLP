@@ -1,0 +1,53 @@
+T1	NoType 74 94	probabilistic parser
+T2	NoType 106 112	parser
+T3	NoType 131 147	candidate parses
+T4	NoType 163 171	sentence
+T5	NoType 190 203	probabilities
+T6	NoType 227 234	ranking
+T7	NoType 244 250	parses
+T8	NoType 262 267	model
+T9	NoType 311 318	ranking
+T10	NoType 338 346	features
+T11	NoType 354 358	tree
+T12	NoType 421 425	tree
+T13	NoType 467 475	features
+T14	NoType 511 519	features
+T15	NoType 573 583	derivation
+T16	NoType 589 605	generative model
+T17	NoType 624 632	features
+T18	NoType 682 696	reranking task
+T19	NoType 712 729	boosting approach
+T20	NoType 733 749	ranking problems
+T21	NoType 798 813	boosting method
+T22	NoType 817 824	parsing
+T23	NoType 829 857	Wall Street Journal treebank
+T24	NoType 884 898	log-likelihood
+T25	NoType 907 921	baseline model
+T26	NoType 988 996	features
+T27	NoType 1002 1013	parse trees
+T28	NoType 1053 1058	model
+T29	NoType 1069 1074	model
+T30	NoType 1091 1100	F-measure
+T31	NoType 1130 1139	F-measure
+T32	NoType 1155 1177	baseline model's score
+T33	NoType 1240 1257	boosting approach
+T34	NoType 1287 1316	sparsity of the feature space
+T35	NoType 1324 1336	parsing data
+T36	NoType 1424 1438	implementation
+T37	NoType 1446 1463	boosting approach
+T38	NoType 1577 1602	feature selection methods
+T39	NoType 1610 1645	log-linear (maximum-entropy) models
+T40	NoType 1696 1726	natural language parsing (NLP)
+T41	NoType 1777 1789	NLP problems
+T42	NoType 1820 1833	ranking tasks
+T43	NoType 1849 1867	speech recognition
+T44	NoType 1870 1889	machine translation
+T45	NoType 1895 1922	natural language generation
+R1	MODEL-FEATURE Arg1:T3 Arg2:T4
+R2	MODEL-FEATURE Arg1:T10 Arg2:T11
+R3	USAGE Arg1:T17 Arg2:T16
+R4	USAGE Arg1:T19 Arg2:T20
+R5	USAGE Arg1:T22 Arg2:T23
+R6	RESULT Arg1:T29 Arg2:T30
+R7	MODEL-FEATURE Arg1:T34 Arg2:T35
+R8	PART_WHOLE Arg1:T38 Arg2:T39

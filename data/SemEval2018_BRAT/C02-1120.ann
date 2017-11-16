@@ -1,0 +1,19 @@
+T1	NoType 25 53	unsupervised learning method
+T2	NoType 58 104	associative relationships between verb phrases
+T3	NoType 148 159	Q&A systems
+T4	NoType 204 209	query
+T5	NoType 274 284	Q&A system
+T6	NoType 294 298	text
+T7	NoType 337 348	description
+T8	NoType 429 440	description
+T9	NoType 483 488	query
+T10	NoType 518 538	large-scale database
+T11	NoType 557 581	associative relationship
+T12	NoType 642 670	unsupervised learning method
+T13	NoType 695 719	associative relationship
+T14	NoType 735 755	scenario consistency
+T15	NoType 804 865	expectation-maximization (EM) based word-clustering algorithm
+T16	NoType 928 949	Japanese verb phrases
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T12 Arg2:T13
+R3	USAGE Arg1:T15 Arg2:T16

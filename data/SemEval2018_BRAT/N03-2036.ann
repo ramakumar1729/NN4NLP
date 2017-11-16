@@ -1,0 +1,20 @@
+T1	NoType 30 56	phrase-based unigram model
+T2	NoType 61 92	statistical machine translation
+T3	NoType 125 141	model parameters
+T4	NoType 155 174	phrase-based models
+T5	NoType 181 201	units of translation
+T6	NoType 206 212	blocks
+T7	NoType 224 231	phrases
+T8	NoType 241 249	decoding
+T9	NoType 261 280	block unigram model
+T10	NoType 287 320	word-based trigram language model
+T11	NoType 330 338	training
+T12	NoType 345 351	blocks
+T13	NoType 369 396	source interval projections
+T14	NoType 417 431	word alignment
+T15	NoType 466 490	block selection criteria
+T16	NoType 500 507	unigram
+T17	NoType 519 525	phrase
+R1	USAGE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T12 Arg2:T13
+R3	USAGE Arg1:T16 Arg2:T15

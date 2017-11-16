@@ -1,0 +1,20 @@
+T1	NoType 68 103	language corpus annotation scenario
+T2	NoType 118 137	discourse relations
+T3	NoType 141 146	Czech
+T4	NoType 193 226	syntactically motivated relations
+T5	NoType 230 239	discourse
+T6	NoType 298 328	Prague Dependency Treebank 2.0
+T7	NoType 337 362	Penn Discourse Treebank 2
+T8	NoType 402 451	syntactico-semantic (tectogrammatical) annotation
+T9	NoType 459 485	Prague Dependency Treebank
+T10	NoType 519 560	sentence-boundary-crossing representation
+T11	NoType 593 608	discourse level
+T12	NoType 612 622	annotation
+T13	NoType 721 755	Praguian dependency-based approach
+T14	NoType 772 797	Penn discourse annotation
+T15	NoType 852 873	discourse connectives
+R1	PART_WHOLE Arg1:T2 Arg2:T3
+R2	PART_WHOLE Arg1:T4 Arg2:T5
+R3	PART_WHOLE Arg1:T8 Arg2:T9
+R4	MODEL-FEATURE Arg1:T11 Arg2:T12
+R5	COMPARE Arg1:T13 Arg2:T14

@@ -1,0 +1,16 @@
+T1	NoType 86 97	classifiers
+T2	NoType 106 133	maximum entropy classifiers
+T3	NoType 135 143	boosting
+T4	NoType 148 152	SVMs
+T5	NoType 168 193	language processing tasks
+T6	NoType 362 389	error correction mechanisms
+T7	NoType 499 510	unseen data
+T8	NoType 539 547	test set
+T9	NoType 647 662	base classifier
+T10	NoType 724 778	N-fold Templated Piped Correction, or NTPC ("nitpick")
+T11	NoType 794 809	error corrector
+T12	NoType 977 988	base models
+T13	NoType 1057 1061	NTPC
+T14	NoType 1102 1124	Occam's Razor argument
+R1	USAGE Arg1:T4 Arg2:T5
+R2	USAGE Arg1:T6 Arg2:T7

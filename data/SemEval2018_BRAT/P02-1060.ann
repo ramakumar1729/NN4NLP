@@ -1,0 +1,21 @@
+T1	NoType 23 48	Hidden Markov Model (HMM)
+T2	NoType 56 78	HMM-based chunk tagger
+T3	NoType 93 135	named entity (NE) recognition (NER) system
+T4	NoType 171 176	names
+T5	NoType 178 208	times and numerical quantities
+T6	NoType 222 225	HMM
+T7	NoType 365 370	words
+T8	NoType 380 394	capitalization
+T9	NoType 419 444	internal semantic feature
+T10	NoType 472 498	internal gazetteer feature
+T11	NoType 503 533	external macro context feature
+T12	NoType 552 563	NER problem
+T13	NoType 611 617	system
+T14	NoType 621 653	MUC-6 and MUC-7 English NE tasks
+T15	NoType 663 673	F-measures
+T16	NoType 788 811	machine-learning system
+T17	NoType 827 838	performance
+T18	NoType 887 904	handcrafted rules
+R1	USAGE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T8 Arg2:T7
+R3	RESULT Arg1:T13 Arg2:T15

@@ -1,0 +1,15 @@
+T1	NoType 3 14	Determiners
+T2	NoType 55 62	meaning
+T3	NoType 69 78	utterance
+T4	NoType 191 206	global meaning 
+T5	NoType 212 220	sentence
+T6	NoType 274 285	determiners
+T7	NoType 304 313	ambiguity
+T8	NoType 343 360	logical formalism
+T9	NoType 419 430	determiners
+T10	NoType 460 474	interpretation
+T11	NoType 486 493	meaning
+R1	MODEL-FEATURE Arg1:T2 Arg2:T3
+R2	MODEL-FEATURE Arg1:T4 Arg2:T5
+R3	MODEL-FEATURE Arg1:T7 Arg2:T6
+R4	MODEL-FEATURE Arg1:T10 Arg2:T11

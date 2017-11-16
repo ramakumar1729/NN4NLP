@@ -1,0 +1,21 @@
+T1	NoType 23 47	addressee identification
+T2	NoType 51 90	four-participants face-to-face meetings
+T3	NoType 97 113	Bayesian Network
+T4	NoType 118 141	Naive Bayes classifiers
+T5	NoType 179 188	addressee
+T6	NoType 194 206	dialogue act
+T7	NoType 233 237	gaze
+T8	NoType 240 249	utterance
+T9	NoType 254 285	conversational context features
+T10	NoType 331 346	meeting context
+T11	NoType 355 366	classifiers
+T12	NoType 369 381	performances
+T13	NoType 389 400	classifiers
+T14	NoType 423 445	conversational context
+T15	NoType 450 468	utterance features
+T16	NoType 487 513	speaker's gaze information
+T17	NoType 520 531	classifiers
+T18	NoType 544 548	gain
+T19	NoType 572 587	meeting context
+R1	USAGE Arg1:T1 Arg2:T2
+R2	RESULT Arg1:T17 Arg2:T18

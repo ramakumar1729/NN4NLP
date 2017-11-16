@@ -1,0 +1,6 @@
+T1	NoType 39 73	feature-based partial descriptions
+T2	NoType 90 118	Halliday's systemic networks
+T3	NoType 158 178	consistency checking
+T4	NoType 276 286	algorithms
+T5	NoType 353 367	intractability
+R1	USAGE Arg1:T4 Arg2:T5

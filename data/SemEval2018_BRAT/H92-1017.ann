@@ -1,0 +1,12 @@
+T1	NoType 41 72	domain-independent capabilities
+T2	NoType 95 139	Paramax spoken language understanding system
+T3	NoType 142 165	non-monotonic reasoning
+T4	NoType 168 197	implicit reference resolution
+T5	NoType 204 229	database query paraphrase
+T6	NoType 275 309	February 1992 ATIS benchmark tests
+T7	NoType 343 369	standard evaluation metric
+T8	NoType 511 558	n-best speech/language integration architecture
+T9	NoType 572 575	OCR
+T10	NoType 576 584	accuracy
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	RESULT Arg1:T8 Arg2:T10

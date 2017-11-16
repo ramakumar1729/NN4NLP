@@ -1,0 +1,21 @@
+T1	NoType 13 31	evaluation metrics
+T2	NoType 36 68	Machine Translation (MT) systems
+T3	NoType 79 83	BLEU
+T4	NoType 87 91	NIST
+T5	NoType 170 184	language pairs
+T6	NoType 190 205	English-Chinese
+T7	NoType 209 225	English-Japanese
+T8	NoType 243 268	word segmentation problem
+T9	NoType 338 342	BLEU
+T10	NoType 346 358	word n-grams
+T11	NoType 386 395	character
+T12	NoType 414 418	BLEU
+T13	NoType 426 435	character
+T14	NoType 457 482	word segmentation problem
+T15	NoType 556 573	unsegmented texts
+T16	NoType 594 616	statistical MT systems
+T17	NoType 645 652	outputs
+R1	USAGE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T8 Arg2:T7
+R3	USAGE Arg1:T9 Arg2:T10
+R4	USAGE Arg1:T12 Arg2:T13

@@ -1,0 +1,21 @@
+T1	NoType 14 31	statistical model
+T2	NoType 35 57	Japanese unknown words
+T3	NoType 81 107	length and spelling models
+T4	NoType 126 141	character types
+T5	NoType 160 164	word
+T6	NoType 203 217	character sets
+T7	NoType 272 287	character types
+T8	NoType 315 330	Japanese script
+T9	NoType 340 349	ideograms
+T10	NoType 355 362	Chinese
+T11	NoType 364 369	kanji
+T12	NoType 375 385	phonograms
+T13	NoType 391 398	English
+T14	NoType 400 408	katakana
+T15	NoType 416 442	word segmentation accuracy
+T16	NoType 447 478	part of speech tagging accuracy
+T17	NoType 543 559	tagging accuracy
+T18	NoType 563 576	unknown words
+R1	MODEL-FEATURE Arg1:T1 Arg2:T2
+R2	PART_WHOLE Arg1:T4 Arg2:T5
+R3	PART_WHOLE Arg1:T9 Arg2:T8

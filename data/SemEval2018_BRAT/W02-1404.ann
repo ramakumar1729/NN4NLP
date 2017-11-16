@@ -1,0 +1,28 @@
+T1	NoType 29 57	knowledge-independent method
+T2	NoType 71 76	terms
+T3	NoType 97 109	translations
+T4	NoType 117 146	small, domain-specific corpus
+T5	NoType 161 205	parallel English and Chinese court judgments
+T6	NoType 229 252	sentence-aligned corpus
+T7	NoType 254 278	translation equivalences
+T8	NoType 310 328	frequency profiles
+T9	NoType 332 353	parallel concordances
+T10	NoType 395 427	conventional statistical methods
+T11	NoType 442 455	large corpora
+T12	NoType 477 495	lexical approaches
+T13	NoType 521 543	bilingual dictionaries
+T14	NoType 564 579	parallel corpus
+T15	NoType 594 607	Chinese words
+T16	NoType 617 630	English words
+T17	NoType 656 665	precision
+T18	NoType 674 680	recall
+T19	NoType 719 728	algorithm
+T20	NoType 778 797	translation lexicon
+T21	NoType 802 819	legal terminology
+T22	NoType 837 850	general terms
+R1	PART_WHOLE Arg1:T3 Arg2:T4
+R2	MODEL-FEATURE Arg1:T8 Arg2:T9
+R3	USAGE Arg1:T11 Arg2:T10
+R4	USAGE Arg1:T13 Arg2:T12
+R5	PART_WHOLE Arg1:T15 Arg2:T14
+R6	PART_WHOLE Arg1:T21 Arg2:T20

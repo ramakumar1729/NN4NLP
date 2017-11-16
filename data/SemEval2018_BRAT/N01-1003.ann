@@ -1,0 +1,25 @@
+T1	NoType 1 18	Sentence planning
+T2	NoType 81 97	sentence scoping
+T3	NoType 119 138	syntactic structure
+T4	NoType 154 165	speech acts
+T5	NoType 223 232	sentences
+T6	NoType 261 265	SPoT
+T7	NoType 270 286	sentence planner
+T8	NoType 338 342	SPoT
+T9	NoType 359 367	feedback
+T10	NoType 380 392	human judges
+T11	NoType 471 511	randomized sentence-plan-generator (SPG)
+T12	NoType 559 573	sentence plans
+T13	NoType 586 601	text-plan input
+T14	NoType 616 642	sentence-plan-ranker (SPR)
+T15	NoType 668 682	sentence plans
+T16	NoType 717 721	plan
+T17	NoType 728 731	SPR
+T18	NoType 737 750	ranking rules
+T19	NoType 778 791	training data
+T20	NoType 819 822	SPR
+T21	NoType 842 855	sentence plan
+T22	NoType 906 936	top human-ranked sentence plan
+R1	MODEL-FEATURE Arg1:T12 Arg2:T13
+R2	USAGE Arg1:T19 Arg2:T18
+R3	COMPARE Arg1:T21 Arg2:T22

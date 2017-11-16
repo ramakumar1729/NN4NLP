@@ -1,0 +1,1 @@
+ This paper proposes a practical approach employing n-gram models and error-correction rules for Thai key prediction and Thai-English language identification . The paper also proposes rule-reduction algorithm applying mutual information to reduce the error-correction rules . Our algorithm reported more than 99% accuracy in both language identification and key prediction . 

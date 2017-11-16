@@ -1,0 +1,10 @@
+T1	NoType 1 27	Metagrammatical formalisms
+T2	NoType 41 76	context-free phrase structure rules
+T3	NoType 81 105	metarules (MPS grammars)
+T4	NoType 159 165	syntax
+T5	NoType 169 186	natural languages
+T6	NoType 188 214	Unconstrained MPS grammars
+T7	NoType 339 390	computational tractability and explanatory adequacy
+T8	NoType 498 524	metagrammatical formalisms
+R1	PART_WHOLE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T4 Arg2:T5

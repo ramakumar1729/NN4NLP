@@ -1,0 +1,13 @@
+T1	NoType 26 62	compositional classes of paraphrases
+T2	NoType 83 107	class-oriented framework
+T3	NoType 123 142	paraphrase examples
+T4	NoType 153 175	sentential paraphrases
+T5	NoType 199 215	paraphrase class
+T6	NoType 239 269	automatic candidate generation
+T7	NoType 274 290	manual judgement
+T8	NoType 334 351	paraphrase corpus
+T9	NoType 435 450	cost-efficiency
+T10	NoType 452 466	exhaustiveness
+T11	NoType 472 483	reliability
+R1	USAGE Arg1:T2 Arg2:T3
+R2	PART_WHOLE Arg1:T4 Arg2:T5

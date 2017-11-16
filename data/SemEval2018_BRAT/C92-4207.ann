@@ -1,0 +1,22 @@
+T1	NoType 57 77	spatial descriptions
+T2	NoType 81 89	Japanese
+T3	NoType 129 134	world
+T4	NoType 284 300	computer program
+T5	NoType 301 307	SPRINT
+T6	NoType 322 344	natural language texts
+T7	NoType 360 365	model
+T8	NoType 383 388	world
+T9	NoType 410 415	model
+T10	NoType 442 473	qualitative spatial constraints
+T11	NoType 483 487	text
+T12	NoType 516 537	numerical constraints
+T13	NoType 545 563	spatial attributes
+T14	NoType 571 579	entities
+T15	NoType 637 653	spatial concepts
+T16	NoType 799 815	temporary belief
+T17	NoType 826 831	world
+R1	PART_WHOLE Arg1:T1 Arg2:T2
+R2	MODEL-FEATURE Arg1:T7 Arg2:T8
+R3	PART_WHOLE Arg1:T10 Arg2:T11
+R4	MODEL-FEATURE Arg1:T13 Arg2:T14
+R5	MODEL-FEATURE Arg1:T16 Arg2:T17

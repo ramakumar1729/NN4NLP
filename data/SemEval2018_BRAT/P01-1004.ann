@@ -1,0 +1,22 @@
+T1	NoType 51 64	segment order
+T2	NoType 67 79	segmentation
+T3	NoType 84 102	segment contiguity
+T4	NoType 110 131	retrieval performance
+T5	NoType 137 162	translation memory system
+T6	NoType 193 259	bag-of-words and segment order-sensitive string comparison methods
+T7	NoType 285 319	character- and word-segmented data
+T8	NoType 353 384	local segment contiguity models
+T9	NoType 401 408	N-grams
+T10	NoType 430 438	datasets
+T11	NoType 454 462	indexing
+T12	NoType 483 500	character bigrams
+T13	NoType 512 530	retrieval accuracy
+T14	NoType 561 579	word N-gram models
+T15	NoType 607 620	configuration
+T16	NoType 623 643	bag-of-words methods
+T17	NoType 674 705	segment order-sensitive methods
+T18	NoType 718 736	retrieval accuracy
+R1	RESULT Arg1:T5 Arg2:T4
+R2	USAGE Arg1:T6 Arg2:T7
+R3	USAGE Arg1:T12 Arg2:T11
+R4	COMPARE Arg1:T16 Arg2:T17

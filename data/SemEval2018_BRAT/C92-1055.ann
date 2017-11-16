@@ -1,0 +1,18 @@
+T1	NoType 59 86	adaptive learning procedure
+T2	NoType 124 154	syntactic ambiguity resolution
+T3	NoType 181 207	insufficient training data
+T4	NoType 212 231	approximation error
+T5	NoType 250 264	language model
+T6	NoType 279 301	statistical approaches
+T7	NoType 318 329	ambiguities
+T8	NoType 365 390	maximum likelihood method
+T9	NoType 414 425	performance
+T10	NoType 536 549	accuracy rate
+T11	NoType 635 650	training corpus
+T12	NoType 721 738	separation margin
+T13	NoType 855 868	accuracy rate
+T14	NoType 872 896	syntactic disambiguation
+R1	USAGE Arg1:T1 Arg2:T2
+R2	RESULT Arg1:T5 Arg2:T4
+R3	USAGE Arg1:T8 Arg2:T6
+R4	RESULT Arg1:T14 Arg2:T13

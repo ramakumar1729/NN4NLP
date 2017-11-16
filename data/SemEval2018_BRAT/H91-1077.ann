@@ -1,0 +1,58 @@
+T1	NoType 13 29	sense resolution
+T2	NoType 59 66	WordNet
+T3	NoType 79 95	lexical database
+T4	NoType 114 132	semantic relations
+T5	NoType 134 142	synonymy
+T6	NoType 144 152	antonymy
+T7	NoType 154 162	hyponymy
+T8	NoType 164 172	meronymy
+T9	NoType 174 206	causal and troponymic entailment
+T10	NoType 211 227	labeled pointers
+T11	NoType 236 247	word senses
+T12	NoType 254 261	WordNet
+T13	NoType 294 320	semantically related words
+T14	NoType 355 371	sense resolution
+T15	NoType 379 394	text processing
+T16	NoType 415 419	word
+T17	NoType 434 440	senses
+T18	NoType 509 514	words
+T19	NoType 526 533	meaning
+T20	NoType 541 559	alternative senses
+T21	NoType 567 582	polysemous word
+T22	NoType 606 613	strings
+T23	NoType 660 665	words
+T24	NoType 675 682	context
+T25	NoType 690 705	polysemous word
+T26	NoType 715 729	textual corpus
+T27	NoType 762 777	derived strings
+T28	NoType 788 793	sense
+T29	NoType 833 847	derived string
+T30	NoType 880 886	corpus
+T31	NoType 900 907	context
+T32	NoType 915 930	polysemous word
+T33	NoType 971 977	corpus
+T34	NoType 983 988	words
+T35	NoType 1012 1019	context
+T36	NoType 1035 1042	WordNet
+T37	NoType 1077 1094	semantic distance
+T38	NoType 1106 1111	words
+T39	NoType 1119 1137	alternative senses
+T40	NoType 1145 1160	polysemous word
+T41	NoType 1171 1176	sense
+T42	NoType 1211 1218	meaning
+T43	NoType 1228 1233	words
+T44	NoType 1256 1263	context
+T45	NoType 1343 1364	information retrieval
+T46	NoType 1366 1388	mechanical translation
+T47	NoType 1390 1418	intelligent tutoring systems
+R1	USAGE Arg1:T2 Arg2:T1
+R2	PART_WHOLE Arg1:T4 Arg2:T3
+R3	PART_WHOLE Arg1:T13 Arg2:T12
+R4	PART_WHOLE Arg1:T14 Arg2:T15
+R5	MODEL-FEATURE Arg1:T17 Arg2:T16
+R6	PART_WHOLE Arg1:T27 Arg2:T26
+R7	PART_WHOLE Arg1:T29 Arg2:T30
+R8	MODEL-FEATURE Arg1:T31 Arg2:T32
+R9	MODEL-FEATURE Arg1:T35 Arg2:T34
+R10	USAGE Arg1:T36 Arg2:T37
+R11	MODEL-FEATURE Arg1:T44 Arg2:T43

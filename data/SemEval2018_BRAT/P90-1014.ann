@@ -1,0 +1,8 @@
+T1	NoType 26 41	free indexation
+T2	NoType 94 132	referential properties of noun phrases
+T3	NoType 140 183	principle-and-parameters language framework
+T4	NoType 231 246	free indexation
+T5	NoType 302 311	indexings
+T6	NoType 321 337	exponential time
+T7	NoType 380 405	free indexation algorithm
+R1	RESULT Arg1:T1 Arg2:T2

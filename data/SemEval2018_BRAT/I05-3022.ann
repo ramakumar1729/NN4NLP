@@ -1,0 +1,22 @@
+T1	NoType 23 47	word segmentation system
+T2	NoType 112 125	word breaking
+T3	NoType 130 148	OOV identification
+T4	NoType 154 160	output
+T5	NoType 197 219	segmentation standards
+T6	NoType 286 292	system
+T7	NoType 331 351	segmentation bakeoff
+T8	NoType 355 362	PK-open
+T9	NoType 364 373	PK-closed
+T10	NoType 375 382	AS-open
+T11	NoType 384 393	AS-closed
+T12	NoType 395 402	HK-open
+T13	NoType 404 413	HK-closed
+T14	NoType 415 423	MSR-open
+T15	NoType 428 439	MSR- closed
+T16	NoType 460 488	state-of-the-art performance
+T17	NoType 492 500	MSR-open
+T18	NoType 502 511	MSR-close
+T19	NoType 516 523	PK-open
+T20	NoType 615 621	scores
+R1	MODEL-FEATURE Arg1:T5 Arg2:T4
+R2	RESULT Arg1:T6 Arg2:T16

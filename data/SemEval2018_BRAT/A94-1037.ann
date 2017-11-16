@@ -1,0 +1,13 @@
+T1	NoType 23 42	spelling correction
+T2	NoType 47 56	languages
+T3	NoType 62 69	English
+T4	NoType 142 165	agglutinative languages
+T5	NoType 203 222	spelling correction
+T6	NoType 226 249	agglutinative languages
+T7	NoType 267 287	two-level morphology
+T8	NoType 294 336	dynamic-programming based search algorithm
+T9	NoType 414 433	spelling correction
+T10	NoType 437 444	Turkish
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T5 Arg2:T6
+R3	USAGE Arg1:T9 Arg2:T10

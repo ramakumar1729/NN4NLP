@@ -1,0 +1,10 @@
+T1	NoType 40 83	context-sensitive, phrase structure grammar
+T2	NoType 106 148	best-path, bottom-up, deterministic parser
+T3	NoType 154 161	grammar
+T4	NoType 175 195	English news stories
+T5	NoType 228 235	parsing
+T6	NoType 287 290	CSG
+T7	NoType 371 395	phrase structure grammar
+T8	NoType 400 415	news story text
+R1	USAGE Arg1:T1 Arg2:T2
+R2	USAGE Arg1:T6 Arg2:T7
