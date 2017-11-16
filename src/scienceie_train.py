@@ -1,3 +1,9 @@
+import sys
+from IPython.core import ultratb
+sys.excepthook = ultratb.FormattedTB(mode='Verbose',
+color_scheme='Linux', call_pdb=1)
+
+
 import argparse
 import os
 import sys
@@ -39,11 +45,11 @@ def batch_loader(data, batch_size=1, cuda=True):
     """foo."""
     np.random.shuffle(data)
 
-    n_batch_size = len(data) // batch_size + 1
+    n_batch_size = len(data) // batch_size
 
     for i in range(n_batch_size):
         rs, targets = zip(*data[batch_size*i:batch_size*(i+1)])
-        max_seq_len = max(len(r[0]) for r in rs)
+        max_seq_len = max(len(r) for i in rs for r in i)
         rs = pad(rs, max_seq_len)
         batch = torch.LongTensor(rs)  # B x num_f x seq_len
         targets = torch.LongTensor(targets)
@@ -74,12 +80,22 @@ def train(args):
                            labvocab.get(l))
                           for r, l in dataset[dtype]]
 
+    # Split the training set into tr/dv, and use dev as the test set.
+    # (Discard untouched test set)
+    split_idx = int(len(dataset["train"]) * 0.75)
+    dataset["test"] = dataset["dev"]
+    np.random.shuffle(dataset["train"])
+    dataset["dev"] = dataset["train"][split_idx:]
+    dataset["train"] = dataset["train"][:split_idx]
+
     wvocab = dicts["word"][0]
     rlpvocab = dicts["relpos"][0]
     posvocab = dicts["pos"][0]
     entvocab = dicts["ner"][0]
 
-    print("Tr: {}, Dv: {}".format(len(dataset["train"]), len(dataset["dev"])))
+    print("Tr: {}, Dv: {}, Ts: {}".format(len(dataset["train"]),
+                                          len(dataset["dev"]),
+                                          len(dataset["test"])))
 
     if args.embedding_file:
         W, embed_dim = load_pretrained_embedding(dicts["word"][0], args.embedding_file)
@@ -89,7 +105,7 @@ def train(args):
 
     model = CNNclassifier(vocab_size=len(wvocab),
                           embed_dim=100,
-                          out_dim=100,
+                          out_dim=200,
                           n_ent_labels=len(entvocab),
                           n_pos_labels=len(posvocab),
                           n_loc_labels=len(rlpvocab),
@@ -165,8 +181,14 @@ def train(args):
                     FP[pred] += 1
                     FN[y] += 1
 
-        P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(TP, FP)]
-        R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(TP, FN)]
+        # Aggregate reverse artificially-created relation type
+        ATP, AFP, AFN = [], [], []
+        ATP = [TP[0], TP[1], TP[2]+TP[3]]
+        AFP = [FP[0], FP[1], FP[2]+FP[3]]
+        AFN = [FN[0], FN[1], FN[2]+FN[3]]
+
+        P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(ATP, AFP)]
+        R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(ATP, AFN)]
         F1 = [2*p*r/(p+r) if p+r > 0 else 0 for p, r in zip(P, R)]
         macro_F1 = np.mean(F1[1:])
 
@@ -194,9 +216,57 @@ def train(args):
             tolerance_count += 1
 
     print("Best Macro F1: {}".format(macro_F1_best))
-    tags = sorted(labvocab.items(), key=lambda x: x[1])
+    tags = sorted(labvocab.items(), key=lambda x: x[1])[:-1]
     print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)],
                    headers=("Tag", "F1")))
+
+
+    test_batches = batch_loader(data=dataset["test"],
+                                batch_size=args.batch_size,
+                                cuda=args.cuda)
+    test_n_batches = len(dataset["test"]) // args.batch_size
+
+    TP = [0 for _ in range(len(labvocab))]
+    FP = [0 for _ in range(len(labvocab))]
+    FN = [0 for _ in range(len(labvocab))]
+
+    model.eval()
+    eval_loss = 0
+
+    for rs, targets in tqdm.tqdm(test_batches, total=test_n_batches,
+                                 ncols=100, desc="Evaluating"):
+        predictions = model(rs[:, 0, :].squeeze(1),
+                            rs[:, 1, :].squeeze(1),
+                            rs[:, 2, :].squeeze(1),
+                            rs[:, 3, :].squeeze(1),
+                            rs[:, 4, :].squeeze(1))
+        loss = loss_function(predictions, targets)
+        eval_loss += loss.data[0]
+        preds = predictions.data.max(dim=1)[1]
+
+        for pred, y in zip(preds, targets.data):
+            if pred == y:
+                TP[y] += 1
+            else:
+                FP[pred] += 1
+                FN[y] += 1
+
+    # Aggregate reverse artificially-created relation type
+    ATP, AFP, AFN = [], [], []
+    ATP = [TP[0], TP[1], TP[2]+TP[3]]
+    AFP = [FP[0], FP[1], FP[2]+FP[3]]
+    AFN = [FN[0], FN[1], FN[2]+FN[3]]
+
+    P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(ATP, AFP)]
+    R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(ATP, AFN)]
+    F1 = [2*p*r/(p+r) if p+r > 0 else 0 for p, r in zip(P, R)]
+    macro_F1 = np.mean(F1[1:])
+
+    print("Macro_F1: {}".format(macro_F1))
+    print(tabulate([[t[0], f] for t, f in zip(tags, F1)],
+                   headers=("Tag", "F1")))
+
+
 
 
 if __name__ == '__main__':
@@ -211,7 +281,7 @@ if __name__ == '__main__':
     parser.add_argument("--tolerate", type=int, default=5,
                         help="# of epochs to wait when the metric gets worse.")
     parser.add_argument("--cuda", action="store_true")
-    parser.add_argument("--lr", type=int, default=0.1)
+    parser.add_argument("--lr", type=float, default=0.1)
     parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")

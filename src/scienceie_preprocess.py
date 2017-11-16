@@ -16,6 +16,7 @@ import pickle
 from collections import Counter
 
 import tqdm
+import numpy as np
 from pycorenlp import StanfordCoreNLP
 
 
@@ -66,6 +67,7 @@ def load_data(save_dir):
     txt_paths = glob.glob(os.path.join(save_dir,
                                        "test/data/*.txt"))
     ann_paths = [s.replace(".txt", ".ann") for s in txt_paths]
+
     for tp, ap in zip(txt_paths, ann_paths):
         with open(tp, "r") as ft, open(ap, "r") as fa:
             text = ft.read().strip()  # Text is one-liner
@@ -78,9 +80,7 @@ def load_data(save_dir):
                     ann[i][1] = " ".join(ann[i][1].split(" ")[:-1]+
                                          [str(int(ann[i][1].split(" ")[1])+phrase_len)])
 
-            # Only keep entities
-            if len([a for a in ann if a[0][0] not in ["*", "R"]]) > 0:
-                data.append((text, ann, os.path.basename(tp).split(".")[0]))
+            data.append((text, ann, os.path.basename(tp).split(".")[0]))
 
     dataset["test"] = data
     return dataset
@@ -120,44 +120,32 @@ def extract_examples(text, ann, host, order="fix", test=False):
     Returns:
         example
     """
-    if test:
-        # No relation provided. Predictions only.
-        rel_annotations = []
-        raw_words, pos, ner, sent_boundaries = extract_features(host, text)
-        if ann is not None:
-            ann_ents, _ = fix_tokenize(raw_words, ann)
-            ner, ent2wordidx = fill_ent_annotation(raw_words, ann_ents)
-            negative_rels = get_negative_pairs(ann, sent_boundaries)
+    raw_rel_annotations = [a for a in ann if a[0][0] in ["*", "R"]]
+    rel_annotations = []
+    # Flatten n-ary annotations into pairs
+    for r in raw_rel_annotations:
+        splits = r[1].split()
+        if len(splits) >= 4 and splits[0] == "Synonym-of":
+            pairs = itertools.combinations(splits[1:], 2)
+            for p in pairs:
+                rel_annotations.append([r[0],
+                                        " ".join([splits[0],
+                                                  p[0],
+                                                  p[1]])])
+        else:
+            rel_annotations.append(r)
 
-    else:
-        raw_rel_annotations = [a for a in ann if a[0][0] in ["*", "R"]]
-        rel_annotations = []
-        # Flatten n-ary annotations into pairs
-        for r in raw_rel_annotations:
-            splits = r[1].split()
-            if len(splits) >= 4 and splits[0] == "Synonym-of":
-                pairs = itertools.combinations(splits[1:], 2)
-                for p in pairs:
-                    rel_annotations.append([r[0],
-                                            " ".join([splits[0],
-                                                      p[0],
-                                                      p[1]])])
-            else:
-                rel_annotations.append(r)
-
-        if len(rel_annotations) == 0:
-            return None
-
-        raw_words, pos, _, sent_boundaries = extract_features(host, text)
-        ann_ents, ann_rels = fix_tokenize(raw_words, ann)
-        ner, ent2wordidx = fill_ent_annotation(raw_words, ann_ents)
-        negative_rels = get_negative_pairs(ann, sent_boundaries)
+    raw_words, pos, _, sent_boundaries = extract_features(host, text)
+    ann_ents, ann_rels = fix_tokenize(raw_words, ann)
+    ner, ent2wordidx = fill_ent_annotation(raw_words, ann_ents)
+    negative_rels = get_negative_pairs(ann, sent_boundaries)
 
     entity_dict = {e[0]: e[1:] for e in ann if e[0][0] not in ["*", "R"]}
 
     words = [w[0] for w in raw_words]
 
     examples = []
+    failed = []
     for r in rel_annotations + negative_rels:
         rel_type, src, trg = r[1].split()
         srcid = src.replace("Arg1:", "")
@@ -166,7 +154,11 @@ def extract_examples(text, ann, host, order="fix", test=False):
         trg_words = entity_dict[trgid][1].split()
         if srcid not in ent2wordidx or trgid not in ent2wordidx:
             # CoreNLP failed to provide consistent tokenization
-            continue
+            if rel_type == "None":
+                continue
+            else:
+                failed.append(r)
+                continue
         src_pos = ent2wordidx[srcid]
         trg_pos = ent2wordidx[trgid]
 
@@ -202,7 +194,6 @@ def extract_examples(text, ann, host, order="fix", test=False):
                 examples.append(((words[span], r_rel_pos, rel_pos,
                                  ner[span], pos[span]),
                                  rel_type))
-
     return examples
 
 
@@ -322,7 +313,17 @@ def main(args):
 
         for data in tqdm.tqdm(raw_dataset[type_], ncols=80, desc=type_):
             examples += extract_examples(data[0], data[1], cli, test=test)
-        dataset[type_] = examples
+
+        if not test:
+           pos = [i for i in examples if i[1] != "None"]
+           neg = [i for i in examples if i[1] == "None"]
+           upsamples = len(neg) * args.upsample - len(pos)
+           duplicate_idx = np.random.choice(range(len(pos)), upsamples)
+
+           dataset[type_] = examples+[pos[int(i)] for i in duplicate_idx]
+        else:
+           dataset[type_] = examples
+
 
     # Construct vocab
     words = ([w for ex in dataset["train"] for w in ex[0][0]] +
@@ -361,6 +362,8 @@ if __name__ == "__main__":
                         required=True)
     parser.add_argument("--order", type=str, help="Ordering strategy",
                         default="fix")
+    parser.add_argument("--upsample", type=float, help="Positive label duplication ratio.",
+                        default=3)
 
     args = parser.parse_args()
     main(args)

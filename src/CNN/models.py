@@ -38,6 +38,7 @@ class CNNclassifier(nn.Module):
         # self.conv = nn.ModuleList([nn.Conv2d(1, out_dim, (i, self.feature_size))
         #                            for i in self.kernels])
 
+        self.dropout = nn.Dropout(0.5)
         self.fc = nn.Linear(out_dim, n_rel_labels)
 
     def forward(self, words, locs1, locs2, ents, poss):
@@ -55,6 +56,6 @@ class CNNclassifier(nn.Module):
         max_pool_outs = [F.max_pool1d(i, i.size(2)).squeeze(2)
                          for i in conv_outs]
 
-        scores = self.fc(torch.cat(max_pool_outs, dim=1))
+        scores = self.fc(self.dropout(torch.cat(max_pool_outs, dim=1)))
 
         return scores
