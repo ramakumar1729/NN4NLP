@@ -302,6 +302,13 @@ def construct_vocab(sequence, max_vocab=50000):
 
 
 def main(args):
+
+    if os.path.exists(args.save_dir):
+        print("Make a new save directory.")
+        sys.exit(0)
+    else:
+        os.mkdir(args.save_dir)
+
     cli = StanfordCoreNLP(args.host)
     raw_dataset = load_data(args.data_dir)
     dataset = {}
@@ -313,16 +320,7 @@ def main(args):
 
         for data in tqdm.tqdm(raw_dataset[type_], ncols=80, desc=type_):
             examples += extract_examples(data[0], data[1], cli, test=test)
-
-        if not test:
-           pos = [i for i in examples if i[1] != "None"]
-           neg = [i for i in examples if i[1] == "None"]
-           upsamples = len(neg) * args.upsample - len(pos)
-           duplicate_idx = np.random.choice(range(len(pos)), upsamples)
-
-           dataset[type_] = examples+[pos[int(i)] for i in duplicate_idx]
-        else:
-           dataset[type_] = examples
+        dataset[type_] = examples
 
 
     # Construct vocab
@@ -362,8 +360,6 @@ if __name__ == "__main__":
                         required=True)
     parser.add_argument("--order", type=str, help="Ordering strategy",
                         default="fix")
-    parser.add_argument("--upsample", type=float, help="Positive label duplication ratio.",
-                        default=3)
 
     args = parser.parse_args()
     main(args)

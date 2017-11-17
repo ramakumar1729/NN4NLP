@@ -38,6 +38,14 @@ def denum(dicts, r):
     return denumed
 
 
+def upsample(data, upsample_ratio):
+    pos = [i for i in data if i[1] != 0]
+    neg = [i for i in data if i[1] == 0]
+    upsamples = len(neg) * upsample_ratio - len(pos)
+    duplicate_idx = np.random.choice(range(len(pos)), int(upsamples))
+    return data+[pos[int(i)] for i in duplicate_idx]
+
+
 def load_data(path):
     # Load data
     with open(os.path.join(path, "data.pkl"), "rb") as f:
@@ -96,6 +104,9 @@ def train(args):
     np.random.shuffle(dataset["train"])
     dataset["dev"] = dataset["train"][split_idx:]
     dataset["train"] = dataset["train"][:split_idx]
+
+    dataset["dev"] = upsample(dataset["dev"], args.upsample)
+    dataset["train"] = upsample(dataset["train"], args.upsample)
 
     wvocab = dicts["word"][0]
     rlpvocab = dicts["relpos"][0]
@@ -300,6 +311,9 @@ if __name__ == '__main__':
     parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")
+    parser.add_argument("--upsample", type=float, help="Positive label duplication ratio.",
+                        default=3)
+
     args = parser.parse_args()
 
     train(args)
