@@ -29,6 +29,15 @@ def pad(features, max_seq_len):
     return [[f + [1]*(max_seq_len - len(f)) for f in r]
             for r in features]
 
+def denum(dicts, r):
+    r = r.cpu().tolist()
+    denumed = []
+    anno = ["word", "relpos", "relpos", "ner", "pos"]
+    for i, feat in enumerate(r):
+        denumed.append([dicts[anno[i]][1][j] for j in feat if j != 1])
+    return denumed
+
+
 def load_data(path):
     # Load data
     with open(os.path.join(path, "data.pkl"), "rb") as f:
@@ -163,6 +172,7 @@ def train(args):
 
         model.eval()
         eval_loss = 0
+        mistakes = []
         for rs, targets in tqdm.tqdm(dev_batches, total=dev_n_batches,
                                      ncols=100, desc="Evaluating"):
             predictions = model(rs[:, 0, :].squeeze(1),
@@ -174,14 +184,15 @@ def train(args):
             eval_loss += loss.data[0]
             preds = predictions.data.max(dim=1)[1]
 
-            for pred, y in zip(preds, targets.data):
+            for pred, r, y in zip(preds, rs.data, targets.data):
                 if pred == y:
                     TP[y] += 1
                 else:
                     FP[pred] += 1
                     FN[y] += 1
+                    mistakes.append((denum(dicts, r), pred, y))
 
-        # Aggregate reverse artificially-created relation type
+        # Aggregate artificially-created reverse relation type
         ATP, AFP, AFN = [], [], []
         ATP = [TP[0], TP[1], TP[2]+TP[3]]
         AFP = [FP[0], FP[1], FP[2]+FP[3]]
@@ -208,6 +219,9 @@ def train(args):
             macro_F1_best = macro_F1
             F1_best = F1
             tolerance_count = 0
+            # Dump mistakes
+            with open(os.path.join(args.save_dir, "dev_mistakes.pkl"), "wb") as f:
+                pickle.dump(mistakes, f)
 
         elif tolerance_count > args.tolerate:
             break
@@ -219,6 +233,7 @@ def train(args):
     tags = sorted(labvocab.items(), key=lambda x: x[1])[:-1]
     print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)],
                    headers=("Tag", "F1")))
+    print()
 
 
     test_batches = batch_loader(data=dataset["test"],
