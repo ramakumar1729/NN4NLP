@@ -58,14 +58,47 @@ def batch_loader(data, batch_size=1, cuda=True):
 
     for i in range(n_batch_size):
         rs, targets = zip(*data[batch_size*i:batch_size*(i+1)])
-        max_seq_len = max(len(r) for i in rs for r in i)
+        word_lengths = [len(r) for i in rs for r in i]
+        max_seq_len = max(word_lengths)
         rs = pad(rs, max_seq_len)
+
+        # 
+        locs1 = [r[1] for r in rs]
+        p_end =  [loc.index(1) for loc in locs1]
+        c_start = [loc.index(0) for loc in locs2]
+
+        ps = [r[0][:end] for r, end in zip(rs, p_end)]
+        cs = [r[0][start:] for r, start in zip(rs, c_start)]
+
+        ps_lengths = [len(p) for p  in ps]
+        cs_lengths = [len(c) for c in cs]
+
+        max_p_len = max(ps_lengths)
+        max_c_len = max(cs_lengths)
+
+        ps = pad(ps, max_p_len)
+        cs = pad(cs, max_c_len)
+
+        ps = torch.LongTensor(ps)
+        cs = torch.LongTensor(cs)
+
         batch = torch.LongTensor(rs)  # B x num_f x seq_len
         targets = torch.LongTensor(targets)
         if cuda:
-            yield Variable(batch).cuda(), Variable(targets).cuda()
+            yield Variable(batch).cuda(), Variable(targets).cuda(),
+            Variable(ps).cuda(), Variable(cs).cuda(), Variable(ps_lengths,
+                            requires_grad=False).cuda(), Variable(cs_lengths,
+                            requires_grad=False).cuda(), Variable(word_lengths,
+                            requires_grad=False).cuda()
+
+
         else:
-            yield Variable(batch), Variable(targets)
+            yield Variable(batch), Variable(targets),
+            Variable(ps).cuda, Variable(cs).cuda, Variable(ps_lengths,
+                    requires_grad=False), Variable(cs_lengths,
+                            requires_grad=False), Variable(word_lengths,
+                            requires_grad=False)
+
 
 
 def train(args):
@@ -112,15 +145,27 @@ def train(args):
     else:
         W = None
 
-    model = CNNclassifier(vocab_size=len(wvocab),
-                          embed_dim=100,
-                          out_dim=200,
-                          n_ent_labels=len(entvocab),
-                          n_pos_labels=len(posvocab),
-                          n_loc_labels=len(rlpvocab),
-                          n_rel_labels=len(labvocab),
-                          pretrained_emb=W,
-                          freeze_emb=args.freeze_emb)
+    if args.model == 'CNN':
+        model = CNNclassifier(vocab_size=len(wvocab),
+                              embed_dim=100,
+                              out_dim=200,
+                              n_ent_labels=len(entvocab),
+                              n_pos_labels=len(posvocab),
+                              n_loc_labels=len(rlpvocab),
+                              n_rel_labels=len(labvocab),
+                              pretrained_emb=W,
+                              freeze_emb=args.freeze_emb)
+    else:
+        model = LSTMRelationClassifier(vocab_size=len(wvocab),
+                              embed_dim=100,
+                              hidden_dim=200,
+                              n_ent_labels=len(entvocab),
+                              n_pos_labels=len(posvocab),
+                              n_loc_labels=len(rlpvocab),
+                              n_rel_labels=len(labvocab),
+                              pretrained_emb=W,
+                              freeze_emb=args.freeze_emb)
+
     if args.cuda:
         model = model.cuda()
 
@@ -131,9 +176,8 @@ def train(args):
     n_batches = len(dataset["train"]) // args.batch_size + 1
     dev_n_batches = len(dataset["dev"]) // args.batch_size + 1
 
-    with open(os.path.join(args.save_dir, "train.log"), "a") as f:
-        print("\t\t".join(["Epoch", "Tr loss", "Dv loss", "Macro-F1"]),
-              file=f)
+    #with open(os.path.join(args.save_dir, "train.log"), "a") as f:
+    #    print("\t\t".join(["Epoch", "Tr loss", "Dv loss", "Macro-F1"]), file=f)
 
     macro_F1_best = 0    # For tracking best macro F1
     F1_best = None       # For per-class F1
@@ -149,15 +193,17 @@ def train(args):
                                    cuda=args.cuda)
         # Train
         model.train()
-        for rs, targets in tqdm.tqdm(train_batches, total=n_batches,
+        for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths in tqdm.tqdm(train_batches, total=n_batches,
                                      ncols=100, desc="Training"):
 
             optimizer.zero_grad()
+
             predictions = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
-                                rs[:, 4, :].squeeze(1))
+                                rs[:, 4, :].squeeze(1),
+                                ps, cs, ps_lengths, cs_lengths, word_lengths)
 
             loss = loss_function(predictions, targets)
             loss.backward()
@@ -173,13 +219,14 @@ def train(args):
         model.eval()
         eval_loss = 0
         mistakes = []
-        for rs, targets in tqdm.tqdm(dev_batches, total=dev_n_batches,
+        for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(dev_batches, total=dev_n_batches,
                                      ncols=100, desc="Evaluating"):
             predictions = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
-                                rs[:, 4, :].squeeze(1))
+                                rs[:, 4, :].squeeze(1),
+                                ps, cs, ps_lengths, cs_lengths, word_lengths)
             loss = loss_function(predictions, targets)
             eval_loss += loss.data[0]
             preds = predictions.data.max(dim=1)[1]
@@ -207,10 +254,10 @@ def train(args):
                          "\tdv_loss / F1: ({:.3f} | {:.3f})").format(
                              epoch+1, epoch_loss, eval_loss, macro_F1))
 
-        with open(os.path.join(args.save_dir, "train.log"), "a") as f:
-            print("{:2d}\t\t{:3.2f}\t\t{:.2f}\t\t{:.3f}".format(
-                epoch+1, epoch_loss, eval_loss, macro_F1),
-                  file=f)
+       # with open(os.path.join(args.save_dir, "train.log"), "a") as f:
+       #     print("{:2d}\t\t{:3.2f}\t\t{:.2f}\t\t{:.3f}".format(
+       #         epoch+1, epoch_loss, eval_loss, macro_F1),
+       #           file=f)
 
         if macro_F1 > macro_F1_best:
             save_checkpoint(model.state_dict(),
@@ -248,13 +295,14 @@ def train(args):
     model.eval()
     eval_loss = 0
 
-    for rs, targets in tqdm.tqdm(test_batches, total=test_n_batches,
+    for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(test_batches, total=test_n_batches,
                                  ncols=100, desc="Evaluating"):
         predictions = model(rs[:, 0, :].squeeze(1),
                             rs[:, 1, :].squeeze(1),
                             rs[:, 2, :].squeeze(1),
                             rs[:, 3, :].squeeze(1),
-                            rs[:, 4, :].squeeze(1))
+                            rs[:, 4, :].squeeze(1),
+                            ps, cs, ps_lengths, cs_lengths, word_lengths)
         loss = loss_function(predictions, targets)
         eval_loss += loss.data[0]
         preds = predictions.data.max(dim=1)[1]
@@ -286,6 +334,7 @@ def train(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Relation classifier")
+    parser.add_argument("--model", type=str, default='CNN')
     parser.add_argument("--num-epochs", type=int, default=100)
     parser.add_argument("--embed-dim", type=int, default=100)
     parser.add_argument("--hidden-dim", type=int, default=100)
