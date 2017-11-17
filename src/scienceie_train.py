@@ -24,8 +24,11 @@ from src.CNN.models import CNNclassifier
 from src.NRE.utils import load_pretrained_embedding, save_checkpoint
 
 
-def pad(features, max_seq_len):
+def pad(features, max_seq_len, single_ex=False):
     # Padding idx = 1
+    if single_ex:
+        return [f + [1]*(max_seq_len - len(f)) for f in features]
+
     return [[f + [1]*(max_seq_len - len(f)) for f in r]
             for r in features]
 
@@ -58,8 +61,7 @@ def load_data(path):
     return data, dicts
 
 
-def batch_loader(data, batch_size=1, cuda=True):
-    """foo."""
+def batch_loader(data, dist1id, ent0id, batch_size=1, cuda=True):
     np.random.shuffle(data)
 
     n_batch_size = len(data) // batch_size
@@ -70,10 +72,12 @@ def batch_loader(data, batch_size=1, cuda=True):
         max_seq_len = max(word_lengths)
         rs = pad(rs, max_seq_len)
 
-        # 
         locs1 = [r[1] for r in rs]
-        p_end =  [loc.index(1) for loc in locs1]
-        c_start = [loc.index(0) for loc in locs2]
+        locs2 = [r[2] for r in rs]
+        p_end =  [loc.index(dist1id)
+                  if dist1id in loc
+                  else len(loc) - loc[::-1].index(ent0id) for loc in locs1]
+        c_start = [loc.index(ent0id) for loc in locs2]
 
         ps = [r[0][:end] for r, end in zip(rs, p_end)]
         cs = [r[0][start:] for r, start in zip(rs, c_start)]
@@ -84,28 +88,35 @@ def batch_loader(data, batch_size=1, cuda=True):
         max_p_len = max(ps_lengths)
         max_c_len = max(cs_lengths)
 
-        ps = pad(ps, max_p_len)
-        cs = pad(cs, max_c_len)
+        ps = pad(ps, max_p_len, single_ex=True)
+        cs = pad(cs, max_c_len, single_ex=True)
 
         ps = torch.LongTensor(ps)
         cs = torch.LongTensor(cs)
+        ps_lengths = torch.LongTensor(ps_lengths)
+        cs_lengths = torch.LongTensor(cs_lengths)
+        word_lengths = torch.LongTensor(word_lengths)
 
         batch = torch.LongTensor(rs)  # B x num_f x seq_len
         targets = torch.LongTensor(targets)
         if cuda:
-            yield Variable(batch).cuda(), Variable(targets).cuda(),
-            Variable(ps).cuda(), Variable(cs).cuda(), Variable(ps_lengths,
-                            requires_grad=False).cuda(), Variable(cs_lengths,
-                            requires_grad=False).cuda(), Variable(word_lengths,
-                            requires_grad=False).cuda()
+            yield (Variable(batch).cuda(),
+                   Variable(targets).cuda(),
+                   Variable(ps).cuda(),
+                   Variable(cs).cuda(),
+                   Variable(ps_lengths, requires_grad=False).cuda(),
+                   Variable(cs_lengths, requires_grad=False).cuda(),
+                   Variable(word_lengths, requires_grad=False).cuda())
 
 
         else:
-            yield Variable(batch), Variable(targets),
-            Variable(ps).cuda, Variable(cs).cuda, Variable(ps_lengths,
-                    requires_grad=False), Variable(cs_lengths,
-                            requires_grad=False), Variable(word_lengths,
-                            requires_grad=False)
+            yield (Variable(batch),
+                   Variable(targets),
+                   Variable(ps),
+                   Variable(cs),
+                   Variable(ps_lengths, requires_grad=False),
+                   Variable(cs_lengths, requires_grad=False),
+                   Variable(word_lengths, requires_grad=False))
 
 
 
@@ -119,6 +130,9 @@ def train(args):
 
     # Fetch processed data. #### Data is preprocessed offline ####
     dataset, dicts = load_data(args.data_dir)
+    dist1id = dicts["relpos"][0][1]
+    ent0id = dicts["relpos"][0][0]
+
     labvocab = ["None", "Synonym-of", "Hyponym-of", "r_Hyponym-of"]
     labvocab = {n: i for (i, n) in enumerate(labvocab)}  # This includes None
     for dtype in dataset:
@@ -196,10 +210,10 @@ def train(args):
 
     for epoch in tqdm.trange(args.num_epochs, ncols=100, desc="Epoch"):
         epoch_loss = 0
-        train_batches = batch_loader(data=dataset["train"],
+        train_batches = batch_loader(dataset["train"], dist1id, ent0id,
                                      batch_size=args.batch_size,
                                      cuda=args.cuda)
-        dev_batches = batch_loader(data=dataset["dev"],
+        dev_batches = batch_loader(dataset["dev"], dist1id, ent0id,
                                    batch_size=args.batch_size,
                                    cuda=args.cuda)
         # Train
@@ -208,20 +222,20 @@ def train(args):
                                      ncols=100, desc="Training"):
 
             optimizer.zero_grad()
-
             predictions = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
                                 rs[:, 4, :].squeeze(1),
-                                ps, cs, ps_lengths, cs_lengths, word_lengths)
+                                ps, cs, ps_lengths,
+                                cs_lengths, word_lengths)
 
             loss = loss_function(predictions, targets)
             loss.backward()
             optimizer.step()
             epoch_loss += loss.data[0]
 
-        # Dev
+        # Devp
         # Compute F-1.
         TP = [0 for _ in range(len(labvocab))]
         FP = [0 for _ in range(len(labvocab))]
@@ -232,12 +246,15 @@ def train(args):
         mistakes = []
         for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(dev_batches, total=dev_n_batches,
                                      ncols=100, desc="Evaluating"):
+
             predictions = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
                                 rs[:, 4, :].squeeze(1),
-                                ps, cs, ps_lengths, cs_lengths, word_lengths)
+                                ps, cs, ps_lengths,
+                                cs_lengths, word_lengths)
+
             loss = loss_function(predictions, targets)
             eval_loss += loss.data[0]
             preds = predictions.data.max(dim=1)[1]
@@ -294,7 +311,7 @@ def train(args):
     print()
 
 
-    test_batches = batch_loader(data=dataset["test"],
+    test_batches = batch_loader(dataset["test"], dist1id, ent0id,
                                 batch_size=args.batch_size,
                                 cuda=args.cuda)
     test_n_batches = len(dataset["test"]) // args.batch_size
@@ -308,12 +325,15 @@ def train(args):
 
     for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(test_batches, total=test_n_batches,
                                  ncols=100, desc="Evaluating"):
+
         predictions = model(rs[:, 0, :].squeeze(1),
                             rs[:, 1, :].squeeze(1),
                             rs[:, 2, :].squeeze(1),
                             rs[:, 3, :].squeeze(1),
                             rs[:, 4, :].squeeze(1),
-                            ps, cs, ps_lengths, cs_lengths, word_lengths)
+                            ps, cs, ps_lengths,
+                            cs_lengths, word_lengths)
+
         loss = loss_function(predictions, targets)
         eval_loss += loss.data[0]
         preds = predictions.data.max(dim=1)[1]
@@ -345,7 +365,7 @@ def train(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Relation classifier")
-    parser.add_argument("--model", type=str, default='CNN')
+    parser.add_argument("--model", type=str, default="CNN")
     parser.add_argument("--num-epochs", type=int, default=100)
     parser.add_argument("--embed-dim", type=int, default=100)
     parser.add_argument("--hidden-dim", type=int, default=100)
