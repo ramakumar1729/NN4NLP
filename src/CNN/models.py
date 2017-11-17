@@ -3,6 +3,124 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.nn.utils.rnn import pack_padded_sequence as pack
+from torch.nn.utils.rnn import pad_packed_sequence as unpack
+
+
+torch.manual_seed(1)
+
+class LSTMRelationClassifier(nn.Module):
+
+    def __init__(self, vocab_size, embed_dim, hidden_dim,
+                 n_ent_labels, n_pos_labels, n_rel_labels, n_loc_labels,
+                 pretrained_emb=None, freeze_emb=False):
+        """constructor of the relation classifier.
+
+        Parameters:
+            embeddings_dim (int): Dimension size of the look up table.
+            hidden_dim (int): Dimension size of hidden reps in the RNN.
+            vocab_size (int): Vocabulary size.
+            n_rel_size (int): Number of target classes.
+            pretrained_emb (torch.Tensor): Loaded tensor of word embeddings.
+            freeze_emb (bool): The flag to freeze word embeddings weights.
+        Returns:
+            Variable: log softmax values for each class
+        """
+        super(LSTMRelationClassifier, self).__init__()
+
+        self.embedding_dim = embed_dim
+        self.hidden_dim = hidden_dim
+        self.vocab_size = vocab_size
+        self.tagset_size = tagset_size
+
+        self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
+        self.location_embeddings = nn.Embedding(n_loc_labels, 10, padding_idx=1)
+        self.pos_embeddings = nn.Embedding(n_pos_labels, 10, padding_idx=1)
+        self.entity_embeddings = nn.Embedding(n_ent_labels, 10, padding_idx=1)
+
+        if pretrained_emb is not None:
+            self.word_embeddings.weight = nn.Parameter(pretrained_emb)
+
+        # Whether or not to freeze the pretrained embeddings
+        if freeze_emb:
+            self.word_embeddings.weight.requires_grad = False
+
+        self.dropout = nn.Dropout(0.5)
+
+        self.lstm = nn.LSTM(embedding_dim, hidden_dim, bidirectional=True,
+                            batch_first=True)
+
+        self.fc = nn.Linear(2*hidden_dim, hidden_dim)
+        # The linear layer that maps from hidden state space to tag space
+        self.feat2tag = nn.Linear(2*hidden_dim, n_rel_labels)
+
+    def forward(self, words, locs1, locs2, ents, poss, ps, cs, p_lengths, c_lengths, word_lengths):
+
+        batch_size = len(words)
+
+        # Add sentence embedding.
+        
+        w_emb = self.dropout(self.word_embeddings(words))
+        loc1_emb = self.dropout(self.location_embeddings(locs1))
+        loc2_emb = self.dropout(self.location_embeddings(locs2))
+        pos_emb = self.dropout(self.pos_embeddings(poss))
+        ent_emb = self.dropout(self.entity_embeddings(ents))
+
+        word_emb = torch.cat([w_emb, locs1_emb, locs2_emb, ent_emb, pos_emb], dim=2)
+
+        sorted_word_lens, sorted_word_idx = torch.sort(word_lengths,
+                descending=True)
+        _, unsorted_word_idx = torch.sorted_word_idx
+        packed_word_emb = pack(word_emb[sorted_word_idx],
+                                lengths=sorted_word_lens.data.int().tolist(),
+                                batch_first=True
+                                )
+        sent_outputs, (sent_hn, _) = self.lstm(packed_word_emb)
+        sent_hn = sent_hn.transpose(0, 1).contiguous().view(batch_size, -1)
+        sent_hn = sent_hn[unsorted_word_idx]
+        sent_hn = self.fc(sent_hn)
+
+        # Parent entity embedding.
+
+        p_emb = self.dropout(self.word_embeddings(ps))
+        sorted_p_lens, sorted_p_idx = torch.sort(p_lengths, descending=True)
+        _, unsort_p_idx = torch.sort(sorted_p_idx)
+        packed_p_emb = pack(p_emb[sorted_p_idx],
+                            lengths=sorted_p_lens.data.int().tolist(),
+                            batch_first=True)
+        # Last hidden state: 2 x B x hidden
+        _, (p_hn, _) = self.lstm(packed_p_emb)
+        # Concatenated last hidden state
+        p_hn = p_hn.transpose(0, 1).contiguous().view(batch_size, -1)
+        # Unsort
+        p_hn = p_hn[unsort_p_idx]
+        # Squeeze the dimension back to original hidden_dim
+        p_hn = self.fc(p_hn)
+
+        # Child entity embedding.
+        
+        c_emb = self.dropout(self.word_embeddings(cs))
+        sorted_c_lens, sorted_c_idx = torch.sort(c_lengths, descending=True)
+        _, unsort_c_idx = torch.sort(sorted_c_idx)
+        packed_c_emb = pack(c_emb[sorted_c_idx],
+                            lengths=sorted_c_lens.data.int().tolist(),
+                            batch_first=True)
+        # Last hidden state: 2 x B x hidden
+        _, (c_hn, _) = self.lstm(packed_c_emb)
+        # Concatenated last hidden state
+        c_hn = c_hn.transpose(0, 1).contiguous().view(batch_size, -1)
+        # Unsort
+        c_hn = c_hn[unsort_c_idx]
+        # Squeeze the dimension back to original hidden_dim
+        c_hn = self.fc(c_hn)
+
+        # features = p_hn + c_hn + sent_hn
+        
+        features = torch.cat((p_hn, c_hn, sent_hn), dim=1)
+        scores = self.feat2tag(features)
+
+        return scores
+
 
 
 class CNNclassifier(nn.Module):
@@ -41,7 +159,7 @@ class CNNclassifier(nn.Module):
         self.dropout = nn.Dropout(0.5)
         self.fc = nn.Linear(out_dim, n_rel_labels)
 
-    def forward(self, words, locs1, locs2, ents, poss):
+    def forward(self, words, locs1, locs2, ents, poss, ps, cs, p_lengths, c_lengths, word_lengths):
         wemb = self.word_emb(words)
         lemb1 = self.loc_emb(locs1)
         lemb2 = self.loc_emb(locs2)
