@@ -10,6 +10,7 @@ import sys
 import tqdm
 import numpy as np
 import pickle
+from collections import defaultdict
 from tabulate import tabulate
 
 import torch
@@ -62,6 +63,18 @@ def load_data(path):
     return data, dicts
 
 
+def aggregate_stats(labvocab, stats):
+    agg = defaultdict(int)
+    for rel, val in zip(labvocab, stats):
+        if rel.startswith("r_"):
+            agg[rel[2:]] += val
+        else:
+            agg[rel] += val
+    # Force None to be at the head
+    return ([agg["None"]] + [v for r, v in agg.items() if r != "None"],
+            ["None"] + [k for k in agg.keys() if k != "None"])
+
+
 def batch_loader(data, dist1id, ent0id, batch_size=1, cuda=True):
     np.random.shuffle(data)
 
@@ -69,9 +82,10 @@ def batch_loader(data, dist1id, ent0id, batch_size=1, cuda=True):
 
     for i in range(n_batch_size):
         rs, targets = zip(*data[batch_size*i:batch_size*(i+1)])
-        # word_lengths = [len(r) for i in rs for r in i]
+
         words = [r[0] for r in rs]
         word_lengths = [len(w) for w in words]
+
         max_seq_len = max(word_lengths)
         rs = pad(rs, max_seq_len)
 
@@ -136,7 +150,12 @@ def train(args):
     dist1id = dicts["relpos"][0][1]
     ent0id = dicts["relpos"][0][0]
 
-    labvocab = ["None", "Synonym-of", "Hyponym-of", "r_Hyponym-of"]
+    if args.dataset == "SE17":
+        labvocab = ["None", "Synonym-of", "Hyponym-of", "r_Hyponym-of"]
+    else:
+        labvocab = ["None", "COMPARE", "MODEL-FEATURE", "PART_WHOLE", "RESULT", "TOPIC",
+                    "USAGE", "r_MODEL-FEATURE", "r_PART_WHOLE", "r_RESULT", "r_TOPIC", "r_USAGE"]
+
     labvocab = {n: i for (i, n) in enumerate(labvocab)}  # This includes None
     for dtype in dataset:
         dataset[dtype] = [([[dicts["word"][0].get(i, 0) for i in r[0]],
@@ -210,6 +229,7 @@ def train(args):
     macro_F1_best = 0    # For tracking best macro F1
     F1_best = None       # For per-class F1
     tolerance_count = 0  # For tracking the number of waits
+    aggvocab = None
 
     for epoch in tqdm.trange(args.num_epochs, ncols=100, desc="Epoch"):
         epoch_loss = 0
@@ -272,9 +292,9 @@ def train(args):
 
         # Aggregate artificially-created reverse relation type
         ATP, AFP, AFN = [], [], []
-        ATP = [TP[0], TP[1], TP[2]+TP[3]]
-        AFP = [FP[0], FP[1], FP[2]+FP[3]]
-        AFN = [FN[0], FN[1], FN[2]+FN[3]]
+        ATP, aggvocab = aggregate_stats(labvocab, TP)
+        AFP, _ = aggregate_stats(labvocab, FP)
+        AFN, _ = aggregate_stats(labvocab, FN)
 
         P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(ATP, AFP)]
         R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(ATP, AFN)]
@@ -308,8 +328,7 @@ def train(args):
             tolerance_count += 1
 
     print("Best Macro F1: {}".format(macro_F1_best))
-    tags = sorted(labvocab.items(), key=lambda x: x[1])[:-1]
-    print(tabulate([[t[0], f] for t, f in zip(tags, F1_best)],
+    print(tabulate([[t, f] for t, f in zip(aggvocab, F1_best)],
                    headers=("Tag", "F1")))
     print()
 
@@ -350,9 +369,9 @@ def train(args):
 
     # Aggregate reverse artificially-created relation type
     ATP, AFP, AFN = [], [], []
-    ATP = [TP[0], TP[1], TP[2]+TP[3]]
-    AFP = [FP[0], FP[1], FP[2]+FP[3]]
-    AFN = [FN[0], FN[1], FN[2]+FN[3]]
+    ATP, aggvocab = aggregate_stats(labvocab, TP)
+    AFP, _ = aggregate_stats(labvocab, FP)
+    AFN, _ = aggregate_stats(labvocab, FN)
 
     P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(ATP, AFP)]
     R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(ATP, AFN)]
@@ -360,15 +379,17 @@ def train(args):
     macro_F1 = np.mean(F1[1:])
 
     print("Macro_F1: {}".format(macro_F1))
-    print(tabulate([[t[0], f] for t, f in zip(tags, F1)],
-                   headers=("Tag", "F1")))
-
-
+    print(tabulate([[t, p, r, f] for t, p, r, f in zip(aggvocab, P, R, F1)],
+                   headers=("Tag", "P", "R", "F1")))
+    with open(os.path.join(args.save_dir, "scores.txt"), "w") as f:
+        print(tabulate([[t, p, r, f] for t, p, r, f in zip(aggvocab, P, R, F1)],
+                       headers=("Tag", "P", "R", "F1")), file=f)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Relation classifier")
     parser.add_argument("--model", type=str, default="CNN")
+    parser.add_argument("--dataset", type=str, default="SE17")
     parser.add_argument("--num-epochs", type=int, default=100)
     parser.add_argument("--embed-dim", type=int, default=100)
     parser.add_argument("--hidden-dim", type=int, default=100)
