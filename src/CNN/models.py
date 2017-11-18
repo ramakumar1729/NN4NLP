@@ -28,12 +28,12 @@ class LSTMRelationClassifier(nn.Module):
         """
         super(LSTMRelationClassifier, self).__init__()
 
-        self.embedding_dim = embed_dim
+        self.embed_dim = embed_dim
         self.hidden_dim = hidden_dim
         self.vocab_size = vocab_size
-        self.tagset_size = tagset_size
+        self.n_rel_labels = n_rel_labels
 
-        self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
+        self.word_embeddings = nn.Embedding(vocab_size, embed_dim)
         self.location_embeddings = nn.Embedding(n_loc_labels, 10, padding_idx=1)
         self.pos_embeddings = nn.Embedding(n_pos_labels, 10, padding_idx=1)
         self.entity_embeddings = nn.Embedding(n_ent_labels, 10, padding_idx=1)
@@ -47,38 +47,18 @@ class LSTMRelationClassifier(nn.Module):
 
         self.dropout = nn.Dropout(0.5)
 
-        self.lstm = nn.LSTM(embedding_dim, hidden_dim, bidirectional=True,
+        self.lstm = nn.LSTM(embed_dim, hidden_dim, bidirectional=True,
+                            batch_first=True)
+        self.lstm2 = nn.LSTM(embed_dim+40, hidden_dim, bidirectional=True,
                             batch_first=True)
 
         self.fc = nn.Linear(2*hidden_dim, hidden_dim)
         # The linear layer that maps from hidden state space to tag space
-        self.feat2tag = nn.Linear(2*hidden_dim, n_rel_labels)
+        self.feat2tag = nn.Linear(3*hidden_dim, n_rel_labels)
 
     def forward(self, words, locs1, locs2, ents, poss, ps, cs, p_lengths, c_lengths, word_lengths):
 
         batch_size = len(words)
-
-        # Add sentence embedding.
-        
-        w_emb = self.dropout(self.word_embeddings(words))
-        loc1_emb = self.dropout(self.location_embeddings(locs1))
-        loc2_emb = self.dropout(self.location_embeddings(locs2))
-        pos_emb = self.dropout(self.pos_embeddings(poss))
-        ent_emb = self.dropout(self.entity_embeddings(ents))
-
-        word_emb = torch.cat([w_emb, locs1_emb, locs2_emb, ent_emb, pos_emb], dim=2)
-
-        sorted_word_lens, sorted_word_idx = torch.sort(word_lengths,
-                descending=True)
-        _, unsorted_word_idx = torch.sorted_word_idx
-        packed_word_emb = pack(word_emb[sorted_word_idx],
-                                lengths=sorted_word_lens.data.int().tolist(),
-                                batch_first=True
-                                )
-        sent_outputs, (sent_hn, _) = self.lstm(packed_word_emb)
-        sent_hn = sent_hn.transpose(0, 1).contiguous().view(batch_size, -1)
-        sent_hn = sent_hn[unsorted_word_idx]
-        sent_hn = self.fc(sent_hn)
 
         # Parent entity embedding.
 
@@ -113,6 +93,28 @@ class LSTMRelationClassifier(nn.Module):
         c_hn = c_hn[unsort_c_idx]
         # Squeeze the dimension back to original hidden_dim
         c_hn = self.fc(c_hn)
+
+        # Add sentence embedding.
+        
+        w_emb = self.dropout(self.word_embeddings(words))
+        locs1_emb = self.dropout(self.location_embeddings(locs1))
+        locs2_emb = self.dropout(self.location_embeddings(locs2))
+        pos_emb = self.dropout(self.pos_embeddings(poss))
+        ent_emb = self.dropout(self.entity_embeddings(ents))
+
+        word_emb = torch.cat([w_emb, locs1_emb, locs2_emb, ent_emb, pos_emb], dim=2)
+        # word_emb = w_emb
+        sorted_word_lens, sorted_word_idx = torch.sort(word_lengths,
+                descending=True)
+        _, unsorted_word_idx = torch.sort(sorted_word_idx)
+        packed_word_emb = pack(word_emb[sorted_word_idx],
+                                lengths=sorted_word_lens.data.int().tolist(),
+                                batch_first=True
+                                )
+        sent_outputs, (sent_hn, _) = self.lstm2(packed_word_emb)
+        sent_hn = sent_hn.transpose(0, 1).contiguous().view(batch_size, -1)
+        sent_hn = sent_hn[unsorted_word_idx]
+        sent_hn = self.fc(sent_hn)
 
         # features = p_hn + c_hn + sent_hn
         

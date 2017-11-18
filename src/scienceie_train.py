@@ -21,6 +21,7 @@ np.random.seed(1)
 torch.manual_seed(1)
 
 from src.CNN.models import CNNclassifier
+from src.CNN.models import LSTMRelationClassifier
 from src.NRE.utils import load_pretrained_embedding, save_checkpoint
 
 
@@ -68,7 +69,9 @@ def batch_loader(data, dist1id, ent0id, batch_size=1, cuda=True):
 
     for i in range(n_batch_size):
         rs, targets = zip(*data[batch_size*i:batch_size*(i+1)])
-        word_lengths = [len(r) for i in rs for r in i]
+        # word_lengths = [len(r) for i in rs for r in i]
+        words = [r[0] for r in rs]
+        word_lengths = [len(w) for w in words]
         max_seq_len = max(word_lengths)
         rs = pad(rs, max_seq_len)
 
