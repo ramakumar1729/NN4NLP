@@ -1,0 +1,6 @@
+nltk
+numpy
+tabulate
+torch
+tqdm
+pycorenlp

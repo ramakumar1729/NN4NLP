@@ -1,10 +1,7 @@
 """scienceie_preprocess.py: Preprocessing to prepare features for Science IE
 data.
 """
-import sys
-from IPython.core import ultratb
-sys.excepthook = ultratb.FormattedTB(mode='Verbose',
-color_scheme='Linux', call_pdb=1)
+
 
 import argparse
 import glob
@@ -12,6 +9,7 @@ import itertools
 import json
 import os
 import re
+import sys
 import pickle
 from collections import Counter
 
@@ -199,12 +197,20 @@ def extract_examples(text, ann, host, order="fix", mode="SE17"):
         src_pos = ent2wordidx[srcid]
         trg_pos = ent2wordidx[trgid]
 
+###########Change the spans here.
+        startPos, endPos= findSentenceSpans(sent_boundaries, src_pos, trg_pos, raw_words)
         if src_pos < trg_pos:
-            span = slice(src_pos, trg_pos+len(trg_words))
-            rel_pos = ([0] * len(src_words) +
-                       list(range(1, (trg_pos+len(trg_words))-(src_pos+len(src_words))+1)))
-            r_rel_pos = (list(range(-(trg_pos-src_pos), 0)) +
-                         [0] * len(trg_words))
+            span = slice(startPos, endPos)
+            rel_pos = (list(range(-(src_pos-startPos), 0))+[0] * len(src_words) +
+                       list(range(1,  endPos-src_pos+1-len(src_words))))
+
+            r_rel_pos = (list(range(-(trg_pos - startPos), 0)) +
+                         [0] * len(trg_words)+ list(range(1,  endPos-trg_pos+1-len(trg_words))))
+
+            # rel_pos = ([0] * len(src_words) +
+            #            list(range(1, (trg_pos+len(trg_words))-(src_pos+len(src_words))+1)))
+            # r_rel_pos = (list(range(-(trg_pos-src_pos), 0)) +
+            #              [0] * len(trg_words))
             examples.append(((words[span], rel_pos, r_rel_pos,
                              ner[span], pos[span]),
                              rel_type))
@@ -216,11 +222,18 @@ def extract_examples(text, ann, host, order="fix", mode="SE17"):
                                  rel_type))
 
         else:
-            span = slice(trg_pos, src_pos+len(src_words))
-            rel_pos = ([0] * len(trg_words) +
-                       list(range(1, (src_pos+len(src_words))-(trg_pos+len(trg_words))+1)))
-            r_rel_pos = (list(range(-(src_pos-trg_pos), 0)) +
-                         [0] * len(src_words))
+            #span = slice(trg_pos, src_pos+len(src_words))
+            span = slice(startPos, endPos)
+            rel_pos = (list(range(-(trg_pos - startPos), 0)) + [0] * len(trg_words) +
+                       list(range(1, endPos - trg_pos + 1 -len(trg_words))))
+
+            r_rel_pos = (list(range(-(src_pos - startPos), 0)) +
+                         [0] * len(src_words) + list(range(1, endPos - src_pos + 1- len(src_words))))
+
+            # rel_pos = ([0] * len(trg_words) +
+            #            list(range(1, (src_pos+len(src_words))-(trg_pos+len(trg_words))+1)))
+            # r_rel_pos = (list(range(-(src_pos-trg_pos), 0)) +
+            #              [0] * len(src_words))
             if rel_type not in ["Synonym-of", "None"]:
                 rel_type = "r_{}".format(rel_type)
             examples.append(((words[span], rel_pos, r_rel_pos,
@@ -232,6 +245,30 @@ def extract_examples(text, ann, host, order="fix", mode="SE17"):
                                  ner[span], pos[span]),
                                  rel_type))
     return examples
+
+def findSentenceSpans(sent_bounds, src, target, words):
+    #Sent bounds are char level, src/target are word level
+    start=0
+    end=sent_bounds[-1]
+    s= min(src, target)
+    t= max(src, target)
+    found= False
+    for boundChar in sent_bounds:
+        bound=0
+        for i in range(len(words)):
+            w, charStart, charEnd= words[i]
+            if charEnd== boundChar:
+                bound= i+1
+        if s> bound:
+            start= bound
+        if t< bound and (not found):
+            end= bound
+            found= True
+    # print "start, end, sentBounds"
+    # print start, end, src, target
+    # print sent_bounds
+    # print words
+    return start, end
 
 
 def convert_bio(ner):
