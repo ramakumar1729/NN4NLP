@@ -56,6 +56,10 @@ class LSTMRelationClassifier(nn.Module):
         # The linear layer that maps from hidden state space to tag space
         self.feat2tag = nn.Linear(3*hidden_dim, n_rel_labels)
 
+
+        self.lm_fc_f  = nn.Linear(self.hidden_dim, self.vocab_size) 
+        self.lm_fc_b  = nn.Linear(self.hidden_dim, self.vocab_size) 
+
     def forward(self, words, locs1, locs2, ents, poss, ps, cs, p_lengths, c_lengths, word_lengths):
 
         batch_size = len(words)
@@ -111,7 +115,26 @@ class LSTMRelationClassifier(nn.Module):
                                 lengths=sorted_word_lens.data.int().tolist(),
                                 batch_first=True
                                 )
+        # sent_hn : 2x B x H.
         sent_outputs, (sent_hn, _) = self.lstm2(packed_word_emb)
+
+        sent_outputs = unpack(sent_outputs)[0].transpose(0,1).contiguous()
+
+        
+        # Generate LM outputs.
+        sent_outputs_f = sent_outputs[: , : , :self.hidden_dim] # B x S x H
+        sent_outputs_b = sent_outputs[: , : , self.hidden_dim: ] # B x S x H
+
+        sent_outputs_flatten_f = sent_outputs_f.contiguous().view(-1, self.hidden_dim) # B*S x H
+        sent_outputs_flatten_b = sent_outputs_b.contiguous().view(-1, self.hidden_dim ) # B*S x H
+
+        word_predict_flatten_f = self.lm_fc_f(sent_outputs_flatten_f)
+        word_predict_flatten_b = self.lm_fc_b(sent_outputs_flatten_b)
+
+        # word_predict_f = word_predict_flatten_f.view(batch_size, -1, self.vocab_size)
+        # word_predict_b = word_predict_flatten_b.view(batch_size, -1, self.vocab_size)
+        
+        # sent_hn : B x 2 x H.
         sent_hn = sent_hn.transpose(0, 1).contiguous().view(batch_size, -1)
         sent_hn = sent_hn[unsorted_word_idx]
         sent_hn = self.fc(sent_hn)
@@ -121,7 +144,7 @@ class LSTMRelationClassifier(nn.Module):
         features = torch.cat((p_hn, c_hn, sent_hn), dim=1)
         scores = self.feat2tag(features)
 
-        return scores
+        return scores, (word_predict_flatten_f, word_predict_flatten_b)
 
 
 

@@ -245,7 +245,7 @@ def train(args):
                                      ncols=100, desc="Training"):
 
             optimizer.zero_grad()
-            predictions = model(rs[:, 0, :].squeeze(1),
+            predictions, (word_predict_f, word_predict_b) = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
@@ -253,7 +253,22 @@ def train(args):
                                 ps, cs, ps_lengths,
                                 cs_lengths, word_lengths)
 
-            loss = loss_function(predictions, targets)
+            # Create word targets, and have -100 for masked locations.
+            words = rs[:, 0, :].squeeze(1)
+            word_targets_f = words.squeeze(1).clone().data.fill_(-100)
+            word_targets_b = words.squeeze(1).clone().data.fill_(-100)
+            for i, (sent, word_length) in enumerate(zip(words, word_lengths)):
+                idx = int(word_length.data.cpu().numpy()[0])
+                word_targets_f[i][: idx-1] = sent.data[1: idx]
+                word_targets_b[i][1 : idx] = sent.data[: idx-1]
+
+            word_targets_flatten_f = word_targets_f.contiguous().view(-1)
+            word_targets_flatten_b = word_targets_b.contiguous().view(-1)
+
+            word_targets_flatten_f = Variable(word_targets_flatten_f).cuda()
+            word_targets_flatten_b = Variable(word_targets_flatten_b).cuda()
+
+            loss = loss_function(predictions, targets) + loss_function(word_predict_f, word_targets_flatten_f) + loss_function(word_predict_b, word_targets_flatten_b)
             loss.backward()
             optimizer.step()
             epoch_loss += loss.data[0]
@@ -270,7 +285,7 @@ def train(args):
         for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(dev_batches, total=dev_n_batches,
                                      ncols=100, desc="Evaluating"):
 
-            predictions = model(rs[:, 0, :].squeeze(1),
+            predictions, _ = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
@@ -348,7 +363,7 @@ def train(args):
     for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(test_batches, total=test_n_batches,
                                  ncols=100, desc="Evaluating"):
 
-        predictions = model(rs[:, 0, :].squeeze(1),
+        predictions, _ = model(rs[:, 0, :].squeeze(1),
                             rs[:, 1, :].squeeze(1),
                             rs[:, 2, :].squeeze(1),
                             rs[:, 3, :].squeeze(1),
