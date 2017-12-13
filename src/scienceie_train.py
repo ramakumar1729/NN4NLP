@@ -268,7 +268,8 @@ def train(args):
             word_targets_flatten_f = Variable(word_targets_flatten_f).cuda()
             word_targets_flatten_b = Variable(word_targets_flatten_b).cuda()
 
-            loss = loss_function(predictions, targets) + loss_function(word_predict_f, word_targets_flatten_f) + loss_function(word_predict_b, word_targets_flatten_b)
+            lamda = args.lamda
+            loss = loss_function(predictions, targets) + lamda * (loss_function(word_predict_f, word_targets_flatten_f) + loss_function(word_predict_b, word_targets_flatten_b))
             loss.backward()
             optimizer.step()
             epoch_loss += loss.data[0]
@@ -416,6 +417,7 @@ if __name__ == '__main__':
                         help="# of epochs to wait when the metric gets worse.")
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--lr", type=float, default=0.1)
+    parser.add_argument("--lamda", type=float, default=1)
     parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")

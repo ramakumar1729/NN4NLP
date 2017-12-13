@@ -5,6 +5,8 @@ import shutil
 import torch
 from torch.autograd import Variable
 
+from torch.nn.init import xavier_uniform
+
 random.seed(1)
 
 def load_data(data_path, mode="span"):
@@ -134,6 +136,7 @@ def load_pretrained_embedding(dictionary, embed_file, source="glove"):
     n = 0
 
     W = torch.randn((vocab_size, embed_dim))
+    xavier_uniform(W)
     for w, i in dictionary.items():
         if w in vocab_embed:
             W[i] = vocab_embed[w]

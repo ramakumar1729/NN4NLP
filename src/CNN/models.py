@@ -119,6 +119,7 @@ class LSTMRelationClassifier(nn.Module):
         sent_outputs, (sent_hn, _) = self.lstm2(packed_word_emb)
 
         sent_outputs = unpack(sent_outputs)[0].transpose(0,1).contiguous()
+        sent_outputs = sent_outputs[unsorted_word_idx]
 
         
         # Generate LM outputs.
