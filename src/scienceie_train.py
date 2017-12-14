@@ -444,6 +444,7 @@ if __name__ == '__main__':
                         help="# of epochs to wait when the metric gets worse.")
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--lr", type=float, default=0.1)
+    parser.add_argument("--lamda", type=float, default=1)
     parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")

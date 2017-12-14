@@ -6,6 +6,8 @@ import torch
 from torch.autograd import Variable
 from torch.nn.init import xavier_uniform
 
+from torch.nn.init import xavier_uniform
+
 random.seed(1)
 
 def load_data(data_path, mode="span"):
