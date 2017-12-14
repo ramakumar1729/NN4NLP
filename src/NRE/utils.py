@@ -4,6 +4,7 @@ import shutil
 
 import torch
 from torch.autograd import Variable
+from torch.nn.init import xavier_uniform
 
 random.seed(1)
 
@@ -106,6 +107,29 @@ def pad(data, pad_symbol=1):
             [pad_symbol] * max(0, max_len - len(x)))
     return padded, lengths
 
+
+def pad_by_vector(chunks):
+    """Fill the list of tensors with zero vectors.
+
+    Parameters:
+        chunks (List[Variable]): List of variable-length variables/tensors.
+    Returns:
+        Variable : Padded variable.
+        List : List of original sequence lengths.
+    """
+    lengths = list(map(len, chunks))
+    max_len = max(lengths)
+    dim = chunks[0].size(1)
+
+    padded = [torch.cat([c, Variable(torch.zeros(max_len-c.size(0), dim)).cuda()],
+                        dim=0)
+              if c.size(0) < max_len else c
+              for c in chunks]
+
+    # Expand batch dim and concatenate ignored chunk[0] and the padded.
+    return torch.cat([t.unsqueeze(0) for t in padded], dim=0), lengths
+
+
 def load_pretrained_embedding(dictionary, embed_file, source="glove"):
     """Ref: https://github.com/Mjkim88/GA-Reader-Pytorch/blob/master/utils.py
     Parameters:
@@ -134,6 +158,7 @@ def load_pretrained_embedding(dictionary, embed_file, source="glove"):
     n = 0
 
     W = torch.randn((vocab_size, embed_dim))
+    xavier_uniform(W)
     for w, i in dictionary.items():
         if w in vocab_embed:
             W[i] = vocab_embed[w]
@@ -143,9 +168,9 @@ def load_pretrained_embedding(dictionary, embed_file, source="glove"):
 
 
 def save_checkpoint(state, is_best, filename="checkpoint.pth.tar"):
-        """From ImageNet example of PyTorch official repository; save the model
-            details to a file.
-        """
-        torch.save(state, filename)
-        if is_best:
-            shutil.copyfile(filename, "model_best.pth.tar")
+    """From ImageNet example of PyTorch official repository; save the model
+        details to a file.
+    """
+    torch.save(state, filename)
+    if is_best:
+        shutil.copyfile(filename, "model_best.pth.tar")

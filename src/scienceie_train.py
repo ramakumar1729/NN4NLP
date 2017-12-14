@@ -1,10 +1,5 @@
-import sys
-from IPython.core import ultratb
-sys.excepthook = ultratb.FormattedTB(mode='Verbose',
-color_scheme='Linux', call_pdb=1)
-
-
 import argparse
+import json
 import os
 import sys
 import tqdm
@@ -21,8 +16,9 @@ from torch.autograd import Variable
 np.random.seed(1)
 torch.manual_seed(1)
 
-from src.CNN.models import CNNclassifier
-from src.CNN.models import LSTMRelationClassifier
+from src.CNN.models import (CNNclassifier, LSTMRelationClassifier,
+                            StackLSTMCNN, VotingLSTMCNN,
+                            LSTMRelationClassifierContext)
 from src.NRE.utils import load_pretrained_embedding, save_checkpoint
 
 
@@ -33,6 +29,7 @@ def pad(features, max_seq_len, single_ex=False):
 
     return [[f + [1]*(max_seq_len - len(f)) for f in r]
             for r in features]
+
 
 def denum(dicts, r):
     r = r.cpu().tolist()
@@ -153,8 +150,9 @@ def train(args):
     if args.dataset == "SE17":
         labvocab = ["None", "Synonym-of", "Hyponym-of", "r_Hyponym-of"]
     else:
-        labvocab = ["None", "COMPARE", "MODEL-FEATURE", "PART_WHOLE", "RESULT", "TOPIC",
-                    "USAGE", "r_MODEL-FEATURE", "r_PART_WHOLE", "r_RESULT", "r_TOPIC", "r_USAGE"]
+        labvocab = ["None", "COMPARE", "MODEL-FEATURE", "PART_WHOLE", "RESULT",
+                    "TOPIC", "USAGE", "r_MODEL-FEATURE", "r_PART_WHOLE",
+                    "r_RESULT", "r_TOPIC", "r_USAGE"]
 
     labvocab = {n: i for (i, n) in enumerate(labvocab)}  # This includes None
     for dtype in dataset:
@@ -166,6 +164,8 @@ def train(args):
                            labvocab.get(l))
                           for r, l in dataset[dtype]]
 
+    zero_id = dicts["relpos"][0][0]
+    one_id = dicts["relpos"][0][1]
     # Split the training set into tr/dv, and use dev as the test set.
     # (Discard untouched test set)
     split_idx = int(len(dataset["train"]) * 0.75)
@@ -192,26 +192,33 @@ def train(args):
     else:
         W = None
 
-    if args.model == 'CNN':
-        model = CNNclassifier(vocab_size=len(wvocab),
-                              embed_dim=100,
-                              out_dim=200,
-                              n_ent_labels=len(entvocab),
-                              n_pos_labels=len(posvocab),
-                              n_loc_labels=len(rlpvocab),
-                              n_rel_labels=len(labvocab),
-                              pretrained_emb=W,
-                              freeze_emb=args.freeze_emb)
-    else:
-        model = LSTMRelationClassifier(vocab_size=len(wvocab),
-                              embed_dim=100,
-                              hidden_dim=200,
-                              n_ent_labels=len(entvocab),
-                              n_pos_labels=len(posvocab),
-                              n_loc_labels=len(rlpvocab),
-                              n_rel_labels=len(labvocab),
-                              pretrained_emb=W,
-                              freeze_emb=args.freeze_emb)
+    fargs = (len(wvocab), 100, 200, len(entvocab), len(posvocab), len(labvocab),
+             len(rlpvocab), W, args.freeze_emb, (zero_id, one_id))
+
+    if args.model == "CNN":
+        model = CNNclassifier(*fargs)
+    elif args.model == "LSTM":
+        model = LSTMRelationClassifier(*fargs)
+    elif args.model == "Stack":
+        model = StackLSTMCNN(*fargs)
+        if args.load_lstm:
+            ckpt = torch.load(args.load_lstm)
+            model.lstm_clf.load_state_dict(ckpt)
+            print("Pretrained lstm loaded from {}".format(args.load_lstm))
+
+    elif args.model == "Voting":
+        model = VotingLSTMCNN(*fargs)
+        if args.load_lstm:
+            ckpt = torch.load(args.load_lstm)
+            model.lstm_clf.load_state_dict(ckpt)
+            print("Pretrained lstm loaded from {}".format(args.load_lstm))
+        if args.load_cnn:
+            ckpt = torch.load(args.load_cnn)
+            model.cnn_clf.load_state_dict(ckpt)
+            print("Pretrained cnn loaded from {}".format(args.load_cnn))
+
+    elif args.model == "LSTMContext":
+        model = LSTMRelationClassifierContext(*fargs)
 
     if args.cuda:
         model = model.cuda()
@@ -241,11 +248,12 @@ def train(args):
                                    cuda=args.cuda)
         # Train
         model.train()
-        for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths in tqdm.tqdm(train_batches, total=n_batches,
-                                     ncols=100, desc="Training"):
+        for batch in tqdm.tqdm(train_batches, total=n_batches, ncols=100,
+                               desc="Training"):
 
+            (rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths) = batch
             optimizer.zero_grad()
-            predictions, (word_predict_f, word_predict_b) = model(rs[:, 0, :].squeeze(1),
+            predictions = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
@@ -253,27 +261,38 @@ def train(args):
                                 ps, cs, ps_lengths,
                                 cs_lengths, word_lengths)
 
-            # Create word targets, and have -100 for masked locations.
-            words = rs[:, 0, :].squeeze(1)
-            word_targets_f = words.squeeze(1).clone().data.fill_(-100)
-            word_targets_b = words.squeeze(1).clone().data.fill_(-100)
-            for i, (sent, word_length) in enumerate(zip(words, word_lengths)):
-                idx = int(word_length.data.cpu().numpy()[0])
-                word_targets_f[i][: idx-1] = sent.data[1: idx]
-                word_targets_b[i][1 : idx] = sent.data[: idx-1]
+            if args.model not in ["LSTM", "Voting"]:
+                # Classification loss
+                loss = loss_function(predictions, targets)
 
-            word_targets_flatten_f = word_targets_f.contiguous().view(-1)
-            word_targets_flatten_b = word_targets_b.contiguous().view(-1)
+            else:
+                # Extra-expanding for joint-LM training
+                predictions, (word_predict_f, word_predict_b) = predictions
+                loss = loss_function(predictions, targets)
 
-            word_targets_flatten_f = Variable(word_targets_flatten_f).cuda()
-            word_targets_flatten_b = Variable(word_targets_flatten_b).cuda()
+                # Create word targets, and have -100 for masked locations.
+                words = rs[:, 0, :].squeeze(1)
+                word_targets_f = words.squeeze(1).clone().data.fill_(-100)
+                word_targets_b = words.squeeze(1).clone().data.fill_(-100)
+                for i, (sent, word_length) in enumerate(zip(words, word_lengths)):
+                    idx = int(word_length.data.cpu().numpy()[0])
+                    word_targets_f[i][: idx-1] = sent.data[1: idx]
+                    word_targets_b[i][1 : idx] = sent.data[: idx-1]
 
-            loss = loss_function(predictions, targets) + loss_function(word_predict_f, word_targets_flatten_f) + loss_function(word_predict_b, word_targets_flatten_b)
+                word_targets_flatten_f = word_targets_f.contiguous().view(-1)
+                word_targets_flatten_b = word_targets_b.contiguous().view(-1)
+
+                word_targets_flatten_f = Variable(word_targets_flatten_f).cuda()
+                word_targets_flatten_b = Variable(word_targets_flatten_b).cuda()
+
+                loss = loss + args.lamda * (loss_function(word_predict_f, word_targets_flatten_f) +
+                                            loss_function(word_predict_b, word_targets_flatten_b))
+
             loss.backward()
             optimizer.step()
             epoch_loss += loss.data[0]
 
-        # Devp
+        # Dev
         # Compute F-1.
         TP = [0 for _ in range(len(labvocab))]
         FP = [0 for _ in range(len(labvocab))]
@@ -282,16 +301,20 @@ def train(args):
         model.eval()
         eval_loss = 0
         mistakes = []
-        for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(dev_batches, total=dev_n_batches,
-                                     ncols=100, desc="Evaluating"):
+        for batch in tqdm.tqdm(dev_batches, total=dev_n_batches, ncols=100,
+                               desc="Evaluating"):
 
-            predictions, _ = model(rs[:, 0, :].squeeze(1),
+            (rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths) = batch
+            predictions = model(rs[:, 0, :].squeeze(1),
                                 rs[:, 1, :].squeeze(1),
                                 rs[:, 2, :].squeeze(1),
                                 rs[:, 3, :].squeeze(1),
                                 rs[:, 4, :].squeeze(1),
                                 ps, cs, ps_lengths,
                                 cs_lengths, word_lengths)
+
+            if args.model in ["LSTM", "Voting"]:
+                predictions = predictions[0]
 
             loss = loss_function(predictions, targets)
             eval_loss += loss.data[0]
@@ -319,11 +342,6 @@ def train(args):
         tqdm.tqdm.write(("Epoch {:2d}\ttr_loss: {:.3f}"
                          "\tdv_loss / F1: ({:.3f} | {:.3f})").format(
                              epoch+1, epoch_loss, eval_loss, macro_F1))
-
-       # with open(os.path.join(args.save_dir, "train.log"), "a") as f:
-       #     print("{:2d}\t\t{:3.2f}\t\t{:.2f}\t\t{:.3f}".format(
-       #         epoch+1, epoch_loss, eval_loss, macro_F1),
-       #           file=f)
 
         if macro_F1 > macro_F1_best:
             save_checkpoint(model.state_dict(),
@@ -360,16 +378,20 @@ def train(args):
     model.eval()
     eval_loss = 0
 
-    for rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths  in tqdm.tqdm(test_batches, total=test_n_batches,
-                                 ncols=100, desc="Evaluating"):
+    for batch in tqdm.tqdm(test_batches, total=test_n_batches, ncols=100,
+                           desc="Evaluating"):
 
-        predictions, _ = model(rs[:, 0, :].squeeze(1),
+        (rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths) = batch
+        predictions = model(rs[:, 0, :].squeeze(1),
                             rs[:, 1, :].squeeze(1),
                             rs[:, 2, :].squeeze(1),
                             rs[:, 3, :].squeeze(1),
                             rs[:, 4, :].squeeze(1),
                             ps, cs, ps_lengths,
                             cs_lengths, word_lengths)
+
+        if args.model in ["LSTM", "Voting"]:
+            predictions = predictions[0]
 
         loss = loss_function(predictions, targets)
         eval_loss += loss.data[0]
@@ -397,13 +419,19 @@ def train(args):
     print(tabulate([[t, p, r, f] for t, p, r, f in zip(aggvocab, P, R, F1)],
                    headers=("Tag", "P", "R", "F1")))
     with open(os.path.join(args.save_dir, "scores.txt"), "w") as f:
+        print("Macro_F1: {}".format(macro_F1), file=f)
         print(tabulate([[t, p, r, f] for t, p, r, f in zip(aggvocab, P, R, F1)],
                        headers=("Tag", "P", "R", "F1")), file=f)
+
+    # Save args
+    with open(os.path.join(args.save_dir, "cmd_args.json"), "w") as f:
+        json.dump(vars(args), f)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Relation classifier")
-    parser.add_argument("--model", type=str, default="CNN")
+    parser.add_argument("--model", type=str, default="CNN",
+                        choices=["CNN", "LSTM", "Stack", "Voting", "LSTMContext"])
     parser.add_argument("--dataset", type=str, default="SE17")
     parser.add_argument("--num-epochs", type=int, default=100)
     parser.add_argument("--embed-dim", type=int, default=100)
@@ -419,9 +447,14 @@ if __name__ == '__main__':
     parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")
-    parser.add_argument("--upsample", type=float, help="Positive label duplication ratio.",
-                        default=3)
-
+    parser.add_argument("--upsample", type=float, default=3,
+                        help="Positive label duplication ratio.")
+    parser.add_argument("--lamda", type=float, default=0.5,
+                        help="Language model vs classification model loss contribution./")
+    parser.add_argument("--load-lstm", type=str,
+                        help="LSTM pretrained model path.")
+    parser.add_argument("--load-cnn", type=str,
+                        help="CNN pretrained model path.")
     args = parser.parse_args()
 
     train(args)
