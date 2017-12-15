@@ -431,6 +431,129 @@ def train(args):
         json.dump(vars(args), f)
 
 
+def evaluate(args):
+    # Fetch processed data. #### Data is preprocessed offline ####
+    dataset, dicts = load_data(args.data_dir)
+    dist1id = dicts["relpos"][0][1]
+    ent0id = dicts["relpos"][0][0]
+
+    if args.dataset == "SE17":
+        labvocab = ["None", "Synonym-of", "Hyponym-of", "r_Hyponym-of"]
+    else:
+        labvocab = ["None", "COMPARE", "MODEL-FEATURE", "PART_WHOLE", "RESULT",
+                    "TOPIC", "USAGE", "r_MODEL-FEATURE", "r_PART_WHOLE",
+                    "r_RESULT", "r_TOPIC", "r_USAGE"]
+
+    labvocab = {n: i for (i, n) in enumerate(labvocab)}  # This includes None
+    for dtype in dataset:
+        dataset[dtype] = [([[dicts["word"][0].get(i, 0) for i in r[0]],
+                            [dicts["relpos"][0].get(i, 0) for i in r[1]],
+                            [dicts["relpos"][0].get(i, 0) for i in r[2]],
+                            [dicts["ner"][0].get(i, 0) for i in r[3]],
+                            [dicts["pos"][0].get(i, 0) for i in r[4]]],
+                           labvocab.get(l))
+                          for r, l in dataset[dtype]]
+
+    zero_id = dicts["relpos"][0][0]
+    one_id = dicts["relpos"][0][1]
+    # Split the training set into tr/dv, and use dev as the test set.
+    # (Discard untouched test set)
+    split_idx = int(len(dataset["train"]) * 0.75)
+    dataset["test"] = dataset["dev"]
+
+    wvocab = dicts["word"][0]
+    rlpvocab = dicts["relpos"][0]
+    posvocab = dicts["pos"][0]
+    entvocab = dicts["ner"][0]
+
+    fargs = (len(wvocab), 100, 200, len(entvocab), len(posvocab), len(labvocab),
+             len(rlpvocab), W, args.freeze_emb, (zero_id, one_id))
+
+    if args.model == "CNN":
+        model = CNNclassifier(*fargs)
+    elif args.model == "LSTM":
+        model = LSTMRelationClassifier(*fargs)
+    elif args.model == "Stack":
+        model = StackLSTMCNN(*fargs)
+        if args.load_lstm:
+            ckpt = torch.load(args.load_lstm)
+            model.lstm_clf.load_state_dict(ckpt)
+            print("Pretrained lstm loaded from {}".format(args.load_lstm))
+
+    elif args.model == "Voting":
+        model = VotingLSTMCNN(*fargs)
+        if args.load_lstm:
+            ckpt = torch.load(args.load_lstm)
+            model.lstm_clf.load_state_dict(ckpt)
+            print("Pretrained lstm loaded from {}".format(args.load_lstm))
+        if args.load_cnn:
+            ckpt = torch.load(args.load_cnn)
+            model.cnn_clf.load_state_dict(ckpt)
+            print("Pretrained cnn loaded from {}".format(args.load_cnn))
+
+    elif args.model == "LSTMContext":
+        model = LSTMRelationClassifierContext(*fargs)
+
+    # Load model
+    model.load_state_dict(torch.load(args.model_dict))
+
+    if args.cuda:
+        model = model.cuda()
+
+    test_batches = batch_loader(dataset["test"], dist1id, ent0id,
+                                batch_size=args.batch_size,
+                                cuda=args.cuda)
+    test_n_batches = len(dataset["test"]) // args.batch_size
+
+    TP = [0 for _ in range(len(labvocab))]
+    FP = [0 for _ in range(len(labvocab))]
+    FN = [0 for _ in range(len(labvocab))]
+
+    model.eval()
+    eval_loss = 0
+
+    for batch in tqdm.tqdm(test_batches, total=test_n_batches, ncols=100,
+                           desc="Evaluating"):
+
+        (rs, targets, ps, cs, ps_lengths, cs_lengths, word_lengths) = batch
+        predictions = model(rs[:, 0, :].squeeze(1),
+                            rs[:, 1, :].squeeze(1),
+                            rs[:, 2, :].squeeze(1),
+                            rs[:, 3, :].squeeze(1),
+                            rs[:, 4, :].squeeze(1),
+                            ps, cs, ps_lengths,
+                            cs_lengths, word_lengths)
+
+        if args.model in ["LSTM", "Voting"]:
+            predictions = predictions[0]
+
+        loss = loss_function(predictions, targets)
+        eval_loss += loss.data[0]
+        preds = predictions.data.max(dim=1)[1]
+
+        for pred, y in zip(preds, targets.data):
+            if pred == y:
+                TP[y] += 1
+            else:
+                FP[pred] += 1
+                FN[y] += 1
+
+    # Aggregate reverse artificially-created relation type
+    ATP, AFP, AFN = [], [], []
+    ATP, aggvocab = aggregate_stats(labvocab, TP)
+    AFP, _ = aggregate_stats(labvocab, FP)
+    AFN, _ = aggregate_stats(labvocab, FN)
+
+    P = [float(tp)/(tp+fp) if tp+fp > 0 else 0 for tp, fp in zip(ATP, AFP)]
+    R = [float(tp)/(tp+fn) if tp+fn > 0 else 0 for tp, fn in zip(ATP, AFN)]
+    F1 = [2*p*r/(p+r) if p+r > 0 else 0 for p, r in zip(P, R)]
+    macro_F1 = np.mean(F1[1:])
+
+    print("Macro_F1: {}".format(macro_F1))
+    print(tabulate([[t, p, r, f] for t, p, r, f in zip(aggvocab, P, R, F1)],
+                   headers=("Tag", "P", "R", "F1")))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Relation classifier")
     parser.add_argument("--model", type=str, default="CNN",
@@ -447,7 +570,6 @@ if __name__ == '__main__':
                         help="# of epochs to wait when the metric gets worse.")
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--lr", type=float, default=0.1)
-    parser.add_argument("--lamda", type=float, default=1)
     parser.add_argument("--data-dir", type=str, default="data/scienceie")
     parser.add_argument("--save-dir", type=str, required=True,
                         help="Directory to save the experiment.")
@@ -459,6 +581,8 @@ if __name__ == '__main__':
                         help="LSTM pretrained model path.")
     parser.add_argument("--load-cnn", type=str,
                         help="CNN pretrained model path.")
+    parser.add_argument("--eval", action="store_true")
+    parser.add_argument("--model-dict", type=str)
     args = parser.parse_args()
 
     train(args)
