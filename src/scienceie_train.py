@@ -18,7 +18,7 @@ torch.manual_seed(1)
 
 from src.CNN.models import (CNNclassifier, LSTMRelationClassifier,
                             StackLSTMCNN, VotingLSTMCNN,
-                            LSTMRelationClassifierContext)
+                            LSTMRelationClassifierContext, LSTMCNNConcatRelationClassifier)
 from src.NRE.utils import load_pretrained_embedding, save_checkpoint
 
 
@@ -219,6 +219,9 @@ def train(args):
 
     elif args.model == "LSTMContext":
         model = LSTMRelationClassifierContext(*fargs)
+
+    elif args.model == 'LSTM_CNN':
+        model = LSTMCNNConcatRelationClassifier(*fargs)
 
     if args.cuda:
         model = model.cuda()
