@@ -585,4 +585,7 @@ if __name__ == '__main__':
     parser.add_argument("--model-dict", type=str)
     args = parser.parse_args()
 
-    train(args)
+    if args.eval:
+        evaluate(args)
+    else:
+        train(args)
