@@ -467,7 +467,7 @@ def evaluate(args):
     entvocab = dicts["ner"][0]
 
     fargs = (len(wvocab), 100, 200, len(entvocab), len(posvocab), len(labvocab),
-             len(rlpvocab), W, args.freeze_emb, (zero_id, one_id))
+             len(rlpvocab), None, args.freeze_emb, (zero_id, one_id))
 
     if args.model == "CNN":
         model = CNNclassifier(*fargs)
@@ -510,8 +510,6 @@ def evaluate(args):
     FN = [0 for _ in range(len(labvocab))]
 
     model.eval()
-    eval_loss = 0
-
     for batch in tqdm.tqdm(test_batches, total=test_n_batches, ncols=100,
                            desc="Evaluating"):
 
@@ -527,8 +525,6 @@ def evaluate(args):
         if args.model in ["LSTM", "Voting"]:
             predictions = predictions[0]
 
-        loss = loss_function(predictions, targets)
-        eval_loss += loss.data[0]
         preds = predictions.data.max(dim=1)[1]
 
         for pred, y in zip(preds, targets.data):
