@@ -1,0 +1,1 @@
+from relation_classifier.dataset_readers.full_context_relations import FullContextRelationDatasetReader
