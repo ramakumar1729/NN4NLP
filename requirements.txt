@@ -1,5 +1,7 @@
+allennlp==0.3
 nltk
 numpy
 tabulate
 tqdm
 pycorenlp
+pytest

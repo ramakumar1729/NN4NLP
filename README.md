@@ -23,3 +23,11 @@ python -m src.train \
 
 - `model_best.pt` : PyTorch model.
 - `train.log` : Training/Dev loss and F-1 history.
+
+## Running relation classifier model.
+
+python run.py train relation_classifier/experiments/concat_reprs.json -s /tmp/relation_classifier_model
+
+
+## Running tests. (Install pytest)
+py.test
