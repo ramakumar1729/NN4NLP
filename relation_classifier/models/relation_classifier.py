@@ -84,12 +84,17 @@ class RelationClassifier(Model):
 
     @overrides
     def forward(self,  # type: ignore
-                title: Dict[str, torch.LongTensor],
-                abstract: Dict[str, torch.LongTensor],
-                label: torch.LongTensor = None) -> Dict[str, torch.Tensor]:
+                e2e_tokens: Dict[str, torch.LongTensor],
+                left_context_tokens: Dict[str, torch.LongTensor],
+                right_context_tokens: Dict[str, torch.LongTensor],
+                pos_tags:  Dict[str, torch.LongTensor],
+                entity_tags: Dict[str, torch.LongTensor],
+                relpos1_tags: Dict[str, torch.LongTensor],
+                relpos2_tags: Dict[str, torch.LongTensor],
+                relation_label: torch.LongTensor = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         """
-        Parameters
+        Parameters (TODO)
         ----------
         title : Dict[str, Variable], required
             The output of ``TextField.as_array()``.
@@ -107,24 +112,29 @@ class RelationClassifier(Model):
         loss : torch.FloatTensor, optional
             A scalar loss to be optimised.
         """
-        embedded_title = self.text_field_embedder(title)
-        title_mask = util.get_text_field_mask(title)
-        encoded_title = self.title_encoder(embedded_title, title_mask)
+        embedded_e2e = self.text_field_embedder(e2e_tokens)
+        e2e_mask = util.get_text_field_mask(e2e_tokens)
+        encoded_e2e = self.e2e_encoder(embedded_e2e, e2e_mask)
 
-        embedded_abstract = self.text_field_embedder(abstract)
-        abstract_mask = util.get_text_field_mask(abstract)
-        encoded_abstract = self.abstract_encoder(embedded_abstract, abstract_mask)
+        embedded_left_context = self.text_field_embedder(left_context_tokens)
+        left_context_mask = util.get_text_field_mask(left_context_tokens)
+        encoded_left_context = self.right_context_encoder(embedded_left_context, left_context_mask)
 
-        logits = self.classifier_feedforward(torch.cat([encoded_title, encoded_abstract], dim=-1))
+        embedded_right_context = self.text_field_embedder(right_context_tokens)
+        right_context_mask = util.get_text_field_mask(right_context_tokens)
+        encoded_right_context = self.right_context_encoder(embedded_right_context, right_context_mask)
+
+        logits = self.classifier_feedforward(torch.cat([encoded_e2e, encoded_left_context, encoded_right_context], dim=-1))
         output_dict = {'logits': logits}
-        if label is not None:
-            loss = self.loss(logits, label.squeeze(-1))
-            for metric in self.metrics.values():
-                metric(logits, label.squeeze(-1))
+        if relation_label is not None:
+            loss = self.loss(logits, relation_label.squeeze(-1))
+            # for metric in self.metrics.values():
+            #    metric(logits, relation_label.squeeze(-1))
             output_dict["loss"] = loss
 
         return output_dict
 
+    # TODO
     @overrides
     def decode(self, output_dict: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
         """
@@ -146,11 +156,13 @@ class RelationClassifier(Model):
         return {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
 
     @classmethod
-    def from_params(cls, vocab: Vocabulary, params: Params) -> 'AcademicPaperClassifier':
+    def from_params(cls, vocab: Vocabulary, params: Params) -> 'RelationClassifier':
         embedder_params = params.pop("text_field_embedder")
         text_field_embedder = TextFieldEmbedder.from_params(vocab, embedder_params)
-        title_encoder = Seq2VecEncoder.from_params(params.pop("title_encoder"))
-        abstract_encoder = Seq2VecEncoder.from_params(params.pop("abstract_encoder"))
+        e2e_encoder = Seq2VecEncoder.from_params(params.pop("e2e_encoder"))
+        left_context_encoder = Seq2VecEncoder.from_params(params.pop("left_context_encoder"))
+        right_context_encoder = Seq2VecEncoder.from_params(params.pop("right_context_encoder"))
+        relative_position_encoder =Seq2VecEncoder.from_params(params.pop("relative_position_encoder"))
         classifier_feedforward = FeedForward.from_params(params.pop("classifier_feedforward"))
 
         initializer = InitializerApplicator.from_params(params.pop('initializer', []))
@@ -158,8 +170,10 @@ class RelationClassifier(Model):
 
         return cls(vocab=vocab,
                    text_field_embedder=text_field_embedder,
-                   title_encoder=title_encoder,
-                   abstract_encoder=abstract_encoder,
+                   e2e_encoder=e2e_encoder,
+                   left_context_encoder=left_context_encoder,
+                   right_context_encoder=right_context_encoder,
+                   relative_position_encoder=relative_position_encoder,
                    classifier_feedforward=classifier_feedforward,
                    initializer=initializer,
                    regularizer=regularizer)

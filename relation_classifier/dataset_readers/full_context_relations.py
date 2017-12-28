@@ -24,7 +24,7 @@ class FullContextRelationDatasetReader(DatasetReader):
     """
     Reads a JSON-lines file containing entity to entity, relative positions, left context, right context, POS tags, NER tags and relation labels.
 
-    Expected format for each input line: {"text": "", "relpos1": [], "relpos2" : [], "left_context" : "", 'right_context" : "", "pos" : [], "ner" :[], "relation" : "" }
+    Expected format for each input line: {"text": "", "relpos1": [], "relpos2" : [], "left_context" : "", 'right_context" : "", "pos" : [], "entity" :[], "relation" : "" }
 
     The JSON could have other fields, too, but they are ignored.
 
@@ -54,10 +54,15 @@ class FullContextRelationDatasetReader(DatasetReader):
                     continue
                 paper_json = json.loads(line)
                 e2e = paper_json["e2e"]["text"]
-                left_context = paper_json["left_context"]["text"]
-                right_context = paper_json["right_context"]["text"]
+                left_context = paper_json["left_context"]
+                if left_context:
+                        left_context = paper_json["left_context"]["text"]
+                right_context = paper_json["right_context"]
+                if right_context:
+                    right_context = paper_json["right_context"]["text"]
+
                 pos_tags = paper_json["e2e"]["pos"]
-                ner_tags = paper_json["e2e"]["ner"]
+                entity_tags = paper_json["e2e"]["entity"]
                 relpos1 = paper_json["e2e"]["relpos1"]
                 relpos2 = paper_json["e2e"]["relpos2"]
                 relation_label = paper_json["relation"]
@@ -80,13 +85,13 @@ class FullContextRelationDatasetReader(DatasetReader):
                 instance_fields["pos_tags"] = SequenceLabelField(pos_tags, e2e_sequence, "pos_tags")
 
                 # Add NER tags.
-                instance_fields["ner_tags"] = SequenceLabelField(ner_tags, e2e_sequence, "ner_tags")
+                instance_fields["entity_tags"] = SequenceLabelField(entity_tags, e2e_sequence, "entity_tags")
 
                 # Add relpos1.
-                instance_fields["relpos1"] = SequenceLabelField(relpos1, e2e_sequence, "relpos1")
+                instance_fields["relpos1_tags"] = SequenceLabelField(relpos1, e2e_sequence, "relpos1_tags")
 
                 # Add relpos2.
-                instance_fields["relpos2"] = SequenceLabelField(relpos2, e2e_sequence, "relpos2")
+                instance_fields["relpos2_tags"] = SequenceLabelField(relpos2, e2e_sequence, "relpos2_tags")
 
                 # Add relation label.
                 instance_fields["relation_label"] = LabelField(relation_label)
