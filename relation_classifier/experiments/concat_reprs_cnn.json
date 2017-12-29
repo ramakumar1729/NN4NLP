@@ -17,7 +17,8 @@
       }
     },
     "relative_position_encoder": {
-      "type": "lstm",
+      "type": "boe",
+      "embedding_dim" : 100,
       "bidirectional": true,
       "input_size": 100,
       "hidden_size": 100,
@@ -25,12 +26,11 @@
       "dropout": 0.5
     },
     "e2e_encoder": {
-      "type": "lstm",
-      "bidirectional": true,
-      "input_size": 100,
-      "hidden_size": 100,
-      "num_layers": 1,
-      "dropout": 0.5
+      "type": "cnn",
+      "embedding_dim": 100,
+      "num_filters": 40,
+      "ngram_filter_sizes": [5],
+      "output_dim" : 200
     },
     "left_context_encoder": {
       "type": "lstm",

@@ -17,7 +17,8 @@
       }
     },
     "relative_position_encoder": {
-      "type": "lstm",
+      "type": "boe",
+      "embedding_dim" : 100,
       "bidirectional": true,
       "input_size": 100,
       "hidden_size": 100,
@@ -25,7 +26,8 @@
       "dropout": 0.5
     },
     "e2e_encoder": {
-      "type": "lstm",
+      "type": "boe",
+      "embedding_dim" : 100,
       "bidirectional": true,
       "input_size": 100,
       "hidden_size": 100,
@@ -33,7 +35,8 @@
       "dropout": 0.5
     },
     "left_context_encoder": {
-      "type": "lstm",
+      "type": "boe",
+      "embedding_dim" : 100,
       "bidirectional": true,
       "input_size": 100,
       "hidden_size": 100,
@@ -41,7 +44,8 @@
       "dropout": 0.5
     },
     "right_context_encoder": {
-      "type": "lstm",
+      "type": "boe",
+      "embedding_dim" : 100,
       "bidirectional": true,
       "input_size": 100,
       "hidden_size": 100,
@@ -49,7 +53,7 @@
       "dropout": 0.5
     },
     "classifier_feedforward": {
-      "input_dim": 600,
+      "input_dim": 300,
       "num_layers": 2,
       "hidden_dims": [200, 4],
       "activations": ["relu", "linear"],

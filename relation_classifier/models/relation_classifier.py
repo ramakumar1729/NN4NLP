@@ -12,7 +12,7 @@ from allennlp.modules import FeedForward, Seq2VecEncoder, TextFieldEmbedder
 from allennlp.models.model import Model
 from allennlp.nn import InitializerApplicator, RegularizerApplicator
 from allennlp.nn import util
-from allennlp.training.metrics import CategoricalAccuracy
+from allennlp.training.metrics import CategoricalAccuracy, F1Measure
 
 
 @Model.register("relation_classifier")
@@ -76,7 +76,10 @@ class RelationClassifier(Model):
                                                             abstract_encoder.get_input_dim()))
         self.metrics = {
                 "accuracy": CategoricalAccuracy(),
-                "accuracy3": CategoricalAccuracy(top_k=3)
+                "accuracy3": CategoricalAccuracy(top_k=3),
+                "F11": F1Measure(positive_label=1),
+                "F12": F1Measure(positive_label=2),
+                "F13": F1Measure(positive_label=3)
         }
         self.loss = torch.nn.CrossEntropyLoss()
 
@@ -118,18 +121,19 @@ class RelationClassifier(Model):
 
         embedded_left_context = self.text_field_embedder(left_context_tokens)
         left_context_mask = util.get_text_field_mask(left_context_tokens)
-        encoded_left_context = self.right_context_encoder(embedded_left_context, left_context_mask)
+        encoded_left_context = self.e2e_encoder(embedded_left_context, left_context_mask)
 
         embedded_right_context = self.text_field_embedder(right_context_tokens)
         right_context_mask = util.get_text_field_mask(right_context_tokens)
-        encoded_right_context = self.right_context_encoder(embedded_right_context, right_context_mask)
+        encoded_right_context = self.e2e_encoder(embedded_right_context, right_context_mask)
 
         logits = self.classifier_feedforward(torch.cat([encoded_e2e, encoded_left_context, encoded_right_context], dim=-1))
+        # logits = self.classifier_feedforward(torch.cat([encoded_e2e], dim=-1))
         output_dict = {'logits': logits}
         if relation_label is not None:
             loss = self.loss(logits, relation_label.squeeze(-1))
-            # for metric in self.metrics.values():
-            #    metric(logits, relation_label.squeeze(-1))
+            for metric in self.metrics.values():
+                metric(logits, relation_label.squeeze(-1))
             output_dict["loss"] = loss
 
         return output_dict
@@ -153,7 +157,12 @@ class RelationClassifier(Model):
 
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        return {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
+        d1 = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items() if metric_name[0] != 'F'}
+        for metric_name, metric in self.metrics.items():
+            if metric_name[0] == 'F':
+                precision, recall, f1_measure =  metric.get_metric(reset)
+                d1["{}.{}".format(metric_name, "f1_measure")] = f1_measure
+        return d1
 
     @classmethod
     def from_params(cls, vocab: Vocabulary, params: Params) -> 'RelationClassifier':

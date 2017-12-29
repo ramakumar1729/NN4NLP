@@ -25,12 +25,10 @@
       "dropout": 0.5
     },
     "e2e_encoder": {
-      "type": "lstm",
-      "bidirectional": true,
-      "input_size": 100,
-      "hidden_size": 100,
-      "num_layers": 1,
-      "dropout": 0.5
+      "type": "alternating_lstm",
+      "input_size" : 100,
+      "hidden_size" : 100,
+      "num_layers" : 2
     },
     "left_context_encoder": {
       "type": "lstm",
@@ -49,11 +47,11 @@
       "dropout": 0.5
     },
     "classifier_feedforward": {
-      "input_dim": 600,
+      "input_dim": 300,
       "num_layers": 2,
       "hidden_dims": [200, 4],
       "activations": ["relu", "linear"],
-      "dropout": [0.5, 0.0]
+      "dropout": [0.5, 0.5]
     }
   },
   "iterator": {

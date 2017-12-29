@@ -22,7 +22,7 @@
       "input_size": 100,
       "hidden_size": 100,
       "num_layers": 1,
-      "dropout": 0.5
+      "dropout": 0.2
     },
     "e2e_encoder": {
       "type": "lstm",
@@ -30,7 +30,7 @@
       "input_size": 100,
       "hidden_size": 100,
       "num_layers": 1,
-      "dropout": 0.5
+      "dropout": 0.2
     },
     "left_context_encoder": {
       "type": "lstm",
@@ -38,7 +38,7 @@
       "input_size": 100,
       "hidden_size": 100,
       "num_layers": 1,
-      "dropout": 0.5
+      "dropout": 0.2
     },
     "right_context_encoder": {
       "type": "lstm",
@@ -46,14 +46,14 @@
       "input_size": 100,
       "hidden_size": 100,
       "num_layers": 1,
-      "dropout": 0.5
+      "dropout": 0.2
     },
     "classifier_feedforward": {
       "input_dim": 600,
       "num_layers": 2,
       "hidden_dims": [200, 4],
       "activations": ["relu", "linear"],
-      "dropout": [0.5, 0.0]
+      "dropout": [0.2, 0.2]
     }
   },
   "iterator": {
