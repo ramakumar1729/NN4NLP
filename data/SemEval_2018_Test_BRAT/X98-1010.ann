@@ -1,0 +1,26 @@
+T1	NoType 16 44	TIPSTER III research program
+T2	NoType 104 116	coreferences
+T3	NoType 126 144	free text document
+T4	NoType 181 208	TIPSTER II research program
+T5	NoType 217 245	TIPSTER II Proceedings paper
+T6	NoType 265 298	Coreference Resolution Strategies
+T7	NoType 303 335	Acquiring Associated Information
+T8	NoType 422 428	entity
+T9	NoType 449 460	information
+T10	NoType 465 480	name variations
+T11	NoType 485 504	descriptive phrases
+T12	NoType 513 533	location information
+T13	NoType 577 610	coreference resolution techniques
+T14	NoType 618 627	NLToolset
+T15	NoType 661 695	information extraction application
+T16	NoType 712 738	MUC Scenario Template task
+T17	NoType 786 819	coreference resolution algorithms
+T18	NoType 855 861	entity
+T19	NoType 932 941	structure
+T20	NoType 947 955	document
+T21	NoType 978 1008	coreference resolution process
+T22	NoType 1054 1102	entity related coreference resolution techniques
+T23	NoType 1135 1150	document zoning
+T24	NoType 1225 1241	location merging
+T25	NoType 1243 1271	event coreference resolution
+T26	NoType 1277 1290	event merging

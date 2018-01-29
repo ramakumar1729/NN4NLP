@@ -1,0 +1,23 @@
+T1	NoType 29 63	chunk based partial parsing system
+T2	NoType 68 102	spontaneous, conversational speech
+T3	NoType 106 126	unrestricted domains
+T4	NoType 145 157	chunk parses
+T5	NoType 175 189	parsing system
+T6	NoType 239 251	N-best lists
+T7	NoType 259 276	speech recognizer
+T8	NoType 301 332	chunk-based n-gram model scores
+T9	NoType 337 358	chunk coverage scores
+T10	NoType 388 400	N-best lists
+T11	NoType 416 442	speech recognizer lattices
+T12	NoType 468 480	N-best lists
+T13	NoType 496 510	part of speech
+T14	NoType 530 548	preprocessing pipe
+T15	NoType 562 595	part of speech based chunk parser
+T16	NoType 618 644	backpropagation neural net
+T17	NoType 660 678	chunk based scores
+T18	NoType 693 714	reranked N-best lists
+T19	NoType 789 803	chunk accuracy
+T20	NoType 855 881	randomly selected test set
+T21	NoType 899 914	word error rate
+T22	NoType 962 978	first hypotheses
+T23	NoType 986 1007	reranked N-best lists

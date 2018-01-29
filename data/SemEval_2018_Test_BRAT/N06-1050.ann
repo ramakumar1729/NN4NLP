@@ -1,0 +1,23 @@
+T1	NoType 38 53	test collection
+T2	NoType 57 72	research papers
+T3	NoType 103 120	Cranfield 2 tests
+T4	NoType 167 185	research questions
+T5	NoType 190 210	relevance judgements
+T6	NoType 218 230	cited papers
+T7	NoType 283 298	test collection
+T8	NoType 317 323	TREC's
+T9	NoType 345 364	scientific articles
+T10	NoType 377 391	newspaper text
+T11	NoType 414 428	IR experiments
+T12	NoType 442 462	citation information
+T13	NoType 468 483	test collection
+T14	NoType 510 517	queries
+T15	NoType 523 543	relevance judgements
+T16	NoType 549 568	document collection
+T17	NoType 576 589	ACL Anthology
+T18	NoType 621 628	queries
+T19	NoType 633 653	relevance judgements
+T20	NoType 686 701	test collection
+T21	NoType 772 782	collection
+T22	NoType 791 798	queries
+T23	NoType 820 838	relevant documents

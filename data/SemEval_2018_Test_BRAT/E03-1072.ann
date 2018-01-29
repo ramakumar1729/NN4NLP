@@ -1,0 +1,24 @@
+T1	NoType 52 62	initiative
+T2	NoType 66 95	human-human tutorial dialogue
+T3	NoType 108 129	initiative management
+T4	NoType 137 156	dialogue strategies
+T5	NoType 158 175	didactic tutoring
+T6	NoType 180 197	Socratic tutoring
+T7	NoType 220 237	didactic tutoring
+T8	NoType 254 270	tutor-initiative
+T9	NoType 277 294	Socratic tutoring
+T10	NoType 304 320	mixed-initiative
+T11	NoType 336 354	student initiative
+T12	NoType 374 382	learning
+T13	NoType 446 456	initiative
+T14	NoType 481 499	didactic dialogues
+T15	NoType 531 549	Socratic dialogues
+T16	NoType 615 633	student initiative
+T17	NoType 638 646	learning
+T18	NoType 657 675	Socratic dialogues
+T19	NoType 703 721	didactic dialogues
+T20	NoType 751 767	tutor utterances
+T21	NoType 806 811	words
+T22	NoType 819 827	dialogue
+T23	NoType 856 869	interactivity
+T24	NoType 902 910	learning

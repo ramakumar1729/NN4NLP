@@ -1,0 +1,12 @@
+T1	NoType 25 51	machine translation system
+T2	NoType 101 116	specific domain
+T3	NoType 198 234	statistical word-alignment algorithm
+T4	NoType 245 284	word association pairs (French-English)
+T5	NoType 313 346	multipurpose bilingual dictionary
+T6	NoType 353 381	word association information
+T7	NoType 398 404	system
+T8	NoType 450 478	translation pattern database
+T9	NoType 500 508	database
+T10	NoType 536 545	technique
+T11	NoType 592 603	translation
+T12	NoType 623 651	independent blind evaluation

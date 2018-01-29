@@ -1,0 +1,3 @@
+
+This project measures and classifies language variation. In contrast to earlier dialectology, we seek a comprehensive characterization of (potentially gradual) differences between dialects, rather than a geographic delineation of (discrete) features of individual words or pronunciations. More general characterizations of dialect differences then become available. We measure phonetic (un)relatedness between dialects using Levenshtein distance, and classify by clustering distances but also by analysis through multidimensional scaling.
+

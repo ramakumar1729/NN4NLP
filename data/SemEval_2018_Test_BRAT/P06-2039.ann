@@ -1,0 +1,26 @@
+T1	NoType 21 128	 has already been proposed in literature. In particular, attempts are being made to develop techniques for 
+T2	NoType 142 153	 where the 
+T3	NoType 159 164	 and 
+T4	NoType 180 201	 are different, e.g. 
+T5	NoType 228 277	 (Hwa et al., 2005). This enables one to develop 
+T6	NoType 290 295	 for 
+T7	NoType 311 325	 having fewer 
+T8	NoType 341 361	 with the help of a 
+T9	NoType 390 396	. The 
+T10	NoType 409 423	 works on the 
+T11	NoType 458 508	 which simply means
+that the relation between two 
+T12	NoType 513 521	 of the 
+T13	NoType 545 598	 can be projected directly between the corresponding 
+T14	NoType 603 611	 of the 
+T15	NoType 644 737	. However, we find that this assumption does not hold good all the time. This leads to wrong 
+T16	NoType 754 761	of the 
+T17	NoType 785 832	. As a solution we propose an algorithm called 
+T18	NoType 849 872	 that can work even if 
+T19	NoType 904 1003	 is not guaranteed. The proposed algorithm works in a recursive manner by considering the embedded 
+T20	NoType 1020 1091	 from outermost level to the innermost. The present work discusses the 
+T21	NoType 1105 1142	, and illustrates it with respect to 
+T22	NoType 1169 1171	. 
+T23	NoType 1197 1236	 has been considered as the underlying 
+T24	NoType 1250 1266	 for this work.
+

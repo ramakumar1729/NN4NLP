@@ -1,0 +1,22 @@
+T1	NoType 11 30	 for tasks such as 
+T2	NoType 48 53	 and 
+T3	NoType 75 94	 typically rely on 
+T4	NoType 113 140	. But the efficacy of such 
+T5	NoType 147 190	 can be surprisingly low, particularly for 
+T6	NoType 199 211	 drawn from 
+T7	NoType 232 245	 such as the 
+T8	NoType 248 272	. We have observed that 
+T9	NoType 288 324	 often result in wildly implausible 
+T10	NoType 348 352	 of 
+T11	NoType 361 405	, which can be detected automatically using 
+T12	NoType 425 444	 obtained from the 
+T13	NoType 447 489	. Based on this observation, we introduce 
+T14	NoType 517 598	 ' a novel, domain-independent method for automatically detecting and discarding 
+T15	NoType 614 652	. We measure the effectiveness of our 
+T16	NoType 668 677	, called 
+T17	NoType 685 694	, on two 
+T18	NoType 710 724	. On a set of 
+T19	NoType 738 790	, it reduces error by 67%. On a set of more complex 
+T20	NoType 813 819	, the 
+T21	NoType 842 852	 was 20%.
+

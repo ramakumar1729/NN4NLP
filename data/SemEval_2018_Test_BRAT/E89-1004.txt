@@ -1,0 +1,3 @@
+
+In this paper a method for controlling the dialog in a natural language (NL) system is presented. It provides a deep modeling of information processing based on time dependent propositional attitudes of the interacting agents. Knowledge about the state of the dialog is represented in a dedicated language and changes of this state are described by a compact set of rules. An appropriate organization of rule application is introduced including the initiation of an adequate system reaction. Finally the application of the method in an NL consultation system is outlined.
+

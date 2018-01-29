@@ -1,0 +1,24 @@
+T1	NoType 30 53	 is important for both 
+T2	NoType 83 129	. It is often achieved by combining a generic 
+T3	NoType 131 139	 with a 
+T4	NoType 159 189	 that is more relevant to the 
+T5	NoType 204 230	. Unlike previous work on 
+T6	NoType 256 304	, this paper investigates how effectively using 
+T7	NoType 333 366	, instead of considering all the 
+T8	NoType 371 379	, helps 
+T9	NoType 392 410	. We evaluate two 
+T10	NoType 442 466	 in this paper, namely, 
+T11	NoType 476 481	 and 
+T12	NoType 514 555	. In addition, a new dynamically adapted 
+T13	NoType 571 576	 for 
+T14	NoType 596 618	 is proposed based on 
+T15	NoType 636 677	. Our experimental results show that the 
+T16	NoType 700 744	 framework outperforms the baseline generic 
+T17	NoType 746 786	. The best result is obtained using the 
+T18	NoType 804 822	 by expanding the 
+T19	NoType 836 842	 with 
+T20	NoType 870 910	, together with using a large number of 
+T21	NoType 916 933	, which yields a 
+T22	NoType 953 997	 of 14.23% compared to the baseline generic 
+T23	NoType 999 1001	.
+

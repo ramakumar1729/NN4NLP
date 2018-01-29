@@ -1,0 +1,25 @@
+T1	NoType 42 79	Chinese semantically annotated corpus
+T2	NoType 89 113	Chinese Proposition Bank
+T3	NoType 118 136	Normalization Bank
+T4	NoType 142 183	Chinese semantic role labeling (SRL) task
+T5	NoType 213 220	English
+T6	NoType 226 237	Chinese SRL
+T7	NoType 270 304	semantic role identification (SRI)
+T8	NoType 309 329	classification (SRC)
+T9	NoType 467 470	SRC
+T10	NoType 493 515	linguistic discrepancy
+T11	NoType 533 542	arguments
+T12	NoType 547 552	ARGMs
+T13	NoType 565 589	semantic role classifier
+T14	NoType 601 640	hierarchical feature selection strategy
+T15	NoType 670 681	SRC systems
+T16	NoType 694 697	SRC
+T17	NoType 735 749	trained models
+T18	NoType 779 804	hierarchical architecture
+T19	NoType 811 819	argument
+T20	NoType 872 880	argument
+T21	NoType 887 891	ARGM
+T22	NoType 921 943	fine-gained categories
+T23	NoType 991 1015	argument interdependence
+T24	NoType 1097 1121	classification precision
+T25	NoType 1235 1246	Chinese SRC

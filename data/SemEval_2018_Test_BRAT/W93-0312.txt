@@ -1,0 +1,3 @@
+
+This paper describes a sense tagging technique for the automatic sense tagging of running Chinese text. The system takes as input running Chinese text, and outputs sense disambiguated text. Whereas previous work (Yarowsky, 1992; Gale et al., 1992, 1993) relies heavily on the role of statistics, the present system makes use of Machine Readable/Tractable Dictionaries (Wilks et al., 1990; Guo, in press) and an example-based reasoning technique (Nagao, 1984; Sumita et al., 1990) to treat novel words, compound words, and phrases found in the input text.
+

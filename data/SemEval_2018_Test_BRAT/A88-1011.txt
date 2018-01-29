@@ -1,0 +1,3 @@
+
+Most existing systems for the correction of word level errors are oriented toward either typographical or orthographical errors. Triphone analysis is a new correction strategy which combines phonemic transcription with trigram analysis. It corrects both kinds of errors (also in combination) and is superior for orthographical errors.
+

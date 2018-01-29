@@ -1,0 +1,20 @@
+T1	NoType 41 49	features
+T2	NoType 63 83	data representations
+T3	NoType 93 106	surface texts
+T4	NoType 111 122	parse trees
+T5	NoType 128 145	answer extraction
+T6	NoType 159 167	features
+T7	NoType 186 199	surface texts
+T8	NoType 223 241	feature generation
+T9	NoType 249 260	parse trees
+T10	NoType 310 324	feature vector
+T11	NoType 326 339	string kernel
+T12	NoType 344 355	tree kernel
+T13	NoType 374 392	syntactic features
+T14	NoType 396 419	Support Vector Machines
+T15	NoType 443 471	TREC question answering task
+T16	NoType 487 495	features
+T17	NoType 531 551	data representations
+T18	NoType 603 611	features
+T19	NoType 631 644	surface texts
+T20	NoType 694 701	feature

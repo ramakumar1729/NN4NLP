@@ -1,0 +1,19 @@
+T1	NoType 62 84	CoNLL 2008 Shared Task
+T2	NoType 104 139	syntactic and semantic dependencies
+T3	NoType 176 184	sentence
+T4	NoType 200 216	syntactic parser
+T5	NoType 243 267	machine learning methods
+T6	NoType 284 305	semantic dependencies
+T7	NoType 322 336	identification
+T8	NoType 341 349	labeling
+T9	NoType 353 363	predicates
+T10	NoType 365 379	identification
+T11	NoType 384 392	labeling
+T12	NoType 396 405	arguments
+T13	NoType 435 465	generative probabilistic model
+T14	NoType 480 501	semantic dependencies
+T15	NoType 561 577	hybrid algorithm
+T16	NoType 641 678	labeled syntactic attachment accuracy
+T17	NoType 687 717	labeled semantic dependency F1
+T18	NoType 729 751	labeled macro Fl score
+T19	NoType 769 792	WSJ and Brown test sets

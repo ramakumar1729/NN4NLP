@@ -1,0 +1,3 @@
+
+We present some preliminary results of a Czech-English translation system based on dependency trees. The fully automated process includes: morphological tagging, analytical and tectogrammatical parsing of Czech, tectogrammatical transfer based on lexical substitution using word-to-word translation dictionaries enhanced by the information from the English-Czech parallel corpus of WSJ, and a simple rule-based system for generation from English tectogrammatical representation. In the evaluation part, we compare results of the fully automated and the manually annotated processes of building the tectogrammatical representation.
+

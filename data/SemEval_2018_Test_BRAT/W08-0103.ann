@@ -1,0 +1,13 @@
+T1	NoType 21 44	n-best correction model
+T2	NoType 63 85	implicit user feedback
+T3	NoType 138 175	multi-modal speech-search application
+T4	NoType 228 239	n-best list
+T5	NoType 257 274	speech recognizer
+T6	NoType 292 313	additional candidates
+T7	NoType 324 349	confusability information
+T8	NoType 363 384	user click statistics
+T9	NoType 412 425	expanded list
+T10	NoType 488 499	n-best list
+T11	NoType 536 559	n-best correction model
+T12	NoType 603 620	existing baseline
+T13	NoType 651 678	n-best rescoring approaches

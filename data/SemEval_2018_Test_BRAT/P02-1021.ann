@@ -1,0 +1,24 @@
+T1	NoType 1 19	Text normalization
+T2	NoType 57 78	information retrieval
+T3	NoType 84 101	medical documents
+T4	NoType 110 124	clinical notes
+T5	NoType 126 143	radiology reports
+T6	NoType 148 167	discharge summaries
+T7	NoType 176 190	medical domain
+T8	NoType 237 255	text normalization
+T9	NoType 259 298	abbreviation and acronym disambiguation
+T10	NoType 309 322	abbreviations
+T11	NoType 358 363	texts
+T12	NoType 405 419	data retrieval
+T13	NoType 429 437	document
+T14	NoType 484 522	automatically generating training data
+T15	NoType 527 556	Maximum Entropy (ME) modeling
+T16	NoType 560 573	abbreviations
+T17	NoType 578 586	acronyms
+T18	NoType 612 623	ME modeling
+T19	NoType 653 691	abbreviation and acronym normalization
+T20	NoType 765 774	ME models
+T21	NoType 793 806	abbreviations
+T22	NoType 811 819	acronyms
+T23	NoType 842 860	rheumatology notes
+T24	NoType 871 879	accuracy

@@ -1,0 +1,13 @@
+T1	NoType 17 45	non-proprietary NLP software
+T2	NoType 82 102	HMM-based POS tagger
+T3	NoType 106 109	TnT
+T4	NoType 176 191	HMM performance
+T5	NoType 195 225	languages with rich morphology
+T6	NoType 262 284	TnT's peculiar license
+T7	NoType 422 433	POS tagging
+T8	NoType 460 469	languages
+T9	NoType 482 540	HunPos, a free and open source (LGPL-licensed) alternative
+T10	NoType 607 624	HMM architectures
+T11	NoType 635 646	performance
+T12	NoType 661 680	more complex models
+T13	NoType 723 751	training and tagging process

@@ -1,0 +1,3 @@
+
+This paper Identifies the types of sentence fragments found in the text of two domains : medical records and Navy equipment status messages. The fragment types are related to full sentence forms on the basis of the elements which were regularly deleted. A breakdown of the fragment types and their distributions In the two domains Is presented. An approach to reconstructing the semantic class of deleted elements In the medical records is proposed which Is based on the semantic patterns recognized In the domain.
+

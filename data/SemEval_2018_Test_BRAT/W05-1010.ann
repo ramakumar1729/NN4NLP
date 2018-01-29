@@ -1,0 +1,25 @@
+T1	NoType 33 48	learning method
+T2	NoType 62 81	sparse data problem
+T3	NoType 85 105	automatic extraction
+T4	NoType 109 129	bilingual word pairs
+T5	NoType 135 151	parallel corpora
+T6	NoType 165 174	languages
+T7	NoType 180 195	learning method
+T8	NoType 219 224	rules
+T9	NoType 259 278	sparse data problem
+T10	NoType 290 306	parallel corpora
+T11	NoType 319 337	bilingual resource
+T12	NoType 347 367	bilingual dictionary
+T13	NoType 369 396	machine translation systems
+T14	NoType 430 460	Inductive Chain Learning (ICL)
+T15	NoType 466 469	ICL
+T16	NoType 484 496	search scope
+T17	NoType 505 513	decision
+T18	NoType 517 528	equivalents
+T19	NoType 536 539	ICL
+T20	NoType 545 551	recall
+T21	NoType 561 568	systems
+T22	NoType 578 597	similarity measures
+T23	NoType 673 685	recall value
+T24	NoType 689 695	GIZA++
+T25	NoType 733 736	ICL

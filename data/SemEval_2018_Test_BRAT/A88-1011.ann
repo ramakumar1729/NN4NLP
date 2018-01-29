@@ -1,0 +1,9 @@
+T1	NoType 31 41	correction
+T2	NoType 45 62	word level errors
+T3	NoType 90 128	typographical or orthographical errors
+T4	NoType 130 147	Triphone analysis
+T5	NoType 157 176	correction strategy
+T6	NoType 192 214	phonemic transcription
+T7	NoType 220 236	trigram analysis
+T8	NoType 264 270	errors
+T9	NoType 313 334	orthographical errors

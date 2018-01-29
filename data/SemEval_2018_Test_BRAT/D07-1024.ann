@@ -1,0 +1,20 @@
+T1	NoType 16 42	relation extraction method
+T2	NoType 59 68	sentences
+T3	NoType 72 87	biomedical text
+T4	NoType 105 116	interaction
+T5	NoType 127 140	protein names
+T6	NoType 215 228	protein names
+T7	NoType 236 258	dependency parse trees
+T8	NoType 266 275	sentences
+T9	NoType 287 303	dependency trees
+T10	NoType 328 358	similarity functions (kernels)
+T11	NoType 368 385	cosine similarity
+T12	NoType 390 403	edit distance
+T13	NoType 432 445	protein names
+T14	NoType 459 479	similarity functions
+T15	NoType 531 550	learning algorithms
+T16	NoType 552 575	Support Vector Machines
+T17	NoType 580 598	k-nearest-neighbor
+T18	NoType 658 698	transductive SVMs and harmonic functions
+T19	NoType 844 870	Semi-supervised algorithms
+T20	NoType 963 975	labeled data

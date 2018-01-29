@@ -1,0 +1,13 @@
+T1	NoType 28 57	semantic role labeling system
+T2	NoType 75 85	CoNLL-2005
+T3	NoType 140 161	syntactic information
+T4	NoType 191 213	sequential BlO-tagging
+T5	NoType 232 253	labeling architecture
+T6	NoType 301 316	set of features
+T7	NoType 320 337	binary classifier
+T8	NoType 347 352	label
+T9	NoType 370 378	AdaBoost
+T10	NoType 396 410	decision trees
+T11	NoType 487 495	Fi=76.59
+T12	NoType 512 520	test set
+T13	NoType 587 611	partial vs. full parsing

@@ -1,0 +1,12 @@
+T1	NoType 24 64	error-driven HMM-based text chunk tagger
+T2	NoType 70 95	context-dependent lexicon
+T3	NoType 120 136	HMM-based tagger
+T4	NoType 143 149	tagger
+T5	NoType 168 190	contextual information
+T6	NoType 198 211	lexical entry
+T7	NoType 226 256	error-driven learning approach
+T8	NoType 284 302	memory requirement
+T9	NoType 319 343	positive lexical entries
+T10	NoType 394 427	context-dependent lexical entries
+T11	NoType 438 459	memory-based learning
+T12	NoType 513 525	chunk tagger

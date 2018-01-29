@@ -1,0 +1,3 @@
+
+Within the framework of translation knowledge acquisition from WWW news sites, this paper studies issues on the effect of cross-language retrieval of relevant texts in bilingual lexicon acquisition from comparable corpora. We experimentally show that it is quite effective to reduce the candidate bilingual term pairs against which bilingual term correspondences are estimated, in terms of both computational complexity and the performance of precise estimation of bilingual term correspondences.
+

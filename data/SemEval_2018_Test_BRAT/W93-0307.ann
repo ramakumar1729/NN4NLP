@@ -1,0 +1,26 @@
+T1	NoType 2 34	Lexical co-occurrence statistics
+T2	NoType 67 85	syntactic analysis
+T3	NoType 89 107	unconstrained text
+T4	NoType 143 164	lexical relationships
+T5	NoType 177 187	sparseness
+T6	NoType 191 195	data
+T7	NoType 232 251	less informed model
+T8	NoType 282 304	statistical parameters
+T9	NoType 323 344	"lexical association"
+T10	NoType 358 410	resolving ambiguous prepositional phrase attachments
+T11	NoType 463 478	attachment site
+T12	NoType 482 486	verb
+T13	NoType 494 507	direct object
+T14	NoType 518 529	preposition
+T15	NoType 544 550	object
+T16	NoType 558 569	preposition
+T17	NoType 606 625	lexical association
+T18	NoType 650 672	noun class information
+T19	NoType 692 706	disambiguation
+T20	NoType 853 872	lexical association
+T21	NoType 882 902	qualitative analysis
+T22	NoType 906 913	results
+T23	NoType 956 978	noun class information
+T24	NoType 998 1021	multiplicity of classes
+T25	NoType 1041 1045	noun
+T26	NoType 1064 1084	sense disambiguation

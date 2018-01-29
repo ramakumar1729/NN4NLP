@@ -1,0 +1,23 @@
+T1	NoType 31 93	Interagency Language Roundtable (ILR) based comprehension test
+T2	NoType 104 115	test design
+T3	NoType 125 134	questions
+T4	NoType 138 168	multiple ILR difficulty levels
+T5	NoType 181 189	document
+T6	NoType 207 245	Arabic machine translation (MT) output
+T7	NoType 269 283	research sites
+T8	NoType 330 342	MT condition
+T9	NoType 360 372	MT condition
+T10	NoType 383 387	text
+T11	NoType 392 402	audio data
+T12	NoType 428 475	human reference Gold Standard (GS) translations
+T13	NoType 504 521	95% comprehension
+T14	NoType 526 528	GS
+T15	NoType 533 536	74%
+T16	NoType 541 543	MT
+T17	NoType 554 560	genres
+T18	NoType 567 584	difficulty levels
+T19	NoType 600 619	comprehension rates
+T20	NoType 649 672	translation error rates
+T21	NoType 734 744	MT quality
+T22	NoType 802 804	MT
+T23	NoType 810 812	GS

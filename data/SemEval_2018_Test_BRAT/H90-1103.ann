@@ -1,0 +1,32 @@
+T1	NoType 32 53	military applications
+T2	NoType 66 94	speech processing technology
+T3	NoType 180 201	military applications
+T4	NoType 205 222	speech technology
+T5	NoType 272 293	military applications
+T6	NoType 306 323	speech technology
+T7	NoType 384 401	speech processing
+T8	NoType 420 444	application requirements
+T9	NoType 560 581	military applications
+T10	NoType 585 602	speech technology
+T11	NoType 678 699	military applications
+T12	NoType 703 720	speech technology
+T13	NoType 757 837	narrowband (2400 b/s) and very low-rate (50-1200 b/s) secure voice communication
+T14	NoType 844 887	voice/data integration in computer networks
+T15	NoType 894 912	speech recognition
+T16	NoType 916 932	fighter aircraft
+T17	NoType 999 1015	training systems
+T18	NoType 1026 1056	noise and interference removal
+T19	NoType 1061 1076	human listeners
+T20	NoType 1226 1243	speech technology
+T21	NoType 1251 1269	system integration
+T22	NoType 1307 1363	integrated multi-rate voice/data communications terminal
+T23	NoType 1370 1407	interactive speech enhancement system
+T24	NoType 1414 1455	voice-controlled pilot's associate system
+T25	NoType 1471 1507	air traffic control training systems
+T26	NoType 1514 1566	battle management command and control support system
+T27	NoType 1572 1605	spoken natural language interface
+T28	NoType 1616 1650	spoken language translation system
+T29	NoType 1820 1847	speech algorithm techniques
+T30	NoType 1858 1871	speech coding
+T31	NoType 1873 1891	speech recognition
+T32	NoType 1897 1916	speaker recognition

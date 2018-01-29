@@ -1,0 +1,32 @@
+T1	NoType 44 58	word alignment
+T2	NoType 63 94	languages with scarce resources
+T3	NoType 101 118	bilingual corpora
+T4	NoType 128 142	language pairs
+T5	NoType 155 169	word alignment
+T6	NoType 178 197	languages L1 and L2
+T7	NoType 220 231	language L3
+T8	NoType 264 278	bilingual data
+T9	NoType 309 328	language pair L1-L2
+T10	NoType 330 359	large-scale bilingual corpora
+T11	NoType 363 368	L1-L3
+T12	NoType 373 378	L2-L3
+T13	NoType 424 431	corpora
+T14	NoType 441 443	L3
+T15	NoType 451 465	pivot language
+T16	NoType 478 498	word alignment model
+T17	NoType 503 512	L1 and L2
+T18	NoType 519 527	approach
+T19	NoType 540 560	word alignment model
+T20	NoType 569 578	languages
+T21	NoType 590 606	bilingual corpus
+T22	NoType 628 641	language pair
+T23	NoType 673 693	word alignment model
+T24	NoType 698 707	L1 and L2
+T25	NoType 724 746	L1-L2 bilingual corpus
+T26	NoType 782 788	models
+T27	NoType 808 822	word alignment
+T28	NoType 831 840	L1 and L2
+T29	NoType 874 903	relative error rate reduction
+T30	NoType 935 941	method
+T31	NoType 957 979	small bilingual corpus
+T32	NoType 983 992	L1 and L2

@@ -1,0 +1,3 @@
+
+Brief Summary of Objectives: There are three objectives of the contract: to perform research and development in parallel parsing, semantic representation, ill-formed input, discourse, and tools for linguistic knowledge acquisition, and to integrate software components from BBN and elsewhere to produce Janus, DARPA's New Generation Natural Language Interface, and to demonstrate state-of-the-art natural language technology in DARPA applications. The following software has been distributed: natural language system; IRACQ, knowledge acquisition system; System components and knowledge bases of Janus; KL-TWO knowledge representation and inference system integrated with Janus; various components for DARPA's Spoken Language Systems Project at BBN.
+

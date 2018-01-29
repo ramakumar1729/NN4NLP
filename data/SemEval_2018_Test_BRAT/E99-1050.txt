@@ -1,0 +1,3 @@
+
+This paper proposes a novel, corpus-based method for producing mappings between lexical resources. Results from a preliminary experiment using part of speech tags suggests this is a promising area for future research.
+

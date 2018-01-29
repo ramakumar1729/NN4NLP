@@ -1,0 +1,24 @@
+T1	NoType 104 158	intermediate and resolved logical form representations
+T2	NoType 162 171	sentences
+T3	NoType 182 203	referring expressions
+T4	NoType 210 238	reference resolution process
+T5	NoType 265 280	representations
+T6	NoType 286 342	intermediate representation, Quasi Logical Form (or QLF)
+T7	NoType 356 372	unresolved terms
+T8	NoType 390 412	anaphoric noun phrases
+T9	NoType 422 445	bound variable anaphora
+T10	NoType 447 457	reflexives
+T11	NoType 463 484	definite descriptions
+T12	NoType 486 504	Implicit relations
+T13	NoType 535 552	compound nominals
+T14	NoType 563 566	QLF
+T15	NoType 570 589	unresolved formulae
+T16	NoType 595 613	QLF representation
+T17	NoType 646 657	ambiguities
+T18	NoType 675 691	quantifier scope
+T19	NoType 700 735	collective/distributive distinction
+T20	NoType 765 786	quantifier resolution
+T21	NoType 788 808	Reference candidates
+T22	NoType 854 880	reference resolution rules
+T23	NoType 901 923	resolved logical forms
+T24	NoType 933 969	linguistic and pragmatic constraints

@@ -1,0 +1,13 @@
+T1	NoType 30 51	text-to-speech system
+T2	NoType 80 102	syntactic constituency
+T3	NoType 104 123	adjacency to a verb
+T4	NoType 129 147	constituent length
+T5	NoType 161 178	prosodic phrasing
+T6	NoType 183 199	synthetic speech
+T7	NoType 251 279	"discourse neutral" phrasing
+T8	NoType 286 318	sentence-level phrasing patterns
+T9	NoType 343 362	discourse semantics
+T10	NoType 442 459	clausal structure
+T11	NoType 464 492	predicate-argument relations
+T12	NoType 580 586	corpus
+T13	NoType 590 620	judgments of prosodic phrasing

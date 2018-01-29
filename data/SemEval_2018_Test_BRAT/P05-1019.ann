@@ -1,0 +1,12 @@
+T1	NoType 11 32	discourse connectives
+T2	NoType 64 81	discourse parsing
+T3	NoType 86 96	generation
+T4	NoType 142 153	connectives
+T5	NoType 174 193	coherence relations
+T6	NoType 246 262	substitutability
+T7	NoType 266 287	discourse connectives
+T8	NoType 303 319	substitutability
+T9	NoType 328 353	distributional similarity
+T10	NoType 363 386	variance-based function
+T11	NoType 401 426	probability distributions
+T12	NoType 460 476	substitutability

@@ -1,0 +1,24 @@
+T1	NoType 10 29	dependency recovery
+T2	NoType 73 106	wide-coverage statistical parsers
+T3	NoType 113 149	Combinatory Categorial Grammar (ccg)
+T4	NoType 200 220	parser's performance
+T5	NoType 233 246	constructions
+T6	NoType 267 273	parser
+T7	NoType 290 302	applications
+T8	NoType 353 363	ccg parser
+T9	NoType 367 397	object extraction dependencies
+T10	NoType 407 415	wsj text
+T11	NoType 438 444	parser
+T12	NoType 466 475	questions
+T13	NoType 480 498	Question Answering
+T14	NoType 504 512	accuracy
+T15	NoType 529 535	parser
+T16	NoType 539 548	questions
+T17	NoType 612 618	parser
+T18	NoType 628 634	domain
+T19	NoType 652 665	labelled data
+T20	NoType 673 695	lexical category level
+T21	NoType 710 721	supertagger
+T22	NoType 732 742	categories
+T23	NoType 746 751	words
+T24	NoType 810 835	question parsing accuracy

@@ -1,0 +1,21 @@
+T1	NoType 27 49	unsupervised algorithm
+T2	NoType 51 59	WordEnds
+T3	NoType 75 90	word boundaries
+T4	NoType 96 127	transcribed adult conversations
+T5	NoType 129 141	Phone ngrams
+T6	NoType 206 226	discriminative model
+T7	NoType 230 246	boundary marking
+T8	NoType 258 267	algorithm
+T9	NoType 282 293	performance
+T10	NoType 302 331	morphologically complex words
+T11	NoType 335 342	English
+T12	NoType 347 353	Arabic
+T13	NoType 389 412	phonetic transcriptions
+T14	NoType 428 451	pronunciation variation
+T15	NoType 463 476	training data
+T16	NoType 500 518	miniature datasets
+T17	NoType 526 545	performance numbers
+T18	NoType 603 611	WordEnds
+T19	NoType 624 629	model
+T20	NoType 633 659	child language acquisition
+T21	NoType 683 703	speech understanding

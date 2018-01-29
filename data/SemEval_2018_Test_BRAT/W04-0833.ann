@@ -1,0 +1,24 @@
+T1	NoType 47 90	statistical word sense disambiguation (WSD)
+T2	NoType 141 152	Naive Bayes
+T3	NoType 156 167	word tokens
+T4	NoType 172 187	Maximum Entropy
+T5	NoType 191 228	local syntactic and semantic features
+T6	NoType 267 281	context window
+T7	NoType 288 298	sub-window
+T8	NoType 320 324	word
+T9	NoType 353 367	outside window
+T10	NoType 374 387	content words
+T11	NoType 419 429	sub-window
+T12	NoType 435 440	words
+T13	NoType 470 482	window sizes
+T14	NoType 516 520	word
+T15	NoType 541 566	accuracies of 75% and 67%
+T16	NoType 598 633	coarse and fine grained evaluations
+T17	NoType 657 673	sense resolution
+T18	NoType 703 722	syntactic structure
+T19	NoType 734 743	semantics
+T20	NoType 747 764	neighboring nouns
+T21	NoType 768 776	features
+T22	NoType 782 805	Maximum Entropy learner
+T23	NoType 807 832	Accuracies of 70% and 63%
+T24	NoType 851 886	coarse and fine grained evaluations

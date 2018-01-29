@@ -1,0 +1,3 @@
+
+Most theories of presupposition implicitly assume that presuppositions are facts, and that all agents involved in a discourse share belief in the presuppositions that it generates. These unrealistic assumptions can be eliminated if each presupposition is treated as the belief of an agent. However, it is not enough to consider only the beliefs of the speaker; we show that the beliefs of other agents are often involved. We describe a new model, including an improved definition of presupposition, that treats presuppositions as beliefs and considers the beliefs of all agents involved in the discourse. We show that treating presuppositions as beliefs makes it possible to explain phenomena that cannot be explained otherwise.
+

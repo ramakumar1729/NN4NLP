@@ -1,0 +1,19 @@
+T1	NoType 37 55	textual entailment
+T2	NoType 72 86	decision trees
+T3	NoType 92 121	supervised learning algorithm
+T4	NoType 174 189	lexical overlap
+T5	NoType 205 244	bag of words similarity overlap measure
+T6	NoType 255 262	mapping
+T7	NoType 266 271	terms
+T8	NoType 279 289	hypothesis
+T9	NoType 297 308	source text
+T10	NoType 333 357	lexico-semantic matching
+T11	NoType 370 374	text
+T12	NoType 383 393	hypothesis
+T13	NoType 429 435	chunks
+T14	NoType 443 453	hypothesis
+T15	NoType 458 464	chunks
+T16	NoType 472 476	text
+T17	NoType 506 510	text
+T18	NoType 515 525	hypothesis
+T19	NoType 533 550	dependency graphs

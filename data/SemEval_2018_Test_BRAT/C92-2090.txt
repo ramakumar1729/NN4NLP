@@ -1,0 +1,3 @@
+
+In this paper we describe the roots of Controlled English (CE), the analysis of several existing CE grammars, the development of a well-founded 150-rule CE grammar (COGRAM), the elaboration of an algorithmic variant (ALCOGRAM) as a basis for NLP applications, the use of ALCOGRAM in a CA1 program teaching writers how to use it effectively, and the preparatory study into a Controlled English grammar and style checker within a desktop publishing (DTP) environment.
+

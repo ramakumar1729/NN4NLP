@@ -1,0 +1,3 @@
+
+This paper presents a model for generating prosodically appropriate synthesized responses to database queries using Combinatory Categorial Grammar (CCG - cf. [22]), a formalism which easily integrates the notions of syntactic constituency, prosodie phrasing and information structure. The model determines accent locations within phrases on the basis of contrastive sets derived from the discourse structure and a domain-independent knowledge base.
+

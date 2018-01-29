@@ -1,0 +1,3 @@
+
+The stack decoder is an attractive algorithm for controlling the acoustic and language model matching in a continuous speech recognizer. A previous paper described a near-optimal admissible Viterbi A* search algorithm for use with non-cross-word acoustic models and no-grammar language models [16]. This paper extends this algorithm to include unigram language models and describes a modified version of the algorithm which includes the full (forward) decoder, cross-word acoustic models and longer-span language models. The resultant algorithm is not admissible, but has been demonstrated to have a low probability of search error and to be very efficient.
+

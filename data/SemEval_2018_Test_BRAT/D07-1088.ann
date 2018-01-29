@@ -1,0 +1,13 @@
+T1	NoType 53 65	data records
+T2	NoType 76 86	attributes
+T3	NoType 92 125	unstructured biomedical full text
+T4	NoType 214 223	semantics
+T5	NoType 241 258	record extraction
+T6	NoType 276 301	language processing tasks
+T7	NoType 315 335	data record template
+T8	NoType 346 370	semantic language models
+T9	NoType 376 393	unstructured text
+T10	NoType 420 473	discourse level Conditional Random Fields (CRF) model
+T11	NoType 524 546	Information Extraction
+T12	NoType 587 605	system performance
+T13	NoType 626 642	baseline systems

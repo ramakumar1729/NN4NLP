@@ -1,0 +1,16 @@
+T1	NoType 52 88	definite description (dd) resolution
+T2	NoType 119 129	heuristics
+T3	NoType 144 170	discourse-new descriptions
+T4	NoType 194 203	detectors
+T5	NoType 259 286	definite descriptions (dds)
+T6	NoType 301 307	corpus
+T7	NoType 312 325	discourse new
+T8	NoType 382 391	detectors
+T9	NoType 396 418	non-anaphoric pronouns
+T10	NoType 441 466	Lap-pin and Leass' (1994)
+T11	NoType 529 552	anaphoric dd resolution
+T12	NoType 568 582	classification
+T13	NoType 605 614	detectors
+T14	NoType 717 726	detectors
+T15	NoType 849 866	revised algorithm
+T16	NoType 901 935	discourse-new detection techniques

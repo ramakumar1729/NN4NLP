@@ -1,0 +1,3 @@
+
+We propose a semantic construction method for Feature-Based Tree Adjoining Grammar which is based on the derived tree, compare it with related proposals and briefly discuss some implementation possibilities.
+

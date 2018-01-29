@@ -1,0 +1,12 @@
+T1	NoType 32 54	mixture language model
+T2	NoType 80 105	long distance constraints
+T3	NoType 111 119	sentence
+T4	NoType 123 132	paragraph
+T5	NoType 150 169	m-component mixture
+T6	NoType 173 186	digram models
+T7	NoType 224 237	SK vocabulary
+T8	NoType 274 305	Wall Street Journal text corpus
+T9	NoType 317 338	BU recognition system
+T10	NoType 377 397	recognition accuracy
+T11	NoType 407 428	mixture digram models
+T12	NoType 452 464	Digram model

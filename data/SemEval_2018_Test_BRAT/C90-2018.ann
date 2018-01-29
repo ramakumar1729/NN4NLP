@@ -1,0 +1,26 @@
+T1	NoType 14 27	feature terms
+T2	NoType 46 55	variables
+T3	NoType 57 65	negation
+T4	NoType 70 87	named disjunction
+T5	NoType 113 131	feature structures
+T6	NoType 189 194	names
+T7	NoType 236 249	feature logic
+T8	NoType 253 278	computational linguistics
+T9	NoType 314 334	open world semantics
+T10	NoType 339 352	feature terms
+T11	NoType 364 374	denotation
+T12	NoType 380 384	term
+T13	NoType 420 439	disjunctive context
+T14	NoType 472 484	disjunctions
+T15	NoType 496 531	context-unique feature descriptions
+T16	NoType 535 587	relational, constraint-based representation language
+T17	NoType 599 622	normalization procedure
+T18	NoType 643 654	consistency
+T19	NoType 658 671	feature terms
+T20	NoType 721 744	disjunctive normal form
+T21	NoType 764 781	structure sharing
+T22	NoType 790 801	information
+T23	NoType 825 834	disjuncts
+T24	NoType 856 891	Context-unique feature descriptions
+T25	NoType 947 967	ordinary unification
+T26	NoType 977 983	PROLOG

@@ -1,0 +1,18 @@
+T1	NoType 65 101	controlled document authoring system
+T2	NoType 109 123	knowledge base
+T3	NoType 148 181	closed-world authoring situations
+T4	NoType 196 210	knowledge base
+T5	NoType 249 258	documents
+T6	NoType 277 294	user's selections
+T7	NoType 312 343	open-world authoring situations
+T8	NoType 388 397	authoring
+T9	NoType 421 435	knowledge base
+T10	NoType 489 497	document
+T11	NoType 522 536	knowledge base
+T12	NoType 581 590	authoring
+T13	NoType 598 607	documents
+T14	NoType 623 633	Datalog KB
+T15	NoType 656 678	closed-world situation
+T16	NoType 688 708	Description Logic KB
+T17	NoType 747 767	open-world situation
+T18	NoType 841 860	decidability issues

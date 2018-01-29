@@ -1,0 +1,13 @@
+T1	NoType 50 61	ambiguities
+T2	NoType 63 87	Semantic representations
+T3	NoType 113 128	scope relations
+T4	NoType 137 148	quantifiers
+T5	NoType 162 171	operators
+T6	NoType 185 201	Truth conditions
+T7	NoType 225 240	representations
+T8	NoType 255 276	consequence relations
+T9	NoType 314 325	correctness
+T10	NoType 335 353	inference patterns
+T11	NoType 399 424	underspecified structures
+T12	NoType 450 461	translation
+T13	NoType 484 499	disambiguations

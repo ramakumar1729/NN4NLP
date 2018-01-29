@@ -1,0 +1,30 @@
+T1	NoType 52 56	data
+T2	NoType 62 67	texts
+T3	NoType 84 116	handcrafted linguistic knowledge
+T4	NoType 131 193	BBN's PLUM system (Probabilistic Language Understanding Model)
+T5	NoType 221 226	DARPA
+T6	NoType 265 294	probabilistic language models
+T7	NoType 305 338	traditional linguistic techniques
+T8	NoType 405 421	new applications
+T9	NoType 476 489	user markings
+T10	NoType 493 521	correct and incorrect output
+T11	NoType 553 568	interpretations
+T12	NoType 606 635	robust partial interpretation
+T13	NoType 644 667	complete interpretation
+T14	NoType 756 761	texts
+T15	NoType 771 790	Wall Street Journal
+T16	NoType 805 815	MUC-3 task
+T17	NoType 829 851	end-to-end application
+T18	NoType 855 859	plum
+T19	NoType 883 890	parsing
+T20	NoType 981 1019	parsing component, the MIT Fast Parser
+T21	NoType 1044 1047	BBN
+T22	NoType 1090 1095	MUC-3
+T23	NoType 1156 1173	unrestricted text
+T24	NoType 1178 1193	data extraction
+T25	NoType 1223 1227	text
+T26	NoType 1283 1287	plum
+T27	NoType 1315 1341	partially understood input
+T28	NoType 1363 1374	information
+T29	NoType 1412 1423	information
+T30	NoType 1482 1497	plum components

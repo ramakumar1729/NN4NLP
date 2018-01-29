@@ -1,0 +1,15 @@
+T1	NoType 5 36	space and run-time requirements
+T2	NoType 40 63	broad coverage grammars
+T3	NoType 80 92	applications
+T4	NoType 218 248	application-dependent grammars
+T5	NoType 421 441	automatic extraction
+T6	NoType 445 485	application-tuned consistent subgrammars
+T7	NoType 498 529	large-scale generation grammars
+T8	NoType 570 599	large-scale systemic grammars
+T9	NoType 618 636	formal equivalence
+T10	NoType 645 662	systemic grammars
+T11	NoType 667 699	typed unification based grammars
+T12	NoType 724 734	generation
+T13	NoType 738 758	encyclopedia entries
+T14	NoType 811 824	applicability
+T15	NoType 830 840	extensions

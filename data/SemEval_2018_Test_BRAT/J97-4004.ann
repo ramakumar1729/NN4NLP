@@ -1,0 +1,26 @@
+T1	NoType 32 49	mapping sentences
+T2	NoType 55 72	character strings
+T3	NoType 78 94	strings of words
+T4	NoType 134 146	tokenization
+T5	NoType 170 182	tokenization
+T6	NoType 218 230	tokenization
+T7	NoType 392 420	unambiguous token boundaries
+T8	NoType 429 445	character string
+T9	NoType 460 470	dictionary
+T10	NoType 491 512	tokenized word string
+T11	NoType 570 592	tokenized word strings
+T12	NoType 613 624	word string
+T13	NoType 631 639	relation
+T14	NoType 649 665	tokenized string
+T15	NoType 702 723	tokenized word string
+T16	NoType 757 775	tokenization forms
+T17	NoType 827 849	tokenization ambiguity
+T18	NoType 979 990	ambiguities
+T19	NoType 1019 1042	tokenization variations
+T20	NoType 1103 1115	tokenization
+T21	NoType 1153 1165	tokenization
+T22	NoType 1195 1207	tokenization
+T23	NoType 1280 1292	tokenization
+T24	NoType 1356 1368	tokenization
+T25	NoType 1382 1402	ambiguity resolution
+T26	NoType 1420 1432	tokenization

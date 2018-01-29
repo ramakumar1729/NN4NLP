@@ -1,0 +1,3 @@
+
+The knowledge representation method is introduced to be applied in the ICAI system to teach programming language. Knowledge about syntax and semantics of that language is represented by a set of axioms written in the predicate calculus language. The directed graph of concepts is mentioned as a method to represent an instructional structure of the domain knowledge. The proof procedure to answer student's questions is described.
+

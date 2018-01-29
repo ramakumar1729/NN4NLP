@@ -1,0 +1,19 @@
+T1	NoType 35 59	automated word alignment
+T2	NoType 63 77	parallel texts
+T3	NoType 116 137	syntactic divergences
+T4	NoType 167 185	syntactic analysis
+T5	NoType 193 220	less resource rich language
+T6	NoType 240 250	robustness
+T7	NoType 254 287	syntactically agnostic approaches
+T8	NoType 300 325	IBM word alignment models
+T9	NoType 397 420	syntax-based heuristics
+T10	NoType 441 456	target language
+T11	NoType 463 470	English
+T12	NoType 512 527	source language
+T13	NoType 547 573	standard alignment methods
+T14	NoType 587 605	transformed bitext
+T15	NoType 695 721	word alignment performance
+T16	NoType 726 740	language pairs
+T17	NoType 749 763	English-Korean
+T18	NoType 768 781	English-Hindi
+T19	NoType 797 834	longer-distance syntactic divergences

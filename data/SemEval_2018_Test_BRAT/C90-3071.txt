@@ -1,0 +1,3 @@
+
+We consider the problem of extracting specified types of information from natural language text. To properly analyze the text, we wish to apply semantic (selectional) constraints whenever possible; however, we cannot expect to have semantic patterns for all the input we may encounter in real texts. We therefore use preference semantics: selecting the analysis which maximizes the number of semantic patterns matched. We describe a specific information extraction task, and report on the benefits of using preference semantics for this task.
+

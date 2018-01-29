@@ -1,0 +1,22 @@
+T1	NoType 31 53	information extraction
+T2	NoType 69 82	customization
+T3	NoType 92 100	scenario
+T4	NoType 129 150	automated acquisition
+T5	NoType 154 162	patterns
+T6	NoType 180 191	portability
+T7	NoType 196 207	scalability
+T8	NoType 237 270	Tree-Based Pattern representation
+T9	NoType 279 286	pattern
+T10	NoType 303 307	path
+T11	NoType 315 330	dependency tree
+T12	NoType 336 344	sentence
+T13	NoType 382 401	Tree-Based Patterns
+T14	NoType 405 413	Japanese
+T15	NoType 419 436	un-annotated text
+T16	NoType 471 480	sentences
+T17	NoType 490 503	training data
+T18	NoType 513 527	TF/IDF scoring
+T19	NoType 543 548	paths
+T20	NoType 556 566	parse tree
+T21	NoType 579 588	sentences
+T22	NoType 612 620	patterns

@@ -1,0 +1,19 @@
+T1	NoType 22 54	discriminative language modeling
+T2	NoType 67 101	vocabulary speech recognition task
+T3	NoType 119 147	parameter estimation methods
+T4	NoType 153 173	perceptron algorithm
+T5	NoType 197 229	conditional random fields (CRFs)
+T6	NoType 235 241	models
+T7	NoType 257 301	deterministic weighted finite state automata
+T8	NoType 339 347	automata
+T9	NoType 353 366	word-lattices
+T10	NoType 394 413	baseline recognizer
+T11	NoType 419 439	perceptron algorithm
+T12	NoType 502 513	feature set
+T13	NoType 550 563	training data
+T14	NoType 584 602	feature set output
+T15	NoType 612 632	perceptron algorithm
+T16	NoType 657 664	weights
+T17	NoType 667 679	CRF training
+T18	NoType 721 736	word error rate
+T19	NoType 783 791	baseline

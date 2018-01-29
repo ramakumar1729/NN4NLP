@@ -1,0 +1,15 @@
+T1	NoType 20 45	sentence reduction system
+T2	NoType 73 91	extraneous phrases
+T3	NoType 97 106	sentences
+T4	NoType 133 141	document
+T5	NoType 146 167	summarization purpose
+T6	NoType 194 214	sources of knowledge
+T7	NoType 231 238	phrases
+T8	NoType 255 263	sentence
+T9	NoType 290 309	syntactic knowledge
+T10	NoType 311 330	context information
+T11	NoType 336 346	statistics
+T12	NoType 363 369	corpus
+T13	NoType 429 438	Reduction
+T14	NoType 469 480	conciseness
+T15	NoType 484 503	automatic summaries

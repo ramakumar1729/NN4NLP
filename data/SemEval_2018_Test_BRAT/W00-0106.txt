@@ -1,0 +1,3 @@
+
+In this paper we describe a method for analyzing the reading comprehension task. First, we describe a method of classifying facts (information) into categories or levels; where each level signifies a different degree of difficulty of extracting a fact from a piece of text containing it. We then proceed to show how one can use this model the analyze the complexity of the reading comprehension task. Finally, we analyze five different reading comprehension tasks and present results from this analysis.
+

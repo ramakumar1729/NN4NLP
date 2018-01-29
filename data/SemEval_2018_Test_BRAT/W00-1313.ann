@@ -1,0 +1,23 @@
+T1	NoType 27 51	query translation method
+T2	NoType 65 92	mutual information matrices
+T3	NoType 96 101	terms
+T4	NoType 109 136	Chinese and English corpora
+T5	NoType 162 189	bilingual phrase dictionary
+T6	NoType 195 215	compositional phrase
+T7	NoType 221 232	translation
+T8	NoType 236 242	phrase
+T9	NoType 267 278	translation
+T10	NoType 286 296	components
+T11	NoType 305 310	query
+T12	NoType 346 407	general-purpose Chinese- English dictionary look-up procedure
+T13	NoType 417 433	selection method
+T14	NoType 438 450	translations
+T15	NoType 454 465	query terms
+T16	NoType 499 523	query translation method
+T17	NoType 549 562	English query
+T18	NoType 577 587	query term
+T19	NoType 594 600	weight
+T20	NoType 639 660	retrieval performance
+T21	NoType 677 701	query translation method
+T22	NoType 718 751	monolingual information retrieval
+T23	NoType 796 820	word-by-word translation

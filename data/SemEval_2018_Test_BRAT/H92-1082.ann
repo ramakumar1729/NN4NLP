@@ -1,0 +1,11 @@
+T1	NoType 5 18	stack decoder
+T2	NoType 66 93	acoustic and language model
+T3	NoType 108 136	continuous speech recognizer
+T4	NoType 191 218	Viterbi A* search algorithm
+T5	NoType 232 262	non-cross-word acoustic models
+T6	NoType 267 293	no-grammar language models
+T7	NoType 345 368	unigram language models
+T8	NoType 438 460	full (forward) decoder
+T9	NoType 462 488	cross-word acoustic models
+T10	NoType 493 520	longer-span language models
+T11	NoType 620 632	search error

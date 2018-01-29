@@ -1,0 +1,57 @@
+T1	NoType 22 36	Text REtrieval
+T2	NoType 58 64	TREC-1
+T3	NoType 83 89	TREC-2
+T4	NoType 106 112	TREC-3
+T5	NoType 134 140	TREC-4
+T6	NoType 216 222	TREC-1
+T7	NoType 232 238	TREC-4
+T8	NoType 268 291	text retrieval software
+T9	NoType 349 363	text retrieval
+T10	NoType 465 469	TREC
+T11	NoType 510 524	text retrieval
+T12	NoType 638 642	TREC
+T13	NoType 689 707	document detection
+T14	NoType 711 718	TIPSTER
+T15	NoType 736 740	TREC
+T16	NoType 800 804	NIST
+T17	NoType 850 854	TREC
+T18	NoType 912 927	test collection
+T19	NoType 955 964	documents
+T20	NoType 978 995	full-text sources
+T21	NoType 1001 1007	topics
+T22	NoType 1033 1042	documents
+T23	NoType 1071 1077	topics
+T24	NoType 1081 1099	Spanish collection
+T25	NoType 1131 1137	TREC-3
+T26	NoType 1142 1148	TREC-4
+T27	NoType 1169 1175	topics
+T28	NoType 1177 1183	TREC-1
+T29	NoType 1282 1301	document collection
+T30	NoType 1322 1337	test collection
+T31	NoType 1385 1403	TIPSTER collection
+T32	NoType 1423 1429	TREC-2
+T33	NoType 1471 1485	TREC-1 results
+T34	NoType 1566 1586	retrieval techniques
+T35	NoType 1637 1643	TREC-3
+T36	NoType 1744 1750	TREC-3
+T37	NoType 1779 1815	automatic query expansion techniques
+T38	NoType 1828 1853	passages or sub-documents
+T39	NoType 1870 1879	precision
+T40	NoType 1883 1900	retrieval results
+T41	NoType 1921 1941	training information
+T42	NoType 1966 1971	terms
+T43	NoType 1984 1991	queries
+T44	NoType 2056 2075	Rocchio methodology
+T45	NoType 2099 2117	vector space model
+T46	NoType 2210 2216	TREC-4
+T47	NoType 2366 2391	automatic query expansion
+T48	NoType 2553 2562	searching
+T49	NoType 2664 2679	merging results
+T50	NoType 2697 2716	TREC subcollections
+T51	NoType 2743 2757	corrupted data
+T52	NoType 2807 2828	effectiveness measure
+T53	NoType 2883 2900	Spanish retrieval
+T54	NoType 2906 2910	TREC
+T55	NoType 3002 3015	DARPA TIPSTER
+T56	NoType 3067 3082	test collection
+T57	NoType 3270 3276	TREC-5

@@ -1,0 +1,3 @@
+
+This paper provides an approach to the semi-automatic extraction of collocations from corpora using statistics. The growing availability of large textual corpora, and the increasing number of applications of collocation extraction, has given rise to various approaches on the topic. In this paper, we address the problem of nested collocations; that is, those being part of longer collocations. Most approaches till now, treated substring of collocations as collocations only if they appeared frequently enough by themselves in the corpus. These techniques left a lot of collocations unextracted. In this paper, we propose an algorithm for a semi-automatic extraction of nested uninterrupted and interrupted collocations, paying particular attention to nested collocation.
+

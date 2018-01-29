@@ -1,0 +1,16 @@
+T1	NoType 23 32	Wikipedia
+T2	NoType 36 54	external knowledge
+T3	NoType 66 96	named entity recognition (NER)
+T4	NoType 137 152	Wikipedia entry
+T5	NoType 162 185	candidate word sequence
+T6	NoType 201 215	category label
+T7	NoType 231 239	sentence
+T8	NoType 247 252	entry
+T9	NoType 283 298	definition part
+T10	NoType 306 321	category labels
+T11	NoType 334 342	features
+T12	NoType 348 367	CRF-based NE tagger
+T13	NoType 394 412	CoNLL 2003 dataset
+T14	NoType 422 447	Wikipedia category labels
+T15	NoType 475 481	method
+T16	NoType 515 518	NER

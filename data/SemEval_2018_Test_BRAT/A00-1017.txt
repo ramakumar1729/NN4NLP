@@ -1,0 +1,3 @@
+
+This paper introduces an approach to representing the kinds of information that components in a natural language generation (NLG) system will need to communicate to one another. This information may be partial, may involve more than one level of analysis and may need to include information about the history of a derivation. We present a general representation scheme capable of handling these cases. In addition, we make a proposal for organising intermodule communication in an NLG system by having a central server for this information. We have validated the approach by a reanalysis of an existing NLG system and through a full implementation of a runnable specification.
+

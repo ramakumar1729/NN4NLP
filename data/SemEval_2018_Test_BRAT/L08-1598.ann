@@ -1,0 +1,30 @@
+T1	NoType 1 8	WordNet
+T2	NoType 57 93	Word Sense Disambiguation (WSD) task
+T3	NoType 105 120	sense inventory
+T4	NoType 127 137	repository
+T5	NoType 141 163	semantic relationships
+T6	NoType 239 278	Geographical Information Retrieval task
+T7	NoType 306 333	toponym disambiguation task
+T8	NoType 381 384	WSD
+T9	NoType 437 458	geographical entities
+T10	NoType 462 469	WordNet
+T11	NoType 522 566	geometric shape-based disambiguation methods
+T12	NoType 588 599	Geo-WordNet
+T13	NoType 604 624	automatic annotation
+T14	NoType 628 635	WordNet
+T15	NoType 641 665	geographical coordinates
+T16	NoType 671 681	annotation
+T17	NoType 717 737	geographical synsets
+T18	NoType 743 750	WordNet
+T19	NoType 772 780	holonyms
+T20	NoType 785 794	hypernyms
+T21	NoType 837 874	Wikipedia-World geographical database
+T22	NoType 878 884	weight
+T23	NoType 916 937	candidate annotations
+T24	NoType 955 962	matches
+T25	NoType 981 997	database entries
+T26	NoType 1002 1014	synset gloss
+T27	NoType 1016 1024	holonyms
+T28	NoType 1029 1038	hypernyms
+T29	NoType 1078 1126	Geographical Information Retrieval related tasks
+T30	NoType 1143 1165	toponym disambiguation

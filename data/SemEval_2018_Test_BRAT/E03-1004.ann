@@ -1,0 +1,15 @@
+T1	NoType 42 74	Czech-English translation system
+T2	NoType 84 100	dependency trees
+T3	NoType 140 161	morphological tagging
+T4	NoType 163 202	analytical and tectogrammatical parsing
+T5	NoType 206 211	Czech
+T6	NoType 213 238	tectogrammatical transfer
+T7	NoType 248 268	lexical substitution
+T8	NoType 275 312	word-to-word translation dictionaries
+T9	NoType 350 379	English-Czech parallel corpus
+T10	NoType 394 400	simple
+T11	NoType 401 418	rule-based system
+T12	NoType 423 433	generation
+T13	NoType 439 478	English tectogrammatical representation
+T14	NoType 530 582	fully automated and the manually annotated processes
+T15	NoType 599 630	tectogrammatical representation

@@ -1,0 +1,15 @@
+T1	NoType 5 60	Document Understanding Conference (DUC) 2005 evaluation
+T2	NoType 74 124	user-oriented, question-focused summarization task
+T3	NoType 170 179	documents
+T4	NoType 198 211	fluent answer
+T5	NoType 217 233	complex question
+T6	NoType 270 291	summarization systems
+T7	NoType 308 337	extracting relevant sentences
+T8	NoType 353 370	complex questions
+T9	NoType 386 410	representative sentences
+T10	NoType 442 457	generic summary
+T11	NoType 502 507	words
+T12	NoType 517 523	answer
+T13	NoType 569 590	summarization systems
+T14	NoType 602 613	fluent text
+T15	NoType 619 637	multiple documents

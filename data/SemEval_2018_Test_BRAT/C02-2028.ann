@@ -1,0 +1,17 @@
+T1	NoType 24 54	extended GLR parsing algorithm
+T2	NoType 60 73	grammar PCFG*
+T3	NoType 91 121	Tomita's GLR parsing algorithm
+T4	NoType 167 180	grammar PCFG*
+T5	NoType 198 202	PCFG
+T6	NoType 224 235	probability
+T7	NoType 245 254	frequency
+T8	NoType 276 280	rule
+T9	NoType 289 313	syntactic parsing system
+T10	NoType 338 357	rule-based approach
+T11	NoType 362 381	statistics approach
+T12	NoType 440 479	Chinese base noun phrase identification
+T13	NoType 484 506	full syntactic parsing
+T14	NoType 605 646	extended GLR parsing algorithm with PCFG*
+T15	NoType 663 677	parsing method
+T16	NoType 715 735	statistical property
+T17	NoType 741 746	rules

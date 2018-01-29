@@ -1,0 +1,16 @@
+T1	NoType 46 67	automatic acquisition
+T2	NoType 71 106	Information Extraction (IE) systems
+T3	NoType 117 133	dependency trees
+T4	NoType 156 189	extraction pattern representation
+T5	NoType 231 245	pattern models
+T6	NoType 247 254	schemes
+T7	NoType 272 283	IE patterns
+T8	NoType 317 336	dependency analysis
+T9	NoType 405 416	information
+T10	NoType 447 451	text
+T11	NoType 511 525	pattern models
+T12	NoType 555 576	IE evaluation corpora
+T13	NoType 587 605	dependency parsers
+T14	NoType 636 649	linked chains
+T15	NoType 685 708	information of interest
+T16	NoType 750 767	possible patterns

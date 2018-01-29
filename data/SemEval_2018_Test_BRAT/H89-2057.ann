@@ -1,0 +1,19 @@
+T1	NoType 113 129	parallel parsing
+T2	NoType 131 154	semantic representation
+T3	NoType 156 172	ill-formed input
+T4	NoType 174 183	discourse
+T5	NoType 199 231	linguistic knowledge acquisition
+T6	NoType 250 269	software components
+T7	NoType 304 360	Janus, DARPA's New Generation Natural Language Interface
+T8	NoType 406 425	language technology
+T9	NoType 429 447	DARPA applications
+T10	NoType 463 471	software
+T11	NoType 494 517	natural language system
+T12	NoType 519 554	IRACQ, knowledge acquisition system
+T13	NoType 556 573	System components
+T14	NoType 578 593	knowledge bases
+T15	NoType 597 602	Janus
+T16	NoType 604 656	KL-TWO knowledge representation and inference system
+T17	NoType 673 678	Janus
+T18	NoType 688 698	components
+T19	NoType 711 742	Spoken Language Systems Project

@@ -1,0 +1,3 @@
+
+This paper is a contribution to formal ontology study. Some entities belong more or less to a class. In particular, some individual entities are attached to classes whereas they do not check all the properties of the class. To specify whether an individual entity belonging to a class is typical or not, we borrow the topological concepts of interior, border, closure, and exterior. We define a system of relations by adapting these topological operators. A scale of typicality, based on topology, is introduced. It enables to define levels of typicality where individual entities are more or less typical elements of a concept.
+

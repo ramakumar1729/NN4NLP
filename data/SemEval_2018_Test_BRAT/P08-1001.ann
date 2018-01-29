@@ -1,0 +1,32 @@
+T1	NoType 50 78	multilingual characteristics
+T2	NoType 82 91	Wikipedia
+T3	NoType 122 134	large corpus
+T4	NoType 138 142	text
+T5	NoType 148 183	Named Entity Recognition (NER) tags
+T6	NoType 228 248	linguistic expertise
+T7	NoType 283 292	languages
+T8	NoType 303 312	resources
+T9	NoType 368 377	languages
+T10	NoType 395 404	Wikipedia
+T11	NoType 445 459	named entities
+T12	NoType 486 493	process
+T13	NoType 514 532	Category structure
+T14	NoType 545 555	 Wikipedia
+T15	NoType 573 590	named entity type
+T16	NoType 596 611	proposed entity
+T17	NoType 654 675	English language data
+T18	NoType 705 716	NER process
+T19	NoType 726 735	languages
+T20	NoType 776 792	generated corpus
+T21	NoType 796 809	training sets
+T22	NoType 827 845	BBN's Identifinder
+T23	NoType 849 855	French
+T24	NoType 857 866	Ukrainian
+T25	NoType 868 875	Spanish
+T26	NoType 877 883	Polish
+T27	NoType 885 892	Russian
+T28	NoType 898 908	Portuguese
+T29	NoType 928 936	F-scores
+T30	NoType 970 993	human-annotated corpora
+T31	NoType 1042 1047	words
+T32	NoType 1051 1075	human-annotated newswire

@@ -1,0 +1,3 @@
+
+This paper analyses the syntax and semantics of English comparatives, and some types of ellipsis. It improves on other recent analyses in the computational linguistics literature in three respects: (i) it uses no tree- or logical-form rewriting devices in building meaning representations (ii) this results in a fully reversible linguistic description, equally suited for analysis or generation (iii) the analysis extends to types of elliptical comparative not elsewhere treated.
+

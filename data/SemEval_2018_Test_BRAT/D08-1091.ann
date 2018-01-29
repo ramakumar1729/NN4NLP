@@ -1,0 +1,21 @@
+T1	NoType 14 54	discriminative, latent variable approach
+T2	NoType 58 75	syntactic parsing
+T3	NoType 85 90	rules
+T4	NoType 119 129	refinement
+T5	NoType 155 182	latent variable CRF grammar
+T6	NoType 188 193	trees
+T7	NoType 228 247	grammar productions
+T8	NoType 253 263	categories
+T9	NoType 292 299	grammar
+T10	NoType 343 351	grammars
+T11	NoType 457 481	split-and-merge grammars
+T12	NoType 524 547	discriminative approach
+T13	NoType 566 574	features
+T14	NoType 582 607	local tree configurations
+T15	NoType 622 649	multi-scale training method
+T16	NoType 674 699	CKY-style dynamic program
+T17	NoType 717 724	domains
+T18	NoType 729 738	languages
+T19	NoType 745 751	method
+T20	NoType 780 798	parsing accuracies
+T21	NoType 826 834	grammars

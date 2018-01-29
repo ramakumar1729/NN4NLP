@@ -1,0 +1,11 @@
+T1	NoType 45 85	Example-Based Machine Translation (EBMT)
+T2	NoType 109 119	similarity
+T3	NoType 130 147	sentence fragment
+T4	NoType 161 176	stored examples
+T5	NoType 217 227	similarity
+T6	NoType 246 263	surface structure
+T7	NoType 313 323	clustering
+T8	NoType 332 341	retrieval
+T9	NoType 349 370	best matching example
+T10	NoType 380 388	database
+T11	NoType 454 468	CELEX database

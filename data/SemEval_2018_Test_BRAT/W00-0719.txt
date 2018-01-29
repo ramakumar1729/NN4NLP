@@ -1,0 +1,3 @@
+
+Spam filtering is a text categorization task that shows especial features that make it interesting and difficult. First, the task has been performed traditionally using heuristics from the domain. Second, a cost model is required to avoid misclassification of legitimate messages. We present a comparative evaluation of several machine learning algorithms applied to spam filtering, considering the text of the messages and a set of heuristics for the task. Cost-oriented biasing and evaluation is performed.
+

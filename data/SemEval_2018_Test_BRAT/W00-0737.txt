@@ -1,0 +1,3 @@
+
+This paper proposes an error-driven HMM-based text chunk tagger with context-dependent lexicon. Compared with standard HMM-based tagger, this tagger incorporates more contextual information into a lexical entry. Moreover, an error-driven learning approach is adopted to decrease the memory requirement by keeping only positive lexical entries and makes it possible to further incorporate more context-dependent lexical entries. Finally, memory-based learning is adopted to further improve the performance of the chunk tagger.
+

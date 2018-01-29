@@ -1,0 +1,25 @@
+T1	NoType 14 44	 increasingly need to produce 
+T2	NoType 48 60	 written in 
+T3	NoType 78 97	. However, typical 
+T4	NoType 116 148	 require the user to change the 
+T5	NoType 167 190	 each time a different 
+T6	NoType 198 244	 is used. This is cumbersome, especially when 
+T7	NoType 260 309	 are frequent. To solve this problem, we propose 
+T8	NoType 316 326	, a novel 
+T9	NoType 345 363	 that detects the 
+T10	NoType 371 379	 of the 
+T11	NoType 395 429	 and automatically dispatches the 
+T12	NoType 434 454	 to the appropriate 
+T13	NoType 471 509	. Unlike previously reported methods, 
+T14	NoType 516 542	 can handle more than two 
+T15	NoType 551 584	, and can easily support any new 
+T16	NoType 592 615	 even if the available 
+T17	NoType 621 673	 is small. When evaluating this method, we obtained 
+T18	NoType 700 730	 of 96.7% when an appropriate 
+T19	NoType 738 773	 had to be chosen from among three 
+T20	NoType 782 798	. The number of 
+T21	NoType 813 831	 needed to switch 
+T22	NoType 840 875	 was decreased over 93% when using 
+T23	NoType 882 897	 rather than a 
+T24	NoType 916 918	.
+

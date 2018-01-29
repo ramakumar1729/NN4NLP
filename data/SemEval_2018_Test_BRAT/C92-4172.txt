@@ -1,0 +1,3 @@
+
+This paper discusses the formalization of relative clauses in Japanese based on JPSG framework. We characterize them as adjuncts to nouns, and formalize them in terms of constraints among grammatical features. Furthermore, we claim that there is a constraint on the number of slash elements and show the supporting facts.
+

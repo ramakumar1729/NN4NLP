@@ -1,0 +1,3 @@
+
+"We present a robust summarisation system developed within the GATE architecture that makes use of robust components for semantic tagging and coreference resolution provided by GATE. Our system combines GATE components with well established statistical techniques developed for the purpose of text summarisation research. The system supports "generic" and query-based summarisation addressing the need for user adaptation. "
+

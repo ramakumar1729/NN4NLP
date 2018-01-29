@@ -1,0 +1,21 @@
+T1	NoType 31 43	proper names
+T2	NoType 47 51	text
+T3	NoType 83 94	NLP systems
+T4	NoType 108 125	unrestricted text
+T5	NoType 150 159	documents
+T6	NoType 173 188	name references
+T7	NoType 207 228	information retrieval
+T8	NoType 237 249	preprocessor
+T9	NoType 259 284	knowledge intensive tasks
+T10	NoType 293 312	database extraction
+T11	NoType 355 379	text skimming techniques
+T12	NoType 393 405	proper names
+T13	NoType 416 435	semantic attributes
+T14	NoType 455 468	newswire text
+T15	NoType 504 517	name elements
+T16	NoType 569 581	proper names
+T17	NoType 599 639	context-dependent linguistic expressions
+T18	NoType 662 673	information
+T19	NoType 681 694	local context
+T20	NoType 718 750	computational model of discourse
+T21	NoType 887 901	knowledge base

@@ -1,0 +1,13 @@
+T1	NoType 54 60	tagset
+T2	NoType 70 103	Russian morphosyntactic phenomena
+T3	NoType 126 137	core tagset
+T4	NoType 163 169	tagset
+T5	NoType 185 215	morphosyntactic specifications
+T6	NoType 233 255	MULTEXT-East framework
+T7	NoType 360 369	linguists
+T8	NoType 447 453	tagset
+T9	NoType 473 477	tags
+T10	NoType 497 509	95% accuracy
+T11	NoType 546 569	Russian National Corpus
+T12	NoType 595 603	test set
+T13	NoType 607 633	tagging models and corpora

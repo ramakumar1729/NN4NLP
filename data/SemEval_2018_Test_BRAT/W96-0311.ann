@@ -1,0 +1,25 @@
+T1	NoType 53 60	Turkish
+T2	NoType 79 92	lexical rules
+T3	NoType 97 108	inflections
+T4	NoType 110 121	derivations
+T5	NoType 127 143	lexical category
+T6	NoType 184 199	lexical entries
+T7	NoType 201 214	Lexical rules
+T8	NoType 233 250	grammatical roles
+T9	NoType 260 276	type constraints
+T10	NoType 305 330	sub-categorization frames
+T11	NoType 334 361	valency changing operations
+T12	NoType 365 394	lexical inheritance hierarchy
+T13	NoType 426 442	type constraints
+T14	NoType 444 466	Semantic compositions 
+T15	NoType 470 481	inflections
+T16	NoType 486 497	derivations
+T17	NoType 539 544	terms
+T18	NoType 549 559	predicates
+T19	NoType 600 612	HPSG grammar
+T20	NoType 617 624	Turkish
+T21	NoType 677 682	rules
+T22	NoType 786 793	lexicon
+T23	NoType 818 829	inflections
+T24	NoType 834 845	derivations
+T25	NoType 849 856	Turkish

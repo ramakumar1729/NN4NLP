@@ -1,0 +1,34 @@
+T1	NoType 14 26	correlations
+T2	NoType 34 55	connectivity patterns
+T3	NoType 71 100	syntactic dependency networks
+T4	NoType 108 116	networks
+T5	NoType 134 143	treebanks
+T6	NoType 151 159	vertices
+T7	NoType 167 177	word forms
+T8	NoType 193 199	nuclei
+T9	NoType 203 219	dependency trees
+T10	NoType 227 232	edges
+T11	NoType 250 258	vertices
+T12	NoType 275 290	instance nuclei
+T13	NoType 300 308	vertices
+T14	NoType 327 347	dependency structure
+T15	NoType 353 361	sentence
+T16	NoType 378 407	syntactic dependency networks
+T17	NoType 417 426	languages
+T18	NoType 496 506	clustering
+T19	NoType 539 547	vertices
+T20	NoType 577 583	vertex
+T21	NoType 664 679	mean clustering
+T22	NoType 683 691	vertices
+T23	NoType 713 719	degree
+T24	NoType 762 795	hierarchical network organization
+T25	NoType 810 821	mean degree
+T26	NoType 829 846	nearest neighbors
+T27	NoType 852 858	vertex
+T28	NoType 886 892	degree
+T29	NoType 929 950	disassortative mixing
+T30	NoType 969 974	links
+T31	NoType 991 999	vertices
+T32	NoType 1014 1021	degrees
+T33	NoType 1084 1108	large scale organization
+T34	NoType 1112 1141	syntactic dependency networks

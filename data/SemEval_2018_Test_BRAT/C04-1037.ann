@@ -1,0 +1,16 @@
+T1	NoType 56 70	disambiguation
+T2	NoType 116 121	rules
+T3	NoType 146 176	probability or heuristic rules
+T4	NoType 181 195	disambiguation
+T5	NoType 210 230	ambiguity resolution
+T6	NoType 248 265	language analysis
+T7	NoType 277 287	morphology
+T8	NoType 292 301	semantics
+T9	NoType 330 337	Swahili
+T10	NoType 365 380	analysis system
+T11	NoType 409 430	two-level description
+T12	NoType 434 444	morphology
+T13	NoType 449 477	constraint grammar formalism
+T14	NoType 481 495	disambiguation
+T15	NoType 593 602	precision
+T16	NoType 616 628	rule writing

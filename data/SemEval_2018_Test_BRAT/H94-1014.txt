@@ -1,0 +1,3 @@
+
+This paper introduces a simple mixture language model that attempts to capture long distance constraints in a sentence or paragraph. The model is an m-component mixture of digram models. The models were constructed using a SK vocabulary and trained using a 76 million word Wall Street Journal text corpus. Using the BU recognition system, experiments show a 7% improvement in recognition accuracy with the mixture digram models as compared to using a Digram model.
+

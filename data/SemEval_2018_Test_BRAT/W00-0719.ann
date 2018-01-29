@@ -1,0 +1,16 @@
+T1	NoType 1 15	Spam filtering
+T2	NoType 21 45	text categorization task
+T3	NoType 126 130	task
+T4	NoType 170 180	heuristics
+T5	NoType 190 196	domain
+T6	NoType 208 218	cost model
+T7	NoType 240 257	misclassification
+T8	NoType 261 280	legitimate messages
+T9	NoType 295 317	comparative evaluation
+T10	NoType 329 356	machine learning algorithms
+T11	NoType 368 382	spam filtering
+T12	NoType 400 404	text
+T13	NoType 412 420	messages
+T14	NoType 434 444	heuristics
+T15	NoType 453 457	task
+T16	NoType 459 480	Cost-oriented biasing

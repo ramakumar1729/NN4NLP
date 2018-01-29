@@ -1,0 +1,2 @@
+Syntactic models should be descriptively adequate and parsable. A syntactic description is autonomous in the sense that it has certain explicit formal properties. Such a description relates to the semantic interpretation of the sentences, and to the surface text. As the formalism is implemented in a broad-coverage syntactic parser, we concentrate on issues that must be resolved by any practical system that uses such models. The correspondence between the structure and linear order is discussed.
+

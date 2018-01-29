@@ -1,0 +1,34 @@
+T1	NoType 68 88	conceptual structure
+T2	NoType 97 101	word
+T3	NoType 107 113	corpus
+T4	NoType 119 126	concept
+T5	NoType 132 136	word
+T6	NoType 159 182	probabilistic framework
+T7	NoType 199 209	Belief Net
+T8	NoType 219 234	Collocation Map
+T9	NoType 258 271	probabilities
+T10	NoType 277 287	Belief Net
+T11	NoType 301 326	conditional independences
+T12	NoType 330 335	words
+T13	NoType 364 386	cooccurrence relations
+T14	NoType 392 403	computation
+T15	NoType 415 426	Belief Nets
+T16	NoType 465 479	Gibbs sampling
+T17	NoType 488 501	approximation
+T18	NoType 509 522	probabilities
+T19	NoType 534 544	Belief Net
+T20	NoType 558 573	lexical meaning
+T21	NoType 596 603	network
+T22	NoType 642 654	applications
+T23	NoType 704 714	Belief Net
+T24	NoType 720 735	lexical concept
+T25	NoType 754 769	Collocation Map
+T26	NoType 788 797	subdomain
+T27	NoType 801 815	language usage
+T28	NoType 846 871	conditional probabilities
+T29	NoType 876 891	Collocation Map
+T30	NoType 943 962	language processing
+T31	NoType 971 991	sense disambiguation
+T32	NoType 993 1015	thesaurus construction
+T33	NoType 1017 1035	automatic indexing
+T34	NoType 1041 1064	document classification

@@ -1,0 +1,3 @@
+
+We present a methodfor individuating dependencies between the semantic class of predicates and their associated subcategorization frames, and describe an implementation which allows the acquisition of such dependencies from bracketed texts.
+

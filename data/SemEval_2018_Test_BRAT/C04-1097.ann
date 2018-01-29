@@ -1,0 +1,19 @@
+T1	NoType 20 38	statistical models
+T2	NoType 42 69	syntactic constituent order
+T3	NoType 74 94	sentence realization
+T4	NoType 140 152	joint models
+T5	NoType 174 200	statistical parsing models
+T6	NoType 220 238	conditional models
+T7	NoType 244 262	conditional models
+T8	NoType 287 306	linguistic features
+T9	NoType 315 339	manual feature selection
+T10	NoType 367 373	models
+T11	NoType 377 397	sentence realization
+T12	NoType 402 419	French and German
+T13	NoType 447 464	conditional model
+T14	NoType 517 522	model
+T15	NoType 543 558	unordered trees
+T16	NoType 568 581	Penn TreeBank
+T17	NoType 607 620	standard data
+T18	NoType 661 669	ordering
+T19	NoType 673 693	sentence realization

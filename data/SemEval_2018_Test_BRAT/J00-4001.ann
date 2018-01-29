@@ -1,0 +1,34 @@
+T1	NoType 42 46	text
+T2	NoType 55 62	content
+T3	NoType 71 76	style
+T4	NoType 113 127	categorization
+T5	NoType 169 188	text categorization
+T6	NoType 201 206	genre
+T7	NoType 222 234	Modern Greek
+T8	NoType 260 282	stylometric approaches
+T9	NoType 330 369	natural language processing (NLP) tools
+T10	NoType 404 417	style markers
+T11	NoType 428 451	analysis-level measures
+T12	NoType 488 498	input text
+T13	NoType 536 557	stylistic information
+T14	NoType 645 665	text genre detection
+T15	NoType 667 688	author identification
+T16	NoType 694 713	author verification
+T17	NoType 738 753	proposed method
+T18	NoType 792 823	distributional lexical measures
+T19	NoType 844 863	vocabulary richness
+T20	NoType 868 893	frequencies of occurrence
+T21	NoType 915 920	words
+T22	NoType 965 982	unrestricted text
+T23	NoType 1003 1017	World Wide Web
+T24	NoType 1030 1055	manual text preprocessing
+T25	NoType 1059 1072	text sampling
+T26	NoType 1115 1127	training set
+T27	NoType 1170 1183	style markers
+T28	NoType 1203 1209	system
+T29	NoType 1229 1240	application
+T30	NoType 1281 1300	text categorization
+T31	NoType 1313 1349	stylistically homogeneous categories
+T32	NoType 1387 1409	analysis-level markers
+T33	NoType 1453 1474	stylistic information
+T34	NoType 1490 1511	text processing tools

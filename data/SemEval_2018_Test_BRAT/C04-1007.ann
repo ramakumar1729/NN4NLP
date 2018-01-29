@@ -1,0 +1,13 @@
+T1	NoType 42 77	inter-paragraph discourse structure
+T2	NoType 81 85	text
+T3	NoType 107 117	paragraphs
+T4	NoType 210 230	clustering algorithm
+T5	NoType 238 243	model
+T6	NoType 247 268	segment "relatedness"
+T7	NoType 283 304	machine learning step
+T8	NoType 374 392	word co-occurrence
+T9	NoType 394 408	lexical chains
+T10	NoType 410 421	cue phrases
+T11	NoType 423 434	punctuation
+T12	NoType 440 445	tense
+T13	NoType 497 515	word co-occurrence

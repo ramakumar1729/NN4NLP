@@ -1,0 +1,14 @@
+T1	NoType 38 56	structured content
+T2	NoType 60 80	semantic constraints
+T3	NoType 126 155	term-based document retrieval
+T4	NoType 208 228	automatic extraction
+T5	NoType 232 248	semantic content
+T6	NoType 264 290	attribute-value (AV) pairs
+T7	NoType 296 318	natural language texts
+T8	NoType 328 341	domain models
+T9	NoType 360 388	semi-structured web resource
+T10	NoType 433 470	state-of-the-art term-based IR system
+T11	NoType 484 514	constraint-based search system
+T12	NoType 539 547	AV pairs
+T13	NoType 634 648	IR performance
+T14	NoType 658 678	term-based IR system

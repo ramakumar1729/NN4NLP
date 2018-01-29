@@ -1,0 +1,3 @@
+
+This paper reports the principles behind designing a tagset to cover Russian morphosyntactic phenomena, modifications of the core tagset, and its evaluation. The tagset and associated morphosyntactic specifications are based on the MULTEXT-East framework, while the decisions in designing it were aimed at achieving a balance between parameters important for linguists and the possibility to detect and disambiguate them automatically. The final tagset contains about 600 tags and achieves about 95% accuracy on the disambiguated portion of the Russian National Corpus. We have also produced a test set of tagging models and corpora that can be shared with other researchers.
+

@@ -1,0 +1,19 @@
+T1	NoType 72 87	local coherence
+T2	NoType 121 147	entity-grid representation
+T3	NoType 151 160	discourse
+T4	NoType 177 185	patterns
+T5	NoType 189 208	entity distribution
+T6	NoType 214 218	text
+T7	NoType 286 290	text
+T8	NoType 305 332	entity transition sequences
+T9	NoType 345 399	distributional, syntactic, and referential information
+T10	NoType 406 424	discourse entities
+T11	NoType 446 466	coherence assessment
+T12	NoType 472 485	learning task
+T13	NoType 504 531	entity-based representation
+T14	NoType 551 575	ranking-based generation
+T15	NoType 580 605	text classification tasks
+T16	NoType 617 640	proposed representation
+T17	NoType 673 686	text ordering
+T18	NoType 688 716	summary coherence evaluation
+T19	NoType 722 744	readability assessment

@@ -1,0 +1,23 @@
+T1	NoType 66 101	English-Spanish machine translation
+T2	NoType 105 114	news text
+T3	NoType 131 161	WMT'08 Shared Translation Task
+T4	NoType 182 199	domain adaptation
+T5	NoType 213 241	small in-domain news bi-text
+T6	NoType 281 296	Europarl corpus
+T7	NoType 311 345	separate phrase translation models
+T8	NoType 354 378	separate language models
+T9	NoType 397 427	third phrase translation model
+T10	NoType 456 468	news bi-text
+T11	NoType 484 532	monolingual sentence-level syntactic paraphrases
+T12	NoType 581 587	models
+T13	NoType 593 609	log-linear model
+T14	NoType 616 643	minimum error rate training
+T15	NoType 683 714	tokenization and recasing rules
+T16	NoType 733 743	Bleu score
+T17	NoType 751 772	WMT'07 news test data
+T18	NoType 795 802	English
+T19	NoType 806 813	Spanish
+T20	NoType 855 873	highest Bleu score
+T21	NoType 902 908	WMT'07
+T22	NoType 950 992	WMT'08 English to Spanish news translation
+T23	NoType 1053 1063	Bleu score
